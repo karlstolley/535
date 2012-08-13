@@ -1,0 +1,20 @@
+Instructional Design
+
+The format of this class will be quite different from others I have taught.
+
+First, we will be building a single project together as an entire class that will take us the entire semester. Readings and resources will be selected and shared on an ongoing basis by both the students and instructor. While we will work through the Mastering the Instructional Design Process book, our activities, readings, and discussion will be driven by the project. Also, in stark contrast to the lumbering, complex process outlined in the Mastering book, we will be reading from 37Signals' book Getting Real to develop an agile, do-something-now approach to instructional design and design in general.
+
+So what is the project?
+
+The project is the development of a web-based learning resource for students in our graduate program to learn key technologies used in different classes in the program, either through self-study or guided learning in a classroom setting.
+
+Content-wise, we will select the core technologies for the resource in the first two weeks of thee semester.
+
+In terms of form, we will be creating a web-based resource. It will employ responsive design techniques to make it maximally usable in mobile, tablet, and desktop environments. Each student in the class plus the instructor will be responsible for one technology that is part of the resource.
+
+We will be looking to make this an active learning resource, complete with multiple media (sound, video, images, and text, wherever appropriate) with multiple points of assessment throughout. Although the project is intended for students in our own program, we should aim to make this a resource that would be useful to raise the visibility of our program, including recruiting potential students, as well as providing a useful resource to other technical communicators, information architects, and digital humanists.
+
+We will coordinate our work through three technologies:
+  * Basecamp, a project-management application
+  * Campfire, a group chat that will be available in- and outside of class
+  * Git & GitHub, a distributed version control system that will keep everyone in sync as we work collaboratively to build this learning resource
