@@ -3,31 +3,61 @@
 <head>
   <meta charset="utf-8" />
   <title>COM535: Instructional Design</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/bootstrap-custom.css">
+  <script type="text/javascript" src="//use.typekit.net/oij6xqh.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
-  <article id="page" class="calendar">
-    <header id="header">
+  <!--
+    Basic nav cribbed straight from Bootstrap; see
+    http://twitter.github.com/bootstrap/examples/starter-template.html
+  -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" rel="home" href="http://karlstolley.github.com/535/">535</a>
+        <div class="nav-collapse">
+          <ul class="nav pull-right">
+            <li class="active"><a href="/535/">Calendar</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="https://github.com/karlstolley/535/wiki">Wiki</a></li>
+            <li><a href="https://karlstolley.campfirenow.com/room/528274">Campfire</a></li>
+            <li><a href="policies.html">Policies</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </nav>
+  <article id="page" class="calendar container-fluid">
+    <header id="header" class="hero-unit">
       <h1>Instructional Design</h1>
+      <p>A graduate course in designing instructional materials for adult learning. Taught by <a href="http://karlstolley.com/">Karl Stolley</a>, Fall Semester 2012 at <a href="http://www.iit.edu/">Illinois Institute of Technology</a>.</p>
     </header>
     <section id="content">
       <h1>Course Calendar</h1>
       <dl id="calendar">
-        <dt>Theme <time datetime="2012-08-21">August 21, 2012</time></dt>
+        <dt>Week One <time datetime="2012-08-21">August 21, 2012</time></dt>
         <dd>
-          <ul>
+          <ul class="row-fluid">
             <!--
-            <li class="news">
+            <li class="news span4">
               <h2>News</h2>
               <p>Add stuff if there's news. And uncomment.</p>
             </li>
             -->
-            <li class="agenda">
+            <li class="agenda span6 offset6">
               <h2>Agenda</h2>
               <ol>
                 <li></li>
               </ol>
             </li>
-            <li class="assigned">
+            <li class="assigned span6 offset6">
               <h2>Assigned</h2>
               <ol>
                 <li></li>
@@ -35,22 +65,22 @@
             </li>
           </ul>
         </dd>
-        <dt>Theme <time datetime="2012-08-28">August 28, 2012</time></dt>
+        <dt>Week Two <time datetime="2012-08-28">August 28, 2012</time></dt>
         <dd>
-          <ul>
+          <ul class="row-fluid">
             <!--
-            <li class="news">
+            <li class="news span4">
               <h2>News</h2>
               <p>Add stuff if there's news. And uncomment.</p>
             </li>
             -->
-            <li class="agenda">
+            <li class="agenda span6 offset6">
               <h2>Agenda</h2>
               <ol>
                 <li></li>
               </ol>
             </li>
-            <li class="assigned">
+            <li class="assigned span6 offset6">
               <h2>Assigned</h2>
               <ol>
                 <li></li>
@@ -58,22 +88,22 @@
             </li>
           </ul>
         </dd>
-        <dt>Theme <time datetime="2012-09-04">September 4, 2012</time></dt>
+        <dt>Week Three <time datetime="2012-09-04">September 4, 2012</time></dt>
         <dd>
-          <ul>
+          <ul class="row-fluid">
             <!--
-            <li class="news">
+            <li class="news span4">
               <h2>News</h2>
               <p>Add stuff if there's news. And uncomment.</p>
             </li>
             -->
-            <li class="agenda">
+            <li class="agenda span6 offset6">
               <h2>Agenda</h2>
               <ol>
                 <li></li>
               </ol>
             </li>
-            <li class="assigned">
+            <li class="assigned span6 offset6">
               <h2>Assigned</h2>
               <ol>
                 <li></li>
@@ -81,22 +111,22 @@
             </li>
           </ul>
         </dd>
-        <dt>Theme <time datetime="2012-09-11">September 11, 2012</time></dt>
+        <dt>Week Four <time datetime="2012-09-11">September 11, 2012</time></dt>
         <dd>
-          <ul>
+          <ul class="row-fluid">
             <!--
-            <li class="news">
+            <li class="news span4">
               <h2>News</h2>
               <p>Add stuff if there's news. And uncomment.</p>
             </li>
             -->
-            <li class="agenda">
+            <li class="agenda span6 offset6">
               <h2>Agenda</h2>
               <ol>
                 <li></li>
               </ol>
             </li>
-            <li class="assigned">
+            <li class="assigned span6 offset6">
               <h2>Assigned</h2>
               <ol>
                 <li></li>
@@ -104,22 +134,22 @@
             </li>
           </ul>
         </dd>
-        <dt>Theme <time datetime="2012-09-18">September 18, 2012</time></dt>
+        <dt>Week Five <time datetime="2012-09-18">September 18, 2012</time></dt>
         <dd>
-          <ul>
+          <ul class="row-fluid">
             <!--
-            <li class="news">
+            <li class="news span4">
               <h2>News</h2>
               <p>Add stuff if there's news. And uncomment.</p>
             </li>
             -->
-            <li class="agenda">
+            <li class="agenda span6 offset6">
               <h2>Agenda</h2>
               <ol>
                 <li></li>
               </ol>
             </li>
-            <li class="assigned">
+            <li class="assigned span6 offset6">
               <h2>Assigned</h2>
               <ol>
                 <li></li>
@@ -127,22 +157,22 @@
             </li>
           </ul>
         </dd>
-        <dt>Theme <time datetime="2012-09-25">September 25, 2012</time></dt>
+        <dt>Week Six <time datetime="2012-09-25">September 25, 2012</time></dt>
         <dd>
-          <ul>
+          <ul class="row-fluid">
             <!--
-            <li class="news">
+            <li class="news span4">
               <h2>News</h2>
               <p>Add stuff if there's news. And uncomment.</p>
             </li>
             -->
-            <li class="agenda">
+            <li class="agenda span6 offset6">
               <h2>Agenda</h2>
               <ol>
                 <li></li>
               </ol>
             </li>
-            <li class="assigned">
+            <li class="assigned span6 offset6">
               <h2>Assigned</h2>
               <ol>
                 <li></li>
@@ -150,22 +180,22 @@
             </li>
           </ul>
         </dd>
-        <dt>Theme <time datetime="2012-10-02">October 2, 2012</time></dt>
+        <dt>Week Seven <time datetime="2012-10-02">October 2, 2012</time></dt>
         <dd>
-          <ul>
+          <ul class="row-fluid">
             <!--
-            <li class="news">
+            <li class="news span4">
               <h2>News</h2>
               <p>Add stuff if there's news. And uncomment.</p>
             </li>
             -->
-            <li class="agenda">
+            <li class="agenda span6 offset6">
               <h2>Agenda</h2>
               <ol>
                 <li></li>
               </ol>
             </li>
-            <li class="assigned">
+            <li class="assigned span6 offset6">
               <h2>Assigned</h2>
               <ol>
                 <li></li>
@@ -173,22 +203,22 @@
             </li>
           </ul>
         </dd>
-        <dt>Theme <time datetime="2012-10-09">October 9, 2012</time></dt>
+        <dt>Week Eight <time datetime="2012-10-09">October 9, 2012</time></dt>
         <dd>
-          <ul>
+          <ul class="row-fluid">
             <!--
-            <li class="news">
+            <li class="news span4">
               <h2>News</h2>
               <p>Add stuff if there's news. And uncomment.</p>
             </li>
             -->
-            <li class="agenda">
+            <li class="agenda span6 offset6">
               <h2>Agenda</h2>
               <ol>
                 <li></li>
               </ol>
             </li>
-            <li class="assigned">
+            <li class="assigned span6 offset6">
               <h2>Assigned</h2>
               <ol>
                 <li></li>
@@ -196,22 +226,22 @@
             </li>
           </ul>
         </dd>
-        <dt>Theme <time datetime="2012-10-16">October 16, 2012</time></dt>
+        <dt>Week Nine <time datetime="2012-10-16">October 16, 2012</time></dt>
         <dd>
-          <ul>
+          <ul class="row-fluid">
             <!--
-            <li class="news">
+            <li class="news span4">
               <h2>News</h2>
               <p>Add stuff if there's news. And uncomment.</p>
             </li>
             -->
-            <li class="agenda">
+            <li class="agenda span6 offset6">
               <h2>Agenda</h2>
               <ol>
                 <li></li>
               </ol>
             </li>
-            <li class="assigned">
+            <li class="assigned span6 offset6">
               <h2>Assigned</h2>
               <ol>
                 <li></li>
@@ -219,22 +249,22 @@
             </li>
           </ul>
         </dd>
-        <dt>Theme <time datetime="2012-10-23">October 23, 2012</time></dt>
+        <dt>Week Ten <time datetime="2012-10-23">October 23, 2012</time></dt>
         <dd>
-          <ul>
+          <ul class="row-fluid">
             <!--
-            <li class="news">
+            <li class="news span4">
               <h2>News</h2>
               <p>Add stuff if there's news. And uncomment.</p>
             </li>
             -->
-            <li class="agenda">
+            <li class="agenda span6 offset6">
               <h2>Agenda</h2>
               <ol>
                 <li></li>
               </ol>
             </li>
-            <li class="assigned">
+            <li class="assigned span6 offset6">
               <h2>Assigned</h2>
               <ol>
                 <li></li>
@@ -242,22 +272,22 @@
             </li>
           </ul>
         </dd>
-        <dt>Theme <time datetime="2012-10-30">October 30, 2012</time></dt>
+        <dt>Week Eleven <time datetime="2012-10-30">October 30, 2012</time></dt>
         <dd>
-          <ul>
+          <ul class="row-fluid">
             <!--
-            <li class="news">
+            <li class="news span4">
               <h2>News</h2>
               <p>Add stuff if there's news. And uncomment.</p>
             </li>
             -->
-            <li class="agenda">
+            <li class="agenda span6 offset6">
               <h2>Agenda</h2>
               <ol>
                 <li></li>
               </ol>
             </li>
-            <li class="assigned">
+            <li class="assigned span6 offset6">
               <h2>Assigned</h2>
               <ol>
                 <li></li>
@@ -265,22 +295,22 @@
             </li>
           </ul>
         </dd>
-        <dt>Theme <time datetime="2012-11-06">November 6, 2012</time></dt>
+        <dt>Week Twelve <time datetime="2012-11-06">November 6, 2012</time></dt>
         <dd>
-          <ul>
+          <ul class="row-fluid">
             <!--
-            <li class="news">
+            <li class="news span4">
               <h2>News</h2>
               <p>Add stuff if there's news. And uncomment.</p>
             </li>
             -->
-            <li class="agenda">
+            <li class="agenda span6 offset6">
               <h2>Agenda</h2>
               <ol>
                 <li></li>
               </ol>
             </li>
-            <li class="assigned">
+            <li class="assigned span6 offset6">
               <h2>Assigned</h2>
               <ol>
                 <li></li>
@@ -288,22 +318,22 @@
             </li>
           </ul>
         </dd>
-        <dt>Theme <time datetime="2012-11-13">November 13, 2012</time></dt>
+        <dt>Week Thirteen <time datetime="2012-11-13">November 13, 2012</time></dt>
         <dd>
-          <ul>
+          <ul class="row-fluid">
             <!--
-            <li class="news">
+            <li class="news span4">
               <h2>News</h2>
               <p>Add stuff if there's news. And uncomment.</p>
             </li>
             -->
-            <li class="agenda">
+            <li class="agenda span6 offset6">
               <h2>Agenda</h2>
               <ol>
                 <li></li>
               </ol>
             </li>
-            <li class="assigned">
+            <li class="assigned span6 offset6">
               <h2>Assigned</h2>
               <ol>
                 <li></li>
@@ -313,22 +343,22 @@
         </dd>
         <dt>Thanksgiving Break <time datetime="2012-11-20">November 20, 2012</time></dt>
         <dd>No class.</dd>
-        <dt>Theme <time datetime="2012-11-27">November 27, 2012</time></dt>
+        <dt>Work Week <time datetime="2012-11-27">November 27, 2012</time></dt>
         <dd>
-          <ul>
+          <ul class="row-fluid">
             <!--
-            <li class="news">
+            <li class="news span4">
               <h2>News</h2>
               <p>Add stuff if there's news. And uncomment.</p>
             </li>
             -->
-            <li class="agenda">
+            <li class="agenda span6 offset6">
               <h2>Agenda</h2>
               <ol>
                 <li></li>
               </ol>
             </li>
-            <li class="assigned">
+            <li class="assigned span6 offset6">
               <h2>Assigned</h2>
               <ol>
                 <li></li>
@@ -336,27 +366,35 @@
             </li>
           </ul>
         </dd>
-        <dt>Final Meeting <time datetime="2012-12-04">December 4, 2012 (?)</time></dt>
+        <dt>Final Meeting <time datetime="2012-12-04">December 4, 2012 (Time TBD)</time></dt>
         <dd>
-          <ul>
+          <ul class="row-fluid">
             <!--
-            <li class="news">
+            <li class="news span4">
               <h2>News</h2>
               <p>Add stuff if there's news. And uncomment.</p>
             </li>
             -->
-            <li class="agenda">
+            <li class="agenda span6 offset6">
               <h2>Agenda</h2>
               <ol>
-                <li></li>
+                <li>Final presentations</li>
               </ol>
             </li>
           </ul>
         </dd>
       </dl>
     </section>
-    <footer id="footer">
+    <footer class="row-fluid" id="footer">
+      <p class="span6">
+        Course created by <a href="http://karlstolley.com/">Karl Stolley</a>; forkable on <a href="https://github.com/karlstolley/535">GitHub</a>. Content licensed under <a href="http://creativecommons.org/licenses/by/2.0/" rel="license">Creative Commons</a>. Powered by <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>, <a href="https://github.com/thomas-mcdonald/bootstrap-sass/">Bootstrap-Sass</a>, <a href="https://help.github.com/articles/creating-project-pages-manually">GitHub Project Pages</a>, <a href="http://modernizr.com/">Modernizr</a>, and <a href="https://typekit.com/">Typekit</a>.
+      </p>
     </footer>
   </article>
+  <script src="assets/js/modernizr.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script src="assets/js/bootstrap-transition.js"></script>
+  <script src="assets/js/bootstrap-button.js"></script>
+  <script src="assets/js/bootstrap-collapse.js"></script>
 </body>
 </html>

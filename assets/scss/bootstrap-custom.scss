@@ -1,0 +1,150 @@
+// CUSTOM VARIABLES
+// Set up custom variables first...these override the Bootstrap defaults
+$sansFontFamily:        "ff-tisa-sans-web-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serifFontFamily:       "ff-tisa-web-pro", Georgia, "Times New Roman", Times, serif;
+
+$baseFontSize:          15px;
+$baseLineHeight:        22px !default;
+
+$headingsFontFamily:    $serifFontFamily; // empty to use BS default, @baseFontFamily
+$headingsFontWeight:    bold !default;    // instead of browser default, bold
+$headingsColor:         inherit !default; // empty to use BS default, @textColor
+
+// Then load up bootstrap & bootstrap-responsive
+@import "bootstrap";
+@import "bootstrap-responsive";
+
+// Then go nuts adding custom styles and stuff...
+
+// MIXINS
+// As of Sass 3.2.0, mixins accept blocks:
+// http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#mixin-content
+
+// Make media queries not suck; just use e.g.,
+// @include iphone { }
+// and go wild
+
+@mixin iphone {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin ipadPortrait {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin ipadLandscape {
+  @media screen and (min-width: 980px) {
+    @content;
+  }
+}
+
+@mixin hugeDesktop {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+// EXTENSIONS
+// Keeping my HTML simple, rather than run wild with all of the Bootstrap classes...
+
+dt {
+  @extend h3;
+  border-bottom: 1px solid $grayLight;
+  margin-bottom: $baseLineHeight - 1;
+  time {
+    @extend small;
+    font-size: 75%;
+  }
+}
+
+dd {
+  dt + & {
+    margin-bottom: $baseLineHeight;
+  }
+  h2 {
+    @extend h4;
+    text-transform: uppercase;
+  }
+  > ul {
+    @extend ul.unstyled; // Keep the calendar sub-headings bullet-free
+    > li {
+      margin-bottom: $baseLineHeight/2;
+    }
+  }
+}
+
+// FULLY CUSTOM STYLES
+.brand {
+  font-family: $serifFontFamily;
+}
+
+nav.navbar {
+  padding-top: 20px;
+  .nav > li > a {
+     line-height: 1;
+     padding: 14px;
+     padding-bottom: 8px;
+  }
+}
+nav.navbar a.brand {
+  padding: 9px;
+  padding-bottom: 0px;
+}
+
+
+.hero-unit {
+  font-family: $serifFontFamily;
+  h1 {
+    font-size: $baseFontSize * 2.5;
+    line-height: $baseLineHeight * 2;
+    margin-bottom: $baseLineHeight;
+  }
+  p {
+    line-height: $baseLineHeight * 1.25;
+    font-style: italic;
+    a.btn {
+      font-style: normal;
+    }
+    + p {
+      margin-top: $baseLineHeight;
+    }
+  }
+}
+
+footer {
+  margin-top: $baseLineHeight * 3;
+  border-top: 1px dotted $grayLight;
+  p {
+    font-size: $baseFontSize * .85;
+    padding: $baseLineHeight;
+    padding-bottom: $baseLineHeight * 2;
+  }
+}
+
+@include iphone {
+  dt time {
+    display: block;
+  }
+}
+
+@include ipadPortrait {
+  nav.navbar {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+}
+
+@include ipadLandscape {
+
+}
+
+@include hugeDesktop {
+  .container-fluid {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
