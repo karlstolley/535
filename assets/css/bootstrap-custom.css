@@ -344,7 +344,7 @@ ol {
 li {
   line-height: 22px; }
 
-ul.unstyled, dd > ul, ol.unstyled {
+ul.unstyled, #calendar dd > ul, ol.unstyled {
   margin-left: 0;
   list-style: none; }
 
@@ -4098,7 +4098,7 @@ dt + dd {
   margin-bottom: 22px; }
 dd h2 {
   text-transform: uppercase; }
-dd > ul > li {
+#calendar dd > ul > li {
   margin-bottom: 11px; }
 
 .brand {

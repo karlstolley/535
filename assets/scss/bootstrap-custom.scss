@@ -69,7 +69,7 @@ dd {
     @extend h4;
     text-transform: uppercase;
   }
-  > ul {
+  #calendar & > ul {
     @extend ul.unstyled; // Keep the calendar sub-headings bullet-free
     > li {
       margin-bottom: $baseLineHeight/2;
