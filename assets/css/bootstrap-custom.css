@@ -4148,6 +4148,9 @@ footer {
     padding-bottom: 44px; }
 
 @media screen and (max-width: 480px) {
+  .hero-unit h1 {
+    font-size: 27px; }
+
   dt time {
     display: block; } }
 @media screen and (min-width: 768px) {

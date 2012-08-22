@@ -139,6 +139,9 @@ footer {
 }
 
 @include iphone {
+  .hero-unit h1 {
+    font-size: $baseFontSize * 1.8;
+  }
   dt time {
     display: block;
   }
