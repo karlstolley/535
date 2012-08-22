@@ -78,8 +78,21 @@ dd {
 }
 
 // FULLY CUSTOM STYLES
+
+.alert {
+  padding: 11px 35px 7px 14px;
+  margin: $baseLineHeight / 2 0 $baseLineHeight;
+}
+
 .brand {
   font-family: $serifFontFamily;
+}
+
+.label, .badge {
+  line-height: $baseLineHeight;
+}
+.label {
+  padding: 5px 5px 1px;
 }
 
 nav.navbar {

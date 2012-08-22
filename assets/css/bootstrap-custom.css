@@ -4101,8 +4101,18 @@ dd h2 {
 #calendar dd > ul > li {
   margin-bottom: 11px; }
 
+.alert {
+  padding: 11px 35px 7px 14px;
+  margin: 11px 0 22px; }
+
 .brand {
   font-family: "ff-tisa-web-pro", Georgia, "Times New Roman", Times, serif; }
+
+.label, .badge {
+  line-height: 22px; }
+
+.label {
+  padding: 5px 5px 1px; }
 
 nav.navbar {
   padding-top: 20px; }
