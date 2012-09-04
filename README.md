@@ -1,5 +1,5 @@
 # The Project
-*Repository for [The Project] in COM525: Instructional Design*
+*Repository for [The Project](http://karlstolley.github.com/535/projects.html) in COM525: Instructional Design*
 
 ## How to contribute:
 
