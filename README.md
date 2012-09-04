@@ -28,7 +28,7 @@
 
 To easily view your work in a browser, you’ll use [Serve](http://get-serve.com/get-started).
 
-Once you have Ruby installed on your computer, just running
+Once you have Ruby installed on your computer, just run:
 
     $ gem install serve
 
