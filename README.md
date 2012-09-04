@@ -20,7 +20,7 @@
 
       ``$ git add some-file.html``
 
-      ``$ git commit -m "A message describing the change"`
+      ``$ git commit -m "A message describing the change"``
 
 
 3. Regularly pull from origin/master; regularly push to your own branch at ``personal``:
