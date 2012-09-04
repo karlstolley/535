@@ -5,22 +5,31 @@
 
 1. Clone this repository by running
 
-    $ git clone git://github.com/karlstolley/535.git
+    ``$ git clone git://github.com/karlstolley/535.git``
 
 2. Immediately fork your own copy via GitHub, then back on your computer, add a new remote to your clone, perhaps called ``personal``:
 
-    $ cd 535
-    $ git remote add personal git@github.com:YOUR_USERNAME/535.git
+
+     ``$ cd 535``
+
+     ``$ git remote add personal git@github.com:YOUR_USERNAME/535.git``
+
 
 3. Make lots of small, simple commits
 
-    $ git add some-file.html
-    $ git commit -m “A message describing the change”
+
+      ``$ git add some-file.html``
+
+      ``$ git commit -m "A message describing the change"`
+
 
 3. Regularly pull from origin/master; regularly push to your own branch at ``personal``:
 
-    $ git pull origin master
-    $ git push personal master
+
+      ``$ git pull origin master``
+
+      ``$ git push personal master``
+
 
 4. When you have work that is ready to be integrated into the origin/master branch, you’ll submit a pull request on GitHub. For the time being, see https://help.github.com/articles/using-pull-requests
 
