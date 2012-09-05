@@ -1,5 +1,5 @@
 # The Project
-*Repository for [The Project](http://karlstolley.github.com/535/projects.html) in COM525: Instructional Design*
+*Repository for [The Project](http://karlstolley.github.com/535/projects.html) in COM535: Instructional Design*
 
 ## How to contribute:
 
@@ -50,3 +50,4 @@ Open your browser to ``http://localhost:4000/`` and you will see the ``index.htm
 Other files and folders can be accessed by appending them to the URL. E.g., to see the pages for the Git section of The Project, go to ``http://localhost:4000/git/``.
 
 When you’re done viewing things in the ``serve`` server, hit Ctrl C to kill the process.
+
