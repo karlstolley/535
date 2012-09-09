@@ -1,5 +1,8 @@
-Outline:
+Questions:
+7c17819 - Have I understodd the elements branding correctly?
+How are we going to incorporate active learning into this project? Assignments with links to what it should look like completed? Or something more dynamic like the codeacademy.com site?
 
+Outline:
 CSS & SASS
 
 learning objectives - CSS
