@@ -29,7 +29,7 @@
   <div class="container-fluid">
 
     <header id="page-header">
-      <h1>Subject Area</h1>
+      <h1>Javascript</h1>
     </header>
 
     <article>
@@ -39,9 +39,92 @@
           <h2>Subtitle</h2>
         </hgroup>
       </header>
+
       <section>
-        <p>And so it begins...</p>
+        <h1>Accessing a JavaScript REPL </h1>
+        <p>
+          Most current web browsers ship with a modern Javascript engine
+          and access to it via a developer console. (I think this is the
+          case for MSIE, Firefox, Chrome, and possibly Safari, although
+          some work might be necessary to enable it in all of these.)
+          This section will give a quick tour on how to get up and running
+          in a JavaScript REPL, how they work, etc. My thinking is
+          that if we do this first, the rest of the sections can
+          be done interactively using the console.
+        </p>
       </section>
+
+      <section>
+      <h1>Introduction to Programming Concepts</h1>
+      <p>
+        Topics here might include:
+        <ul>
+          <li>Variables</li>
+          <li>Control flow. (Could talk about "truthiness" here, but
+          probably isn't necessary for introduction.)</li>
+          <li>Data types</li>
+          <li>Functions</li>
+        </ul>
+      </p>
+      <p>
+        I think the goal of the section would be the ability to
+        "think" like a programmer -- to look at a problem and
+        identify how you could use things like variables and
+        functions to solve them. This isn't necessarily JS specific,
+        and might be able to be pulled out so these topics
+        could be referenced both in this section as well as the
+        Ruby section. I'm still having a hard time knowing
+        exactly how much detail we need to have here.
+      </p>
+      </section>
+
+      <section>
+      <h1>The DOM</h1>
+      <p>
+      <cite>Eloquent JavaScript</cite> doesn't really begin
+      mentioning web programming / the dom specificially until
+      chapter 11/12. I think it should get introducd here
+      earlier. My thinking is, we aren't necessary just trying
+      to introduce JavaScript as a programming language, but
+      rather introduce it within the context of web technologies
+      and the role it plays on the web. So rather than focus on
+      some of the other details <cite>Eloquent JavaScript</cite>
+      does (object orientation, functional programming, etc.),
+      it would be better to give the reader a basic understanding
+      of programming and then jump into the DOM.
+      </p>
+
+      <p>
+      Here again, I struggle with how much detail to go into.
+      Chapter 3 of <cite>DOM Scripting</cite> might be a good
+      basis though, I think, basically breaking down what the
+      D, O, and M mean.
+      </p>
+      </section>
+
+      <section>
+      <h1>An Exercise</h1>
+      <p>
+      After an introduction to JavaScript and the DOM,
+      <cite>DOM Scripting</cite> has a chapter that is
+      basically an exercise in actually putting together
+      a small JS app. I think it would be beneficial to
+      do the same thing here, sort of as an extension
+      of the last section. Also, up until now, I've been
+      assuming that we've just been doing examples in
+      the JS console, and this could be a chance to see
+      how loading scripts on a page works, etc. We could
+      create a template that includes all the HTML or
+      something, and then just have them focus on filling
+      out the js files.
+      </p>
+      <p>
+      TODO: Figure out a good exercise. It shouldn't be
+      something terribly complex, but it ideally touches
+      on everything learned up to this point.
+      </p>
+      </section>
+
       <footer>
         <p>Notes, stuff...?</p>
       </footer>
