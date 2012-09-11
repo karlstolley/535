@@ -30,14 +30,21 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
       <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
     <a class="brand" href="/">PreReq</a>
     <ul class="nav">
+<div class="nav-collapse">
       <li><a href="/cli/">CLI</a></li>
       <li><a href="/git/">Git</a></li>
       <li><a href="/md/">Markdown</a></li>
       <li><a href="/html/">HTML</a></li>
       <li><a href="/css/">CSS</a></li>
       <li><a href="/js/">Javascript</a></li>
+</div>
       <li class="active"><a href="/ruby/">Ruby</a></li>
     </ul>
 
