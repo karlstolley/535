@@ -1,0 +1,52 @@
+html, body {
+  background: #a06620;
+  font-family: 'Cabin Condensed', sans-serif;
+  font-size:16px;
+}
+
+.container-fluid {
+  width:80%;
+  padding: 40px 30px 30px 30px;
+  margin: 0 auto;
+  margin-top: 40px;
+  -webkit-border-radius: 50px 5px 50px 5px;
+  border-radius: 50px 5px 50px 5px; 
+  background: #eaa34d; /* Old browsers */
+  background: -moz-linear-gradient(top,  #eaa34d 0%, #f6e6b4 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eaa34d), color-stop(100%,#f6e6b4)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #eaa34d 0%,#f6e6b4 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #eaa34d 0%,#f6e6b4 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #eaa34d 0%,#f6e6b4 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #eaa34d 0%,#f6e6b4 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaa34d', endColorstr='#f6e6b4',GradientType=0 ); /* IE6-9 
+ */
+  -webkit-box-shadow: 20px 20px 5px 2px rgba(69, 44, 13, .7);
+  box-shadow: 20px 20px 5px 2px rgba(69, 44, 13, .7); ; 
+}
+
+h1{
+  font-family: 'Amaranth', sans-serif;
+  font-size: 24px;
+  width: 30%;
+  clear:both;
+  float:left;
+}
+
+#page-header h1 {
+  clear:both;
+  font-family: 'Allura', cursive;
+  font-weight:500;
+  font-size:60px;
+}
+
+h2{
+  font-family: 'Amaranth', sans-serif;
+  font-size: 18px;
+  clear:both;
+}
+
+hgroup h1 + p {
+  width: 60%;
+  float:left;
+}
+
