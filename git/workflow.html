@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Git: Specific Element</title>
+  <title>Git: Workflow</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!--Brief page description:-->
@@ -34,13 +34,52 @@
 
     <article>
       <header>
-        <hgroup>
-          <h1>Specific Element</h1>
-          <h2>Subtitle</h2>
+        <hgroup class="hero-unit">
+          <h1>Git in Your Workflow</h1>
+          <h2>Keep that command line open</h2>
         </hgroup>
       </header>
       <section>
-        <p>And so it begins...</p>
+        <p>
+          One of the hardest things for Git newcomers is figuring out how Git
+          fits with their workflow.
+        </p>
+        <p>
+          Everyone knows that you have to save files on a computer. Whether its
+          an image or a document, <code>File > Save</code> is a routine thing
+          we do to save our work.
+        </p>
+        <p>
+          Git adds a couple of extra steps to the process of saving work.
+        </p>
+        <p>
+          The basic Git-powered workflow looks something like this:
+        </p>
+        <ol>
+          <li>
+            Make some changes to your file
+          </li>
+          <li>
+            Save your file
+          </li>
+          <li>
+            Tell Git about the file or files you want to commit with
+            <code>git add</code>
+          </li>
+          <li>
+            Tell Git to preserve a snapshot of those files with
+            <code>git commit</code>
+          </li>
+          <li>
+            Make some more changes to your file...then add, the commit
+          </li>
+        </ol>
+        <p>
+          In short, you <b>change</b> your file, you <b>save</b> the file,
+          you <b>add</b> it to a list of files ready for preservation, and
+          then you <b>commit</b> it to your repository.
+          <b>Change. Save. Add. Commit.</b>
+        </p>
       </section>
       <footer>
         <p>Notes, stuff...?</p>
