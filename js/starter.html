@@ -187,6 +187,25 @@
         it says.
         </p>
 
+        <p>
+        Type the following into the console:
+        </p>
+
+        <pre>
+        <code>
+          var btn = document.getElementById("color-change-button");
+
+          btn.onclick = buttonClickHandler;
+
+          function buttonClickHandler() {
+            var randomColor = getRandomColor();
+            document.body.style.background = randomColor;
+          }
+        </code>
+        </pre>
+
+        <p>
+        Try clicking the button again. You should see a result.
         </p>
 
       </section>
