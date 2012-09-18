@@ -11,8 +11,17 @@ body {
   background: -ms-linear-gradient(top, #a90329 0%,#8f0222 44%,#6d0019 100%); /* IE10+ */
   background: linear-gradient(to bottom, #a90329 0%,#8f0222 44%,#6d0019 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
+  padding-bottom: 30px;
 }
 
 .ruby-header h1, .ruby-header p {
   color: #fff;
+}
+
+.center {
+  text-align: center;
+}
+
+.not-bold h2 {
+  font-weight: 400;
 }
