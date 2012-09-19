@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Git: Workflow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Brief page description:-->
+  <meta name="description" content="">
+  <!--Name(s) of primary authors-->
+  <meta name="author" content="">
+
+  <!--Styles-->
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+  <!--Custom styles-->
+  <link href="/assets/css/custom.css">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+
+  <div class="container-fluid">
+
+    <header id="page-header">
+      <h1>Git</h1>
+    </header>
+
+    <article class="row-fluid">
+      <header>
+        <hgroup class="hero-unit">
+          <h1>Git in Your Workflow</h1>
+          <h2>Keep that command line open</h2>
+        </hgroup>
+      </header>
+      <section class="span8 offset3 clearfix">
+        <p class="lead">
+          One of the hardest things for Git newcomers is figuring out how Git
+          fits with their workflow.
+        </p>
+        <p>
+          Everyone knows that you have to save files on a computer. Whether its
+          an image or a document, <code>File > Save</code> is a routine thing
+          we do to save our work.
+        </p>
+        <p>
+          Git adds a couple of extra steps to the process of saving work.
+        </p>
+        <p>
+          The basic Git-powered workflow looks something like this:
+        </p>
+        <ol>
+          <li>
+            Make some changes to your file
+          </li>
+          <li>
+            Save your file
+          </li>
+          <li>
+            Tell Git about the file or files you want to commit with
+            <code>git add</code>
+          </li>
+          <li>
+            Tell Git to preserve a snapshot of those files with
+            <code>git commit</code>
+          </li>
+          <li>
+            Make some more changes to your file...then add, the commit
+          </li>
+        </ol>
+        <p>
+          In short, you <b>change</b> your file, you <b>save</b> the file,
+          you <b>add</b> it to a list of files ready for preservation, and
+          then you <b>commit</b> it to your repository.
+          <b>Change. Save. Add. Commit.</b>
+        </p>
+        <p>Let’s break that process down.</p>
+        <h2>Changing &amp; Saving Files</h2>
+        <p>
+          Git works best with plain text formats (such as HTML or CSS files), but
+          it can track changes to anything, including image files.
+        </p>
+        <p>
+          Just as you normally would, you make changes to your files, and you save
+          them when the work is good. <b>But if you get to a point where you have
+          another idea or an alternative approach you want to try out, it's time to
+          tell Git about your changes.</b>
+        </p>
+        <h2>Tell Git What to Commit</h2>
+        <p>
+          Sometimes a meaningful change that you want to commit is contained in a single
+          file. If you're working on a Web page called <code>about.html</code>, and you
+          revise a paragraph of copy, you just need to commit that one file:
+        </p>
+        <pre>$ git add about.html</pre>
+        <p>
+          Once you add the file, <code>git status</code> will tell you what files the
+          commit will include:
+        </p>
+<pre>
+$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   index.html
+#
+</pre>
+      <p>
+        Sometimes, though, one change is spread over two different files. Imagine
+        that you revised a class in HTML, like <code>&lt;h1 class=&quot;page_title&quot;&gt</code>,
+        to a simpler <code>&lt;h1 class=&quot;title&quot;&gt</code>. You would also need to adjust
+        your CSS selector from <code>h1.page_title</code> to <code>h1.title</code>.
+      </p>
+      <p>
+        In that particular case, you edited two different files, but for a single change. Both
+        files should be staged for a commit: <code>git add index.html css/styles.css</code>
+      </p>
+      <h2>Tell Git to Commit</h2>
+      <p>
+        Once you have checked via <code>$ git status</code> that the correct file(s) are staged
+        for commit, it's time to make the commit. The shorthand version for this is
+        <code>$ git commit -m "Commit message goes here"</code>:
+      </p>
+<pre>
+$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   index.html
+# modified:   css/styles.css
+#
+
+$ git commit -m "Changed .page_title to simply .title"
+[master 3df6a79] Changed .page_title to simply .title
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+</pre>
+      <p>
+        Note that in Git, a changed line will be reported as both an insertion, and a deletion.
+        From a certain perspective, this is true: you "deleted" the old line, and "inserted" a
+        new one (even if it was only part of the line that changed.
+      </p>
+      </section>
+      <footer class="span8 offset3">
+        <p>Page last updated by Karl Stolley.</p>
+      </footer>
+    </article>
+
+    <footer id="page-footer">
+      <p>Licensed under Creative Commons</p>
+    </footer>
+
+  </div><!--/.container-fluid-->
+
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+</body>
+</html>
