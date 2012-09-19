@@ -22,6 +22,17 @@
   <script src="/assets/js/bootstrap.min.js"></script>
   <script src="/assets/js/prettify/prettify.js"></script>
 
+  <!-- Remove this later! -->
+  <style>
+    .checkThisLink {
+      padding: 5px;
+      background:yellow;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      border: 1px dotted red;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -64,7 +75,8 @@ h1
 p
 ul
 </pre>
-        <p>Look familiar? They should: they're the same basic HTML elements you learned about in the <a href="/html">HTML section</a>.</p>
+        <p>Look familiar? They should: they're the same basic HTML elements you learned about in the <a class="checkThisLink" href="/html">HTML section</a>.</p>
+
       </section>
       <section>
         <h2>Declarations</h2>
@@ -76,6 +88,7 @@ ul
       </section>      
       <section>
         <h2>Classes and IDs as Selectors</h2>
+        <p>You can also specify a CSS style using <em>classes</em> and <em>identifiers</em> (IDs). Classes and IDs can be added to HTML elements to indicate specific elements. For example, if you attached a CSS style to a generic &lt;p&gt; tag, <em>all</em> &lt;p&gt; tags would be affected:</p>
         <p>Also used by Javascript to act on specific elements</p>
       </section>    
       <section>
