@@ -1,3 +1,7 @@
+TO DO's:
+1. Check if "type=" is necessary in Selectors section"
+
+
 Questions:
 
 4b8ad07110 - Have I understood the elements branding correctly?
