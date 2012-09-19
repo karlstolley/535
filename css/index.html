@@ -23,13 +23,13 @@
   <script src="/assets/js/prettify/prettify.js"></script>
 
   <!-- Remove this later! -->
-  <style>
+  <style type="text/css">
     .checkThisLink {
       padding: 2px;
       background:yellow;
       -webkit-border-radius: 4px;
       border-radius: 4px;
-      border: 1px dotted red;
+      border: 2px solid red;
     }
   </style>
 
@@ -69,15 +69,51 @@
         <h2>Selectors</h2>
         <p>You can think of selectors as the nouns of CSS: they tell the browser <em>which</em> element or elements are going to be affected. Here are some examples of selectors:</p>
 <pre class="prettify">
-html
-body
-h1
-p
-ul
+&lt;html&gt;
+&lt;body&gt;
+&lt;h1&gt;
+&lt;p&gt;
+&lt;ul&gt;
 </pre>
-        <p>Look familiar? They should: they're the same basic HTML elements you learned about in the <a class="checkThisLink" href="/html">HTML section</a>.</p>
+        <p>Look familiar? They should: they're the same basic HTML elements you learned about in the <a class="checkThisLink" href="/html">HTML section</a>. There are additional ways to identify selectors (classes and IDs), but we'll discuss those later. For now, let's get started with our first CSS style declaration. Let's say I'm going to use the <strong>&lt;h1&gt;</strong> element for my name on my personal page. I really want it to stand out, so I'm going to add some CSS styling for that tag.</p>
+<div class="cssExample">
+  <h1>My Name</h1>
+</div>
+
+      <h3>Add a style section to the page</h3>
+        <p>I need a place to hold your CSS declarations, so I'll add a section inside of the <a href="#" class="checkThisLink">&lt;head&gt;</a> portion of my page, like this:</p>
+<pre class="prettify">
+&lt;head&gt;
+<strong>&lt;style type="text/css"&gt;
+
+&lt;/style&gt;</strong>
+&lt;/head&gt;
+</pre>
+
+      <p>Then I'll tell the browser that I want to change the default style of all &lt;h1&gt; tags. I have to tell the browser when to stop applying our style rules to the &lt;h1&gt; tag and start applying rules fo the next element, so I'll wrap the declaration in <em>braces</em>: {&nbsp;&nbsp;}</p>
+
+<pre class="prettify">
+&lt;head&gt;
+&lt;style type="text/css"&gt;
+  <strong>h1 {
+
+  }</strong>
+&lt;/style&gt;
+&lt;/head&gt;
+</pre>
+      <aside>
+        <p>Note that you don't need to use the <strong>&lt;</strong> and <strong>&gt</strong> symbols. Those are part of the HTML syntax and not necessary here.</p>
+        <p>I'm also using a standard programming convention for the braces. It's very common to put the opening brace directly after the element, and the closing brace on its own line.</p>
+      </aside>
+      <p>So I've added my h1 selector to my page. Let's see what happens:</p>
+        <div class="cssExample">
+          <h1>My Name</h1>
+        </div> 
+      <p>Nothing has changed. And that makes sense, right? That because we've identified h1 as the <em>selector</em> we want to change in our style, but we haven't actually made any changes to the style. That's for our next section: <a href="#" class="checkThisLink">Declarations</a>.</p>
 
       </section>
+
+
       <section>
         <h2>Declarations</h2>
         <p>Verbs -- how the element is going to change</p>
