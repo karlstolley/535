@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript: The REPL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Brief page description:-->
+  <meta name="description" content="">
+  <!--Name(s) of primary authors-->
+  <meta name="author" content="">
+
+  <!--Styles-->
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+  <!--Custom styles-->
+  <link href="/assets/css/custom.css">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+
+  <div class="container-fluid">
+
+    <header id="page-header">
+      <h1>JavaScript</h1>
+    </header>
+
+    <article class="row-fluid">
+      <header>
+        <hgroup class="hero-unit">
+          <h1>The REPL</h1>
+        </hgroup>
+      </header>
+      <section class="span8 offset3 clearfix">
+
+      <p class="lead">
+      </p>
+
+      <h2>Accessing the REPL</h2>
+      <p>
+      [This part will explain how to access the JavaScript console in a variety
+      of different browsers.]
+      </p>
+
+      <h2>Accessing the REPL</h2>
+      <p>
+      [This part will explain how to access the JavaScript console in a variety
+      of different browsers.]
+      </p>
+
+      <h2>Values, Expressions, and Functions</h2>
+
+      <p>
+      We're going to talk more about working with the REPL soon, but
+      before we do that, let's talk about what a <em>program</em> is.
+      Afterall,  JavaScript is a <em>programming</em> language.
+      </p>
+
+      <p>
+      For our purposes, let's say that a program consists of a set
+      of <em>stuff</em>, and a list of instructions to perform on
+      that <em>stuff</em> to produce new <em>stuff</em>. Admittedly,
+      this is a bit a vague. But let's use a calculator as an example.
+      </p>
+
+      <p>
+      When you type <code>2+3</code> into your calculator, that is
+      a program. The <em>stuff</em> I was referring to before are
+      the numbers 2 and 3. They are numbers -- one of the most basic
+      things your calculator can understand. We are going to refer to
+      these as <em>values</em>. In between these values, you type
+      <code>+</code>. This is an instruction to the calculator. What
+      you are saying is, "I want you to take these two numbers, and
+      add them together." We'll refer to an instruction as a
+      <em>function</em>. When you apply the addition <em>function</em>
+      to the <em>values</em> 2 and 3, you get a result: 5.
+      </p>
+
+      <p>
+      You could type something more complex into your calculator.
+      For example, you could type: <br />
+      <code> (10 * 5) / 25</code> <br />
+      In this case, we have a couple of instructions we are giving
+      the calculator: "First, multiply 10 by 5, and then divide the
+      result by 25." To use the terms we just introduced, we want to
+      apply the multiplication <em>function</em> to the <em>values</em>
+      10 and 5. That will give us a result -- another value (50). Then
+      we want to apply the division <em>function</em> to the <em>values</em>
+      50 and 25. Our final result is 2. What's different in this example
+      is that we have to apply one function before we can apply the other --
+      we have to know what 10 * 5 is before we can divide it by 25. To
+      introduce one more term, an <em>expression</em> is anything that
+      produces a <em>value</em>. <code>(10 * 5)</code> is an <em>expression</em>
+      because it produces the value 50. <code>(10 * 5) / 25</code> is
+      an <em>expression</em> because it produces the value 2. An expression
+      consists of some values and the functions you are applying to them.
+      A program is just a big list of expressions.
+
+      <p>
+      Let's get some practice with these things inside of our JavaScript REPL.
+      I've been referring to this thing we've been looking for as a REPL, but
+      what does that mean? It stands for <strong>Read Eval Print Loop</strong>.
+      At first, this might look like jargon, but let's break it down.
+      </p>
+
+      <p>
+      When you type something into the REPL, first it <strong>reads</strong>
+      it. That just means it looks at what you typed in. Then it
+      <strong>evaluates</strong> it. We'll get into this in just a second,
+      but what this basically means is it applies some rules to what
+      you typed in. Finally, it <strong>prints</strong> the results.
+      <strong>Loop</strong> just means it never stops -- after it prints
+      out the result, it will be ready to read in the next thing you have
+      to say.
+      </p>
+
+      <p>
+      Open up your REPL and type in: <br />
+      <code>42</code> <br />
+      What happened? It should just print the number 42 right back at you.
+      I said before that evaluation means applying some rules to what
+      you typed in. 42 in JavaScript, like in our calculator example, is a
+      value. The rule for values in the REPL is that they evaluate to themselves.
+      </p>
+
+      <p>
+      Now type in: <br />
+      <code>42 + 3</code> <br />
+      What happened? It should print the number 45. Instead of typing in a
+      <em>value</em>, you typed in an <em>epression</em>. The rule the
+      REPL follows for expressions is to apply the functions in the expression
+      to the values, resulting in a single value. If you type in
+      <code>42 + 3 + 7 + 3</code>, it will apply the add function to all those
+      values, and it will print the result 55.
+      </p>
+
+      <p>
+      So far we've just been using the REPL as a calculator, giving it
+      numeric values. But there are other types of values in JavaScript
+      too. One of them is a <em>string</em>. Try typing this into the REPL: <br />
+      <code>"Hello!"</code> <br />
+      "Hello!" is a string value. You can tell it's a string because it is
+      surrounded by quotation marks. We'll look more at using strings later.
+      </p>
+
+      <p>
+      Now try typing: <br />
+      <code>"Hello!".toUpperCase()</code> <br />
+      What happened? It should print out "HELLO!" Why did it do that? What
+      we just typed in was an expression. It looks different than <code>2+3</code>,
+      but it actually has all the same elements. In this case, we have the
+      string value <code>"Hello!"</code>. <code>.toUpperCase()</code> is
+      actually a function that we are asking the REPL to apply to that
+      value.
+      </p>
+
+      <p>
+      Finally, try typing: <br />
+      <code>alert("Hello!")</code> <br />
+      What happened? You should have gotten a pop up window from your
+      browser that said "Hello!" In this case, <code>alert</code> is
+      a function, and we're giving it the value <code>"Hello!"</code>.
+      But what does the REPL say? It should print out something like
+      <code>undefined</code>. Up until now, we have been typing
+      expressions into the REPL, and we have only looked at functions
+      that produce values. Sometimes, we call functions that don't
+      produce values, and instead we call them for their <em>side effects</em>.
+      In this case, the side effect of calling <code>alert</code> is
+      that the browser pops open a little window with our message,
+      but the alert function does not produce a new value.
+      </p>
+
+      <p>
+      TODO: Talk about variables here. It's going to be necessary, I think
+      and this is probably the place to do it.
+      </p>
+
+      <p>
+      You just learned a lot about some programming fundamentals. You
+      have an idea about what <em>values</em>, <em>functions</em>,
+      and <em>expressions</em> are, and seen some examples of them in JavaScript.
+      You now know how to open up a JavaScript REPL in your browser, and
+      have some experience experimenting with JavaScript inside of it.
+      Next, you're going to use the REPL to add some functionality
+      to this webpage, and in the process, learn more about JavaScript
+      the language, and the role it plays on the web.
+      </p>
+
+
+      <footer class="span8 offset3">
+        <p>Page last updated by Matthew Heston</p>
+      </footer>
+    </article>
+
+    <footer id="page-footer">
+      <p>Licensed under Creative Commons</p>
+    </footer>
+
+  </div><!--/.container-fluid-->
+
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+</body>
+</html>
