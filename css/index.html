@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>CSS & Sass: CSS Basics</title>
+  <title>CSS & Sass</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!--Brief page description:-->
@@ -13,14 +13,31 @@
   <!--Styles-->
   <link href="/assets/css/bootstrap.css" rel="stylesheet">
   <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/assets/css/prettify.css" rel="stylesheet">
 
   <!--Custom styles-->
-  <link href="/assets/css/custom.css">
+  <link href="/assets/css/custom.css" rel="stylesheet">
 
-  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/prettify/prettify.js"></script>
+
+  <!-- Remove this later! -->
+  <style type="text/css">
+    .checkThisLink {
+      padding: 2px;
+      background:yellow;
+      -webkit-border-radius: 4px;
+      border-radius: 4px;
+      border: 2px solid red;
+    }
+
+    .cssExample{
+        background: whiteSmoke;
+        padding:10px;
+        border: 1px solid #ccc;
+    }
+  </style>
 
 </head>
 
@@ -29,24 +46,171 @@
   <div class="container-fluid">
 
     <header id="page-header">
-      <h1>CSS & Sass</h1>
+      <h1>CSS</h1>
     </header>
 
     <article>
       <header>
         <hgroup>
-          <h1>CSS Basics</h1>
-          <h2>Subtitle</h2>
+          <h1>Introduction</h1>
         </hgroup>
       </header>
       <section>
-        <p>And so it begins...</p>
+        <p CLASS="lead">CSS is where you can turn your plain black-text-on-a-white-background HTML pages into the picture that you have in your head. If HTML is the cake, then CSS is the frosting.</p>
+        <p>CSS stands for "Cascading Style Sheets." It's the language you use to tell a machine how to display your data. For our purposes, we'll use CSS to tell a web browser how to display our <a href="#" class="checkThisLink">(HTML document ?name of project)</a>. </p>
+        <p>Need convincing? Here are some examples.</p>
+          <a href="/css/examples/page-no-CSS.html" class="btn btn-danger btn-large">Plain Old Boring HTML Page</a>
+          <a href="css/examples/page-with-CSS.html" class="btn btn-success btn-large">Fabulous CSS-Styled HTML Page</a>
+        <p>Pretty fancy, huh?</p>
+        <h4>Progress with this chapter</h4>
+        <div class="progress">
+            <div class="bar" style="width: 5%;"></div>
+        </div>
+      </section>
+    </article>
+
+    <article>
+      <header>
+        <hgroup>
+          <h1>Cascading <em>Style</em> Sheets</h1>
+        </hgroup>
+      </header>
+      <section>
+        <h2>Selectors</h2>
+        <p>You can think of selectors as the nouns of CSS: they tell the browser <em>which</em> element or elements are going to be affected. Here are some examples of selectors:</p>
+<pre class="prettify">
+&lt;html&gt;
+&lt;body&gt;
+&lt;h1&gt;
+&lt;p&gt;
+&lt;ul&gt;
+</pre>
+        <p>Look familiar? They should: they're the same basic HTML elements you learned about in the <a class="checkThisLink" href="/html">HTML section</a>. There are additional ways to identify selectors (classes and IDs), but we'll discuss those later. For now, let's get started with our first CSS style declaration. Let's say I'm going to use the <strong>&lt;h1&gt;</strong> element for my name on my personal page. I really want it to stand out, so I'm going to add some CSS styling for that tag.</p>
+<div class="cssExample">
+  <h1>My Name</h1>
+</div>
+
+      <h3>Add a style section to the page</h3>
+        <p>I need a place to hold your CSS declarations, so I'll add a section inside of the <a href="#" class="checkThisLink">&lt;head&gt;</a> portion of my page, like this:</p>
+<pre class="prettify">
+&lt;head&gt;
+<strong>&lt;style type="text/css"&gt;
+
+&lt;/style&gt;</strong>
+&lt;/head&gt;
+</pre>
+
+      <p>Then I'll tell the browser that I want to change the default style of all &lt;h1&gt; tags. I have to tell the browser when to stop applying our style rules to the &lt;h1&gt; tag and start applying rules fo the next element, so I'll wrap the declaration in <em>braces</em>: {&nbsp;&nbsp;}</p>
+
+<pre class="prettify">
+&lt;head&gt;
+&lt;style type="text/css"&gt;
+  <strong>h1 {
+
+  }</strong>
+&lt;/style&gt;
+&lt;/head&gt;
+</pre>
+      <aside>
+        <p>Note that you don't need to use the <strong>&lt;</strong> and <strong>&gt;</strong> symbols. Those are part of the HTML syntax and not necessary here.</p>
+        <p>I'm also using a standard programming convention for the braces. It's very common to put the opening brace directly after the element, and the closing brace on its own line.</p>
+      </aside>
+      <p>So I've added my h1 selector to my page. Let's see what happens:</p>
+        <div class="cssExample">
+          <h1>My Name</h1>
+        </div> 
+      <p>Nothing has changed. And that makes sense, right? That because we've identified h1 as the <em>selector</em> we want to change in our style, but we haven't actually made any changes to the style. That's for our next section: <a href="#" class="checkThisLink">Declarations</a>.</p>
+
+      </section>
+
+
+      <section>
+        <h2>Declarations</h2>
+        <p>Declarations are like the verbs of CSS. They tell the browser <em>how</em> to change the element. You can change just about anything about an element; here are some examples: </p>
+        <ul>
+            <li>Size: 16px, 12em, large, x-small, 80%</li>
+            <li>Color: red, #E01B6A, rgb(92, 140, 41)</li>
+            <li>Position: top: 100px, position: absolute, float: right</li>
+            <li>Background </li>
+        </ul>
+        <h3>Property - what should change</h3>
+        <h3>Value - what it should change to</h3>
+        <p>Example: color:red, font-weight: bold, margin: 20px;</p>
+        <h3>Online resources for declarations</h3>
+      </section>      
+      <section>
+        <h2>Classes and IDs as Selectors</h2>
+        <p>You can also specify a CSS style using <em>classes</em> and <em>identifiers</em> (IDs). Classes and IDs can be added to HTML elements to indicate specific elements. For example, if you attached a CSS style to a generic &lt;p&gt; tag, <em>all</em> &lt;p&gt; tags would be affected:</p>
+        <p>Also used by Javascript to act on specific elements</p>
+      </section>    
+      <section>
+        <h2>Positioning</h2>
+      </section>  
+      <section>
+        <h2>Multiple Selectors</h2>
+      </section>    
+      <section>
+        <h2>Adding Comments</h2>
+      </section>  
+      <footer>
+        <p>Notes, stuff...?</p>
+      </footer>
+    </article>    
+
+    <article>
+      <header>
+        <hgroup>
+          <h1><em>Cascading</em> Style Sheets</h1>
+        </hgroup>
+      </header>
+      <section>
+         <h2>Inheritance</h2>
+         <h3>Browser inheritance</h3>
+         <h3>Inheritance Rules</h3>
+         <h3>Best practice: larger to more granular</h3>
       </section>
       <footer>
         <p>Notes, stuff...?</p>
       </footer>
-    </article>
+    </article>    
 
+    <article>
+      <header>
+        <hgroup>
+          <h1>Cascading Style <em>Sheets</em></h1>
+        </hgroup>
+      </header>
+      <section>
+         <h2>Style Sheets by media</h2>
+         <h3>Screen</h3>
+         <h3>Print</h3>
+         <h3>Audio</h3>
+      </section>
+      <footer>
+        <p>Notes, stuff...?</p>
+      </footer>
+    </article>      
+
+    <article>
+      <header>
+        <hgroup>
+          <h1>CSS3</h1>
+        </hgroup>
+      </header>
+      <section>
+         <h2>Gradients</h2>
+         <h3>Border Radius</h3>
+         <h3>Transformations</h3>
+      </section>
+      <section>
+         <h2>Online resources for CSS items</h2>
+      </section>      
+      <footer>
+        <p>Notes, stuff...?</p>
+      </footer>
+    </article>     
+    
+    
     <footer id="page-footer">
       <p>Licensed under Creative Commons</p>
     </footer>
