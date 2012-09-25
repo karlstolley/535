@@ -37,6 +37,10 @@
         padding:10px;
         border: 1px solid #ccc;
     }
+    .exampleAside {
+      color:red;
+      font-weight:900;
+    }
   </style>
 
 </head>
@@ -131,12 +135,25 @@
             <li>Size: 16px, 12em, large, x-small, 80%</li>
             <li>Color: red, #E01B6A, rgb(92, 140, 41)</li>
             <li>Position: top: 100px, position: absolute, float: right</li>
-            <li>Background </li>
+            <li>Background: green, url(images/bg.jpg), -moz-linear-gradient(top, #1e5799 0%, #7db9e8 100%)[a gradient] </li>
         </ul>
-        <h3>Property - what should change</h3>
-        <h3>Value - what it should change to</h3>
-        <p>Example: color:red, font-weight: bold, margin: 20px;</p>
-        <h3>Online resources for declarations</h3>
+        <p>Declarations consist of two parts. </p>
+        <h3>Property</h3>
+        <p>This is <strong>what</strong> about the element should change: color, font size, background</p>
+        <h3>Value</h3>
+        <p>This is what about the element should change <strong>to</strong>: red, x-small, 100px.</p>
+        <pre>
+p {
+    width:        70%;
+    margin:       22px 0 22px 15%;
+    color:        #322938;
+    font-size:    16px;
+    background:   #faf9f5;
+    border:       2px solid #a14016;
+}
+  <span class="exampleAside"><i class="icon-arrow-up"></i>properties    <i class="icon-arrow-up"></i>values</span>  
+        </pre>
+
       </section>      
       <section>
         <h2>Classes and IDs as Selectors</h2>
