@@ -56,6 +56,13 @@ hgroup h1 + p {
   float:left;
 }
 
+hgroup p{  
+  -webkit-border-radius: 50px 5px 50px 5px;
+  border-radius: 50px 5px 50px 5px; 
+  padding: 20px;
+  background:yellow;
+}
+
 a {
   width: 100px;
   color:#180410;
