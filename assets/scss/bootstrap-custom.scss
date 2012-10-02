@@ -62,6 +62,8 @@ dt {
 }
 
 dd {
+  margin: 0;
+  padding: 0;
   dt + & {
     margin-bottom: $baseLineHeight;
   }

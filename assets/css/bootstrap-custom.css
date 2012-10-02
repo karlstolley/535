@@ -5134,12 +5134,15 @@ dt {
   dt time {
     font-size: 75%; }
 
-dt + dd {
-  margin-bottom: 22px; }
-dd h2 {
-  text-transform: uppercase; }
-#calendar dd > ul > li {
-  margin-bottom: 11px; }
+dd {
+  margin: 0;
+  padding: 0; }
+  dt + dd {
+    margin-bottom: 22px; }
+  dd h2 {
+    text-transform: uppercase; }
+  #calendar dd > ul > li {
+    margin-bottom: 11px; }
 
 .alert {
   padding: 11px 35px 7px 14px;
