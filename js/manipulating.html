@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript: Manipulating the Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Brief page description:-->
+  <meta name="description" content="">
+  <!--Name(s) of primary authors-->
+  <meta name="author" content="">
+
+  <!--Styles-->
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+  <!--Custom styles-->
+  <link href="/assets/css/custom.css">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+
+  <div class="container-fluid">
+
+    <header id="page-header">
+      <h1>JavaScript</h1>
+    </header>
+
+    <article class="row-fluid">
+      <header>
+        <hgroup class="hero-unit">
+          <h1>Manipulating the Page</h1>
+        </hgroup>
+      </header>
+      <section class="span8 offset3 clearfix">
+
+      <p class="lead">
+      </p>
+
+        <p>
+        Here is a button:
+        </p>
+
+        <button type="button" class="btn" id="color-change-button">Change background color</button>
+
+        <p>
+        If you tried clicking on it, you'll notice that nothing
+        happened. That's because it hasn't actually been programmed to do
+        anything. But that's about to change! Fire up your browser's
+        JavaScript console, and you're going to make that button do what
+        it says.
+        </p>
+
+        <p>
+        Type the following into the console:
+        </p>
+
+        <pre>
+        <code>
+          var btn = document.getElementById("color-change-button");
+
+          btn.onclick = buttonClickHandler;
+
+          function buttonClickHandler() {
+            var randomColor = getRandomColor();
+            document.body.style.background = randomColor;
+          }
+        </code>
+        </pre>
+
+        <p>
+        Try clicking the button again. You should see a result.
+        </p>
+
+        <button type="button" class="btn" id="make-not-annoying-button">Change background color back</button>
+
+        <p>
+        I've gone ahead and added this button along with the
+        JavaScript for you to change the background color back, in
+        case your new random background color is unbearable.
+        </p>
+
+        <p>
+        Go ahead and take a look at what you just typed in and see
+        if you can make any sense of it. If not, that's okay. Before
+        understanding what you just did, we need to learn a few more
+        concepts about the JavaScript language and how it interacts with
+        HTML, but we'll be returning to the code you just entered as
+        an example. So, in trying to figure out how exactly that code works,
+        the first thing we need to understand are objects.
+        </p>
+
+        <h2>Objects</h2>
+
+        <p>
+        Before when we talked about values, we really only talked about
+        numbers (42) and strings ("Hello!"). There are other types of values,
+        though, and one very important type is <em>objects</em>.
+        </p>
+
+        <p>
+        An object in JavaScript is very similar to an object in real life.
+        Take your car, for example. Your car is an object. What are some
+        ways you can describe your car? You can say that its <strong>make</strong>
+        is <em>Chrysler</em>. You can say that its <strong>model</strong> is
+        <em>PT Cruiser</em>. You can say that its <strong>color</strong> is
+        <em>red</em>. The way you say what your car is is by describing various
+        aspects of it. In programming terms, your car is an <em>object</em>, and
+        the things we just mentioned in bold are <em>properties</em>. That is to
+        say, color is a property of car, and the value of that property is "red."
+        Another way to phrase that is that an object is a named container
+        for a set of values. Let's jump into the REPL to see if we can make more
+        sense of this.
+        </p>
+
+        <p>
+        Try typing this in your REPL: <br />
+        <code>var car = {color: "red", make: "Chrysler", model: "PT Cruiser"}</code> <br />
+        Alright, this looks weird. But remember just a couple sentences ago we
+        said one way to think of an object is as a container for a set of values?
+        Well, think of the curly brackets as that container. It is a named container
+        because we're assigning this all to a variable with the name "car."
+        Inside that container, we have a bunch of string values, like "red,"
+        and "Chrysler," and those strings are assigned to the names "color"
+        and "make," respectively.
+        </p>
+
+        <p>
+        If you now type <code>car.color</code> in the REPL, it will print the
+        string "red." There's something going on here. You are accessing the
+        color <em>property</em> on the car <em>object</em>, so the REPL is returning
+        to you the value of that property. Try it for the other properties
+        on your car object. The lesson to learn here is that to access a value
+        in an object, you reference it by <code>object.property-name</code>.
+        </p>
+
+        <p>
+        I want to introduce another syntax -- or another way of writing --
+        the stuff we just wrote. We could also do this:
+
+        <pre>
+        <code>
+        var car = {};
+        car.make = "Chrysler";
+        car.model = "PT Cruiser";
+        car.color = "red";
+        </code>
+        </pre>
+
+        In this case, <code>{}</code> simply stands for an empty object.
+        So first, we make car an empty object. Then, we use a similar syntax
+        to the one we were using before to dynamically add those properties
+        to it.
+        </p>
+
+        <p>
+        At this point, you've seen a couple different ways to create a
+        car object with several properties, and you've also seen how to
+        access those properties. Let's add another property to our
+        object now.
+
+        <pre>
+        <code>
+        car.driver = {};
+        car.driver.firstname = "Stephen"
+        car.driver.lastname = "Malkmus"
+        </code>
+        </pre>
+
+        What did we just do here? We created another property on car called
+        driver. But what is the value of driver? <em>It is another object</em>.
+        You are basically living out the movie <cite>Inception</cite> -- you
+        are putting objects inside objects. Now try typing
+        <code>car.driver.firstname</code>. As you might expect, you see the
+        string value you assigned there. You can nest objects arbitrarily deep.
+        Try to add another object to our driver property called "band." Then
+        add a string property called "name" to that object with the value "Pavement."
+        After doing this, you should be able to type <code>car.driver.band.name</code>
+        and you'll see the result "Pavement."
+        </p>
+
+        <p>
+        In practice, you probably wouldn't organize an object like
+        this -- it would be silly to have to reference a car just to
+        find out a band name. But this little exercise should give you
+        some insight into one of the lines we saw in our example
+        above. Remember this? <br />
+        <code>document.body.style.background = randomColor;</code> <br />
+        That should make more sense now. <code>document</code> is an object.
+        It has a property called <code>body</code>. This has a property
+        called <code>style</code>. That is also an object! Finally,
+        we reach <code>background</code>. This is just a string property
+        on <code>style</code>.
+        </p>
+
+        <p>
+        Be proud of yourself for making it through this section! Objects
+        are unlike anything we have seen yet in JavaScript. The important
+        thing to remember is that when you see something like
+        <code>document.body.style.background</code>, all of those dots
+        mean that you're traversing a series of objects in order to
+        access a property. This has been a difficult section, but it's
+        also been an important one. Objects are at the core of our next
+        topic -- the Document Object Model, or the DOM.
+        </p>
+
+
+      <footer class="span8 offset3">
+        <p>Page last updated by Matthew Heston</p>
+      </footer>
+    </article>
+
+    <footer id="page-footer">
+      <p>Licensed under Creative Commons</p>
+    </footer>
+
+  </div><!--/.container-fluid-->
+
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+</body>
+</html>
