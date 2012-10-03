@@ -12,6 +12,8 @@ body {
   background: linear-gradient(to bottom, #a90329 0%,#8f0222 44%,#6d0019 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
   padding-bottom: 30px;
+  padding-top:20px;
+  border-radius: 0px;
 }
 
 .ruby-header h1, .ruby-header p {
