@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>CSS: Selectors and Declarations</title>
+  <title>CSS: Declarations</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!--Brief page description:-->
@@ -34,64 +34,51 @@
     <article class="row-fluid">
       <header>
         <hgroup class="hero-unit">
-          <h1>Selectors</h1>
+          <h1>Declarations</h1>
         </hgroup>
       </header>
       <section class="span8 offset3 clearfix">
 
       <p class="lead">
-        You can think of selectors as the nouns of CSS: they tell the browser <em>which</em> element or elements are going to be affected. 
+        Declarations are like the verbs of CSS. They tell the browser <em>how</em> to change the element. You can change just about anything about an element.
       </p>
-
-        <p>Here are some examples of selectors:</p>
-<pre class="prettify">
-&lt;html&gt;
-&lt;body&gt;
-&lt;h1&gt;
-&lt;p&gt;
-&lt;ul&gt;
-</pre>
-        <p>Look familiar? They should: they're the same basic HTML elements you learned about in the <a class="checkThisLink" href="/html">HTML section</a>. There are additional ways to identify selectors (classes and IDs), but we'll discuss those later. For now, let's get started with our first CSS style declaration. Let's say I'm going to use the <strong>&lt;h1&gt;</strong> element for my name on my personal page. I really want it to stand out, so I'm going to add some CSS styling for that tag.</p>
-<div class="cssExample">
-  <h1>My Name</h1>
-</div>
-
-      <h3>Add a style section to the page</h3>
-        <p>I need a place to hold your CSS declarations, so I'll add a section inside of the <a href="#" class="checkThisLink">&lt;head&gt;</a> portion of my page, like this:</p>
-<pre class="prettify">
-&lt;head&gt;
-<strong>&lt;style type="text/css"&gt;
-
-&lt;/style&gt;</strong>
-&lt;/head&gt;
-</pre>
-
-      <p>Then I'll tell the browser that I want to change the default style of all &lt;h1&gt; tags. I have to tell the browser when to stop applying our style rules to the &lt;h1&gt; tag and start applying rules fo the next element, so I'll wrap the declaration in <em>braces</em>: {&nbsp;&nbsp;}</p>
-
-<pre class="prettify">
-&lt;head&gt;
-&lt;style type="text/css"&gt;
-  <strong>h1 {
-
-  }</strong>
-&lt;/style&gt;
-&lt;/head&gt;
-</pre>
-      <aside>
-        <p>Note that you don't need to use the <strong>&lt;</strong> and <strong>&gt;</strong> symbols. Those are part of the HTML syntax and not necessary here.</p>
-        <p>I'm also using a standard programming convention for the braces. It's very common to put the opening brace directly after the element, and the closing brace on its own line.</p>
-      </aside>
-      <p>So I've added my h1 selector to my page. Let's see what happens:</p>
-        <div class="cssExample">
-          <h1>My Name</h1>
-        </div> 
-      <p>Nothing has changed. And that makes sense, right? That because we've identified h1 as the <em>selector</em> we want to change in our style, but we haven't actually made any changes to the style. That's for our next section: <a href="#" class="checkThisLink">Declarations</a>.</p>      
+      <p>here are some examples:</p>
+        <ul>
+            <li>Size: 16px, 12em, large, x-small, 80%</li>
+            <li>Color: red, #E01B6A, rgb(92, 140, 41)</li>
+            <li>Position: top: 100px, position: absolute, float: right</li>
+            <li>Background: green, url(images/bg.jpg), -moz-linear-gradient(top, #1e5799 0%, #7db9e8 100%)[a gradient] </li>
+        </ul>
+        <p>Declarations consist of two parts. </p>
+        <h3>Property</h3>
+        <p>This is <strong>what</strong> about the element should change: color, font size, background</p>
+        <h3>Value</h3>
+        <p>This is what about the element should change <strong>to</strong>: red, x-small, 100px.</p>
+        <pre>
+p {
+    width:        70%;
+    margin:       22px 0 22px 15%;
+    color:        #322938;
+    font-size:    16px;
+    background:   #faf9f5;
+    border:       2px solid #a14016;
+}
+  <span class="exampleAside"><i class="icon-arrow-up"></i>properties    <i class="icon-arrow-up"></i>values</span>  
+        </pre>
+ 
+      </section>
+      
+      <section>
+        <p class="lead">
+        Positioning is such an important part of CSS that it deserves its own section. Here it is. 
+      </p>
       
       <h4>Progress with this chapter</h4>
       <div class="progress">
           <div class="bar" style="width: 5%;"></div>
-      </div>      
-      </section>
+      </div>           
+      </section>  
+      
       <footer class="span8 offset3">
         <p>Page last updated by Christine McClure</p>
       </footer>
