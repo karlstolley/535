@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS: Selectors and Declarations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Brief page description:-->
+  <meta name="description" content="">
+  <!--Name(s) of primary authors-->
+  <meta name="author" content="">
+
+  <!--Styles-->
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/assets/css/prettify.css" rel="stylesheet">
+
+  <!--Custom styles-->
+  <link href="/assets/css/custom.css" rel="stylesheet">
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/prettify/prettify.js"></script>
+</head>
+
+
+<body>
+
+  <div class="container-fluid">
+
+    <header id="page-header">
+      <h1>CSS</h1>
+    </header>
+
+    <article class="row-fluid">
+      <header>
+        <hgroup class="hero-unit">
+          <h1>Selectors</h1>
+        </hgroup>
+      </header>
+      <section class="span8 offset3 clearfix">
+
+      <p class="lead">
+        You can think of selectors as the nouns of CSS: they tell the browser <em>which</em> element or elements are going to be affected. 
+      </p>
+
+        <p>Here are some examples of selectors:</p>
+<pre class="prettify">
+&lt;html&gt;
+&lt;body&gt;
+&lt;h1&gt;
+&lt;p&gt;
+&lt;ul&gt;
+</pre>
+        <p>Look familiar? They should: they're the same basic HTML elements you learned about in the <a class="checkThisLink" href="/html">HTML section</a>. There are additional ways to identify selectors (classes and IDs), but we'll discuss those later. For now, let's get started with our first CSS style declaration. Let's say I'm going to use the <strong>&lt;h1&gt;</strong> element for my name on my personal page. I really want it to stand out, so I'm going to add some CSS styling for that tag.</p>
+<div class="cssExample">
+  <h1>My Name</h1>
+</div>
+
+      <h3>Add a style section to the page</h3>
+        <p>I need a place to hold your CSS declarations, so I'll add a section inside of the <a href="#" class="checkThisLink">&lt;head&gt;</a> portion of my page, like this:</p>
+<pre class="prettify">
+&lt;head&gt;
+<strong>&lt;style type="text/css"&gt;
+
+&lt;/style&gt;</strong>
+&lt;/head&gt;
+</pre>
+
+      <p>Then I'll tell the browser that I want to change the default style of all &lt;h1&gt; tags. I have to tell the browser when to stop applying our style rules to the &lt;h1&gt; tag and start applying rules fo the next element, so I'll wrap the declaration in <em>braces</em>: {&nbsp;&nbsp;}</p>
+
+<pre class="prettify">
+&lt;head&gt;
+&lt;style type="text/css"&gt;
+  <strong>h1 {
+
+  }</strong>
+&lt;/style&gt;
+&lt;/head&gt;
+</pre>
+      <aside>
+        <p>Note that you don't need to use the <strong>&lt;</strong> and <strong>&gt;</strong> symbols. Those are part of the HTML syntax and not necessary here.</p>
+        <p>I'm also using a standard programming convention for the braces. It's very common to put the opening brace directly after the element, and the closing brace on its own line.</p>
+      </aside>
+      <p>So I've added my h1 selector to my page. Let's see what happens:</p>
+        <div class="cssExample">
+          <h1>My Name</h1>
+        </div> 
+      <p>Nothing has changed. And that makes sense, right? That because we've identified h1 as the <em>selector</em> we want to change in our style, but we haven't actually made any changes to the style. That's for our next section: <a href="#" class="checkThisLink">Declarations</a>.</p>      
+      
+      <h4>Progress with this chapter</h4>
+      <div class="progress">
+          <div class="bar" style="width: 5%;"></div>
+      </div>      
+      </section>
+      <footer class="span8 offset3">
+        <p>Page last updated by Christine McClure</p>
+      </footer>
+    </article>
+
+    <footer id="page-footer">
+      <p>Licensed under Creative Commons</p>
+    </footer>
+
+  </div><!--/.container-fluid-->
+
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+</body>
+</html>
