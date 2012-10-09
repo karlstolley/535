@@ -25,3 +25,30 @@ body {
 .not-bold h2 {
   font-weight: 400;
 }
+
+
+
+/* Simlates the styling of the <pre> tag */
+.cssExample{
+    background: whiteSmoke;
+    padding:10px;
+    border: 1px solid #ccc;
+}
+
+/* For when you want to make a note in the <pre> tag */
+.exampleAside {
+  color:red;
+  font-weight:900;
+}
+
+
+/* *** Temporary - Remove later */
+/* Makes an ugly highlight on an item to remind you to check something later */
+.checkThisLater {
+  padding: 2px;
+  background:yellow;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border: 2px solid red;
+}
+
