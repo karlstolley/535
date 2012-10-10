@@ -7,39 +7,36 @@
 
 2. Clone your fork by running (replace ``YOURUSERNAME``):
 
-    ``$ git clone git://github.com/YOURUSERNAME/535.git``
+        $ git clone git://github.com/YOURUSERNAME/535.git
 
 3. Add a new remote, called ``upstream``, to your cloned copy of the repository that points to the main repository:
 
-     ``$ cd 535``
-
-     ``$ git remote add upstream git@github.com:karlstolley/535.git``
+        $ cd 535
+        $ git remote add upstream git@github.com:karlstolley/535.git
 
 4. Do your work on a development branch (e.g., `dev`) OR, better, on a feature branch (e.g., `section_overview`)
 
-     ``$ git checkout -b dev``
+        $ git checkout -b dev
 
 5. Make lots of small, simple commits
 
-      ``$ git add some-file.html``
-
-      ``$ git commit -m "A message describing the change"``
+        $ git add some-file.html
+        $ git commit -m "A message describing the change"
 
 6. Keep your `master` branch up-to-date with the upstream remote. Regularly pull from upstream/master; rebase your `dev` or feature branch with ``master``:
 
-      ``$ git checkout master``
-      ``$ git pull upstream master``
-      ``$ git checkout dev``
-      ``$ git rebase master``
+        $ git checkout master
+        $ git pull upstream master
+        $ git checkout dev
+        $ git rebase master
 
 7. Push your ``dev`` and/or feature branches to your remote (``origin``):
 
-      ``$ git push origin dev``
+        $ git push origin dev
 
 8. If a rebase causes errors, you can force push the rebased branch (assuming you're not sharing with anyone else):
 
-      ``$ git push origin dev -f``
-
+        $ git push origin dev -f
 
 9. When you have work that is ready to be integrated into the upstream master branch, you’ll submit a pull request on GitHub. For the time being, see https://help.github.com/articles/using-pull-requests
 
