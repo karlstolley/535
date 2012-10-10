@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS: Declarations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Brief page description:-->
+  <meta name="description" content="">
+  <!--Name(s) of primary authors-->
+  <meta name="author" content="">
+
+  <!--Styles-->
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/assets/css/prettify.css" rel="stylesheet">
+
+  <!--Custom styles-->
+  <link href="/assets/css/custom.css" rel="stylesheet">
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/prettify/prettify.js"></script>
+</head>
+
+
+<body>
+
+  <div class="container-fluid">
+
+    <header id="page-header">
+      <h1>CSS</h1>
+    </header>
+
+    <article class="row-fluid">
+      <header>
+        <hgroup class="hero-unit">
+          <h1>Declarations</h1>
+        </hgroup>
+      </header>
+      <section class="span8 offset3 clearfix">
+
+      <p class="lead">
+        Declarations are like the verbs of CSS. They tell the browser <em>how</em> to change the element. You can change just about anything about an element.
+      </p>
+      <p>here are some examples:</p>
+        <ul>
+            <li>Size: 16px, 12em, large, x-small, 80%</li>
+            <li>Color: red, #E01B6A, rgb(92, 140, 41)</li>
+            <li>Position: top: 100px, position: absolute, float: right</li>
+            <li>Background: green, url(images/bg.jpg), -moz-linear-gradient(top, #1e5799 0%, #7db9e8 100%)[a gradient] </li>
+        </ul>
+        <p>Declarations consist of two parts. </p>
+        <h3>Property</h3>
+        <p>This is <strong>what</strong> about the element should change: color, font size, background</p>
+        <h3>Value</h3>
+        <p>This is what about the element should change <strong>to</strong>: red, x-small, 100px.</p>
+        <pre>
+p {
+    width:        70%;
+    margin:       22px 0 22px 15%;
+    color:        #322938;
+    font-size:    16px;
+    background:   #faf9f5;
+    border:       2px solid #a14016;
+}
+  <span class="exampleAside"><i class="icon-arrow-up"></i>properties    <i class="icon-arrow-up"></i>values</span>  
+        </pre>
+ 
+      </section>
+      
+      <section>
+        <p class="lead">
+        Positioning is such an important part of CSS that it deserves its own section. Here it is. 
+      </p>
+      
+      <h4>Progress with this chapter</h4>
+      <div class="progress">
+          <div class="bar" style="width: 5%;"></div>
+      </div>           
+      </section>  
+      
+      <footer class="span8 offset3">
+        <p>Page last updated by Christine McClure</p>
+      </footer>
+    </article>
+
+    <footer id="page-footer">
+      <p>Licensed under Creative Commons</p>
+    </footer>
+
+  </div><!--/.container-fluid-->
+
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+</body>
+</html>
