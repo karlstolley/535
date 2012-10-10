@@ -55,3 +55,7 @@ body {
   border: 2px solid red;
 }
 
+.chapterbutton h2 {
+	background-color: #339999;
+	margin: 20;
+}
