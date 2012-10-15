@@ -29,7 +29,7 @@ body {
 
 
 /* Simlates the styling of the <pre> tag */
-.cssExample{
+.codeExample{
     background: whiteSmoke;
     padding:10px;
     border: 1px solid #ccc;
