@@ -66,7 +66,9 @@
 &lt;/style&gt;</strong>
 &lt;/head&gt;
 </pre>
-
+        <aside>
+          The 'type="text/css"' section of the style declaration is not needed by browsers using the HTML5 specification, but it is for older browsers. Include this for the time being to be on the safe side.
+        </aside>
       <p>Then I'll tell the browser that I want to change the default style of all &lt;h1&gt; tags. I have to tell the browser when to stop applying our style rules to the &lt;h1&gt; tag and start applying rules fo the next element, so I'll wrap the declaration in <em>braces</em>: {&nbsp;&nbsp;}</p>
 
 <pre class="prettify">
