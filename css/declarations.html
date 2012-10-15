@@ -37,7 +37,6 @@
           <h1>Declarations</h1>
         </hgroup>
       </header>
-      <section class="span8 offset3 clearfix">
 
       <p class="lead">
         Declarations are like the verbs of CSS. They tell the browser <em>how</em> to change the element. You can change just about anything about an element.
@@ -54,6 +53,22 @@
         <p>This is <strong>what</strong> about the element should change: color, font size, background</p>
         <h3>Value</h3>
         <p>This is what about the element should change <strong>to</strong>: red, x-small, 100px.</p>
+        <h3>The Equation</h3>
+        <p>Selectors, declaration properties and values combine to make a complete CSS rule. The structure you need to use is this: </p>
+        <pre>
+selector {
+&lt;declaration property&gt; : &lt;declaration value&gt; ;
+}
+                       <span class="exampleAside"><i class="icon-arrow-up"></i>the colon separates
+                         the property from
+                         the value
+                                             <span class="exampleAside"><i class="icon-arrow-up"></i>the semicolon ends the declaration statement
+<span class="exampleAside"><i class="icon-arrow-up"></i>braces enclose the statements
+        </pre>
+        <aside>
+          Technically, you don't need a semicolon on the last line of your CSS rule. The same goes for the braces: if you only have one declaration in your CSS rule, you don't need to use them.
+          But it's a good practice to always include them. It's cost next to nothing in effort, and your code won't break if you add additional lines later. 
+        </aside>
         <pre>
 p {
     width:        70%;
@@ -66,12 +81,8 @@ p {
   <span class="exampleAside"><i class="icon-arrow-up"></i>properties    <i class="icon-arrow-up"></i>values</span>  
         </pre>
  
-      </section>
-      
-      <section>
-        <p class="lead">
-        Positioning is such an important part of CSS that it deserves its own section. Here it is. 
-      </p>
+        
+        <h3>Positioning is such an important part of CSS that it deserves its own section. Here it is. </h3>
       
       <h4>Progress with this chapter</h4>
       <div class="progress">
@@ -79,7 +90,7 @@ p {
       </div>           
       </section>  
       
-      <footer class="span8 offset3">
+      <footer>
         <p>Page last updated by Christine McClure</p>
       </footer>
     </article>
