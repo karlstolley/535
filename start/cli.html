@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Command Line Interface: Overview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Brief page description:-->
+  <meta name="description" content="">
+  <!--Name(s) of primary authors-->
+  <meta name="author" content="">
+
+  <!--Styles-->
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/assets/css/prettify.css" rel="stylesheet">
+
+  <!--Custom styles-->
+  <link href="/assets/css/custom.css" rel="stylesheet">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+
+  <div class="container-fluid">
+
+    <header id="page-header">
+      <h1>Command-Line Interface (CLI)</h1>
+    </header>
+
+    <article class="row-fluid">
+      <header>
+        <hgroup class="hero-unit">
+          <h1>The Command Line</h1>
+          <h2>Learn it, loathe it, learn it more...loathe it less. Maybe even love it.</h2>
+        </hgroup>
+      </header>
+      <section class="span8 offset3 clearfix">
+        <p class="lead">
+          The first time you see it, the command-line interface (or more simply, the command line)
+          seems like a throwback to a primitive era of computing.
+        </p>
+        <p>
+          It is.
+        </p>
+        <p>
+          But despite its appearance, the command line is a powerful means of interacting with
+          a computer. And in certain cases, there are things that a command line can do that
+          you simply can't do from within a fancy, contemporary graphical user interface (GUI)
+        </p>
+        <h1>Where am I?</h1>
+        <p>
+          The command line always opens putting you *somewhere* in the computer's file system. Most
+          often this is in your home directory. On a Linux-like system, running the <code>pwd</code>
+          command will output something like this:
+        </p>
+<pre>
+$ pwd
+/home/username
+$
+</pre>
+        <p>
+          Where <code>username</code> is actually your user name on the system, something like
+          <code>janesmith</code> for Jane Smith.
+        </p>
+        <p>
+          Now, despite how boring that example is, it illustrates the command-line interface in
+          action (and how it is often represented in instructional contexts and books). You have
+          a command prompt, usually represented as <code>$</code> (which you do <b>not</b> type),
+          and you type a command (like <code>pwd</code>, or "print working directory") followed by
+          the <kbd class="btn btn-mini">Return</kbd> or <kbd class="btn btn-mini">Enter</kbd> key.
+          With many commands, the command line then offers some kind of output,
+          <code>/home/janesmith</code>, followed by a new prompt, <code>$</code>, ready to accept
+          another command. (However, oftentimes, the new prompt is not shown, as will be the style
+          here.
+        </p>
+        <h1>What's here?</h1>
+        <p>
+          Once you've figured out where you are in the computer's file system, you can ask for a
+          list of the directory's contents with the list command, <code>ls</code>. Running
+          <code>ls</code> on Mac OS X in your home directory will output something like:
+<pre >
+$ ls
+Desktop  Documents  Downloads  Library  Movies  Music  Pictures  Public
+</pre>
+        <p>
+          That's the listing of default directories for an OS X user account. If we wanted more
+          details about the directory's contents, we can pass a flag, <code>-l</code>, to
+          the <code>ls</code> command:
+        </p>
+<pre >
+$ ls -l
+drwx------+  5 username  staff   170 Sep  4 14:42 Desktop
+drwx------+  4 username  staff   136 Apr 23 22:19 Documents
+drwx------+  4 username  staff   136 Apr 23 22:19 Downloads
+drwx------+ 34 username  staff  1156 Sep  4 14:41 Library
+drwx------+  3 username  staff   102 Apr 23 22:19 Movies
+drwx------+  3 username  staff   102 Apr 23 22:19 Music
+drwx------+  4 username  staff   136 Apr 23 22:19 Pictures
+drwxr-xr-x+  5 username  staff   170 Apr 23 22:19 Public
+</pre>
+        <p>
+          (We will learn about what all that means in the section on <a href="file-permissions.html">file permissions</a>.)
+        </p>
+        <p>
+          Sometimes, rather than passing a flag, like <code>-l</code>, we pass an argument. To move,
+          for example, from the working directory above into the <code>Documents</code> directory,
+          we'd use the change directory command, <code>cd</code>, and give it <code>Documents</code>
+          as an argument:
+        </p>
+<pre>
+$ cd Documents
+$ pwd
+/Users/username/Documents
+</pre>
+        <p>
+          What happens if you run <code>cd</code> by itself, with no arguments? Try it, and then
+          run <code>pwd</code> again.
+        </p>
+        <h1>What Else?</h1>
+        <p>
+          The three commands we've looked at so far have told us our working directory, and the
+          contents of the directory, as well as how to change directories.
+        </p>
+        <p>
+          Here are some other interesting commands to try; see if you can guess their purpose, based
+          on their output:
+        </p>
+<pre>
+$ uptime
+15:17  up 22:31, 3 users, load averages: 0.41 0.35 0.33
+$ who
+username  console  Oct 15 16:46
+username  ttys000  Oct 16 12:32
+username  ttys001  Oct 16 14:31
+$ date
+Tue Oct 16 15:19:05 CDT 2012
+$ which date
+/bin/date
+</pre>
+      </section>
+      <footer class="span8 offset3">
+        <p>Page last updated by Karl Stolley.</p>
+      </footer>
+    </article>
+
+    <footer id="page-footer">
+      <p>Licensed under Creative Commons</p>
+    </footer>
+
+  </div><!--/.container-fluid-->
+
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/prettify/prettify.js"></script>
+</body>
+</html>
