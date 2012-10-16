@@ -20,6 +20,19 @@
   <script src="/assets/js/jquery.min.js"></script>
   <script src="/assets/js/bootstrap.min.js"></script>
   <script src="/assets/js/prettify/prettify.js"></script>
+  <style type="text/css">
+    p.declExample1 {
+      width:        50%;
+  		padding:      8px 4px;
+  		text-align:   center;
+      margin:       22px 0 22px 15%;
+      color:        #322938;
+      font-size:    20px;
+      background:   #FAC96E;
+      border:       4px solid #a14016;
+    }
+
+  </style>
 </head>
 
 
@@ -71,16 +84,24 @@ selector {
         </aside>
         <pre>
 p {
-    width:        70%;
+    width:        50%;
+    padding:      8px 4px;
+    text-align:   center;
     margin:       22px 0 22px 15%;
     color:        #322938;
-    font-size:    16px;
-    background:   #faf9f5;
-    border:       2px solid #a14016;
+    font-size:    20px;
+    background:   #FAC96E;
+    border:       4px solid #a14016;
 }
+
+
   <span class="exampleAside"><i class="icon-arrow-up"></i>properties    <i class="icon-arrow-up"></i>values</span>  
         </pre>
- 
+        <p>Here's an example of a paragraph with no style rules applied. Click the button to apply the style defined above:</p>
+        <hr>
+        <p id="declExample1">Grumpy wizards make toxic brew for the evil Queen and Jack.</p>
+        <button id="declExampleBtn1" class="btn">Apply style</button>
+        <hr>
         
         <h3>Positioning is such an important part of CSS that it deserves its own section. Here it is. </h3>
       
@@ -104,6 +125,18 @@ p {
   <!-- JavaScript
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
+  <script>
+
+
+    $('#declExampleBtn1').toggle(function() {
+      $('#declExample1').addClass('declExample1');
+      $(this).html('Remove Style');
+        }, function() {
+      $('#declExample1').removeClass('declExample1');
+      $(this).html('Apply Style');
+    });
+
+  </script>
   <script src="/assets/js/jquery.min.js"></script>
   <script src="/assets/js/bootstrap.min.js"></script>
 </body>
