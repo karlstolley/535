@@ -1,0 +1,20 @@
+---
+# YAML for each page; see the main index.html for an example...
+
+# Subject area (e.g., JavaScript, HTML, Git...)
+subject:
+
+# Specific page title (e.g., Getting Started)
+title:
+
+# Short (140 chars or so) description/summary of the page
+# Start with an indented line below the > and keep your 
+# lines indented evenly
+description: >
+
+# Comma-separated list of authors
+authors:
+
+# Layout; page is default & matches _layouts/page.html
+layout: page
+---
