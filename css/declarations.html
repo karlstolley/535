@@ -50,6 +50,7 @@
       padding: 10px;
       text-align:center;
     }
+    .inline {display: inline-block;}
 
     /* use colors and patterns for boxk background for vision-impared */
     #box1 {background: rgba(245, 188, 195, 0.7) 
@@ -179,7 +180,7 @@ h1 {
           <li>This usually happens far too quickly to see that elements get repositioned on the screen.</li>
         </ol>
      <h4>Learn positioning with boxes</h4>
-        <p>Positioning can be applied to to any HTML element, but we'll stick with generic colored boxes in this example.</p>
+        <p>Positioning can be applied to to any HTML element, but we'll stick with generic patterned boxes (using 'div' tags) in this example.</p>
 
        <div class="codeExample" id="declExample3">
             <div id="box1" class="box">Box 1</div>
@@ -188,7 +189,30 @@ h1 {
             <div id="box4" class="box">Box 4</div>
        </div>        
         
-      
+        <p>
+          No style has been applied to the boxes that would affect their position on the page. Note the following:
+        </p>
+        <ul>
+          <li>Each box is placed on its own line. This tells us that the 'div' tag is a <em>block-level</em> element by default. Block level elements take up the entire width of their container.  All header tags: h1, h2, etc. and paragraph tags are block-level elements by default. </li>
+          <li>
+              <em>Inline</em> elements continue on in the same line. The &lt;em&gt; tag (used for "emphasis" in a sentence) is an inline-level element by default. 
+          </li>
+          <li>
+              We can change our boxes from their default block-level display to inline by adding the following style:
+          </li>          
+        </ul>      
+<pre>
+div {
+    display: inline-block;
+}
+</pre>
+      <p>Our boxes will now display like this:</p>
+       <div class="codeExample" id="declExample3">
+            <div id="box1" class="box inline">Box 1</div>
+            <div id="box2" class="box inline">Box 2</div>
+            <div id="box3" class="box inline">Box 3</div>
+            <div id="box4" class="box inline">Box 4</div>
+       </div>  
       <h4>Progress with this chapter</h4>
       <div class="progress">
           <div class="bar" style="width: 5%;"></div>
