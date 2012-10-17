@@ -32,6 +32,14 @@
       border:       4px solid #a14016;
     }
 
+    p.declExample2 {
+        font-size: 34px;
+        font-variant: small-caps;
+    }
+    h1.declExample2{
+        font-size: 12px;
+        text-transform: lowercase;
+    }
   </style>
 </head>
 
@@ -117,6 +125,27 @@ p {
           </ol>
         </aside>
       
+      <h3>Styles vs. Elements</h3>
+        <p>A common mistake when learning CSS is thinking that style rules are connected to HTML elements: an &lt;H1&gt; tag will <em>always</em> display more prominently larger than a &lt;p&gt; tag, for example. This is not true. Web browsers will apply some default styling if none is supplied, such as the following.</p> 
+        <div class="codeExample" id="declExample2">
+            <h1>THIS IS WRAPPED IN AN H1 TAG</h1>
+            <p>And this is wrapped in a lowly paragraph tag</p>
+       </div>
+        <button id="declExampleBtn2" class="btn">Apply style</button>
+
+        <p>See how the elements are no longer displaying according to the browser's default style rules. Here are the rules that were applied:</p>
+
+<pre>
+p {
+    font-size: 34px;
+    font-variant: small-caps;
+}
+h1 {
+    font-size: 12px;
+    text-transform: lowercase;
+} 
+</pre>
+
       <h3>Positioning is such an important part of CSS that it deserves its own section. Here it is. </h3>
       
       <h4>Progress with this chapter</h4>
@@ -147,6 +176,16 @@ p {
       $(this).html('Remove Style');
         }, function() {
       $('#declExample1').removeClass('declExample1');
+      $(this).html('Apply Style');
+    });
+
+    $('#declExampleBtn2').toggle(function() {
+      $("#declExample2 h1").addClass("declExample2");
+      $("#declExample2 p").addClass("declExample2");
+      $(this).html('Remove Style');
+        }, function() {
+      $("#declExample2 h1").removeClass("declExample2");
+      $("#declExample2 p").removeClass("declExample2");
       $(this).html('Apply Style');
     });
 
