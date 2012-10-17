@@ -26,6 +26,9 @@ body {
   font-weight: 400;
 }
 
+#footer, article footer {
+  margin-top: 40px;
+}
 
 
 /* Simlates the styling of the <pre> tag */
