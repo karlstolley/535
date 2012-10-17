@@ -105,6 +105,97 @@
         HTML file.
         </p>
 
+        <p>
+        In the last chapter we discussed how it might be convenient to have
+        functions on objects that help us find different child objects, for
+        example, <code>car.getPassengerByName("Kurt")</code>. Luckily, JavaScript's
+        DOM API gives us several ways to traverse the document nodes. A couple
+        examples are <code>getElementById</code> and <code>getElementsByTagName</code>.
+        </p>
+
+        <p>
+        At this point, we should be able to analyze the code you used to make
+        the button change the background color. Let's take another look at it
+        and break it down.
+        </p>
+
+        <pre>
+        <code>
+          var btn = document.getElementById("color-change-button");
+
+          btn.onclick = buttonClickHandler;
+
+          function buttonClickHandler() {
+            var randomColor = getRandomColor();
+            document.body.style.background = randomColor;
+          }
+        </code>
+        </pre>
+
+        <p>
+        Our first line here is
+
+        <br />
+        <code>var btn = document.getElementById("color-change-button");</code>
+        <br />
+
+        We're calling <code>getElementById</code> on the document object. This
+        traverses the DOM and finds an element with the ID <code>color-change-button</code>.
+        We then store that object in a variable called <code>button</code>.
+        </p>
+
+        <p>
+        Our next line is
+
+        <br />
+        <code>btn.onclick = buttonClickHandler;</code>
+        <br />
+
+        Remember that <code>btn</code> is a variable that contains an object that
+        represents an HTML button. One of the properties on button objects is
+        <code>onclick</code>. The value we assign to this property is a function
+        that will fire when someone clicks the button. Here we just give it the
+        name of a function, which we define in the following lines.
+        </p>
+
+        <aside>
+        Other examples of properties on button you can assign functions to are
+        <code>onmouseover</code> and <code>ondblclick</code>.
+        </aside>
+
+        <p>
+        Let's examine the buttonClickHandler function
+
+        <pre>
+        <code>
+        function buttonClickHandler() {
+          var randomColor = getRandomColor();
+          document.body.style.background = randomColor;
+        }
+        </code>
+        </pre>
+        </p>
+
+        <p>
+        The <code>getRandomColor</code> function is just a convenience function
+        that returns a random color (note: this is not a standard JavaScript function,
+        but rather one that was written for the purpose of this exercise.) In
+        the first line of the function, we are just calling that and storing the value
+        it returns in a variable called randomColor.
+        </p>
+
+        <p>
+        The next line is where it gets interesting. So far we've looked at how
+        we can use the DOM to retrieve a certain element. In the case of a button,
+        we then assigned a function value to a property on that object. In this
+        case, we're first accessing the <code>body</code> property on document.
+        This just refers to the DOM object for the body element in our HTML document.
+        Then, we access the <code>style</code> property on the body object.
+        The style property is an object whose properties allow us to manipulate
+        the styling of an HTML element. So when we set the <code>background</code>
+        property to our randomColor variable, it changes the background color
+        of the body element to that value.
+        </p>
       <footer class="span8 offset3">
         <p>Page last updated by Matthew Heston</p>
       </footer>
