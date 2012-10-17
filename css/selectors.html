@@ -51,13 +51,14 @@
 &lt;p&gt;
 &lt;ul&gt;
 </pre>
-        <p>Look familiar? They should: they're the same basic HTML elements you learned about in the <a class="checkThisLater" href="/html">HTML section</a>. There are additional ways to identify selectors (classes and IDs), but we'll discuss those later. For now, let's get started with our first CSS style declaration. Let's say I'm going to use the <strong>&lt;h1&gt;</strong> element for my name on my personal page. I really want it to stand out, so I'm going to add some CSS styling for that tag.</p>
-<div class="cssExample">
+        <p>Look familiar? They should: they're the same basic HTML elements you learned about in the <a href="/html">HTML section</a>. There are additional ways to identify selectors (classes and IDs), but we'll discuss those later. For now, let's get started with our first CSS style declaration. Let's say I'm going to use the <strong>&lt;h1&gt;</strong> element for my name on my personal page. I really want it to stand out, so I'm going to add some CSS styling for that tag.</p>
+        <p>Here's how my <strong>&lt;h1&gt;</strong> tag looks using only the default style supplied by the browser:</p>
+<div class="codeExample">
   <h1>My Name</h1>
 </div>
 
-      <h3>Add a style section to the page</h3>
-        <p>I need a place to hold your CSS declarations, so I'll add a section inside of the <a href="#" class="checkThisLater">&lt;head&gt;</a> portion of my page, like this:</p>
+      <h3>Create a container for CSS selectors</h3>
+        <p>I need a place to hold my CSS declarations, so I'll add a section inside of the <a href="#" class="checkThisLater">&lt;head&gt;</a> portion of my page, like this:</p>
 <pre class="prettify">
 &lt;head&gt;
 <strong>&lt;style type="text/css"&gt;
@@ -65,7 +66,9 @@
 &lt;/style&gt;</strong>
 &lt;/head&gt;
 </pre>
-
+        <aside>
+          The 'type="text/css"' section of the style declaration is not needed by browsers using the HTML5 specification. In 2012, that's anyone using a smartphone or the latest versions of Chrome, Firefox Internet Explorer, Opera or Safari. It is, however, required for older browsers using a priors versions of the standard (which is still many, many people). Include and you will be both backwards-compatible with older browsers and <em>future-compatible</em> in case a successor to CSS is developed.
+        </aside>
       <p>Then I'll tell the browser that I want to change the default style of all &lt;h1&gt; tags. I have to tell the browser when to stop applying our style rules to the &lt;h1&gt; tag and start applying rules fo the next element, so I'll wrap the declaration in <em>braces</em>: {&nbsp;&nbsp;}</p>
 
 <pre class="prettify">
@@ -82,26 +85,17 @@
         <p>I'm also using a standard programming convention for the braces. It's very common to put the opening brace directly after the element, and the closing brace on its own line.</p>
       </aside>
       <p>So I've added my h1 selector to my page. Let's see what happens:</p>
-        <div class="cssExample">
+        <div class="codeExample">
           <h1>My Name</h1>
         </div> 
-      <p>Nothing has changed. And that makes sense, right? That because we've identified h1 as the <em>selector</em> we want to change in our style, but we haven't actually made any changes to the style. That's for our next section: <a href="#" class="checkThisLater">Declarations</a>.</p>
-
-      <h2>Using Classes and IDs as Selectors</h2>
-        <p>You can also specify a CSS style using <em>classes</em> and <em>identifiers</em> (IDs). Classes and IDs can be added to HTML elements to indicate specific elements. For example, if you attached a CSS style to a generic &lt;p&gt; tag, <em>all</em> &lt;p&gt; tags would be affected:</p>
-        <p>Also used by Javascript to act on specific elements</p>
-
-      
-
-        <h2>Multiple Selectors</h2>
+      <p>Nothing has changed. And that makes sense, right? That because we've identified h1 as the <em>selector</em> we want to change in our style, but we haven't actually made any changes to the style. That's for our next section: <a href="declarations.html">Declarations</a>.</p>
 
       <h4>Progress with this chapter</h4>
       <div class="progress">
           <div class="bar" style="width: 15%;"></div>
       </div>
 
-
-      <footer class="span8 offset3">
+      <footer>
         <p>Page last updated by Christine McClure</p>
       </footer>
     </article>
