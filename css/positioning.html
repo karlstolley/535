@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS: Positioning Elements</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Brief page description:-->
+  <meta name="description" content="">
+  <!--Name(s) of primary authors-->
+  <meta name="author" content="">
+
+  <!--Styles-->
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/assets/css/prettify.css" rel="stylesheet">
+
+  <!--Custom styles-->
+  <link href="/assets/css/custom.css" rel="stylesheet">
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/prettify/prettify.js"></script>
+  <style type="text/css">
+    p.declExample1 {
+      width:        50%;
+  		padding:      8px 4px;
+  		text-align:   center;
+      margin:       22px 0 22px 15%;
+      color:        navy;
+      font-size:    20px;
+      background:   rgb(250, 201, 110);
+      border:       4px solid #a14016;
+    }
+
+    p.declExample2 {
+        font-size: 34px;
+        font-variant: small-caps;
+    }
+    h1.declExample2{
+        font-size: 12px;
+        text-transform: lowercase;
+    }
+
+    .box {
+      width: 100px;
+      color:black;
+      font-weight:900;
+      font-size: 20px;
+      border: 1px solid black;
+      padding: 10px;
+      text-align:center;
+    }
+    .inline {display: inline-block;}
+
+    /* use colors and patterns for boxk background for vision-impared */
+    #box1 {background: rgba(245, 188, 195, 0.7) 
+      url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAMklEQVQYlWNgYGAwZkAFxjjEcApgSOKTIGgSVpOxKcKqmGiFRFuNUwCHGFaT8erCGuAAtV8HLQ/j6goAAAAASUVORK5CYII=);}
+    #box2 {background: rgba(247, 234, 49, 0.4)  
+      url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQImWNgYGD4z0AswK4SAFXuAf8EPy+xAAAAAElFTkSuQmCC);}
+    #box3 {background:rgba(27, 66, 242, 0.3) 
+      url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAJElEQVQYlWNgwAT/sYjhVIRXMbokVsW4TPhPjCJi5clXTBwAAOy+CfekNMf3AAAAAElFTkSuQmCC);}
+    #box4 {background:rgba(11, 186, 11, 0.3) 
+      url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAEklEQVQYlWNgoBL4T7GCoW8FAGEXBfvNSmHvAAAAAElFTkSuQmCC);}
+  </style>
+</head>
+
+
+<body>
+
+  <div class="container-fluid">
+
+    <header id="page-header">
+      <h1>CSS</h1>
+    </header>
+
+    <article class="row-fluid">
+      <header>
+        <hgroup class="hero-unit">
+          <h1>Positioning Elements</h1>
+        </hgroup>
+      </header>
+
+      <p class="lead">
+        Positioning is such an important part of CSS that it deserves its own section. Here it is. 
+      </p>
+
+        <p>
+            Learning about positioning in CSS requires about the box model. You'll get a longer tutorial in the Javascript section when you learn about the <a class="checkThisLater" href="/js/dom.html">Document Object Model</a>, but the basics are this regarding positioning:
+        </p>
+        <ol>
+          <li>When the browser loads your web document, it reads from top to bottom, left to right.</li>
+          <li>The elements are initially laid out on the page in that order. If you have an &lt;H3&gt; tag  listed before an &lt;H1&gt; tag, the &lt;H3&gt; tag  will be displayed first.</li>
+          <li>Once the elements are laid out out in the browser, your CSS rules will be applied to the document. Here is were you can say that elements 1-2-3 should display as 3-1-2 if you like.</li>
+          <li>This usually happens far too quickly to see that elements get repositioned on the screen.</li>
+        </ol>
+     <h4>Learn positioning with boxes</h4>
+        <p>Positioning can be applied to to any HTML element, but we'll stick with generic patterned boxes (using 'div' tags) in this example.</p>
+
+       <div class="codeExample" id="declExample3">
+            <div id="box1" class="box">Box 1</div>
+            <div id="box2" class="box">Box 2</div>
+            <div id="box3" class="box">Box 3</div>
+            <div id="box4" class="box">Box 4</div>
+       </div>        
+        
+        <p>
+          No style has been applied to the boxes that would affect their position on the page. Note the following:
+        </p>
+        <ul>
+          <li>Each box is placed on its own line. This tells us that the 'div' tag is a <em>block-level</em> element by default. Block level elements take up the entire width of their container.  All header tags: h1, h2, etc. and paragraph tags are block-level elements by default. </li>
+          <li>
+              <em>Inline</em> elements continue on in the same line. The &lt;em&gt; tag (used for "emphasis" in a sentence) is an inline-level element by default. 
+          </li>
+          <li>
+              We can change our boxes from their default block-level display to inline by adding the following style:
+          </li>          
+        </ul>      
+<pre>
+div {
+    display: inline-block;
+}
+</pre>
+      <p>Our boxes will now display like this:</p>
+       <div class="codeExample" id="declExample3">
+            <div id="box1" class="box inline">Box 1</div>
+            <div id="box2" class="box inline">Box 2</div>
+            <div id="box3" class="box inline">Box 3</div>
+            <div id="box4" class="box inline">Box 4</div>
+       </div>  
+      <h4>Progress with this chapter</h4>
+      <div class="progress">
+          <div class="bar" style="width: 5%;"></div>
+      </div>           
+      </section>  
+      
+      <footer>
+        <p>Page last updated by Christine McClure</p>
+      </footer>
+    </article>
+
+    <footer id="page-footer">
+      <p>Licensed under Creative Commons</p>
+    </footer>
+
+  </div><!--/.container-fluid-->
+
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script>
+
+
+    $('#declExampleBtn1').toggle(function() {
+      $('#declExample1').addClass('declExample1');
+      $(this).html('Remove Style');
+        }, function() {
+      $('#declExample1').removeClass('declExample1');
+      $(this).html('Apply Style');
+    });
+
+    $('#declExampleBtn2').toggle(function() {
+      $("#declExample2 h1").addClass("declExample2");
+      $("#declExample2 p").addClass("declExample2");
+      $(this).html('Remove Style');
+        }, function() {
+      $("#declExample2 h1").removeClass("declExample2");
+      $("#declExample2 p").removeClass("declExample2");
+      $(this).html('Apply Style');
+    });
+
+  </script>
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+</body>
+</html>

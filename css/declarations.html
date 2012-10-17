@@ -168,51 +168,8 @@ h1 {
 </pre>
 
         <p>There are many online sources for looking up different style rules you can use as declarations in your CSS. See the end of this chapter for some of our favorites.</p>
-
-      <h3>Positioning is such an important part of CSS that it deserves its own section. Here it is. </h3>
-        <p>
-            Learning about positioning in CSS requires about the box model. You'll get a longer tutorial in the Javascript section when you learn about the <a class="checkThisLater" href="/js/dom.html">Document Object Model</a>, but the basics are this regarding positioning:
-        </p>
-        <ol>
-          <li>When the browser loads your web document, it reads from top to bottom, left to right.</li>
-          <li>The elements are initially laid out on the page in that order. If you have an &lt;H3&gt; tag  listed before an &lt;H1&gt; tag, the &lt;H3&gt; tag  will be displayed first.</li>
-          <li>Once the elements are laid out out in the browser, your CSS rules will be applied to the document. Here is were you can say that elements 1-2-3 should display as 3-1-2 if you like.</li>
-          <li>This usually happens far too quickly to see that elements get repositioned on the screen.</li>
-        </ol>
-     <h4>Learn positioning with boxes</h4>
-        <p>Positioning can be applied to to any HTML element, but we'll stick with generic patterned boxes (using 'div' tags) in this example.</p>
-
-       <div class="codeExample" id="declExample3">
-            <div id="box1" class="box">Box 1</div>
-            <div id="box2" class="box">Box 2</div>
-            <div id="box3" class="box">Box 3</div>
-            <div id="box4" class="box">Box 4</div>
-       </div>        
-        
-        <p>
-          No style has been applied to the boxes that would affect their position on the page. Note the following:
-        </p>
-        <ul>
-          <li>Each box is placed on its own line. This tells us that the 'div' tag is a <em>block-level</em> element by default. Block level elements take up the entire width of their container.  All header tags: h1, h2, etc. and paragraph tags are block-level elements by default. </li>
-          <li>
-              <em>Inline</em> elements continue on in the same line. The &lt;em&gt; tag (used for "emphasis" in a sentence) is an inline-level element by default. 
-          </li>
-          <li>
-              We can change our boxes from their default block-level display to inline by adding the following style:
-          </li>          
-        </ul>      
-<pre>
-div {
-    display: inline-block;
-}
-</pre>
-      <p>Our boxes will now display like this:</p>
-       <div class="codeExample" id="declExample3">
-            <div id="box1" class="box inline">Box 1</div>
-            <div id="box2" class="box inline">Box 2</div>
-            <div id="box3" class="box inline">Box 3</div>
-            <div id="box4" class="box inline">Box 4</div>
-       </div>  
+     
+   
       <h4>Progress with this chapter</h4>
       <div class="progress">
           <div class="bar" style="width: 5%;"></div>
