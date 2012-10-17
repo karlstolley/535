@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>CSS: CSS3 - The Future is Now</title>
+  <title>CSS: Selectors</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!--Brief page description:-->
@@ -13,16 +13,15 @@
   <!--Styles-->
   <link href="/assets/css/bootstrap.css" rel="stylesheet">
   <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/assets/css/prettify.css" rel="stylesheet">
 
   <!--Custom styles-->
-  <link href="/assets/css/custom.css">
-
-  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-
+  <link href="/assets/css/custom.css" rel="stylesheet">
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/prettify/prettify.js"></script>
 </head>
+
 
 <body>
 
@@ -35,13 +34,18 @@
     <article class="row-fluid">
       <header>
         <hgroup class="hero-unit">
-          <h1>CSS3 - The Future is now</h1>
+          <h1>Using Classes and IDs as Selectors</h1>
         </hgroup>
       </header>
 
+
       <p class="lead">
-      CSS3
+        Think you're limited to using only HTML elements as selectors? Think again.
       </p>
+
+      <p>You can also specify a CSS style using <em>classes</em> and <em>identifiers</em> (IDs). Classes and IDs can be added to HTML elements to indicate specific elements. For example, if you attached a CSS style to a generic &lt;p&gt; tag, <em>all</em> &lt;p&gt; tags would be affected:</p>
+
+      <p>Also used by Javascript to act on specific elements</p>
 
       <footer>
         <p>Page last updated by Christine McClure</p>
