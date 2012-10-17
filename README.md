@@ -42,7 +42,9 @@
 
 ## Doing development work:
 
-To easily view your work in a browser, you’ll use [Serve](http://get-serve.com/get-started).
+To easily view your work in a browser, you’ll use either [Serve](http://get-serve.com/get-started) or [Jekyll](https://github.com/mojombo/jekyll)
+
+### Using Serve
 
 Once you have Ruby installed on your computer, just run:
 
@@ -57,4 +59,25 @@ Open your browser to ``http://localhost:4000/`` and you will see the ``index.htm
 Other files and folders can be accessed by appending them to the URL. E.g., to see the pages for the Git section of The Project, go to ``http://localhost:4000/git/``.
 
 When you’re done viewing things in the ``serve`` server, hit Ctrl C to kill the process.
+
+### Using Jekyll
+
+With Ruby installed on your computer, run
+
+    $ gem install jekyll
+
+Make sure your copy of the repository is up-to-date with the
+upstream ``master`` branch, [which includes](https://github.com/karlstolley/535/commit/5d1e2440a3d6647a92ba077a08fff11ec9386f51)
+a ``_config.yml`` file and modification to ``.gitignore`` to
+work with Jekyll, which outputs a ``site/`` directory (which we
+don't want to track).
+
+Once you've pulled, rebased, and/or merged your heart out,
+just run
+
+        $ jekyll --server --auto
+
+And open up your browser to http://localhost:4000/ to see what's
+going on.
+
 
