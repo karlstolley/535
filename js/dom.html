@@ -16,6 +16,7 @@
 
   <!--Custom styles-->
   <link href="/assets/css/custom.css">
+  <link href="styles/js-tutorial.css" rel="stylesheet">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -196,7 +197,49 @@
         property to our randomColor variable, it changes the background color
         of the body element to that value.
         </p>
-      <footer class="span8 offset3">
+
+        <h1>Another Exercise</h1>
+
+        <p>
+        <div id="change-my-background-color">
+          Please change my background color!
+        </div>
+        </p>
+
+        <p>
+        The text above is inside a div with the id <code>change-my-background-color</code>.
+        Using your JavaScript console, try to enter code that will change the
+        background color of the div when you move your mouse over it. Hint: The
+        div DOM element has an <code>onmouseover</code> event you can assign a function
+        to, similar to what we did before with the button.
+        </p>
+
+        <p>
+        Remember that what you'll want to do first is get the DOM element that
+        represents that div element, and you'll probably want to store it
+        in a variable. Once it's in a variable, you can assign a function to
+        its <code>onmouseover</code> property that uses the style property
+        to change the background color of the div.
+        If you get stuck, click the button below to see a solution, but try
+        to work at it on your own first.
+        </p>
+
+        <button type="button" class=btn" id="show-solution">Show solution</button>
+
+        <div id="solution">
+        <pre>
+        <code>
+        var myDiv = document.getElementById("change-my-background-color")
+        myDiv.onmouseover = mouseOverEventHandler;
+        function mouseOverEventHandler() {
+          myDiv.style.background = "red";
+        }
+        </code>
+        </pre>
+
+        </div>
+
+        <footer class="span8 offset3">
         <p>Page last updated by Matthew Heston</p>
       </footer>
     </article>
@@ -212,5 +255,6 @@
   <!-- Placed at the end of the document so the pages load faster -->
   <script src="/assets/js/jquery.min.js"></script>
   <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="scripts/js-tutorial.js"></script>
 </body>
 </html>
