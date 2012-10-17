@@ -16,7 +16,7 @@ class Conversion
       class_file.push(line)
     end
 
-    puts "File read"
+    puts test_file + " file read."
 
     class_file
 
@@ -32,7 +32,7 @@ class Conversion
       i+=1
     end
 
-    puts "File parsed"
+    puts "File parsed."
 
     course_list
 
@@ -60,7 +60,7 @@ class Conversion
       end
       html_file.puts "</table>"
 
-    puts "File converted"
+    puts html_filename + " created."
 
   end
 
