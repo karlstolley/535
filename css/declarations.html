@@ -26,9 +26,9 @@
   		padding:      8px 4px;
   		text-align:   center;
       margin:       22px 0 22px 15%;
-      color:        #322938;
+      color:        navy;
       font-size:    20px;
-      background:   #FAC96E;
+      background:   rgb(250, 201, 110);
       border:       4px solid #a14016;
     }
 
@@ -80,7 +80,7 @@ selector {
         </pre>
         <aside>
           Technically, you don't need a semicolon on the last line of your CSS rule. The same goes for the braces: if you only have one declaration in your CSS rule, you don't need to use them.
-          But it's a good practice to always include them. It's cost next to nothing in effort, and your code won't break if you add additional lines later. 
+          But it's a good practice to always include them. It costs next to nothing in effort, and your code won't break if you add additional lines later. 
         </aside>
         <pre>
 p {
@@ -88,9 +88,9 @@ p {
     padding:      8px 4px;
     text-align:   center;
     margin:       22px 0 22px 15%;
-    color:        #322938;
+    color:        navy;
     font-size:    20px;
-    background:   #FAC96E;
+    background:   rgb(250, 201, 110);
     border:       4px solid #a14016;
 }
 
@@ -102,8 +102,22 @@ p {
         <p id="declExample1">Grumpy wizards make toxic brew for the evil Queen and Jack.</p>
         <button id="declExampleBtn1" class="btn">Apply style</button>
         <hr>
-        
-        <h3>Positioning is such an important part of CSS that it deserves its own section. Here it is. </h3>
+        <aside>
+          There are several ways to select colors in CSS. 
+          <ol>
+            <li>
+                Named colors. An example is the text color above set to "navy." You can specify colors by their names: red, purple, green, etc. The obvious disadvantage is that you limited to fewer than 200 color names and must rely on the browser's version of how that color should display.
+            </li>
+            <li>
+                Hexadecimal colors. One is used in the text color example above. The foumla is a pound sign "#" followed by 6 numbers/letters. These are much more specific: you have access to more than 16 million colors using this method. 
+            </li>
+            <li>
+                RGB colors. The background color above uses the RGB color specification. It defines color by specifying the amount of Red, Green and Blue to apply to each pixel. With this method, you can also add a level of transparency to the color, such as <strong>rgba(250, 201, 110, .5)</strong> to apply a 50% alpha transparancy to the color.
+            </li>
+          </ol>
+        </aside>
+      
+      <h3>Positioning is such an important part of CSS that it deserves its own section. Here it is. </h3>
       
       <h4>Progress with this chapter</h4>
       <div class="progress">
