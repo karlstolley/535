@@ -85,7 +85,7 @@
       </p>
 
         <p>
-            Learning about positioning in CSS requires about the box model. You'll get a longer tutorial in the Javascript section when you learn about the <a class="checkThisLater" href="/js/dom.html">Document Object Model</a>, but the basics are this regarding positioning:
+            Learning about positioning in CSS requires about the box model. Every HTML element is considered to be a "box." The browser will see boxes of content to be display, whether they're paragraphs, headings, images or videos: this, in short,  is the box model. You'll get a longer tutorial in the Javascript section when you learn about the <a class="checkThisLater" href="/js/dom.html">Document Object Model</a>, but the basics are this regarding positioning:
         </p>
         <ol>
           <li>When the browser loads your web document, it reads from top to bottom, left to right.</li>
@@ -93,8 +93,15 @@
           <li>Once the elements are laid out out in the browser, your CSS rules will be applied to the document. Here is were you can say that elements 1-2-3 should display as 3-1-2 if you like.</li>
           <li>This usually happens far too quickly to see that elements get repositioned on the screen.</li>
         </ol>
-     <h4>Learn positioning with boxes</h4>
-        <p>Positioning can be applied to to any HTML element, but we'll stick with generic patterned boxes (using 'div' tags) in this example.</p>
+
+      <h2>The Position Declaration</h2>
+        <p>This declaration Positioning can be applied to to any HTML element, but we'll stick with generic patterned boxes (using 'div' tags) in this example.</p>
+
+        <h3>Static</h3>
+        <h3>Relative </h3>
+        <h3>Absolute</h3>
+        <h3>Fixed</h3>
+        <h3>Inherit</h3>
 
        <div class="codeExample" id="declExample3">
             <div id="box1" class="box">Box 1</div>
@@ -106,6 +113,20 @@
         <p>
           No style has been applied to the boxes that would affect their position on the page. Note the following:
         </p>
+
+      <p>Our boxes will now display like this:</p>
+       <div class="codeExample" id="declExample3">
+            <div id="box1" class="box inline">Box 1</div>
+            <div id="box2" class="box inline">Box 2</div>
+            <div id="box3" class="box inline">Box 3</div>
+            <div id="box4" class="box inline">Box 4</div>
+       </div>
+
+
+      <h2>The Float Declaration</h2>
+      
+      <h2>The Display Declaration</h2>
+      <p>The <code>display</code> property because that also has an affect on where an item appears within its container. Ther are times </p>
         <ul>
           <li>Each box is placed on its own line. This tells us that the 'div' tag is a <em>block-level</em> element by default. Block level elements take up an entire line in the browser, even if the element's width is narrower than its container. All header tags: h1, h2, etc. and paragraph tags are block-level elements by default. </li>
           <li>
@@ -113,20 +134,13 @@
           </li>
           <li>
               We can change our boxes from their default block-level display to inline by adding the following style:
-          </li>          
-        </ul>      
+          </li>
+        </ul>
 <pre>
 div {
     display: inline-block;
 }
 </pre>
-      <p>Our boxes will now display like this:</p>
-       <div class="codeExample" id="declExample3">
-            <div id="box1" class="box inline">Box 1</div>
-            <div id="box2" class="box inline">Box 2</div>
-            <div id="box3" class="box inline">Box 3</div>
-            <div id="box4" class="box inline">Box 4</div>
-       </div>  
       <h4>Progress with this chapter</h4>
       <div class="progress">
           <div class="bar" style="width: 5%;"></div>
