@@ -29,17 +29,26 @@
       border: 1px solid black;
       padding: 10px;
       text-align:center;
+      position:static; /*default position for objects*/
     }
 
     /* use colors and patterns for boxk background for vision-impared */
-    #box1 {background: rgba(245, 188, 195, 0.7) 
+    .box1 {background: rgba(245, 188, 195, 0.7)
       url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAMklEQVQYlWNgYGAwZkAFxjjEcApgSOKTIGgSVpOxKcKqmGiFRFuNUwCHGFaT8erCGuAAtV8HLQ/j6goAAAAASUVORK5CYII=);}
-    #box2 {background: rgba(247, 234, 49, 0.4)  
+    .box2 {background: rgba(247, 234, 49, 0.4)
       url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQImWNgYGD4z0AswK4SAFXuAf8EPy+xAAAAAElFTkSuQmCC);}
-    #box3 {background:rgba(27, 66, 242, 0.3) 
+    .box3 {background:rgba(27, 66, 242, 0.3)
       url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAJElEQVQYlWNgwAT/sYjhVIRXMbokVsW4TPhPjCJi5clXTBwAAOy+CfekNMf3AAAAAElFTkSuQmCC);}
-    #box4 {background:rgba(11, 186, 11, 0.3) 
-      url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAEklEQVQYlWNgoBL4T7GCoW8FAGEXBfvNSmHvAAAAAElFTkSuQmCC);}
+    .box4 {
+      left: 20px;
+      background:rgba(11, 186, 11, 0.3)
+      url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAEklEQVQYlWNgoBL4T7GCoW8FAGEXBfvNSmHvAAAAAElFTkSuQmCC);
+    }
+
+    #relative .box {
+      position:relative;
+    }
+}
   </style>
 </head>
 
@@ -77,16 +86,30 @@
         <p>Positioning can be applied to to any HTML element, but we'll stick with generic patterned boxes (using 'div' tags) for these examples to keep things simple.</p>
  
         <h3>Static</h3>
-
+        <p>The is the default layout for objects. Each object will appear on its own line, in the order that they appear in the HTML document. </p>
+        <p>Here is a very simple example. </p>
        <div class="codeExample" id="static">
-            <div id="box1" class="box">Box 1</div>
-            <div id="box2" class="box">Box 2</div>
-            <div id="box3" class="box">Box 3</div>
-            <div id="box4" class="box">Box 4</div>
+            <div class="box box1">Box 1</div>
+            <div class="box box2">Box 2</div>
+            <div class="box box3">Box 3</div>
+            <div class="box box4">Box 4</div>
        </div>
-
+        <p>Here are some of the style rules that apply to all of the boxes:</p>
+<pre>
+      width: 100px;
+      padding: 10px;
+      text-align:center;
+      position:static;
+</pre>
         <h3>Relative </h3>
-        <h3>Absolute</h3>
+        <p>The is the default layout for objects. Each object will appear on its own line, in the order that they appear in the HTML document. </p>
+        <p>Here is a very simple example. </p>
+       <div class="codeExample" id="relative">
+            <div class="box box1">Box 1</div>
+            <div class="box box2">Box 2</div>
+            <div class="box box3">Box 3</div>
+            <div class="box box4">Box 4</div>
+       </div>        <h3>Absolute</h3>
         <h3>Fixed</h3>
         <h3>Inherit</h3>
 
