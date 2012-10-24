@@ -94,13 +94,20 @@
             <div class="box box3">Box 3</div>
             <div class="box box4">Box 4</div>
        </div>
-        <p>Here are some of the style rules that apply to all of the boxes:</p>
+        <p>Here are some of the style rules that apply to all of the boxes in the above example:</p>
 <pre>
       width: 100px;
       padding: 10px;
       text-align:center;
       position:static;
 </pre>
+        <p>And here's a special style rule that box 4 has:</p>
+<pre>
+      left: 20px;
+</pre>
+        <p>You can guess that the <code>left: 20px</code> rule should have something to do with Box 4's position within the containing element.
+          But it doesn't look any differently than the others; that's because the <code>static</code> assignment of the position declaration
+          doesn't allow for <em>offset</em> positioning, of which <code>left</code> is a member of--along with <code>right</code>, <code>top</code> and <code>bottom.</code>. </p>
         <h3>Relative </h3>
         <p>The is the default layout for objects. Each object will appear on its own line, in the order that they appear in the HTML document. </p>
         <p>Here is a very simple example. </p>
