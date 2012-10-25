@@ -68,6 +68,7 @@
         Positioning is such an important part of CSS that it deserves its own section. Here it is. 
       </p>
 
+      <h2>Document Flow</h2>
         <p>
             Learning about positioning in CSS requires about the box model. Every HTML element is considered to be a "box." The browser will see boxes of content to be display, whether they're paragraphs, headings, images or videos: this, in short,  is the box model. You'll get a longer tutorial in the Javascript section when you learn about the <a class="checkThisLater" href="/js/dom.html">Document Object Model</a>, but the basics are this regarding positioning:
         </p>
@@ -77,6 +78,23 @@
           <li>Once the elements are laid out out in the browser, your CSS rules will be applied to the document. Here is were you can say that elements 1-2-3 should display as 3-1-2 if you like.</li>
           <li>This usually happens far too quickly to see that elements get repositioned on the screen.</li>
         </ol>
+        
+        <h3>The Display Declaration</h3>
+          <p>The <code>display</code> property because that also has an affect on where an item appears within its container. Ther are times </p>
+          <ul>
+            <li>Each box is placed on its own line. This tells us that the 'div' tag is a <em>block-level</em> element by default. Block level elements take up an entire line in the browser, even if the element's width is narrower than its container. All header tags: h1, h2, etc. and paragraph tags are block-level elements by default. </li>
+            <li>
+                <em>Inline</em> elements continue on in the same line. Think of thie term as "in the same line." The &lt;em&gt; tag (used for "emphasis" in a sentence) is an inline-level element by default.
+            </li>
+            <li>
+                We can change our boxes from their default block-level display to inline by adding the following style:
+            </li>
+          </ul>
+  <pre>
+  div {
+      display: inline-block;
+  }
+  </pre>
 
       <h2>The Position Declaration</h2>
         <p>Positioning can be applied to to any HTML element, but we'll stick with generic patterned boxes (using 'div' tags) for these examples to keep things simple.</p>
@@ -125,22 +143,6 @@
           
       <h2>The Float Declaration</h2>
       
-      <h2>The Display Declaration</h2>
-      <p>The <code>display</code> property because that also has an affect on where an item appears within its container. Ther are times </p>
-        <ul>
-          <li>Each box is placed on its own line. This tells us that the 'div' tag is a <em>block-level</em> element by default. Block level elements take up an entire line in the browser, even if the element's width is narrower than its container. All header tags: h1, h2, etc. and paragraph tags are block-level elements by default. </li>
-          <li>
-              <em>Inline</em> elements continue on in the same line. Think of thie term as "in the same line." The &lt;em&gt; tag (used for "emphasis" in a sentence) is an inline-level element by default.
-          </li>
-          <li>
-              We can change our boxes from their default block-level display to inline by adding the following style:
-          </li>
-        </ul>
-<pre>
-div {
-    display: inline-block;
-}
-</pre>
       <h4>Progress with this chapter</h4>
       <div class="progress">
           <div class="bar" style="width: 5%;"></div>
