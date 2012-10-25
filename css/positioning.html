@@ -160,11 +160,11 @@ div {
   <script>
 
     $('#changeToRelative').toggle(function() {
-      $('#relative box').css('position', 'relative');
-        $(this).html('Change back to \'static\' position');
+      $('#relative .box').css('position', 'relative');
+      $(this).html('Change back to \'static\' position');
         }, function() {
-      $('#declExample1').removeClass('declExample1');
-        $(this).html('Change to \'relative\' position');
+      $('#relative .box').css('position', 'static');
+      $(this).html('Change to \'relative\' position');
     });
 
 
