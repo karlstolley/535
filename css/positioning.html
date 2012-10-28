@@ -46,7 +46,7 @@
       background:rgba(11, 186, 11, 0.3)
       url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAEklEQVQYlWNgoBL4T7GCoW8FAGEXBfvNSmHvAAAAAElFTkSuQmCC);
     }
-}
+
   </style>
 </head>
 
@@ -207,7 +207,28 @@
 
         <h3>Inherit</h3>
           <p>Position declarations are not generally passed down to child elements (unlike declarations like font-size and background-color). The <code>inherit</code> position was designed so that you could do this.</p>
-          
+          <p>Our boxes are sitting inside of a <code>div</code> container. We can have the boxes inherit the properties of the div container if we change the position declataion:</p>
+<pre>
+  div {
+    position: fixed;
+    top: 200px;
+  }
+
+  .box {
+    position: inherit;
+  }
+</pre>
+          <aside>The <code>.box</code> statement is a <em>class declaration</em> that will be discussed in the next section.</aside>
+        <a id="changeToInherit" href="#" class="btn">Change to 'inherit' position</a>
+       <div class="codeExample" id="inherit">
+            <div class="box box1">Box 1</div>
+            <div class="box box2">Box 2</div>
+            <div class="box box3">Box 3</div>
+            <div class="box box4">Box 4</div>
+       </div>
+       <div id="inheritExplanation"></div>
+       <p>Position inheritance can cause problems in complex layouts if your code is not well-documented.</p>
+
       <h2>The Float Declaration</h2>
       
       <h4>Progress with this chapter</h4>
@@ -266,6 +287,20 @@
       $('#fixed .box4').css('bottom', '');
       $('#fixed .box4').css('position', 'static');
       $(this).html('Change to \'fixed\' position');
+    });
+
+    $('#changeToInherit').toggle(function() {
+      $('#inherit').css('position', 'fixed');
+      $('#inherit').css('top', '200px');
+      $('#inherit .box').css('position', 'inherit');
+      $('#inheritExplanation').append ('<p><strong>Once the containing element has a fixed position, the inheriting box elements will also be fixed in the same position and overlap each other.</strong></p>');
+      $(this).html('Change back to \'static\' position');
+        }, function() {
+      $('#inherit').css('position', 'static');
+      $('#inherit').css('left', '0');
+      $('#inherit .box').css('position', 'static');
+      $('#inheritExplanation p').hide();
+      $(this).html('Change to \'inherit\' position');
     });
 
   </script>
