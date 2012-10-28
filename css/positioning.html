@@ -46,9 +46,18 @@
       background:rgba(11, 186, 11, 0.3)
       url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAEklEQVQYlWNgoBL4T7GCoW8FAGEXBfvNSmHvAAAAAElFTkSuQmCC);
     }
-
-    #float1{overflow:auto;}
-    #float1 div {
+    #float1 {
+      width: 400px;
+      overflow:auto;
+      padding: 10px;
+    }
+    #float1 img{
+      width: 100px;
+      float:right;
+      margin: 0 0 0 20px;
+    }
+    #float2{overflow:auto;}
+    #float2 div {
       width: 25%;
       margin: 0 20px 10px 0;
       background: beige;
@@ -243,13 +252,34 @@
       <p>Floats can give your site the consistent look and feel that once was only achieved by stuffing your text into a <code>table</code>.
         They are also the cause of great frustration when things aren't displaying as you expected.</p>
 
-      <p>Floats allow elements to be removed from the normal document flow and positioned so that other elements can flow around them. They are often used to
-      create a newspaper-styled columnar format. Each heading and corresponding paragraph below is wrapped in its own <code>div</code> tag.</p>
+      <p>Floats allow elements to be removed from the normal document flow and positioned so that other elements can flow around them. One of
+      their main uses is to flow text around an image, like so:</p>
+
+      <div class="codeExample" id="float1">
+        <img src="/assets/img/apple.jpg" />
+        <p>Hmmm, suddenly I'm hungry. Why is that? And on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on...</p>
+      </div>
+      
+      <p>Here is the code:</p>
+<pre>
+&lt;img src=&quot;/assets/img/apple.jpg&quot; /&gt;
+&lt;p&gt;Hmmm, suddenly I'm hungry. Why is that? And on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on...&lt;/p&gt;
+</pre>
+      <p>And here is the style that was applied. Note that the paragraph tag has no styling applied to it, only the image tag.</p>
+
+<pre>
+img{
+      width: 70px;
+      float:right;
+      margin: 0 0 0 20px;
+ }
+</pre>
+      <p>Floats are also popular for creating a newspaper-styled columnar format, as in the next example.</p>
 
       <p>Right now, the items below are in their normal document flow. Here's what happens when we float those elements:</p>
 
        <a id="floatLeft" href="#" class="btn">Float Items Left</a>
-       <div class="codeExample" id="float1">
+       <div class="codeExample" id="float2">
          <div>
            <h3>Here is Heading 1</h3>
            <p>Paragraph 1 text. Text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.</p>
@@ -370,10 +400,10 @@
     });
 
     $('#floatLeft').toggle(function() {
-      $('#float1 div').css('float', 'left');
+      $('#float2 div').css('float', 'left');
       $(this).html('Remove float');
         }, function() {
-      $('#float1 div').css('float', 'none');
+      $('#float2 div').css('float', 'none');
       $(this).html('Float items left');
     });
 
