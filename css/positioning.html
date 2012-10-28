@@ -21,6 +21,8 @@
   <script src="/assets/js/bootstrap.min.js"></script>
   <script src="/assets/js/prettify/prettify.js"></script>
   <style type="text/css">
+
+    .h1Inline h1{display:inline; width: 50px;}
       .box {
       width: 100px;
       color:black;
@@ -101,21 +103,19 @@
             <img src="/assets/img/box-model.png">
 
             <h3>The Display Declaration</h3>
-          <p>The <code>display</code> property because that also has an affect on where an item appears within its container. Ther are times </p>
+          <p>The <code>display</code> property because that also has an affect on where an item appears within its container. Some elements, by default, are
+            displayed on a separate line. Other elements are display in the same line as the elements adjacent to them</p>
           <ul>
-            <li>Each box is placed on its own line. This tells us that the 'div' tag is a <em>block-level</em> element by default. Block level elements take up an entire line in the browser, even if the element's width is narrower than its container. All header tags: h1, h2, etc. and paragraph tags are block-level elements by default. </li>
+            <li><em>Block-level</em> elements take up an entire line in the browser, even if the element's width is narrower than its container.
+              All header tags: h1, h2, etc. and paragraph tags are block-level elements by default. </li>
             <li>
                 <em>Inline</em> elements continue on in the same line. Think of thie term as "in the same line." The &lt;em&gt; tag (used for "emphasis" in a sentence) is an inline-level element by default.
             </li>
             <li>
-                We can change our boxes from their default block-level display to inline by adding the following style:
+              We can always override the default display style, however. If you want your <code>h1</code> elements to not display as block level,
+              just write a style for it.
             </li>
           </ul>
-  <pre>
-  div {
-      display: inline-block;
-  }
-  </pre>
 
       <h2>The Position Declaration</h2>
         <p>Positioning can be applied to to any HTML element, but we'll stick with generic patterned boxes (using 'div' tags) for these examples to keep things simple.</p>
