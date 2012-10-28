@@ -178,7 +178,26 @@
           and 200 pixels from the browsers's left edge. Absolute position is a very powerful declaration: use it wisely.</p>
         
         <h3>Fixed</h3>
-          <p>The <code>fixed</code> position is similar to absolute, but it takes it a step further. Not only is the position attached to a particular location, it is attached to the location within the browser window. This means that the item will not scroll off the screen. It is primarily used for <a href="#" class=""checkThisLater>footers</a> and annoying internet ads.</p>
+          <p>The <code>fixed</code> position is similar to absolute, but it takes it a step further. Not only is the position attached to a particular location,
+            it is attached to the location within the browser window. This means that the item will not scroll off the screen.
+            It is primarily used for <a href="#" class="checkThisLater">footers</a> and annoying internet ads.</p>
+<pre>
+      width: 100px;
+      padding: 10px;
+      text-align:center;
+      left: 40%;
+      bottom: 5%;
+      position:fixed;
+</pre>
+
+        <a id="changeToFixed" href="#" class="btn">Change to 'fixed' position</a>
+       <div class="codeExample" id="fixed">
+            <div class="box box1">Box 1</div>
+            <div class="box box2">Box 2</div>
+            <div class="box box3">Box 3</div>
+            <div class="box box4">Box 4</div>
+       </div>
+
         <h3>Inherit</h3>
           <p>Position declarations are not generally passed down to child elements (unlike declarations like font-size and background-color). The <code>inherit</code> position was designed so that you could do this.</p>
           
@@ -228,6 +247,19 @@
       $(this).html('Change to \'absolute\' position');
     });
 
+    $('#changeToFixed').toggle(function() {
+      $('#fixed .box4').css('left', '40%');
+      $('#fixed .box4').css('bottom', '5%');
+      $('#fixed .box4').css('position', 'fixed');
+      $('#fixed').append('<p>Scroll the window up and down and see how box 4 doesn\'t move.</p>');
+      $(this).html('Change back to \'static\' position');
+        }, function() {
+      $('#fixed p').hide();
+      $('#fixed .box4').css('left', '0');
+      $('#fixed .box4').css('bottom', '');
+      $('#fixed .box4').css('position', 'static');
+      $(this).html('Change to \'fixed\' position');
+    });
 
   </script>
   <script src="/assets/js/jquery.min.js"></script>
