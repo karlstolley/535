@@ -155,7 +155,28 @@
             <div class="box box4">Box 4</div>
        </div>        
         <h3>Absolute</h3>
-        <p>The <code>absolute</code> position declaration is just as obstinate as it sounds. It's for when you absolutely, positively, have to have something stuck in one damn place. Absolutely-positioned elements are removed from the <em>document flow</em>, meaning they will be placed within the browser according to their positioning statements and ignoring things like their containing elements and other elements that might also occupy that space. This is how you can layer one object over another: with the absolute position.</p>
+        <p>The <code>absolute</code> position declaration is just as obstinate as it sounds. It's for when you absolutely, positively, 
+          have to have something stuck in one damn place. Absolutely-positioned elements are removed from the <em>document flow</em>,
+          meaning they will be placed within the browser according to their positioning statements and ignoring things like their containing elements and other elements that might also occupy that space. 
+          This is how you can layer one object over another: with the absolute position.</p>
+        <p>For example, if we can drastically change the location of our Box 4 item, once we apply absolute positioning:</p>
+<pre>
+      width: 100px;
+      padding: 10px;
+      text-align:center;
+      top; 10px;
+      left: 200px;
+</pre>
+        <a id="changeToAbsolute" href="#" class="btn">Change to 'absolute' position</a>
+       <div class="codeExample" id="absolute">
+            <div class="box box1">Box 1</div>
+            <div class="box box2">Box 2</div>
+            <div class="box box3">Box 3</div>
+            <div class="box box4">Box 4</div>
+       </div>
+        <p>What happened? Exactly what we told the element to do: place itself--absolutely--ten pixels from the browser's top edge,
+          and 200 pixels from the browsers's left edge. Absolute position is a very powerful declaration: use it wisely.</p>
+        
         <h3>Fixed</h3>
           <p>The <code>fixed</code> position is similar to absolute, but it takes it a step further. Not only is the position attached to a particular location, it is attached to the location within the browser window. This means that the item will not scroll off the screen. It is primarily used for <a href="#" class=""checkThisLater>footers</a> and annoying internet ads.</p>
         <h3>Inherit</h3>
@@ -191,6 +212,20 @@
         }, function() {
       $('#relative .box').css('position', 'static');
       $(this).html('Change to \'relative\' position');
+    });
+
+    $('#changeToAbsolute').toggle(function() {
+      $('#absolute .box4').css('position', 'absolute');
+      $('#absolute .box4').css('top', '10px');
+      $('#absolute .box4').css('left', '200px');
+      $('#absolute').append('<p>Scroll up to the top of the window to see box 4.</p>');
+      $(this).html('Change back to \'static\' position');
+        }, function() {
+      $('#absolute p').hide();
+      $('#absolute .box4').css('top', '0');
+      $('#absolute .box4').css('left', '0');
+      $('#absolute .box4').css('position', 'static');
+      $(this).html('Change to \'absolute\' position');
     });
 
 
