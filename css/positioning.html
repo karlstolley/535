@@ -21,7 +21,7 @@
   <script src="/assets/js/bootstrap.min.js"></script>
   <script src="/assets/js/prettify/prettify.js"></script>
   <style type="text/css">
-
+    .clear {clear:both;}
     .h1Inline h1{display:inline; width: 50px;}
       .box {
       width: 100px;
@@ -45,6 +45,15 @@
       left: 20px;
       background:rgba(11, 186, 11, 0.3)
       url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAEklEQVQYlWNgoBL4T7GCoW8FAGEXBfvNSmHvAAAAAElFTkSuQmCC);
+    }
+
+    #float1{overflow:auto;}
+    #float1 div {
+      width: 25%;
+      margin: 0 20px 10px 0;
+      background: beige;
+      border: 1px solid red;
+      padding:10px;
     }
 
   </style>
@@ -230,7 +239,64 @@
        <p>Position inheritance can cause problems in complex layouts if your code is not well-documented.</p>
 
       <h2>The Float Declaration</h2>
-      
+
+      <p>Floats can give your site the consistent look and feel that once was only achieved by stuffing your text into a <code>table</code>.
+        They are also the cause of great frustration when things aren't displaying as you expected.</p>
+
+      <p>Floats allow elements to be removed from the normal document flow and positioned so that other elements can flow around them. They are often used to
+      create a newspaper-styled columnar format. Each heading and corresponding paragraph below is wrapped in its own <code>div</code> tag.</p>
+
+      <p>Right now, the items below are in their normal document flow. Here's what happens when we float those elements:</p>
+
+       <a id="floatLeft" href="#" class="btn">Float Items Left</a>
+       <div class="codeExample" id="float1">
+         <div>
+           <h3>Here is Heading 1</h3>
+           <p>Paragraph 1 text. Text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.</p>
+         </div>
+         <div>
+           <h3>Here is Heading 2</h3>
+           <p>Paragraph 2 text. Text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.</p>
+         </div>
+         <div>
+           <h3>Here is Heading 3</h3>
+           <p>Paragraph 3 text. Text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.</p>
+         </div>
+       </div>
+       <aside>Using styles like borders and background colors are very helpful when doing your initial layout--particularly if you're
+       seeing unexpected results. </aside>
+       <p>All that was needed was to apply a width and a float to the divs containing the headers and text. Here's the code that was used:</p>
+<pre>
+   &lt;div&gt;
+     &lt;h3&gt;Here is Heading 1&lt;/h3&gt;
+     &lt;p&gt;Paragraph 1 text. Text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div&gt;
+     &lt;h3&gt;Here is Heading 2&lt;/h3&gt;
+     &lt;p&gt;Paragraph 2 text. Text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div&gt;
+     &lt;h3&gt;Here is Heading 3&lt;/h3&gt;
+     &lt;p&gt;Paragraph 3 text. Text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.&lt;/p&gt;
+   &lt;/div&gt;
+</pre>
+       <p>And here's the style that was applied to it. Note that the <code>h3</code> and <code>p</code> elements are wrapped within a containing element:
+         <code>div</code>.It's much easier to float one larger containing element than to float each item individually.</p>
+<pre>
+  div {
+    width: 25%;
+    float:left;
+  }
+</pre>
+       <p>It's also very popular to use a float to flow text around an image, table, or other element. </p>
+
+      <p class="clear">If you only take away two points from this section, let it be these two:</p>
+      <ul>
+        <li>If you want text or other items to flow around your floated element, be sure to assign a width as well as a float.
+          If the element is by default a block-level display, then your next element will appear below the float.</li>
+        <li>When you want to stop the float of elements, assign a <code>clear</code> declaration to the following elelemt.</li>
+      </ul>
+
       <h4>Progress with this chapter</h4>
       <div class="progress">
           <div class="bar" style="width: 5%;"></div>
@@ -301,6 +367,14 @@
       $('#inherit .box').css('position', 'static');
       $('#inheritExplanation p').hide();
       $(this).html('Change to \'inherit\' position');
+    });
+
+    $('#floatLeft').toggle(function() {
+      $('#float1 div').css('float', 'left');
+      $(this).html('Remove float');
+        }, function() {
+      $('#float1 div').css('float', 'none');
+      $(this).html('Float items left');
     });
 
   </script>
