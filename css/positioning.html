@@ -76,8 +76,31 @@
             headings, images or videos: this, in short, is the box model. Some boxes are displayed as <em>block-level</em> elements, and some as 
             <em>inline</em> elements. Regardless, the following properties will affect how each box appears within the browser:
             </p>
-        
-        <h3>The Display Declaration</h3>
+
+            <ul>
+              <li>width</li>
+              <li>height</li>
+              <li>padding (amount of space between the element and its border)</li>
+              <li>margin (amount of space between the element's border and its adjacent elements)</li>
+              <li>position offsets: top, bottom, right, left</li>
+            </ul>
+
+            <p>all of these things will affect the box model. If an element has the following properties:</p>
+<pre>
+  width: 30%;
+  top: 20%;
+  left: 20px;
+  padding: 20px;
+  margin-bottom: 40px;
+  border: 2px dashed red;
+</pre>
+            <aside>You could also write the margin property this way: <code>margin: 0 0 40px 0</code>. This is helpful if you want to
+              specify different values for the top, right, bottom and left attributes but want to use only one line. Just learn the word
+              "TRouBLe" to remember the correct order.</aside>
+            <p>Below is an outline of how those declarations affect its position in the browser:</p>
+            <img src="/assets/img/box-model.png">
+
+            <h3>The Display Declaration</h3>
           <p>The <code>display</code> property because that also has an affect on where an item appears within its container. Ther are times </p>
           <ul>
             <li>Each box is placed on its own line. This tells us that the 'div' tag is a <em>block-level</em> element by default. Block level elements take up an entire line in the browser, even if the element's width is narrower than its container. All header tags: h1, h2, etc. and paragraph tags are block-level elements by default. </li>
