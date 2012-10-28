@@ -56,14 +56,16 @@
       float:right;
       margin: 0 0 0 20px;
     }
-    #float2{overflow:auto;}
-    #float2 div {
+    #float2, #float3, #float3{overflow:auto;}
+    #float2 div, #float3 div, #float4 div {
       width: 25%;
       margin: 0 20px 10px 0;
       background: beige;
       border: 1px solid red;
       padding:10px;
     }
+    #float4 div + p{clear:both;}
+
 
   </style>
 </head>
@@ -252,8 +254,15 @@
       <p>Floats can give your site the consistent look and feel that once was only achieved by stuffing your text into a <code>table</code>.
         They are also the cause of great frustration when things aren't displaying as you expected.</p>
 
+      <h3>The Float property accepts three values:</h3>
+      <ul>
+        <li><strong>left</strong>: float the element to the left side of its containing element (whether its another element of simple the browser window)
+          and flow other elements to its right.</li>
+        <li><strong>right</strong>: the opposite: float to the right and flow other elements around to the left.</li>
+        <li><strong>none</strong>: do not allow the element to float.</li>
+      </ul>
       <p>Floats allow elements to be removed from the normal document flow and positioned so that other elements can flow around them. One of
-      their main uses is to flow text around an image, like so:</p>
+      their main uses is to flow text around an image or table, like so:</p>
 
       <div class="codeExample" id="float1">
         <img src="/assets/img/apple.jpg" />
@@ -278,7 +287,7 @@ img{
 
       <p>Right now, the items below are in their normal document flow. Here's what happens when we float those elements:</p>
 
-       <a id="floatLeft" href="#" class="btn">Float Items Left</a>
+       <a id="floatLeft" href="#" class="btn">Float items left</a>
        <div class="codeExample" id="float2">
          <div>
            <h3>Here is Heading 1</h3>
@@ -311,16 +320,64 @@ img{
    &lt;/div&gt;
 </pre>
        <p>And here's the style that was applied to it. Note that the <code>h3</code> and <code>p</code> elements are wrapped within a containing element:
-         <code>div</code>.It's much easier to float one larger containing element than to float each item individually.</p>
+         <code>div</code>. It's much easier to float one larger containing element than to float each item individually.</p>
 <pre>
   div {
     width: 25%;
     float:left;
   }
 </pre>
-       <p>It's also very popular to use a float to flow text around an image, table, or other element. </p>
+       
+      <h3>All Clear</h3>
+      <p>You'll want to put an end to floating elements, eventually. Consider the above example if we have add another paragraph after our three columns:</p>
 
-      <p class="clear">If you only take away two points from this section, let it be these two:</p>
+       <a id="floatLeft3" href="#" class="btn">Float items left</a>
+       <div class="codeExample" id="float3">
+         <div>
+           <h3>Here is Heading 1</h3>
+           <p>Paragraph 1 text.</p>
+         </div>
+         <div>
+           <h3>Here is Heading 2</h3>
+           <p>Paragraph 2 text.</p>
+         </div>
+         <div>
+           <h3>Here is Heading 3</h3>
+           <p>Paragraph 3 text.</p>
+         </div>
+         <p>Here is a completely separate paragraph that has nothing to do with the columns above. And off I go, rambling on about nothing.
+         And on, and on, and on, and one, and on, and on, and one, and on, and on, and one, and on...</p>
+       </div>
+
+       <p>This can be corrected by applying the clear statement to the ending paragraph, like so:</p>
+
+<pre>
+  div + p {
+    clear:both;
+  }
+</pre>
+       <a id="floatLeft4" href="#" class="btn">Float items left and clear</a>
+      <div class="codeExample" id="float4">
+         <div>
+           <h3>Here is Heading 1</h3>
+           <p>Paragraph 1 text.</p>
+         </div>
+         <div>
+           <h3>Here is Heading 2</h3>
+           <p>Paragraph 2 text.</p>
+         </div>
+         <div>
+           <h3>Here is Heading 3</h3>
+           <p>Paragraph 3 text.</p>
+         </div>
+         <p>Here is a completely separate paragraph that has nothing to do with the columns above. And off I go, rambling on about nothing.
+         And on, and on, and on, and one, and on, and on, and one, and on, and on, and one, and on...</p>
+       </div>
+
+       <aside>If you have a complex layout, you can assign only the <code>left</code> or <code>right</code> values to the <code>clear</code>
+       property. However, you'll likely use the <code>both</code> value most often.</aside>
+
+      <p>If you only take away two points from this section, let it be these two:</p>
       <ul>
         <li>If you want text or other items to flow around your floated element, be sure to assign a width as well as a float.
           If the element is by default a block-level display, then your next element will appear below the float.</li>
@@ -407,6 +464,21 @@ img{
       $(this).html('Float items left');
     });
 
+    $('#floatLeft3').toggle(function() {
+      $('#float3 div').css('float', 'left');
+      $(this).html('Oh no! Remove float!');
+        }, function() {
+      $('#float3 div').css('float', 'none');
+      $(this).html('Float items left');
+    });
+
+    $('#floatLeft4').toggle(function() {
+      $('#float4 div').css('float', 'left');
+      $(this).html('Back to normal');
+        }, function() {
+      $('#float4 div').css('float', 'none');
+      $(this).html('Float items left and clear');
+    });
   </script>
   <script src="/assets/js/jquery.min.js"></script>
   <script src="/assets/js/bootstrap.min.js"></script>
