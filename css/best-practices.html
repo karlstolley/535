@@ -15,6 +15,19 @@
   <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
   <link href="/assets/css/prettify.css" rel="stylesheet">
 
+  <style type="text/css">
+    #group p.intro {
+      font-size: 20px;
+      font-family:fantasy;
+      color: #5D3706;
+    }
+    #group p {
+      font-size: 16px;
+      font-family: monospace;
+      color: #111111;
+    }
+  </style>
+
   <!--Custom styles-->
   <link href="/assets/css/custom.css" rel="stylesheet">
   <script src="/assets/js/jquery.min.js"></script>
@@ -43,7 +56,6 @@
         The DRY principle and other best practices. 
       </p>
 
-
       <h2>Using Multiple Selectors</h2>
       <p>Say I have four levels of headings in my document, and I want to make sure they all use the same font family. I could write the following style rules:</p>
 <pre>
@@ -71,6 +83,57 @@
 </pre>
       <p>The obvious advantage here is that you only need to change one line if you decide to use a different font. Another is that the code is much more readable;
       you can easily see that all of your headings are grouped into one line and add more rules as needed</p>
+
+      <h2>Start with the generics, then get specific</h2>
+
+      <p>List all of your general rules first, then add any specific instances later. This will keep one rule from getting accidentally overwritten by another.
+        Here's an example:</p>
+<pre>
+   &lt;h1&gt;All about me&lt;/h1&gt;
+     &lt;p class=&quot;intro&quot;&gt;My life story: it's a fascinating tale...&lt;/p&gt;
+     &lt;p&gt;The early years...&lt;/p&gt;
+     &lt;p&gt;The current years...&lt;/p&gt;
+</pre>
+
+      <p>The following rules show the specific class of "intro" being displayed <em>before</em> the generic <code>p</code> tag rules.</p>
+<pre>
+p.intro {
+      font-size: 20px;
+      font-family:fantasy;
+      color: #5D3706;
+}
+p {
+      font-size: 16px;
+      font-family: monospace;
+      color: #111111;
+}
+</pre>
+      <p>This would display perfectly fine in the browser due to the rule of <strong>specificity</strong> in CSS. This means that although it appears as if
+      the generic <code>p</code> rule should override the <code>p.intro</code> rule when displaying that first paragraph, it won't because the addition
+      of a class name is more specific than a generic element.</p>
+      <div class="codeExample" id="group">
+         <h1>All about me</h1>
+           <p class="intro">My life story: it's a fascinating tale...</p>
+           <p>The early years...</p>
+           <p>The current years...</p>
+      </div>
+      <p>Still, it makes more sense to have your generic CSS rules grouped together, then more-specific rules.</p>
+<pre>
+p {
+      font-size: 16px;
+      font-family: monospace;
+      color: #111111;
+}
+p.intro {
+      font-size: 20px;
+      font-family:fantasy;
+      color: #5D3706;
+}
+</pre>
+
+      <h2>Group like elements together</h2>
+
+
       <footer>
         <p>Page last updated by Christine McClure</p>
       </footer>
