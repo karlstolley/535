@@ -149,6 +149,22 @@ p.intro {
 
       <h2>Group like elements together</h2>
 
+      <p>Once your CSS rules grow in number, you can spend a lot of time finding them in your document. Comments will help alleviate this, but so will
+      grouping like elements together.</p>
+<pre>
+footer {
+  padding: 20px;
+  background-color: white;
+}
+
+footer p {
+  font-size: 10px;
+}
+
+footer p + p { /* second paragraph */
+  float:right;
+}
+</pre>
 
       <footer>
         <p>Page last updated by Christine McClure</p>
