@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>CSS: Selectors</title>
+  <title>CSS: Best Practices</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!--Brief page description:-->
@@ -34,7 +34,7 @@
     <article class="row-fluid">
       <header>
         <hgroup class="hero-unit">
-          <h1>Rules for Multiple Selectors</h1>
+          <h1>Best Practices</h1>
         </hgroup>
       </header>
 
@@ -43,6 +43,13 @@
         Using the DRY (Don't Repeat Yourself) principle within CSS.
       </p>
 
+      <p>If there are CSS style rules that you'd like to apply to many elements, that's easily done. All you need to do is separate them with
+        commas in the CSs rules.</p>
+<pre>
+  h1, h2, h3, h4 {
+    font-family
+  }
+</pre>
       <footer>
         <p>Page last updated by Christine McClure</p>
       </footer>
