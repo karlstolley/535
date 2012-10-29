@@ -36,6 +36,21 @@
       font-weight:bold;
       font-family: "Helvetica", "Arial", sans-serif;
     }
+    #multipleClasses .center{
+      text-align:center;
+    }
+
+    #multipleClasses .header{
+      color: #A913BD;
+      font-weight:900;
+    }
+
+    #multipleClasses .footer{
+      color: #80248C;
+      font-weight:900;
+      font-size:10px;
+      margin: 40px 0 0 0;
+    }
   </style>
   <!--Custom styles-->
   <link href="/assets/css/custom.css" rel="stylesheet">
@@ -145,9 +160,45 @@
 
       <h3>Multiple classes</h3>
       <p>You can also assign multiple classes to an element. This is helpful when you want to apply rules to different elements without having to repeat yourself
-        (DRY: don't Repeat Yourself).</p>
-      <h2>IDs</h2>
+        (remember the DRY principle: don't Repeat Yourself).</p>
 
+      <p>Here's the code:</p>
+<pre>
+  &lt;h1 <span class="exampleAside">class=&quot;center header&quot;</span>&gt;This is an H1 tag&lt;/h1&gt;
+  &lt;h2 <span class="exampleAside">class=&quot;center header&quot;</span>&gt;This is an H2 tag&lt;/h2&gt;
+  &lt;p <span class="exampleAside">class=&quot;center&quot;</span>&gt;Here is a paragraph of text.&lt;/p&gt;
+  &lt;p <span class="exampleAside">class=&quot;center&quot;</span>&gt;Here is another paragraph of text.&lt;/p&gt;
+  &lt;p <span class="exampleAside">class=&quot;center footer&quot;</span>&gt;This is the footer: &amp;copy;2012&lt;/p&gt;
+</pre>
+      <p>Here are the CSS rules:</p>
+<pre>
+.center{
+      text-align:center;
+ }
+
+ .header{
+    color: #A913BD;
+    font-weight:900;
+  }
+
+ .footer{
+    color: #80248C;
+    font-weight:900;
+    font-size:10px;
+    margin: 40px 0 0 0;
+  }
+</pre>
+      <p>And here's the result:</p>
+      <div class="codeExample" id="multipleClasses">
+        <h1 class="center header">This is an H1 tag</h1>
+        <h2 class="center header">This is an H2 tag</h2>
+        <p class="center">Here is a paragraph of text.</p>
+        <p class="center">Here is another paragraph of text.</p>
+        <p class="center footer">This is the footer: &copy;2012</p>
+      </div>
+
+      <h2>IDs</h2>
+      <p>Using an <strong>Identification Number</strong></p>
       <footer>
         <p>Page last updated by Christine McClure</p>
       </footer>
