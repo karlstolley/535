@@ -15,9 +15,9 @@
   <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
   <link href="/assets/css/prettify.css" rel="stylesheet">
   <style type="text/css">
+    .codeExample{overflow:auto;}
     #columnsEx{
       width: 50%;
-      overflow:auto;
       font-size: 18px;
       font-family: "New Century Schoolbook", "Times New Roman", serif;
     }
@@ -50,6 +50,16 @@
       font-weight:900;
       font-size:10px;
       margin: 40px 0 0 0;
+    }
+
+    #IDsMustBeUnique {
+      width: 20%;
+      float:right;
+      background-color: yellow;
+      margin: 20px 0;
+      padding: 20px;
+      border: 4px solid brown;
+      font-size: 18px;
     }
   </style>
   <!--Custom styles-->
@@ -198,7 +208,41 @@
       </div>
 
       <h2>IDs</h2>
-      <p>Using an <strong>Identification Number</strong></p>
+      <p>Using an <strong>Identification Number (ID)</strong> in CSS rules is very similar to using classes: you assign the ID name to an HTML element then create a 
+      style rule for it. The two main differences are:</p>
+      <ul>
+        <li>The structure for writing a style rule for an ID is <code>#&lt;idname&gt;</code>.</li>
+        <li>ID names must be <strong>unique</strong> to the document. Applying the same ID name to more than one HTML element will cause unexpected results in the browser. </li>
+      </ul>
+      <aside>ID names are used only once to ensure that a single element can be identified within an HTML document. IDs are often use with <a href="/js">JavaScript</a>
+        functions to effect changes on a page.</aside>
+      <p>The code:</p>
+<pre>
+    &lt;p&gt;Here is a plain, boring paragraph.&lt;/p&gt;
+    &lt;p&gt;Here is a another paragraph.&lt;/p&gt;
+    &lt;p&gt;And another.&lt;/p&gt;
+    &lt;p id=&quot;IDsMustBeUnique&quot;&gt;Whoa! what's going on here?&lt;/p&gt;
+</pre>
+      <p>The style rule:</p>
+<pre>
+    #IDsMustBeUnique {
+      width: 20%;
+      float:right;
+      background-color: yellow;
+      margin: 20px 0;
+      padding: 20px;
+      border: 4px solid brown;
+      font-size: 18px;
+    }
+</pre>
+      <p>The result</p>
+      <div class="codeExample" id="IDEx">
+        <p>Here is a plain, boring paragraph.</p>
+        <p>Here is a another paragraph.</p>
+        <p>And another.</p>
+        <p id="IDsMustBeUnique">Whoa! what's going on here?</p>
+      </div>
+
       <footer>
         <p>Page last updated by Christine McClure</p>
       </footer>
