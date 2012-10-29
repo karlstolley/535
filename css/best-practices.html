@@ -147,6 +147,29 @@ p.intro {
 }
 </pre>
 
+      <h2>Use inheritance to your advantage</h2>
+        <p>Some style properties for a child element will be inherited from its parent. Without getting into the <a href="http://www.w3.org/TR/CSS2/cascade.html">official specification</a>, you can
+        generally count on things like color, font size and family to be inheritable styles. Other style rules, like position, are not inherited by default,
+        but can be specified to do do.</p>
+        <p>This can help you set up the basic elements of your document like font size and color without having to specific every element that you
+        might use. Instead of having to write:</p>
+
+<pre>
+  h1, h2, h3, h4, h5, h6, p, li /*and so on*/ {
+    font-family: Helvetica, Arial, sans-serif;
+    color: brown;
+    margin: 10px;
+  }
+</pre>
+        <p>All you need to do is this:</p>
+<pre>
+ html {
+    font-family: Helvetica, Arial, sans-serif;
+    color: brown;
+    margin: 10px;
+  }
+</pre>
+        <p>Since all elements are descendants from the <code>html</code> element, you can specific your generic options there.</p>
       <h2>Group like elements together</h2>
 
       <p>Once your CSS rules grow in number, you can spend a lot of time finding them in your document. Comments will help alleviate this, but so will
