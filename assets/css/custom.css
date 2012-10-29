@@ -60,6 +60,9 @@ body {
 	margin: 20;
 }
 
+.intexthtml {
+	background-color: #D3BECF;
+}
 .splitsample {
 
 }
@@ -75,4 +78,13 @@ body {
 .htmlaside {
 	float: right;
 	background-color: #FFE1FF;
+}
+
+#sidenav {
+	
+}
+
+.span2 {
+	margin-top: 20px;
+	
 }
