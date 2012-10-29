@@ -43,9 +43,20 @@
         Think you're limited to using only HTML elements as selectors? Think again.
       </p>
 
-      <p>You can also specify a CSS style using <em>classes</em> and <em>identifiers</em> (IDs). Classes and IDs can be added to HTML elements to indicate specific elements. For example, if you attached a CSS style to a generic &lt;p&gt; tag, <em>all</em> &lt;p&gt; tags would be affected:</p>
+      <p>So far, we've only discussed creating style rules for HTML elements. But using <em>classes</em> and <em>IDs</em> to create style rules allows
+        For example, if you create a style rule for the <code>p</code> paragraph tag, this will apply to <strong>all</strong> paragraphs in your document,
+        and that might not be what you want. Classes and IDs are special <a href="/css/selectors.html">selectors</a> that can be applied to a subset of
+      HTML elements</p>
 
-      <p>Also used by Javascript to act on specific elements</p>
+      <p>For example, the first paragraph in this section ("Think you're limited...") is a paragraph, but the style is different than the other paragraphs.
+      That's because this paragraph has been assigned the class name of "lead."</p>
+<pre>
+  &lt;p class=&quot;lead&quot;&gt;
+    Think you're limited to using only HTML elements as selectors? Think again.
+  &lt;/p&gt;
+</pre>
+      <p>This let me assign CSS rules that only apply to elements that have that class name.</p>
+
 
       <footer>
         <p>Page last updated by Christine McClure</p>
