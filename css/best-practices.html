@@ -40,16 +40,37 @@
 
 
       <p class="lead">
-        Using the DRY (Don't Repeat Yourself) principle within CSS.
+        The DRY principle and other best practices. 
       </p>
 
-      <p>If there are CSS style rules that you'd like to apply to many elements, that's easily done. All you need to do is separate them with
-        commas in the CSs rules.</p>
+
+      <h2>Using Multiple Selectors</h2>
+      <p>Say I have four levels of headings in my document, and I want to make sure they all use the same font family. I could write the following style rules:</p>
 <pre>
-  h1, h2, h3, h4 {
-    font-family
+  h1 {
+    font-family:  "New Century Schoolbook", "Times New Roman", serif;
+  }
+  h2 {
+    font-family:  "New Century Schoolbook", "Times New Roman", serif;
+  }
+  h3 {
+    font-family:  "New Century Schoolbook", "Times New Roman", serif;
+  }
+  h3 {
+    font-family:  "New Century Schoolbook", "Times New Roman", serif;
   }
 </pre>
+      <p>There's nothing technically wrong with these rules: they'll display just fine in the browser. The problem is that this violates a core principle in
+        programming: <strong>DRY</strong>. It stands for "Don't Repeat Yourself" and is a reminder to re-use code and logic whenever possible (or: whenever it makes)
+        sense to do so). You apply the DRY principle in CSS. If there are  style rules that you'd like to apply to many elements, all you need to do is separate them with
+        commas in the CSS rules. Here's how we can make the above code DRY-compliant:</p>
+<pre>
+  h1, h2, h3, h4 {
+    font-family:  "New Century Schoolbook", "Times New Roman", serif;
+  }
+</pre>
+      <p>The obvious advantage here is that you only need to change one line if you decide to use a different font. Another is that the code is much more readable;
+      you can easily see that all of your headings are grouped into one line and add more rules as needed</p>
       <footer>
         <p>Page last updated by Christine McClure</p>
       </footer>
