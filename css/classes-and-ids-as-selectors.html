@@ -14,7 +14,29 @@
   <link href="/assets/css/bootstrap.css" rel="stylesheet">
   <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
   <link href="/assets/css/prettify.css" rel="stylesheet">
-
+  <style type="text/css">
+    #columnsEx{
+      width: 50%;
+      overflow:auto;
+      font-size: 18px;
+      font-family: "New Century Schoolbook", "Times New Roman", serif;
+    }
+    #columnsEx div {
+      width: 40%;
+      margin: 0 20px 10px 0;
+      float:left;
+      padding:10px;
+    }
+    #columnsEx p{
+      clear:both;
+    }
+    #columnsEx .column{
+      font-size: 12pt;
+      color: #0C17AB;
+      font-weight:bold;
+      font-family: "Helvetica", "Arial", sans-serif;
+    }
+  </style>
   <!--Custom styles-->
   <link href="/assets/css/custom.css" rel="stylesheet">
   <script src="/assets/js/jquery.min.js"></script>
@@ -51,13 +73,80 @@
       <p>For example, the first paragraph in this section ("Think you're limited...") is a paragraph, but the style is different than the other paragraphs.
       That's because this paragraph has been assigned the class name of "lead."</p>
 <pre>
-  &lt;p class=&quot;lead&quot;&gt;
+  &lt;p <span class="exampleAside">class=&quot;lead&quot;</span>&gt;
     Think you're limited to using only HTML elements as selectors? Think again.
   &lt;/p&gt;
 </pre>
       <p>This allowed me to assign CSS rules that only apply to elements that have the class name of "lead".</p>
       
+      <h2>Classes</h2>
 
+      <p>Classes are used when you want to apply an action to <em>one or more</em> HTML elements. An "action" in this chapter refers to CSS style rules,
+      but it could also refer to a <a href="/js">JavaScript</a> method. In the next example, we'll create a class to use on some text columns.</p>
+
+      <div class="codeExample" id="columnsEx">
+         <h1>Fascinating headline here...</h1>
+         <div>
+           <p>Column 1: text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.</p>
+         </div>
+         <div>
+           <p>Column 2: text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.</p>
+         </div>
+         <p>Here is a completely separate paragraph that has nothing to do with the columns above. And off I go, rambling on about nothing.
+         And on, and on, and on, and one, and on, and on, and one, and on, and on, and one, and on...</p>
+      </div>
+
+      <p>Looking at the code below, there are three different paragraphs. If we create a style rule for the <code>p</code> tag, then the last paragraph
+      will also be affected.</p>
+<pre>
+&lt;h1&gt;Fascinating headline here...&lt;/h1&gt;
+ &lt;div&gt;
+   &lt;p&gt;Column 1: text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;div&gt;
+   &lt;p&gt;Column 2: text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;p&gt;Here is a completely separate paragraph ...&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+      <p>Instead, we can add a class name to our column paragraphs. Note that when you assign a class name to an <strong>HTML element</strong>, the structure used is
+        <code>&lt;element class=&quot;&lt;className&gt;&quot;&gt;</code></p>
+<pre>
+   &lt;h1&gt;Fascinating headline here...&lt;/h1&gt;
+   &lt;div&gt;
+     &lt;p <span class="exampleAside">class=&quot;column&quot;</span>&gt;Column 1: text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div&gt;
+     &lt;p <span class="exampleAside">class=&quot;column&quot;</span>&gt; Column 2: text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;p&gt;Here is a completely... &lt;/p&gt;
+</pre>
+      <p>Then, write a style rule for that class. When indicating a class name in a <strong>style rule</strong>, a different structure is used: <code>.&lt;classname&gt;</code>.</p>
+<pre>
+.column{
+      font-size: 12pt;
+      color: #0C17AB;
+      font-weight:bold;
+      font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;
+}
+</pre>
+      <p>this is the result:</p>
+      <div class="codeExample" id="columnsEx">
+         <h1>Fascinating headline here...</h1>
+         <div>
+           <p class="column">Column 1: text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.</p>
+         </div>
+         <div>
+           <p class="column"> Column 2: text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.</p>
+         </div>
+         <p>Here is a completely separate paragraph that has nothing to do with the columns above. And off I go, rambling on about nothing.
+         And on, and on, and on, and one, and on, and on, and one, and on, and on, and one, and on...</p>
+      </div>
+
+      <h3>Multiple classes</h3>
+      <p>You can also assign multiple classes to an element. This is helpful when you want to apply rules to different elements without having to repeat yourself
+        (DRY: don't Repeat Yourself).</p>
+      <h2>IDs</h2>
 
       <footer>
         <p>Page last updated by Christine McClure</p>
