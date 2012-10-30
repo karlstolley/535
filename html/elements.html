@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Subject Area: HTML5</title>
+  <title>HTML5: Tags, Attributes, and Elements</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!--Brief page description:-->
@@ -30,28 +30,31 @@
   <div class="container-fluid">
 
     <header id="page-header">
-      <h1>HTML 5</h1>
+      <h1 id="head">HTML 5</h1>
     </header>
     
      
-     <h2> Tags, Attributes, and Elements </h2>
-          <div class="row">
-          <nav class="span2">
-          <ul id="sidenav"> 
+     <div class="row">
+          <div class="span12">
+           <div class="row">
+          
+           <nav class="span2">
+          <ul class="nav nav-tabs"> 
           	<li><a href="index.html">HTML 5</a></li>
           	<li><a href="overview.html">Overview</a></li>
-          	<li><a href="elements.html">Tags, Attributes, and Elements</a></li>
+          	<li><a href="#">Tags, Attributes, and Elements</a></li>
           	<li><a href="head.html">The Head</a></li>
           	<li><a href="structure.html">Structure and Layout</a></li>
           	<li><a href="images.html">Links and Images</a></li>
 	        <li><a href="tables.html">Tables</a></li>
           	<li><a href="forms.html">Forms</a></li>
           	<li><a href="beyondbasics.html">Beyond the Basics</a></li>
-
+		</ul>
           	</nav>
-        
-          <article class="span9">
-     <p> So, let's take another look at our HTML5 project. And this time from the behind the scenes, that is, the html version.</p>
+          <article class="span8">
+    <h2> Tags, Attributes, and Elements</h2>
+
+     <p> So, let's take another look at our HTML5 project. And this time from the behind the scenes, that is, the HTML version.</p>
 <!-- image of final product, side by side with html -->
     <img src="images/sampleproject.png" alt="sample project">
      
@@ -135,24 +138,20 @@
 <p>There is clearly a lot that went into such a simple looking document, but before we go on, let's define some terminology.</p>
     
 <h3>Tags</h3>
-<p> A tag is the simplest unit of HTML, which basically defines the language. The tags are what the browser reads to determine how to render the code into a webpage. A browser recognizes an HTML tag by the &lt; &gt; which encloses the particular instruction. Like bookends, the &lt; and &gt; lets the browser know when the tag begins (&lt;) and ends (&gt;). Let's take another look at the project code for an example.  On the second line, we see the <span class="prettyprint"> &lt;html&gt; </span> tag. The &lt;html&gt; lets the browser know that the what follows is a webpage. </p>
-<p>But wait, there's more. Just as the tag needed to have both an &lt; and an &gt;, to define it as such, the element that the tag modifies needs it as well, which is defined by &lt;/&gt;. So think of each tag as a set of bookends, one at the beginning, also called a start tag, &lt; &gt; and one at the end, a closing or end tag &lt; / &gt;. [aside: some browsers allow for a looser format and may not require an ending tag but, best practices require both start and end tags] There are two exceptions to this "bookend" rule: one we discussed earlier - &lt;!DOCTYPE html&gt;which tells the browser which version of html it is using; and the second is &lt;/br&gt;, which we'll discuss in the "Structure and Layout" section.
+<p> A tag is the simplest unit of HTML, and basically defines the language.  Browsers read tags for instructions on how to display the content in a webpage. A browser recognizes an HTML tag by the &lt; and &gt; that enclose each particular instruction. Acting as bookends, the &lt; and &gt; lets the browser know when the tag begins (&lt;) and ends (&gt;). Let's take another look at the project code above for an example.  On the second line, we see the <span class="intexthtml"> &lt;html&gt; </span> tag. The <span class="intexthtml"> &lt;html&gt; </span> lets the browser know that the what follows is a webpage. </p>
+<p>But wait, there's more. Just as the tag needs both an &lt; and an &gt;, to define it, the element that the tag modifies needs something to let the browser know when the instruction ends, the &lt;/&gt;. So think of each tag as a set of bookends, one at the beginning, called a start or opening tag, &lt; &gt; and one at the end, a end or closing   tag &lt; / &gt;. [aside: some browsers allow for a looser format and may not require an ending tag but, best practices require both start and end tags] There are three exceptions to this "bookend" rule: one we discussed earlier - &lt;!DOCTYPE html&gt;which tells the browser which version of html it is using; &lt;/br&gt;, which we'll discuss in the next sections.
 </p>
 <p>As we return to our example, we can see that the &lt;html&gt; start tag at the beginning, has a closing bookend tag, &lt;/html&gt; all the way at the very end of the page. In fact, it's the last tag, which makes sense because it is basically telling the browser that there is nothing more to the webpage.
-start and end tags, also called opening and closing tags
 </p>
 
 <h3>Attributes</h3>
-<p> An attribute is part of the tag that gives you more information about it. It is always found in the opening tag, after the tag name (in this case html) and before the end &gt;. An attribute consists of a name and a value. Let's look at the html example again. In the opening &lt;html&gt; tag, there is the attribute lang="en". Here the name is lang which defines the language for this particular html document, and the value en, which tells you the language is English. The value is always enclosed in quotes " ".
+<p> An attribute is part of the tag that gives additional instruction to the browser. It is always found in the opening tag, after the tag name (in this case html) and before the end &gt;. An attribute consists of a name and a value. Let's look at the html example again. In the opening &lt;html&gt; tag, there is the attribute lang="en". Here the name is lang which defines the language for this particular html document, and the value en, which tells you the language is English. The value is always enclosed in quotes " ".
 
 <p> You will get much more involved with attributes as you learn about CSS.</p>
-
 
 <h3>Elements </h3>
 <p> An element consists of a set of opening and closing tags and the information it encloses, including the attributes and values. For example, in the sample project, we see that there are more than one meta elements, which we will learning more about in the next section, each of which begin with the opening meta tag &lt;/meta&gt; has some information then end with the closing tag &lt;/meta&gt;. The tags by themselves &lt;meta&gt; and &lt;/meta&gt;are simply tags.</p>
 <p> Sometimes you may see, the term element used interchangeably with tag. Let's take for example the element &lt;!DOCTYPE html&gt;. It is an element that stands by itself.  Let's find another example. below that is &lt;html&gt;. but not simply &lt;html&gt;, it also includes the tag and value, <span class="prettyprint"> lang="en"</span> where the tag is lang and the value is en.</p>
-
-
 
 <p>Now that we have some of the definitions out of the way, let's move on to the next section and see how webpages are put together, beginning with <a href="head.html">the head</a>.</p>
 
