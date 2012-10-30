@@ -16,6 +16,7 @@
 
   <!--Custom styles-->
   <link href="/assets/css/custom.css">
+  <link href="styles/js-tutorial.css" rel="stylesheet">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -53,10 +54,201 @@
         <p>
         In the last section, we created a series of nested objects.
         We created a car object. Inside of that object was a driver
-        object.
+        object. A car might also have a passenger object. We can visualize
+        this object hierarchy like this:
         </p>
 
-      <footer class="span8 offset3">
+        <p>
+        [TODO: Insert Figure here.]
+        </p>
+
+        <p>
+        When we graph out this object hierarchy, we get a graph that we
+        call a <em>tree</em>. We call each object in the tree a <em>node</em>,
+        and we can describe different relationships between nodes. At the
+        <em>root</em> of our tree is the car object. The driver object
+        is a <em>child</em> of car, because it is directly below it
+        in the object hierarchy. We can also describe car then as driver's
+        <em>parent</em>. What we're establishing here is a <em>model</em> --
+        we are creating a way to describe the relationships between different
+        the car object and its various properties. You might say we are
+        establishing a <em>Car Object Model</em>.
+        </p>
+
+        <p>
+        When we use JavaScript in an HTML document to manipulate that document,
+        we use the <em>Document Object Model</em>. When your web browser loads
+        an HTML page, it constructs a model for that page very similar to the
+        model we just made up. For example, say you have a simple HTML that
+        looks like this:
+
+        <br />
+        <pre>
+        <code>
+        TODO: Put example here.
+        </code>
+        </pre>
+        <br />
+
+        Like with our car object, we can imagine this HTML document as a set
+        of object nodes:
+        <br /><br />
+        TODO: Put figure here
+        <br /><br />
+        </p>
+
+        <p>
+        The Document Object Model, or DOM, is very similar to the object model
+        we came up with earlier, except the object nodes correspond to HTML
+        elements. At the root of our model we have the <em>document</em> node.
+        The descendents of the document node are the various HTML elements
+        in the document in the same hierarchical structure as they appear in the
+        HTML file.
+        </p>
+
+        <p>
+        In the last chapter we discussed how it might be convenient to have
+        functions on objects that help us find different child objects, for
+        example, <code>car.getPassengerByName("Kurt")</code>. Luckily, JavaScript's
+        DOM API gives us several ways to traverse the document nodes. A couple
+        examples are <code>getElementById</code> and <code>getElementsByTagName</code>.
+        </p>
+
+        <p>
+        At this point, we should be able to analyze the code you used to make
+        the button change the background color. Let's take another look at it
+        and break it down.
+        </p>
+
+        <pre>
+        <code>
+          var btn = document.getElementById("color-change-button");
+
+          btn.onclick = buttonClickHandler;
+
+          function buttonClickHandler() {
+            var randomColor = getRandomColor();
+            document.body.style.background = randomColor;
+          }
+        </code>
+        </pre>
+
+        <p>
+        Our first line here is
+
+        <br />
+        <code>var btn = document.getElementById("color-change-button");</code>
+        <br />
+
+        We're calling <code>getElementById</code> on the document object. This
+        traverses the DOM and finds an element with the ID <code>color-change-button</code>.
+        We then store that object in a variable called <code>button</code>.
+        </p>
+
+        <p>
+        Our next line is
+
+        <br />
+        <code>btn.onclick = buttonClickHandler;</code>
+        <br />
+
+        Remember that <code>btn</code> is a variable that contains an object that
+        represents an HTML button. One of the properties on button objects is
+        <code>onclick</code>. The value we assign to this property is a function
+        that will fire when someone clicks the button. Here we just give it the
+        name of a function, which we define in the following lines.
+        </p>
+
+        <aside>
+        Other examples of properties on button you can assign functions to are
+        <code>onmouseover</code> and <code>ondblclick</code>.
+        </aside>
+
+        <p>
+        Let's examine the buttonClickHandler function
+
+        <pre>
+        <code>
+        function buttonClickHandler() {
+          var randomColor = getRandomColor();
+          document.body.style.background = randomColor;
+        }
+        </code>
+        </pre>
+        </p>
+
+        <p>
+        The <code>getRandomColor</code> function is just a convenience function
+        that returns a random color (note: this is not a standard JavaScript function,
+        but rather one that was written for the purpose of this exercise.) In
+        the first line of the function, we are just calling that and storing the value
+        it returns in a variable called randomColor.
+        </p>
+
+        <p>
+        The next line is where it gets interesting. So far we've looked at how
+        we can use the DOM to retrieve a certain element. In the case of a button,
+        we then assigned a function value to a property on that object. In this
+        case, we're first accessing the <code>body</code> property on document.
+        This just refers to the DOM object for the body element in our HTML document.
+        Then, we access the <code>style</code> property on the body object.
+        The style property is an object whose properties allow us to manipulate
+        the styling of an HTML element. So when we set the <code>background</code>
+        property to our randomColor variable, it changes the background color
+        of the body element to that value.
+        </p>
+
+        <h1>Another Exercise</h1>
+
+        <p>
+        <div id="change-my-background-color">
+          Please change my background color!
+        </div>
+        </p>
+
+        <p>
+        The text above is inside a div with the id <code>change-my-background-color</code>.
+        Using your JavaScript console, try to enter code that will change the
+        background color of the div when you move your mouse over it. Hint: The
+        div DOM element has an <code>onmouseover</code> event you can assign a function
+        to, similar to what we did before with the button.
+        </p>
+
+        <p>
+        Remember that what you'll want to do first is get the DOM element that
+        represents that div element, and you'll probably want to store it
+        in a variable. Once it's in a variable, you can assign a function to
+        its <code>onmouseover</code> property that uses the style property
+        to change the background color of the div.
+        If you get stuck, click the button below to see a solution, but try
+        to work at it on your own first.
+        </p>
+
+        <button type="button" class=btn" id="show-solution">Show solution</button>
+
+        <div id="solution">
+        <pre>
+        <code>
+        var myDiv = document.getElementById("change-my-background-color")
+        myDiv.onmouseover = mouseOverEventHandler;
+        function mouseOverEventHandler() {
+          myDiv.style.background = "red";
+        }
+        </code>
+        </pre>
+
+        </div>
+
+        <p>
+        Extra credit: You now know  that <code>onmouseover</code> is an event that
+        fires when you move your mouse over an element. <code>onmouseout</code> is
+        an event that fires when your mouse was on an element and then you move it
+        off. Knowing about these two events, can you think of how you would write
+        code that would change the background color of the div when you move your
+        mouse over the div, and then change it back when you move your mouse off?
+        </p>
+
+        <footer class="span8 offset3">
         <p>Page last updated by Matthew Heston</p>
       </footer>
     </article>
@@ -72,5 +264,6 @@
   <!-- Placed at the end of the document so the pages load faster -->
   <script src="/assets/js/jquery.min.js"></script>
   <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="scripts/js-tutorial.js"></script>
 </body>
 </html>

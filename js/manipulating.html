@@ -200,6 +200,51 @@
         </p>
 
         <p>
+        We began this section by describing objects as a container for
+        a set of name-value properties, such as <em>Make</em> and <em>Model</em>.
+        There's one last thing we need to know about objects: in addition
+        to containing properties, objects can also contain <em>functions</em>.
+        Imagine our car object had a function called <code>getDriver</code> that
+        returned a value of the driver object in the car. So to store the
+        driver object in a variable, we could call:
+
+        <br />
+        <code>
+          var driver = car.getDriver();
+        </code>
+        <br />
+
+        This is semantically equivalent to the following:
+
+        <br />
+        <code>
+          var driver = car.driver;
+        </code>
+        <br />
+
+        so there wouldn't necessarily be a lot of utility in this function.
+        </p>
+
+        <p>
+        But what if car had another property called <code>passengers</code> that
+        was a list of all passengers in the car? How could you find a specific
+        passenger? There might be different ways to go about this, but the most
+        convenient would be if there was some sort of function like <code>getPassengerByName</code>
+        that you could call like this:
+
+        <br />
+        <code>
+          var kurt = car.getPassengerByName("Kurt");
+        </code>
+        <br />
+
+        We'll revisit these ideas more in the next chapter, but the important
+        thing to keep in mind is that objects as containers can also contain
+        functions, and one use of those functions might be to provide
+        an easy way to access different properties of the object.
+        </p>
+
+        <p>
         Be proud of yourself for making it through this section! Objects
         are unlike anything we have seen yet in JavaScript. The important
         thing to remember is that when you see something like

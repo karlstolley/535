@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript: Using Script Files</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Brief page description:-->
+  <meta name="description" content="">
+  <!--Name(s) of primary authors-->
+  <meta name="author" content="">
+
+  <!--Styles-->
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+  <!--Custom styles-->
+  <link href="/assets/css/custom.css">
+  <link href="styles/js-tutorial.css" rel="stylesheet">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+
+  <div class="container-fluid">
+
+    <header id="page-header">
+      <h1>JavaScript</h1>
+    </header>
+
+    <article class="row-fluid">
+      <header>
+        <hgroup class="hero-unit">
+          <h1>Using Script Files</h1>
+        </hgroup>
+      </header>
+      <section class="span8 offset3 clearfix">
+
+      <p class="lead">
+      So far, you've only used JavaScript using your in browser console. Obviously,
+      this approach has some limitations. When you publish a web page, you want
+      your JavaScript scripts deployed with it. We are going to take a break from
+      JavaScript as a language and look into how to incorporate scripts with your
+      web page.
+      </p>
+
+      <p>
+      There are two main ways to use JavaScript in your web pages. They both involve
+      using the <code>script</code> tag. Let's take a look at a short example.
+      </p>
+
+      <pre>
+      <code>
+      &lt;html&gt;
+      &lt;head&gt;
+      &lt;script type=&quot;text/javascript&quot;&gt;
+      alert(&quot;Hello, world!&quot;);
+      &lt;/script&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+      This is my web page.
+      &lt;/body&gt;
+      &lt;/html&gt;
+      </code>
+      </pre>
+
+      <p>
+      This is obviously a fairly trivial example, but it demonstrates the use
+      of the script tag. You can put a script tag on your page, and any code
+      that you put inside these tags will be interpreted as a script.
+      </p>
+
+      <p>
+      Usually we don't want to put JavaScript directly in our HTML pages, though.
+      It's best to separate concerns, so we should keep our JavaScript in a separate
+      file. To achieve the same effect as above, but without putting JavaScript
+      directly into our HTML, we would first create a file called <code>alert.js</code>
+      In this file we would put only our JavaScript code.
+      <br /><br />
+      <code>alert(&quot;Hello, world!&quot;);</code>
+      <br /><br />
+      Then, in our HTML, we would do the following.
+      </p>
+
+      <pre>
+      <code>
+      &lt;html&gt;
+      &lt;head&gt;
+      &lt;script type=&quot;text/javascript&quot; src=&quot;alert.js&quot;&gt;
+      &lt;/script&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+      This is my web page.
+      &lt;/body&gt;
+      &lt;/html&gt;
+      </code>
+      </pre>
+
+      <p>
+      What we did here was add a <code>src</code> attribute to the <code>script</code>
+      tag that points to where our JavaScript file is. If we had put the file inside
+      a scripts folder, we would write:
+      </p>
+
+      <code>
+        &lt;script type=&quot;text/javascript&quot; src=&quot;scripts/alert.js&quot;&gt;
+      </code>
+
+      <p>
+      Besides separation of concerns and keeping JavaScript out of our HTML, this
+      approach is good for reusing certain scripts across web pages. In this example,
+      our script was only one line long. But imagine if we had a 50 line script
+      that we want to run on every page of our web site. With the first approach we
+      looked at, we'd have to copy and paste that script on every page. By using the
+      <code>src</code> attribute, it's easy to include that 50 line script across
+      many web pages by just using one script tag.
+      </p>
+
+      <h1>JavaScript Libraries</h1>
+
+      <p>
+      When you entered the code into your JavaScript console to change the
+      background color of the page, you also relied on having access to a
+      function called <code>getRandomColor</code>. I mentioned that this was
+      a function that I wrote and that was include on the page.
+      </p>
+
+      <p>
+      Programmers often use code that other programmers write. If someone
+      has already solved a problem, a lot of times it's easier to reuse their
+      solution rather than to write a new one from scratch. <code>getRandomColor</code>
+      was just one useful function I wrote, but sometimes programmers will
+      package up a lot of variables and functions together and distribute them
+      for other programmers to use. These are often referred to as <em>frameworks</em>
+      or <em>libraries</em>. In the context of JavaScript, you usually use a library
+      by downloading a <code>.js<code> file (like the alert.js file we created above),
+      and then including that file using a <code>script</code> tag on any page where
+      you want to use it.
+      </p>
+
+      <p>
+      We're going to spend the next chapter looking at one particular very popular
+      JavaScript library called jQuery. The important thing to remember is just that
+      if you hear someone talking about a JavaScript library, they are just referring
+      to some code another programmer packaged up and distributed to help make your
+      life easier.
+      </p>
+
+
+        <footer class="span8 offset3">
+        <p>Page last updated by Matthew Heston</p>
+      </footer>
+    </article>
+
+    <footer id="page-footer">
+      <p>Licensed under Creative Commons</p>
+    </footer>
+
+  </div><!--/.container-fluid-->
+
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="scripts/js-tutorial.js"></script>
+</body>
+</html>
