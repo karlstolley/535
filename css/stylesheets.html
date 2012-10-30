@@ -14,8 +14,16 @@
   <link href="/assets/css/bootstrap.css" rel="stylesheet">
   <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
 
+    <!--Styles-->
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/assets/css/prettify.css" rel="stylesheet">
+
   <!--Custom styles-->
-  <link href="/assets/css/custom.css">
+  <link href="/assets/css/custom.css" rel="stylesheet">
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/prettify/prettify.js"></script>
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -43,10 +51,90 @@
 
       </p>
 
-      <h3>Adding Comments</h3>
+      <h2>Add a Stylesheet</h2>
+      <p>Once you start writing styles, it's hard to stop. This means the <code>head</code> section of your document is going to start filling
+      up with CSS style rules. It's much more efficient to write them in a separate document and load it when the page is opened. This is called
+      an <em>external stylesheet</em></p>
+      <p>The reference to an external stylesheet looks like this:</p>
+<pre>
+ &lt;head&gt;
+  &lt;!-- other head elements go here --&gt;
+    &lt;link href=&quot;../assets/style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+</pre>
+      <p>The elements of the above reference are:</p>
+      <ul>
+        <li>The <code>link</code> tag. This tells the browser that an external file will be loaded.</li>
+        <li>The <code>href</code> parameter. The location and name of the file.</li>
+        <li>The <code>rel</code> and <code>type</code> parameters. These indicate that the document contains CSS style rules.</li>
+        <li>The <code> /&gt;</code> tag means this is a <em>self-closing</em> element. There is no need for a <code>&lt;/link&gt;</code> tag.
+      </ul>
 
+      <p>Since you have defined the type of file in the <code>link</code> tag, your external style sheet will simply be a list of CSS rules.</p>
+<pre>
+  /* main_style.css file */
 
-      
+  body {
+    padding 20px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+</pre>
+
+      <h2>Import a stylesheet</h2>
+      <p>You can also break your stylesheet up into different sections and import it into one main external stylesheet.</p>
+      <ul>
+        <li>The import must be the first line(s) in your main external stylesheet.</li>
+        <li>Best practice tip: start your to-be-imported filename with "_&lt;filename&gt;" to avoid confusion.</li>
+      </ul>
+
+      <p>Here's a sample of a to-be-imported stylesheet</p>
+<pre>
+  /* _colors_and_fonts.css */
+  html {
+    font-family: Helvetica, Arial, san-serif;
+    color:green;
+    background:beige;
+    margin: 10px 20px;
+  }
+</pre>
+      <p>Here's a sample of a to-be-imported stylesheet</p>
+<pre>
+  @import url('_colors_and_fonts.css') /* import external file */
+
+  /* main body styles */
+  h1 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 12px;
+  }
+</pre>
+
+      <aside>Importing multiple stylesheets into one file is preferable to using multiple <code>link</code> tags because the browser only
+      has to load one file.</aside>
+
+      <h2>Define a media-specific stylesheet</h2>
+      <p>If you don't define a specific media type, the browser will assume your stylesheet is for all media, but you can identify different stylesheets for:</p>
+      <ul>
+        <li>displaying on a monitor screen</li>
+        <li>printing</li>
+        <li>displaying on a projector</li>
+        <li>displaying on assistive devices, such as screen readers or braille printers</li>
+        <li>and more</li>
+      </ul>
+      <p>One common use is create a print stylesheet for your resume that removes elements like headers and footers that you wouldn't want to print out. That
+      stylesheet might look like this:</p>
+<pre>
+  @import url('main_style.css') /* import external file */
+
+  /* hide header and footer */
+  header, footer {
+    display:none;
+  }
+</pre>
       <footer>
         <p>Page last updated by Christine McClure</p>
       </footer>
