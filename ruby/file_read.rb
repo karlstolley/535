@@ -1,12 +1,17 @@
 class Conversion
 
-  def read_csv(test_file)
+  def read_csv(test_file="")
 
     class_file = Array.new
 
     begin
       file = File.new(test_file, "r")
     rescue
+      if test_file == ""
+        puts "No file was provided."
+      else
+        puts "No file named " + test_file + " was found."
+      end
       puts "What file do you want to read?"
       test_file = gets.chomp
       retry
@@ -70,7 +75,7 @@ csv_convert = Conversion.new
 
 csv_raw_file = 'test.csv'
 html_file = 'test.htm'
-csv_file = csv_convert.read_csv(csv_raw_file)
+csv_file = csv_convert.read_csv()
 course_list = csv_convert.parse_csv(csv_file)
 csv_convert.convert_csv(course_list,html_file)
 
