@@ -14,6 +14,19 @@
   <link href="/assets/css/bootstrap.css" rel="stylesheet">
   <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
   <link href="/assets/css/prettify.css" rel="stylesheet">
+  <style type="text/css">
+    #h1Color, #allPara p, #firstPara h1 + p{
+      color:blue;
+    }
+    #lists ul li {
+        list-style-type: circle;
+    }
+      
+    #lists ol li {
+      list-style: upper-latin;
+    }
+
+  </style>
 
   <!--Custom styles-->
   <link href="/assets/css/custom.css" rel="stylesheet">
@@ -57,7 +70,7 @@
   <h1>My Name</h1>
 </div>
 
-      <h3>Create a container for CSS selectors</h3>
+      <h2>Create a container for CSS selectors</h2>
         <p>I need a place to hold my CSS declarations, so I'll add a section inside of the <a href="#" class="checkThisLater">&lt;head&gt;</a> portion of my page, like this:</p>
 <pre class="prettify">
 &lt;head&gt;
@@ -67,15 +80,18 @@
 &lt;/head&gt;
 </pre>
         <aside>
-          The 'type="text/css"' section of the style declaration is not needed by browsers using the HTML5 specification. In 2012, that's anyone using a smartphone or the latest versions of Chrome, Firefox Internet Explorer, Opera or Safari. It is, however, required for older browsers using a priors versions of the standard (which is still many, many people). Include and you will be both backwards-compatible with older browsers and <em>future-compatible</em> in case a successor to CSS is developed.
+          The 'type="text/css"' section of the style declaration is not needed by browsers using the HTML5 specification. In 2012, that's anyone using a smartphone or the latest versions of Chrome, Firefox Internet Explorer, Opera or Safari. It is, however, required for older browsers using a priors versions of the standard (which is still many, many people). Include
+          it and you will be both backwards-compatible with older browsers and <em>future-compatible</em> in case a successor to CSS is developed.
         </aside>
-      <p>Then I'll tell the browser that I want to change the default style of all &lt;h1&gt; tags. I have to tell the browser when to stop applying our style rules to the &lt;h1&gt; tag and start applying rules fo the next element, so I'll wrap the declaration in <em>braces</em>: {&nbsp;&nbsp;}</p>
+
+        <h2>Basic Selectors</h2>
+      <p>Now I'll tell the browser that I want to change the default style of all &lt;h1&gt; tags. I have to tell the browser when to stop applying our style rules to the &lt;h1&gt; tag and start applying rules fo the next element, so I'll wrap the declaration in <em>braces</em>: {&nbsp;&nbsp;}</p>
 
 <pre class="prettify">
 &lt;head&gt;
 &lt;style type="text/css"&gt;
   <strong>h1 {
-
+    color: blue;
   }</strong>
 &lt;/style&gt;
 &lt;/head&gt;
@@ -85,12 +101,136 @@
         <p>I'm also using a standard programming convention for the braces. It's very common to put the opening brace directly after the element, and the closing brace on its own line.</p>
       </aside>
       <p>So I've added my h1 selector to my page. Let's see what happens:</p>
-        <div class="codeExample">
+        <div class="codeExample" id="h1Color">
           <h1>My Name</h1>
         </div> 
-      <p>Nothing has changed. And that makes sense, right? That because we've identified h1 as the <em>selector</em> we want to change in our style, but we haven't actually made any changes to the style. That's for our next section: <a href="declarations.html">Declarations</a>.</p>
+      <p>The color changed to blue, as expected. We'll go into more detail on the types of properties you can change in the next section, but let's focus
+        on <em>how</em> to select those items for now.</p>
 
-      <h4>Progress with this chapter</h4>
+      <h2>Sibling Selectors</h2>
+
+      <p>Let's say we have a document with several paragraphs, but we only want to change the first one. Here's our code:</p>
+      <pre>
+  &lt;div class=&quot;codeExample&quot; id=&quot;firstPara&quot;&gt;
+    &lt;h1&gt;My Name&lt;/h1&gt;
+    &lt;p&gt;A paragraph about my background.&lt;/p&gt;
+    &lt;p&gt;A paragraph about my work history.&lt;/p&gt;
+    &lt;p&gt;Another paragraph.&lt;/p&gt;
+  &lt;/div&gt;
+      </pre>
+      <p>If we wrote our style like this:</p>
+<pre>
+  p {
+    color:blue;
+  }
+</pre>
+
+      <p>Then <strong>all</strong> of the paragraphs would change color.</p>
+
+        <div class="codeExample" id="allPara">
+          <h1>My Name</h1>
+          <p>A paragraph about my background.</p>
+          <p>A paragraph about my work history.</p>
+          <p>Another paragraph.</p>
+        </div>
+
+      <p>One way to solve the problem is tell the browser only select the first paragraph. This can be done by telling the browser to look for the <code>p</code> tag
+      that's directly adjacent to the <code>h1</code> tag, like so:</p>
+<pre>
+  h1 + p {
+    color:blue;
+  }
+</pre>
+        <div class="codeExample" id="firstPara">
+          <h1>My Name</h1>
+          <p>A paragraph about my background.</p>
+          <p>A paragraph about my work history.</p>
+          <p>Another paragraph.</p>
+        </div>
+
+      <p>There are many more ways to identify them, but this is just to give you one example.</p>
+
+      <h2>Descendant Selectors</h2>
+
+      <p>You can also specify <em>descendant selectors</em>. This is particularly helpful for lists: if you try to style the parent <code>&lt;ul&gt;</code>
+      or <code>&lt;ol&gt;</code> tags, you won't see any changes.</p>
+<pre>
+  ul {
+    list-style-type: circle;
+  }
+  ol {
+    list-style: upper-latin;
+  }
+</pre>
+
+        <div class="codeExample">
+          <ul>
+            <li>Unorderd list item 1</li>
+            <li>Unorderd list item 2</li>
+          </ul>
+
+          <ol>
+            <li>Orderd list item 1</li>
+            <li>Orderd list item 2</li>
+          </ol>
+        </div>
+
+          <p>Our rules weren't applied. That's because the <code>&lt;li&gt;</code> element uses those rules, not the parent element. We need to change
+          our rule to include the descendant element:</p>
+<pre>
+  ul li {
+    list-style-type: circle;
+  }
+  ol li {
+    list-style: upper-latin;
+  }
+</pre>
+          <p>Now our rules will work.</p>
+
+        <div class="codeExample" id="lists">
+          <ul>
+            <li>Unorderd list item 1</li>
+            <li>Unorderd list item 2</li>
+          </ul>
+
+          <ol>
+            <li>Orderd list item 1</li>
+            <li>Orderd list item 2</li>
+          </ol>
+        </div>
+
+      <h2>How to identify selectors</h2>
+      <p>Choosing how to identify selectors to style is confusing at first. A good approach is to try and look past the content of your HTML and see only
+        the elements of your code. Eventually, instead of seeing something like this:</p>
+<pre>
+&lt;h3&gt;Digital Services Librarian&lt;/h3&gt;
+  &lt;p&gt;Illinois Institute of Technology
+  &lt;h4&gt;Web Design/Development&lt;/h4&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Creating new digital content for the library: including web-based tutorials, digitally reformatted collections, subject specific pathfinders, and other digital library services. &lt;/li&gt;
+        &lt;li&gt;Developing dynamic, evolving, &lt;strong&gt;user-centered content&lt;/strong&gt; and services for all IIT Library web sites. &lt;/li&gt;
+        &lt;li&gt;Introducing &lt;strong&gt;best practices&lt;/strong&gt; for web development such as version control, usability studies and process documentation.&lt;/li&gt;
+        &lt;li&gt;Designed and &lt;strong&gt;developed the library's first &lt;a href=&quot;http://m.library.iit.edu&quot;&gt;mobile website&lt;/a&gt;&lt;/strong&gt; (summer 2011).&lt;/li&gt;
+      &lt;/ul&gt;
+</pre>
+
+      <p>You'll look past the content to see this:</p>
+
+      <p>Another way to identify selectors is to use <em>classes</em> and <em>IDs</em>, but that is in <a href="/css/classes-and-ids-as-selectors.html" class="btn">another section</a>.</p>
+<pre>
+&lt;h3&gt<span class="exampleAside">h3</span>&lt;/h3&gt;
+  &lt;p&gt;<span class="exampleAside">p, sibling of h3</span>&lt;p&gt;
+  &lt;h4&gt;<span class="exampleAside">h4</span>&lt;h4&gt;
+      &lt;ul&gt;<span class="exampleAside">unordered list, parent</span>&lt;ul&gt;
+        &lt;li&gt;<span class="exampleAside">child li</span>&lt;/li&gt;
+        &lt;li&gt;<span class="exampleAside">child li</span>&lt;/li&gt;
+        &lt;li&gt;<span class="exampleAside">child li</span>&lt;/li&gt;
+        &lt;li&gt;<span class="exampleAside">child li</span>&lt;/li&gt;
+      &lt;/ul&gt;
+</pre>
+
+
+          <h4>Progress with this chapter</h4>
       <div class="progress">
           <div class="bar" style="width: 15%;"></div>
       </div>
