@@ -8,7 +8,7 @@ subject:
 title:
 
 # Short (140 chars or so) description/summary of the page
-# Start with an indented line below the > and keep your 
+# Start with an indented line below the > and keep your
 # lines indented evenly
 description: >
 
@@ -17,4 +17,14 @@ authors:
 
 # Layout; page is default & matches _layouts/page.html
 layout: page
+
+# Custom stylesheets, if used; specify root-relative path to file:
+#stylesheets:
+#  - url: /path/to/first/stylesheet.css
+#  - url: /path/to/second/stylesheet.css
+#
+# Custom JavaScripts, if used; specify root-relative path to file:
+#stylesheets:
+#  - url: /path/to/first/javascript.css
+#  - url: /path/to/second/javascript.css
 ---
