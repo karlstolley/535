@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS: Best Practices</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Brief page description:-->
+  <meta name="description" content="">
+  <!--Name(s) of primary authors-->
+  <meta name="author" content="">
+
+  <!--Styles-->
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/assets/css/prettify.css" rel="stylesheet">
+
+  <style type="text/css">
+    #group p.intro {
+      font-size: 20px;
+      font-family:fantasy;
+      color: #5D3706;
+    }
+    #group p {
+      font-size: 16px;
+      font-family: monospace;
+      color: #111111;
+    }
+  </style>
+
+  <!--Custom styles-->
+  <link href="/assets/css/custom.css" rel="stylesheet">
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/prettify/prettify.js"></script>
+</head>
+
+
+<body>
+
+  <div class="container-fluid">
+
+    <header id="page-header">
+      <h1>CSS</h1>
+    </header>
+
+    <article class="row-fluid">
+      <header>
+        <hgroup class="hero-unit">
+          <h1>Best Practices</h1>
+        </hgroup>
+      </header>
+
+
+      <p class="lead">
+        The DRY principle and other best practices. 
+      </p>
+
+      <h2>Take notes: comment your code</h2>
+      <p>As in any other programming language (or anything in life, really), it's best to take notes as you go along. What seems straightforward as you're
+      writing it becomes much more haze as time passes.</p>
+      <p>CSS comments begin with <code>/*</code> and end with the reverse: <code>*/</code>. Anything in between of the comment marks is ignored by the browser.
+        Comments can span multiple lines, or be included on the same line as your code.</p>
+<pre>
+  /*
+    From initial color scheme.
+    This may change.
+  */
+  p {
+    color: #8B0ACC; /* violet */
+  }
+
+</pre>
+
+      <h2>Using Multiple Selectors</h2>
+      <p>Say I have four levels of headings in my document, and I want to make sure they all use the same font family. I could write the following style rules:</p>
+<pre>
+  h1 {
+    font-family:  "New Century Schoolbook", "Times New Roman", serif;
+  }
+  h2 {
+    font-family:  "New Century Schoolbook", "Times New Roman", serif;
+  }
+  h3 {
+    font-family:  "New Century Schoolbook", "Times New Roman", serif;
+  }
+  h3 {
+    font-family:  "New Century Schoolbook", "Times New Roman", serif;
+  }
+</pre>
+      <p>There's nothing technically wrong with these rules: they'll display just fine in the browser. The problem is that this violates a core principle in
+        programming: <strong>DRY</strong>. It stands for "Don't Repeat Yourself" and is a reminder to re-use code and logic whenever possible (or: whenever it makes)
+        sense to do so). You apply the DRY principle in CSS. If there are  style rules that you'd like to apply to many elements, all you need to do is separate them with
+        commas in the CSS rules. Here's how we can make the above code DRY-compliant:</p>
+<pre>
+  h1, h2, h3, h4 {
+    font-family:  "New Century Schoolbook", "Times New Roman", serif;
+  }
+</pre>
+      <p>The obvious advantage here is that you only need to change one line if you decide to use a different font. Another is that the code is much more readable;
+      you can easily see that all of your headings are grouped into one line and add more rules as needed</p>
+
+      <h2>Start with the generics, then get specific</h2>
+
+      <p>List all of your general rules first, then add any specific instances later. This will keep one rule from getting accidentally overwritten by another.
+        Here's an example:</p>
+<pre>
+   &lt;h1&gt;All about me&lt;/h1&gt;
+     &lt;p class=&quot;intro&quot;&gt;My life story: it's a fascinating tale...&lt;/p&gt;
+     &lt;p&gt;The early years...&lt;/p&gt;
+     &lt;p&gt;The current years...&lt;/p&gt;
+</pre>
+
+      <p>The following rules show the specific class of "intro" being displayed <em>before</em> the generic <code>p</code> tag rules.</p>
+<pre>
+p.intro {
+      font-size: 20px;
+      font-family:fantasy;
+      color: #5D3706;
+}
+p {
+      font-size: 16px;
+      font-family: monospace;
+      color: #111111;
+}
+</pre>
+      <p>This would display perfectly fine in the browser due to the rule of <strong>specificity</strong> in CSS. This means that although it appears as if
+      the generic <code>p</code> rule should override the <code>p.intro</code> rule when displaying that first paragraph, it won't because the addition
+      of a class name is more specific than a generic element.</p>
+      <div class="codeExample" id="group">
+         <h1>All about me</h1>
+           <p class="intro">My life story: it's a fascinating tale...</p>
+           <p>The early years...</p>
+           <p>The current years...</p>
+      </div>
+      <p>Still, it makes more sense to have your generic CSS rules grouped together, then more-specific rules.</p>
+<pre>
+p {
+      font-size: 16px;
+      font-family: monospace;
+      color: #111111;
+}
+p.intro {
+      font-size: 20px;
+      font-family:fantasy;
+      color: #5D3706;
+}
+</pre>
+
+      <h2>Use inheritance to your advantage</h2>
+        <p>Some style properties for a child element will be inherited from its parent. Without getting into the <a href="http://www.w3.org/TR/CSS2/cascade.html">official specification</a>, you can
+        generally count on things like color, font size and family to be inheritable styles. Other style rules, like position, are not inherited by default,
+        but can be specified to do do.</p>
+        <p>This can help you set up the basic elements of your document like font size and color without having to specific every element that you
+        might use. Instead of having to write:</p>
+
+<pre>
+  h1, h2, h3, h4, h5, h6, p, li /*and so on*/ {
+    font-family: Helvetica, Arial, sans-serif;
+    color: brown;
+    margin: 10px;
+  }
+</pre>
+        <p>All you need to do is this:</p>
+<pre>
+ html {
+    font-family: Helvetica, Arial, sans-serif;
+    color: brown;
+    margin: 10px;
+  }
+</pre>
+        <p>Since all elements are descendants from the <code>html</code> element, you can specific your generic options there.</p>
+      <h2>Group like elements together</h2>
+
+      <p>Once your CSS rules grow in number, you can spend a lot of time finding them in your document. Comments will help alleviate this, but so will
+      grouping like elements together.</p>
+<pre>
+footer {
+  padding: 20px;
+  background-color: white;
+}
+
+footer p {
+  font-size: 10px;
+}
+
+footer p + p { /* second paragraph */
+  float:right;
+}
+</pre>
+
+      <footer>
+        <p>Page last updated by Christine McClure</p>
+      </footer>
+    </article>
+
+    <footer id="page-footer">
+      <p>Licensed under Creative Commons</p>
+    </footer>
+
+  </div><!--/.container-fluid-->
+
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+</body>
+</html>
