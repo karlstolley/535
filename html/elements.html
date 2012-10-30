@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Subject Area: HTML5</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Brief page description:-->
+  <meta name="description" content="">
+  <!--Name(s) of primary authors-->
+  <meta name="author" content="">
+
+  <!--Styles-->
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+ <!-- <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/assets/css/prettify.css" rel="stylesheet">   -->
+  
+  <!--Custom styles-->
+  <link href="/assets/css/custom.css" rel="stylesheet">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+
+  <div class="container-fluid">
+
+    <header id="page-header">
+      <h1>HTML 5</h1>
+    </header>
+    
+     
+     <h2> Tags, Attributes, and Elements </h2>
+          <div class="row">
+          <nav class="span2">
+          <ul id="sidenav"> 
+          	<li><a href="index">HTML 5</a></li>
+          	<li><a href="#">Overview</a></li>
+          	<li><a href="elements">Tags, Attributes, and Elements</a></li>
+          	<li><a href="head">The Head</a></li>
+          	<li><a href="structure">Structure and Layout</a></li>
+          	<li><a href="images">Links and Images</a></li>
+	        <li><a href="tables">Tables</a></li>
+          	<li><a href="forms">Forms</a></li>
+          	<li><a href="beyondbasics">Beyond the Basics</a></li>
+
+          	</nav>
+          <article class="span9">
+     <p> So, let's take another look at our HTML5 project. And this time from the behind the scenes, that is, the html version.</p>
+<!-- image of final product, side by side with html -->
+    
+     <pre class="prettyprint">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+ &lt;title&gt;HTML5 Sample&lt;/title&gt;
+
+  &lt;!--Brief page description:--&gt;
+  &lt;meta name="description" content=""&gt;
+  &lt;!--Name(s) of primary authors--&gt;
+ &lt;meta name="author" content=""&gt;
+
+  &lt;!--Styles--&gt;
+&lt;!-- &lt;link href="/assets/css/bootstrap.css" rel="stylesheet"&gt; --&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+&lt;section&gt;
+    &lt;header&gt;
+      &lt;h1&gt;About Me&lt;/h1&gt;    
+    &lt;/header&gt;
+    &lt;nav&gt;
+    	&lt;ul&gt;
+    		&lt;li&gt;My life&lt;/li&gt;
+    		&lt;li&gt;My work&lt;/li&gt;
+    		&lt;li&gt;My future&lt;/li&gt;
+    &lt;/nav&gt;
+    &lt;article&gt;
+      &lt;h2&gt; My life &lt;/h2&gt;
+    &lt;/article&gt; 
+ 	&lt;article&gt;
+     &lt;ol&gt;
+		&lt;li&gt;&lt;/li&gt;
+		&lt;li&gt; &lt;/li&gt;
+	&lt;/ol&gt;
+      &lt;/article&gt;
+&lt;/section&gt;
+&lt;footer&gt;
+      &lt;p&gt;Licensed under Creative Commons&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>      
+
+<p>There is clearly a lot that went into such a simple looking document, but before we go on, let's define some terminology.</p>
+    
+<h3>Tags</h3>
+<p> A tag is the simplest unit of HTML, which basically defines the language. The tags are what the browser reads to determine how to render the code into a webpage. A browser recognizes an HTML tag by the &lt; &gt; which encloses the particular instruction. Like bookends, the &lt; and &gt; lets the browser know when the tag begins (&lt;) and ends (&gt;). Let's take another look at the project code for an example.  On the second line, we see the <span class="prettyprint"> &lt;html&gt; </span> tag. The &lt;html&gt; lets the browser know that the what follows is a webpage. </p>
+<p>But wait, there's more. Just as the tag needed to have both an &lt; and an &gt;, to define it as such, the element that the tag modifies needs it as well, which is defined by &lt;/&gt;. So think of each tag as a set of bookends, one at the beginning, also called a start tag, &lt; &gt; and one at the end, a closing or end tag &lt; / &gt;. [aside: some browsers allow for a looser format and may not require an ending tag but, best practices require both start and end tags] There are two exceptions to this "bookend" rule: one we discussed earlier - &lt;!DOCTYPE html&gt;which tells the browser which version of html it is using; and the second is &lt;/br&gt;, which we'll discuss in the "Structure and Layout" section.
+</p>
+<p>As we return to our example, we can see that the &lt;html&gt; start tag at the beginning, has a closing bookend tag, &lt;/html&gt; all the way at the very end of the page. In fact, it's the last tag, which makes sense because it is basically telling the browser that there is nothing more to the webpage.
+</p>
+
+<h3>Attributes</h3>
+<p> An attribute is part of the tag that gives you more information about it. It is always found in the opening tag, after the tag name (in this case html) and before the end &gt;. An attribute consists of a name and a value. Let's look at the html example again. In the opening &lt;html&gt; tag, there is the attribute lang="en". Here the name is lang which defines the language for this particular html document, and the value en, which tells you the language is English. The value is always enclosed in quotes " ".
+
+<p> You will get much more involved with attributes as you learn about CSS.</p>
+
+
+<h3>Elements </h3>
+<p> An element consists of a set of opening and closing tags and the information it encloses, including the attributes and values. For example, in the sample project, we see that there are more than one meta elements, which we will learning more about in the next section, each of which begin with the opening meta tag &lt;/meta&gt; has some information then end with the closing tag &lt;/meta&gt;. The tags by themselves &lt;meta&gt; and &lt;/meta&gt;are simply tags.</p>
+<p> Sometimes you may see, the term element used interchangeably with tag. Let's take for example the element &lt;!DOCTYPE html&gt;. It is an element that stands by itself.  Let's find another example. below that is &lt;html&gt;. but not simply &lt;html&gt;, it also includes the tag and value, <span class="prettyprint"> lang="en"</span> where the tag is lang and the value is en.</p>
+
+
+
+<p>Now that we have some of the definitions out of the way, let's move on to the next section and see how webpages are put together, beginning with <a href="head.html">the head</a>.</p>
+
+    </article>
+    <footer id="page-footer">
+      <p>Licensed under Creative Commons</p>
+    </footer>
+
+  </div><!--/.container-fluid-->
+
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/prettify/prettify.js"></script>
+
+</body>
+</html>
+
