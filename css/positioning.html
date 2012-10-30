@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS: Positioning Elements</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Brief page description:-->
+  <meta name="description" content="">
+  <!--Name(s) of primary authors-->
+  <meta name="author" content="">
+
+  <!--Styles-->
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/assets/css/prettify.css" rel="stylesheet">
+
+  <!--Custom styles-->
+  <link href="/assets/css/custom.css" rel="stylesheet">
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/prettify/prettify.js"></script>
+  <style type="text/css">
+    .clear {clear:both;}
+    .h1Inline h1{display:inline; width: 50px;}
+      .box {
+      width: 100px;
+      color:black;
+      font-weight:900;
+      font-size: 20px;
+      border: 1px solid black;
+      padding: 10px;
+      text-align:center;
+      position:static; /*default position for objects*/
+    }
+
+    /* use colors and patterns for boxk background for vision-impared */
+    .box1 {background: rgba(245, 188, 195, 0.7)
+      url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAMklEQVQYlWNgYGAwZkAFxjjEcApgSOKTIGgSVpOxKcKqmGiFRFuNUwCHGFaT8erCGuAAtV8HLQ/j6goAAAAASUVORK5CYII=);}
+    .box2 {background: rgba(247, 234, 49, 0.4)
+      url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQImWNgYGD4z0AswK4SAFXuAf8EPy+xAAAAAElFTkSuQmCC);}
+    .box3 {background:rgba(27, 66, 242, 0.3)
+      url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAJElEQVQYlWNgwAT/sYjhVIRXMbokVsW4TPhPjCJi5clXTBwAAOy+CfekNMf3AAAAAElFTkSuQmCC);}
+    .box4 {
+      left: 20px;
+      background:rgba(11, 186, 11, 0.3)
+      url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAEklEQVQYlWNgoBL4T7GCoW8FAGEXBfvNSmHvAAAAAElFTkSuQmCC);
+    }
+    #float1 {
+      width: 400px;
+      overflow:auto;
+      padding: 10px;
+    }
+    #float1 img{
+      width: 100px;
+      float:right;
+      margin: 0 0 0 20px;
+    }
+    #float2, #float3, #float3{overflow:auto;}
+    #float2 div, #float3 div, #float4 div {
+      width: 25%;
+      margin: 0 20px 10px 0;
+      background: beige;
+      border: 1px solid red;
+      padding:10px;
+    }
+    #float4 div + p{clear:both;}
+
+
+  </style>
+</head>
+
+
+<body>
+
+  <div class="container-fluid">
+
+    <header id="page-header">
+      <h1>CSS</h1>
+    </header>
+
+    <article class="row-fluid">
+      <header>
+        <hgroup class="hero-unit">
+          <h1>Positioning Elements</h1>
+        </hgroup>
+      </header>
+
+      <p class="lead">
+        Positioning is such an important part of CSS that it deserves its own section. Here it is. 
+      </p>
+
+      <h2>Document Flow</h2>
+        <p>The normal document flow process of loading a web page can be briefly explained as this:</p>
+        <ol>
+          <li>When the browser loads your web document, it reads from top to bottom, left to right.</li>
+          <li>The elements are initially laid out on the page in that order. If you have an &lt;H3&gt; tag  listed before an &lt;H1&gt; tag, the &lt;H3&gt; tag  will be displayed first.</li>
+          <li>Once the elements are laid out out in the browser, your CSS rules will be applied to the document. Here is were you can say that elements 1-2-3 should display as 3-1-2 if you like.</li>
+          <li>This usually happens far too quickly to see that elements get repositioned on the screen.</li>
+        </ol>
+        <h3>The Box Model</h3>
+            <p>
+            Learning about positioning in CSS requires a discussion about the <em>box model</em>.
+            Every HTML element is considered to be a "box." The browser will see boxes (or: rectangles) of content to be display, whether they're paragraphs,
+            headings, images or videos: this, in short, is the box model. Some boxes are displayed as <em>block-level</em> elements, and some as 
+            <em>inline</em> elements. Regardless, the following properties will affect how each box appears within the browser:
+            </p>
+
+            <ul>
+              <li>width</li>
+              <li>height</li>
+              <li>padding (amount of space between the element and its border)</li>
+              <li>margin (amount of space between the element's border and its adjacent elements)</li>
+              <li>position offsets: top, bottom, right, left</li>
+            </ul>
+
+            <p>all of these things will affect the box model. If an element has the following properties:</p>
+<pre>
+  width: 30%;
+  top: 20%;
+  left: 20px;
+  padding: 20px;
+  margin-bottom: 40px;
+  border: 2px dashed red;
+</pre>
+            <aside>You could also write the margin property this way: <code>margin: 0 0 40px 0</code>. This is helpful if you want to
+              specify different values for the top, right, bottom and left attributes but want to use only one line. Just learn the word
+              "TRouBLe" to remember the correct order.</aside>
+            <p>Below is an outline of how those declarations affect its position in the browser:</p>
+            <img src="examples/box-model.png">
+
+            <h3>The Display Declaration</h3>
+          <p>The <code>display</code> property because that also has an affect on where an item appears within its container. Some elements, by default, are
+            displayed on a separate line. Other elements are display in the same line as the elements adjacent to them</p>
+          <ul>
+            <li><em>Block-level</em> elements take up an entire line in the browser, even if the element's width is narrower than its container.
+              All header tags: h1, h2, etc. and paragraph tags are block-level elements by default. </li>
+            <li>
+                <em>Inline</em> elements continue on in the same line. Think of thie term as "in the same line." The &lt;em&gt; tag (used for "emphasis" in a sentence) is an inline-level element by default.
+            </li>
+            <li>
+              You can override the default display style for any element by create a specific style rule.
+            </li>
+          </ul>
+
+      <h2>The Position Declaration</h2>
+        <p>Positioning can be applied to to any HTML element, but we'll stick with generic patterned boxes (using 'div' tags) for these examples to keep things simple.</p>
+ 
+        <h3>Static</h3>
+        <p>The is the default layout for objects. Each object will appear on its own line, in the order that they appear in the HTML document. </p>
+        <p>Here is a very simple example. </p>
+       <div class="codeExample" id="static">
+            <div class="box box1">Box 1</div>
+            <div class="box box2">Box 2</div>
+            <div class="box box3">Box 3</div>
+            <div class="box box4">Box 4</div>
+       </div>
+        <p>Here are some of the style rules that apply to all of the boxes in the above example:</p>
+<pre>
+      width: 100px;
+      padding: 10px;
+      text-align:center;
+      position:static;
+</pre>
+        <p>And here's a special style rule that box 4 has:</p>
+<pre>
+      left: 20px;
+</pre>
+        <p>You can guess that the <code>left: 20px</code> rule should have something to do with Box 4's position within the containing element.
+          But it doesn't look any different than the others; that's because the <code>static</code> assignment of the position declaration
+          doesn't allow for <em>offset</em> positioning, of which <code>left</code> is a member--along with <code>right</code>, <code>top</code> and <code>bottom.</code>. </p>
+
+        <h3>Relative </h3>
+        <p>Now let's see how Box 4's position is affected when we change it's position to <code>relative</code>, which <em>does</em> allow for offset positioning.
+          
+        </p>
+        <a id="changeToRelative" href="#" class="btn">Change to 'relative' position</a>
+       <div class="codeExample" id="relative">
+            <div class="box box1">Box 1</div>
+            <div class="box box2">Box 2</div>
+            <div class="box box3">Box 3</div>
+            <div class="box box4">Box 4</div>
+       </div>        
+        <h3>Absolute</h3>
+        <p>The <code>absolute</code> position declaration is just as obstinate as it sounds. It's for when you absolutely, positively, 
+          have to have something stuck in one damn place. Absolutely-positioned elements are removed from the <em>document flow</em>,
+          meaning they will be placed within the browser according to their positioning statements and ignoring things like their containing elements and other elements that might also occupy that space. 
+          This is how you can layer one object over another: with the absolute position.</p>
+        <p>For example, if we can drastically change the location of our Box 4 item, once we apply absolute positioning:</p>
+<pre>
+      width: 100px;
+      padding: 10px;
+      text-align:center;
+      top; 10px;
+      left: 200px;
+</pre>
+        <a id="changeToAbsolute" href="#" class="btn">Change to 'absolute' position</a>
+       <div class="codeExample" id="absolute">
+            <div class="box box1">Box 1</div>
+            <div class="box box2">Box 2</div>
+            <div class="box box3">Box 3</div>
+            <div class="box box4">Box 4</div>
+       </div>
+        <p>What happened? Exactly what we told the element to do: place itself--absolutely--ten pixels from the browser's top edge,
+          and 200 pixels from the browsers's left edge. Absolute position is a very powerful declaration: use it wisely.</p>
+        
+        <h3>Fixed</h3>
+          <p>The <code>fixed</code> position is similar to absolute, but it takes it a step further. Not only is the position attached to a particular location,
+            it is attached to the location within the browser window. This means that the item will not scroll off the screen.
+            It is primarily used for <a href="#" class="checkThisLater">footers</a> and annoying internet ads.</p>
+<pre>
+      width: 100px;
+      padding: 10px;
+      text-align:center;
+      left: 40%;
+      bottom: 5%;
+      position:fixed;
+</pre>
+
+        <a id="changeToFixed" href="#" class="btn">Change to 'fixed' position</a>
+       <div class="codeExample" id="fixed">
+            <div class="box box1">Box 1</div>
+            <div class="box box2">Box 2</div>
+            <div class="box box3">Box 3</div>
+            <div class="box box4">Box 4</div>
+       </div>
+
+        <h3>Inherit</h3>
+          <p>Position declarations are not generally passed down to child elements (unlike declarations like font-size and background-color). The <code>inherit</code> position was designed so that you could do this.</p>
+          <p>Our boxes are sitting inside of a <code>div</code> container. We can have the boxes inherit the properties of the div container if we change the position declataion:</p>
+<pre>
+  div {
+    position: fixed;
+    top: 200px;
+  }
+
+  .box {
+    position: inherit;
+  }
+</pre>
+          <aside>The <code>.box</code> statement is a <em>class declaration</em> that will be discussed in the next section.</aside>
+        <a id="changeToInherit" href="#" class="btn">Change to 'inherit' position</a>
+       <div class="codeExample" id="inherit">
+            <div class="box box1">Box 1</div>
+            <div class="box box2">Box 2</div>
+            <div class="box box3">Box 3</div>
+            <div class="box box4">Box 4</div>
+       </div>
+       <div id="inheritExplanation"></div>
+       <p>Position inheritance can cause problems in complex layouts if your code is not well-documented.</p>
+
+      <h2>The Float Declaration</h2>
+
+      <p>Floats can give your site the consistent look and feel that once was only achieved by stuffing your text into a <code>table</code>.
+        They are also the cause of great frustration when things aren't displaying as you expected.</p>
+
+      <h3>The Float property accepts three values:</h3>
+      <ul>
+        <li><strong>left</strong>: float the element to the left side of its containing element (whether its another element of simple the browser window)
+          and flow other elements to its right.</li>
+        <li><strong>right</strong>: the opposite: float to the right and flow other elements around to the left.</li>
+        <li><strong>none</strong>: do not allow the element to float.</li>
+      </ul>
+      <p>Floats allow elements to be removed from the normal document flow and positioned so that other elements can flow around them. One of
+      their main uses is to flow text around an image or table, like so:</p>
+
+      <div class="codeExample" id="float1">
+        <img src="examples/apple.jpg" />
+        <p>Hmmm, suddenly I'm hungry. Why is that? And on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on...</p>
+      </div>
+      
+      <p>Here is the code:</p>
+<pre>
+&lt;img src=&quot;apple.jpg&quot; /&gt;
+&lt;p&gt;Hmmm, suddenly I'm hungry. Why is that? And on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on, and on...&lt;/p&gt;
+</pre>
+      <p>And here is the style that was applied. Note that the paragraph tag has no styling applied to it, only the image tag.</p>
+
+<pre>
+img{
+      width: 70px;
+      float:right;
+      margin: 0 0 0 20px;
+ }
+</pre>
+      <p>Floats are also popular for creating a newspaper-styled columnar format, as in the next example.</p>
+
+      <p>Right now, the items below are in their normal document flow. Here's what happens when we float those elements:</p>
+
+       <a id="floatLeft" href="#" class="btn">Float items left</a>
+       <div class="codeExample" id="float2">
+         <div>
+           <h3>Here is Heading 1</h3>
+           <p>Paragraph 1 text. Text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.</p>
+         </div>
+         <div>
+           <h3>Here is Heading 2</h3>
+           <p>Paragraph 2 text. Text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.</p>
+         </div>
+         <div>
+           <h3>Here is Heading 3</h3>
+           <p>Paragraph 3 text. Text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.</p>
+         </div>
+       </div>
+       <aside>Using styles like borders and background colors are very helpful when doing your initial layout--particularly if you're
+       seeing unexpected results. </aside>
+       <p>All that was needed was to apply a width and a float to the divs containing the headers and text. Here's the code that was used:</p>
+<pre>
+   &lt;div&gt;
+     &lt;h3&gt;Here is Heading 1&lt;/h3&gt;
+     &lt;p&gt;Paragraph 1 text. Text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div&gt;
+     &lt;h3&gt;Here is Heading 2&lt;/h3&gt;
+     &lt;p&gt;Paragraph 2 text. Text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div&gt;
+     &lt;h3&gt;Here is Heading 3&lt;/h3&gt;
+     &lt;p&gt;Paragraph 3 text. Text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.&lt;/p&gt;
+   &lt;/div&gt;
+</pre>
+       <p>And here's the style that was applied to it. Note that the <code>h3</code> and <code>p</code> elements are wrapped within a containing element:
+         <code>div</code>. It's much easier to float one larger containing element than to float each item individually.</p>
+<pre>
+  div {
+    width: 25%;
+    float:left;
+  }
+</pre>
+       
+      <h3>All Clear</h3>
+      <p>You'll want to put an end to floating elements, eventually. Consider the above example if we have add another paragraph after our three columns:</p>
+
+       <a id="floatLeft3" href="#" class="btn">Float items left</a>
+       <div class="codeExample" id="float3">
+         <div>
+           <h3>Here is Heading 1</h3>
+           <p>Paragraph 1 text.</p>
+         </div>
+         <div>
+           <h3>Here is Heading 2</h3>
+           <p>Paragraph 2 text.</p>
+         </div>
+         <div>
+           <h3>Here is Heading 3</h3>
+           <p>Paragraph 3 text.</p>
+         </div>
+         <p>Here is a completely separate paragraph that has nothing to do with the columns above. And off I go, rambling on about nothing.
+         And on, and on, and on, and one, and on, and on, and one, and on, and on, and one, and on...</p>
+       </div>
+
+       <p>This can be corrected by applying the clear statement to the ending paragraph, like so:</p>
+
+<pre>
+  div + p {
+    clear:both;
+  }
+</pre>
+       <a id="floatLeft4" href="#" class="btn">Float items left and clear</a>
+      <div class="codeExample" id="float4">
+         <div>
+           <h3>Here is Heading 1</h3>
+           <p>Paragraph 1 text.</p>
+         </div>
+         <div>
+           <h3>Here is Heading 2</h3>
+           <p>Paragraph 2 text.</p>
+         </div>
+         <div>
+           <h3>Here is Heading 3</h3>
+           <p>Paragraph 3 text.</p>
+         </div>
+         <p>Here is a completely separate paragraph that has nothing to do with the columns above. And off I go, rambling on about nothing.
+         And on, and on, and on, and one, and on, and on, and one, and on, and on, and one, and on...</p>
+       </div>
+
+       <aside>If you have a complex layout, you can assign only the <code>left</code> or <code>right</code> values to the <code>clear</code>
+       property. However, you'll likely use the <code>both</code> value most often.</aside>
+
+      <p>If you only take away two points from this section, let it be these two:</p>
+      <ul>
+        <li>If you want text or other items to flow around your floated element, be sure to assign a width as well as a float.
+          If the element is by default a block-level display, then your next element will appear below the float.</li>
+        <li>When you want to stop the float of elements, assign a <code>clear</code> declaration to the following elelemt.</li>
+      </ul>
+
+      <h4>Progress with this chapter</h4>
+      <div class="progress">
+          <div class="bar" style="width: 5%;"></div>
+      </div>           
+      </section>  
+      
+      <footer>
+        <p>Page last updated by Christine McClure</p>
+      </footer>
+    </article>
+
+    <footer id="page-footer">
+      <p>Licensed under Creative Commons</p>
+    </footer>
+
+  </div><!--/.container-fluid-->
+
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script>
+
+    $('#changeToRelative').toggle(function() {
+      $('#relative .box').css('position', 'relative');
+      $(this).html('Change back to \'static\' position');
+        }, function() {
+      $('#relative .box').css('position', 'static');
+      $(this).html('Change to \'relative\' position');
+    });
+
+    $('#changeToAbsolute').toggle(function() {
+      $('#absolute .box4').css('position', 'absolute');
+      $('#absolute .box4').css('top', '10px');
+      $('#absolute .box4').css('left', '200px');
+      $('#absolute').append('<p>Scroll up to the top of the window to see box 4.</p>');
+      $(this).html('Change back to \'static\' position');
+        }, function() {
+      $('#absolute p').hide();
+      $('#absolute .box4').css('top', '0');
+      $('#absolute .box4').css('left', '0');
+      $('#absolute .box4').css('position', 'static');
+      $(this).html('Change to \'absolute\' position');
+    });
+
+    $('#changeToFixed').toggle(function() {
+      $('#fixed .box4').css('left', '40%');
+      $('#fixed .box4').css('bottom', '5%');
+      $('#fixed .box4').css('position', 'fixed');
+      $('#fixed').append('<p>Scroll the window up and down and see how box 4 doesn\'t move.</p>');
+      $(this).html('Change back to \'static\' position');
+        }, function() {
+      $('#fixed p').hide();
+      $('#fixed .box4').css('left', '0');
+      $('#fixed .box4').css('bottom', '');
+      $('#fixed .box4').css('position', 'static');
+      $(this).html('Change to \'fixed\' position');
+    });
+
+    $('#changeToInherit').toggle(function() {
+      $('#inherit').css('position', 'fixed');
+      $('#inherit').css('top', '200px');
+      $('#inherit .box').css('position', 'inherit');
+      $('#inheritExplanation').append ('<p><strong>Once the containing element has a fixed position, the inheriting box elements will also be fixed in the same position and overlap each other.</strong></p>');
+      $(this).html('Change back to \'static\' position');
+        }, function() {
+      $('#inherit').css('position', 'static');
+      $('#inherit').css('left', '0');
+      $('#inherit .box').css('position', 'static');
+      $('#inheritExplanation p').hide();
+      $(this).html('Change to \'inherit\' position');
+    });
+
+    $('#floatLeft').toggle(function() {
+      $('#float2 div').css('float', 'left');
+      $(this).html('Remove float');
+        }, function() {
+      $('#float2 div').css('float', 'none');
+      $(this).html('Float items left');
+    });
+
+    $('#floatLeft3').toggle(function() {
+      $('#float3 div').css('float', 'left');
+      $(this).html('Oh no! Remove float!');
+        }, function() {
+      $('#float3 div').css('float', 'none');
+      $(this).html('Float items left');
+    });
+
+    $('#floatLeft4').toggle(function() {
+      $('#float4 div').css('float', 'left');
+      $(this).html('Back to normal');
+        }, function() {
+      $('#float4 div').css('float', 'none');
+      $(this).html('Float items left and clear');
+    });
+  </script>
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+</body>
+</html>
