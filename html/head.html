@@ -29,25 +29,40 @@
 
   <div class="container-fluid">
 
-    <header id="page-header">
-      <h1>HTML 5</h1>
+  <header id="page-header">
+      <h1 id="head">HTML 5</h1>
     </header>
     
 <section>
-    <article>
-      <header class="row">
-        <hgroup class="span9">
-          <h2>Head, Title, Meta, Comments</h2>
-        </hgroup>
-      </header>
+    <div class="row">
+          <div class="span12">
+           <div class="row">
+          
+           <nav class="span2">
+          <ul class="nav nav-tabs"> 
+          	<li><a href="index.html">HTML 5</a></li>
+          	<li><a href="overview.html">Overview</a></li>
+          	<li><a href="#">Tags, Attributes, and Elements</a></li>
+          	<li><a href="head.html">The Head</a></li>
+          	<li><a href="structure.html">Structure and Layout</a></li>
+          	<li><a href="images.html">Links and Images</a></li>
+	        <li><a href="tables.html">Tables</a></li>
+          	<li><a href="forms.html">Forms</a></li>
+          	<li><a href="beyondbasics.html">Beyond the Basics</a></li>
+		</ul>
+          	</nav>
+          <article class="span8">
+    <h2> Tags, Attributes, and Elements</h2>
 <p>short sample </p>
      <h3>Head</h3>
-As you can see in the project HTML, the tag comes right after the &lt;html&gt; start tag is the &lt;head&gt; start tag.  Look a little below, you can find the &lt;head&gt; end tag. The section enclosed in these tags is called the HEAD of the document and contains important information for the web designer and the browser to know but does not necessarily get displayed for the public. Here, you will include META information (see below) as well as links to stylesheets and scripts (though this could be placed below the body as well). There is no particular order the elements should be presented, if you decided to use any of them, however, the only information that is absolutely necessary to include in the HEAD is the title. 
+As you can see in the project HTML, the tag comes right after the opening &lt;html&gt;  tag is the &lt;head&gt; start tag.  Look a little below, you can find the &lt;head&gt; end tag. The section enclosed in these tags is called the HEAD of the document and contains important information for the web designer and the browser to know but does not necessarily get displayed for the public. Here, you will include META information (see below) as well as links to stylesheets and scripts (though this could be placed below the body as well). There is no particular order the elements should be presented, if you decided to use any of them, however, the only information that is necessary to include in the HEAD is the title. 
      <h3>Tags and Elements for the Head</h3>
      <h4>Title</h4>
-<p>The title tags (&lt;title&gt; and &lt;/title&gt;) let the browser know what the name or title of document is. Depending on you browser, the title is typically displayed at the in the title bar of browser window, or if you are using browser tabs, in the tab. It helps orient the user. It also appears as the name of the document in the user's favorites if the user chooses to bookmark the page.</p>
+<p>The title tags (&lt;title&gt; and &lt;/title&gt;) let the browser know what the name or title of document is. Depending on your browser, the title is typically displayed at the in the title bar of browser window, or if you are using browser tabs, in the tab. It helps orient the user to the name of the page. It also appears as the name of the document in the user's favorites if the user chooses to bookmark the page.</p>
      <h4>Base</h4>
+<p>The base element identifies the base URL of the document, that is, its the main website URL, in order to make it easier to use relative webpages for hyperlinks. As we will see more of when we go to the link section.</p>
      <h4>Link</h4>
+<p>The &lt;link&gt; and &lt;/link&gt; tags are used to link to external resources that affect the behavior or look of the webpage. One common external resource is the stylesheet, CSS. An attribute is needed to let the browser know what type of link it is. For stylesheets, the name is ref and the value is "stylesheet". For each additional stylesheet, a new link element is needed. We need to use the href attribute to identify where the stylesheet is housed and . The value of the attribute will be the destination. Depending on the type of link, the attribute is handled in different ways, as we will more about in Links and Images.</p>
      <h4>Script</h4>
      <h4>Meta</h4>
 <p>Meta information is any extra information about the particular webpage that describes the document or provides helpful explanations for future reference. Meta information is enclosed in the &lt;meta&gt; and &lt;/meta&gt; tags. Let's take a look at the meta information for our project. </p>
@@ -56,9 +71,9 @@ As you can see in the project HTML, the tag comes right after the &lt;html&gt; s
      <h3>Comments</h3>
 <p>So what if there is information you want to include for yourself or another developer, and not for the browser? That where comments come in. Comments are extremely useful to the content creator because it helps with reminders about certain code especially when a significant a amount of time lapses in between uses. In our sample project above, we've used comments to let us know how we are defining certain types of meta information. We would also include it to help distinguish types of styles and scripts from one another. To create a comment in html, simple add a &lt;, an exclamation point ! and two dashes -- to form a &lt;!--. Place your comment, then enclose it with two dashes -- and a &gt; .  Like all elements in html,comments must be enclosed; in this case, with a start &lt;!-- and ending --&gt;. </p>
 <p>Comments are not confined to the head of an html document; they can also be used in the body.</p>
-
+<h5> Let's move on to the body of the webpage, starting with <a href="structure.html">Structure and Layout. </a> </h5>
     </article>
-   <p> Let's move on to the body of the webpage, starting with <a href="structure.html">Structure and Layout. </a> </p>
+   
 </section>
        
     <footer id="page-footer">
