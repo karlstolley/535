@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>HTML5: Images and Links</title>
+  <title>HTML5: Links and Images</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!--Brief page description:-->
@@ -30,30 +30,32 @@
   <div class="container-fluid">
 
     <header id="page-header">
-      <h1>HTML5</h1>
+      <h1 id="head">HTML 5</h1>
     </header>
 <section>
  <h2>Links and Images</h2>
     
-    <div class="row">
+   <div class="row">
+          <div class="span12">
+           <div class="row">
+          
           <nav class="span2">
-          <ul id="sidenav"> 
-          	<li><a href="index">HTML 5</a></li>
-          	<li><a href="#">Overview</a></li>
-          	<li><a href="elements">Tags, Attributes, and Elements</a></li>
-          	<li><a href="head">The Head</a></li>
-          	<li><a href="structure">Structure and Layout</a></li>
-          	<li><a href="images">Links and Images</a></li>
-	        <li><a href="tables">Tables</a></li>
-          	<li><a href="forms">Forms</a></li>
-          	<li><a href="beyondbasics">Beyond the Basics</a></li>
-
+          <ul class="nav nav-tabs"> 
+          	<li><a href="index.html">HTML 5</a></li>
+          	<li><a href="overview.html">Overview</a></li>
+          	<li><a href="elements.html">Tags, Attributes, and Elements</a></li>
+          	<li><a href="head.html">The Head</a></li>
+          	<li><a href="structure.html">Structure</a></li>
+          	<li><a href="#">Links and Images</a></li>
+	        <li><a href="tables.html">Tables</a></li>
+          	<li><a href="forms.html">Forms</a></li>
+          	<li><a href="beyondbasics.html">Beyond the Basics</a></li>
+		</ul>
           	</nav>
-          <article class="span9">
-
+          <article class="span8">
+          
 <h3>HyperLinks</h3>
 <p> Now, let's learn about what makes a webpage truly a webpage, links. If not for links, a webpage would be a static document isolated from the rest of the internet nearly impossible to reach and just as impossible to leave. Links are what makes the world wide web, the world wide web. Now that we've stressed the importance of learning such a critical component of webpages, we're going to learn about three types of links: in page links or bookmarks, local page links, and external links. But before we do, let's take a closer look at the hyperlink tag and its individual components.</p>
-
 <h5>&lt;a&gt;</h5>
 <p>
 Links are formed with the start tag &lt;a&gt; and end tag &lt;/a&gt;. The a in this tag means anchor, and the &lt;a&gt; can refer to either the origin anchor, where the link starts, or the target anchor, where the link ends, on text within the same webpage.
@@ -63,8 +65,85 @@ The origin anchor, also known as the source anchor, is where the link begins and
 [aside: don't confuse the &lt;a&gt; tag with the &lt;link&gt; tag; &lt;a&gt; tags only appear in the body, and &lt;link&gt; tags only appear in the head of the document]
 </p>
 <p>Let's take a look at our sample project.</p>
-<p>SAMPLE PROJECT FINAL</p>
-<p>SAMPLE PROJECT HTML</p>
+
+<p><img src="images/sampleproject.png" alt="sample project"> </p>
+     
+     <pre class="prettyprint">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+ &lt;title&gt;HTML5 Sample&lt;/title&gt;
+
+  &lt;!--Brief page description:--&gt;
+  &lt;meta name="description" content=""&gt;
+  &lt;!--Name(s) of primary authors--&gt;
+ &lt;meta name="author" content=""&gt;
+
+  &lt;!--Styles--&gt;
+&lt;!-- &lt;link href="/assets/css/bootstrap.css" rel="stylesheet"&gt; --&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;section&gt;
+
+    &lt;header&gt;
+      &lt;h1&gt;About Me&lt;/h1&gt;
+      
+    &lt;/header&gt;
+    &lt;nav&gt;
+    	&lt;ul&gt;
+    		&lt;li&gt;&lt;a href="#"&gt;My life&lt;/a&gt;&lt;/li&gt;
+    		&lt;li&gt;&lt;a href="#"&gt;My work&lt;/a&gt;&lt;/li&gt;
+    		&lt;li&gt;&lt;a href="#"&gt;My future&lt;/a&gt;&lt;/li&gt;
+    &lt;/nav&gt;
+    &lt;article&gt;
+      
+      &lt;h2&gt; My life &lt;/h2&gt;
+    
+     &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit convallis nunc mattis tempor. Praesent tortor quam, porttitor a egestas vel, sollicitudin sit amet augue. Sed sed purus erat. Ut ante diam, consequat in mollis eget, gravida eget magna. Vivamus egestas massa non tellus pellentesque scelerisque. Morbi sem mauris, rhoncus in lobortis ut, tincidunt sed erat.  &lt;/p&gt;
+      &lt;/article&gt;
+      &lt;article&gt;
+     &lt;h2&gt; My Work &lt;/h2&gt;
+     &lt;p&gt;Morbi sem mauris, rhoncus in lobortis ut, tincidunt sed erat. Cras rutrum dignissim sagittis. Fusce sit amet lectus dui, quis feugiat elit. Nullam facilisis mattis urna vitae commodo. Cras porttitor malesuada nisi, id facilisis nulla scelerisque ut. Cras eleifend dui quis.&lt;/p&gt;
+     &lt;ol&gt;
+		&lt;li&gt;Class aptent&lt;/li&gt;
+		&lt;li&gt;Fusce sit amet &lt;/li&gt;
+		&lt;li&gt;Morbi sem mauris &lt;/li&gt;
+		&lt;li&gt;Nullam facilisis &lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+	&lt;tr&gt;
+	&lt;th&gt;Education&lt;/th&gt;
+	&lt;th&gt;Experience&lt;/th&gt;
+	&lt;th&gt;Skills&lt;/th&gt;
+	&lt;/tr&gt;
+	
+	&lt;tr&gt;
+	&lt;td&gt;taciti&lt;/td&gt;
+	&lt;td&gt;litora&lt;/td&gt;
+	&lt;td&gt;conubia&lt;/td&gt;
+	&lt;/tr&gt;
+	
+	&lt;tr&gt;
+	&lt;td&gt;scelerisque&lt;/td&gt;
+	&lt;td&gt;torquent&lt;/td&gt;
+	&lt;td&gt;Cras&lt;/td&gt;
+	&lt;/tr&gt;
+	
+	&lt;/table&gt;
+      &lt;/article&gt;
+&lt;h2&gt;My Future&lt;/h2&gt;
+&lt;img src="images/oceanview.jpg" alt="my future image"&gt;
+      &lt;/section&gt;
+    
+    &lt;footer&gt;
+      &lt;p&gt;Designed and Created by Me&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>      
 
 <h4>External Pages</h4>
 <p>Links to external pages are the simplest of the link types. All you have to do to insert a link to an external page is use the &lt;a&gt; element structure listed above and insert the web address (including http//:) as the destination value. For example, in the project above, we have a link to the IIT home page. The user will see only the IIT highlighted as a hyperlink.</p>
