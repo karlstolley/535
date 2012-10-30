@@ -6,7 +6,7 @@ number = gets.chomp
 print "What is the course title of your class? "
 title = gets.chomp
 
-print "Who teaches class? "
+print "Who teaches this class? "
 instructor = gets.chomp
 
 print "What is day of the week does class meet? "
@@ -28,3 +28,4 @@ puts "    <td>" + start_time + "</td>"
 puts "    <td>" + end_time + "</td>"
 puts "  </tr>"
 puts "</table>"
+
