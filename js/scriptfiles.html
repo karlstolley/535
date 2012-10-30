@@ -49,6 +49,79 @@
       web page.
       </p>
 
+      <p>
+      There are two main ways to use JavaScript in your web pages. They both involve
+      using the <code>script</code> tag. Let's take a look at a short example.
+      </p>
+
+      <pre>
+      <code>
+      &lt;html&gt;
+      &lt;head&gt;
+      &lt;script type=&quot;text/javascript&quot;&gt;
+      alert(&quot;Hello, world!&quot;);
+      &lt;/script&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+      This is my web page.
+      &lt;/body&gt;
+      &lt;/html&gt;
+      </code>
+      </pre>
+
+      <p>
+      This is obviously a fairly trivial example, but it demonstrates the use
+      of the script tag. You can put a script tag on your page, and any code
+      that you put inside these tags will be interpreted as a script.
+      </p>
+
+      <p>
+      Usually we don't want to put JavaScript directly in our HTML pages, though.
+      It's best to separate concerns, so we should keep our JavaScript in a separate
+      file. To achieve the same effect as above, but without putting JavaScript
+      directly into our HTML, we would first create a file called <code>alert.js</code>
+      In this file we would put only our JavaScript code.
+      <br /><br />
+      <code>alert(&quot;Hello, world!&quot;);</code>
+      <br /><br />
+      Then, in our HTML, we would do the following.
+      </p>
+
+      <pre>
+      <code>
+      &lt;html&gt;
+      &lt;head&gt;
+      &lt;script type=&quot;text/javascript&quot; src=&quot;alert.js&quot;&gt;
+      &lt;/script&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+      This is my web page.
+      &lt;/body&gt;
+      &lt;/html&gt;
+      </code>
+      </pre>
+
+      <p>
+      What we did here was add a <code>src</code> attribute to the <code>script</code>
+      tag that points to where our JavaScript file is. If we had put the file inside
+      a scripts folder, we would write:
+      </p>
+
+      <code>
+        &lt;script type=&quot;text/javascript&quot; src=&quot;scripts/alert.js&quot;&gt;
+      </code>
+
+      <p>
+      Besides separation of concerns and keeping JavaScript out of our HTML, this
+      approach is good for reusing certain scripts across web pages. In this example,
+      our script was only one line long. But imagine if we had a 50 line script
+      that we want to run on every page of our web site. With the first approach we
+      looked at, we'd have to copy and paste that script on every page. By using the
+      <code>src</code> attribute, it's easy to include that 50 line script across
+      many web pages by just using one script tag.
+      </p>
+
+
         <footer class="span8 offset3">
         <p>Page last updated by Matthew Heston</p>
       </footer>
