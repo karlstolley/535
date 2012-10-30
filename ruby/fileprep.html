@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Ruby: Why Program?</title>
+  <title>Ruby: Practice Prep</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!--Brief page description:-->
@@ -69,30 +69,56 @@
 
     <div class="span9">
 
-      <article id="intro">
+      <article id="whyruby">
         <header class="page-header">
-            <h2>Why Program?</h2>
+          <h2>Practice Prep</h2>
         </header>
         <section>
 
-          <p>Most programming guides just jump into the language, but don't get into why someone would want to make their own program. With all of the commercial software available, why would anyone want to create their own?</p>
+		<p>This tutorial will show you how to write a Ruby script, specifically one that will convert a CSV file into an HTML file that you can then include in your mini-web site.</p>
 
-          <p>If you want to build a piece of furniture or repair a leaky faucet, you need the right tool. You wouldn't use a hammer when assembling a chair if all it came with were screws; you wouldn't try to tighten a pipe joint with a screwdriver. Even if you have a screwdriver or wrench, is it the proper screwdriver or the proper wrench? What if you could create the exact tool you needed when you needed it?</p>
+		<p>That's great, as long as you have the CSV file!
 
-          <p>We do. Programs are tools. They create or change data.</p>
-
-          <p>Why program? So you can make the exact tool you need to work with your data. If you want to merge ten files into one, you can write a program to do it. If you want to change a comma-separated text file into an HTML table, you can write a program to do it.</p>
-
-          <p>Let's get to it.</p>
+		<ol>
+			<li>Download the <a href="create_csv.rb">Ruby script</a></li>
+			<li>Open your command line (Terminal)</li>
+			<li>Type
+<pre>
+ruby ~/Downloads/create_csv.rb
+</pre>
+			<p>(Replace ~/Downloads/ with another path if you downloaded the script to another directory.)</p>
+			</li>
+			<li>The Ruby Script will ask you:
+				<ol>
+					<li>What do you want to name your file?
+						<ul>
+							<li>Do not give it a file extension, the script will set the right one (.csv)</li>
+						</ul>
+					</li>
+					<li>How many classes do you have this semester?</li>
+					<li>For each class:
+						<ol>
+							<li>What is the Course Number?</li>
+							<li>What is the Course Title?</li>
+							<li>Who is the instructor?</li>
+							<li>What days is it held?</li>
+							<li>What time does it start?</li>
+							<li>What time does it end?</li>
+						</ol>
+					</li>
+				</ol>
+			</li>
+		</ol>
 
         </section>
         <footer>
           <ul class="pager">
-            <li><a href="alreadyknow.html">Next</a></li>
+            <li><a href="tolearn.html">Previous</a></li>
+            <li><a href="#">Next</a></li>
           </ul>
           <h5>Progress in This Tutorial</h5>
           <div class="progress progress-striped">
-            <div class="bar" style="width: 5%;"></div>
+            <div class="bar" style="width: 30%;"></div>
           </div>
         </footer>
       </article>
@@ -115,4 +141,3 @@
 
 </body>
 </html>
-
