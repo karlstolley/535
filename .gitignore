@@ -2,3 +2,4 @@ _site/
 nbproject/*
 *.log
 _site/
+.DS_Store
