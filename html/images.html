@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>HTML5: Images and Links</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Brief page description:-->
+  <meta name="description" content="">
+  <!--Name(s) of primary authors-->
+  <meta name="author" content="">
+
+  <!--Styles-->
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+ <!-- <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/assets/css/prettify.css" rel="stylesheet">   -->
+  
+  <!--Custom styles-->
+  <link href="/assets/css/custom.css" rel="stylesheet">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+
+  <div class="container-fluid">
+
+    <header id="page-header">
+      <h1>HTML5</h1>
+    </header>
+<section>
+ <h2>Links and Images</h2>
+    
+    <div class="row">
+          <nav class="span2">
+          <ul id="sidenav"> 
+          	<li><a href="index">HTML 5</a></li>
+          	<li><a href="#">Overview</a></li>
+          	<li><a href="elements">Tags, Attributes, and Elements</a></li>
+          	<li><a href="head">The Head</a></li>
+          	<li><a href="structure">Structure and Layout</a></li>
+          	<li><a href="images">Links and Images</a></li>
+	        <li><a href="tables">Tables</a></li>
+          	<li><a href="forms">Forms</a></li>
+          	<li><a href="beyondbasics">Beyond the Basics</a></li>
+
+          	</nav>
+          <article class="span9">
+
+<h3>HyperLinks</h3>
+<p> Now, let's learn about what makes a webpage truly a webpage, links. If not for links, a webpage would be a static document isolated from the rest of the internet nearly impossible to reach and just as impossible to leave. Links are what makes the world wide web, the world wide web. Now that we've stressed the importance of learning such a critical component of webpages, we're going to learn about three types of links: in page links or bookmarks, local page links, and external links. But before we do, let's take a closer look at the hyperlink tag and its individual components.</p>
+
+<h5>&lt;a&gt;</h5>
+<p>
+Links are formed with the start tag &lt;a&gt; and end tag &lt;/a&gt;. The a in this tag means anchor, and the &lt;a&gt; can refer to either the origin anchor, where the link starts, or the target anchor, where the link ends, on text within the same webpage.
+The origin anchor, also known as the source anchor, is where the link begins and is identified by the simple presence of the opening &lt;a&gt; tag. The target anchor is identified within the opening tag with an attribute [aside: for a refresher on attributes, visit the <a href="elements.html"> Tags, Attributes, and Elements</a> section.] To identify the target anchor, we need to use the href attribute. The value of the attribute will be the destination. Depending on the type of link, the attribute is handled in different ways, as we will soon see below. </p>
+<p> In addition, a title attribute could be added to the opening tag to let the user know where the link will take them; the title may  appear if you hover the cursor over the link, if enabled, or for accessibility.[see this webpage for accessibility]</p>
+<p>In short, the element structure for links is <!-- Trying out an html highligher --> <span class="intexthtml"> &lt;a href="LINK DESTINATION" title="DESTINATION TITLE"&gt; WHAT VIEWER SEES AS A HYPERLINK&lt;/a&gt;</span>.
+[aside: don't confuse the &lt;a&gt; tag with the &lt;link&gt; tag; &lt;a&gt; tags only appear in the body, and &lt;link&gt; tags only appear in the head of the document]
+</p>
+<p>Let's take a look at our sample project.</p>
+<p>SAMPLE PROJECT FINAL</p>
+<p>SAMPLE PROJECT HTML</p>
+
+<h4>External Pages</h4>
+<p>Links to external pages are the simplest of the link types. All you have to do to insert a link to an external page is use the &lt;a&gt; element structure listed above and insert the web address (including http//:) as the destination value. For example, in the project above, we have a link to the IIT home page. The user will see only the IIT highlighted as a hyperlink.</p>
+<h4>Internal Pages</h4>
+<p>Internal page links are those found within the same site, though not within the same webpage. For example, the various sections of this tutorial are housed on different pages within the same website- DigitalContentCreatorsResource.com. You have to know where the page you would like to link to lives within the website, in order to link to it using an internal link.</p>
+
+<h4>Bookmarks</h4>
+<p> We refer to bookmarks as links that take you to anchors on the same page. You must define the anchor. Bookmarks are links found in a webpage that take you to other parts of the same page. 
+</p>
+<h3>Images</h3>
+<p> Images are included as part of the same tutorial as the links because they share the same concept only with different tags. The opening &lt;img&gt;tag contains the src attribute whose value identifies the image that should appear. Here is where the idea closely follows the way an internal page is made. The value of the src is usually within the same website and you have to know and list the location. For example...</p>
+<p> If the image is not found within the same website or directory, then the image element is nested within an anchor or link element. For example...</p>
+    
+    <p> Moving on to <a href="tables.html">Tables. </a> </p>
+
+    </article>
+</div>
+      </section>
+      
+    
+    <footer id="page-footer">
+      <p>Licensed under Creative Commons</p>
+    </footer>
+
+  </div><!--/.container-fluid-->
+
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/prettify/prettify.js"></script>
+
+</body>
+</html>

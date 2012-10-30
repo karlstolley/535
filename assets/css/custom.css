@@ -55,3 +55,36 @@ body {
   border: 2px solid red;
 }
 
+.chapterbutton h2 {
+	background-color: #339999;
+	margin: 20;
+}
+
+.intexthtml {
+	background-color: #D3BECF;
+}
+.splitsample {
+
+}
+
+.htmlsample {
+
+}
+
+.projectsample {
+
+}
+
+.htmlaside {
+	float: right;
+	background-color: #FFE1FF;
+}
+
+#sidenav {
+	
+}
+
+.span2 {
+	margin-top: 20px;
+	
+}
