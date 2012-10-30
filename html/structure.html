@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Subject Area: HTML5</title>
+  <title>HTML5: Structure</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!--Brief page description:-->
@@ -36,57 +36,73 @@
 
           <h2>Structure and Layout</h2>
       <div class="row">
+          <div class="span12">
+           <div class="row">
+          
           <nav class="span2">
-          <ul id="sidenav"> 
-          	<li><a href="index">HTML 5</a></li>
+          <ul class="nav nav-tabs"> 
+          	<li><a href="index.html">HTML 5</a></li>
           	<li><a href="#">Overview</a></li>
-          	<li><a href="elements">Tags, Attributes, and Elements</a></li>
-          	<li><a href="head">The Head</a></li>
-          	<li><a href="structure">Structure and Layout</a></li>
-          	<li><a href="images">Links and Images</a></li>
-	        <li><a href="tables">Tables</a></li>
-          	<li><a href="forms">Forms</a></li>
-          	<li><a href="beyondbasics">Beyond the Basics</a></li>
-
+          	<li><a href="elements.html">Tags, Attributes, and Elements</a></li>
+          	<li><a href="head.html">The Head</a></li>
+          	<li><a href="structure.html">Structure</a></li>
+          	<li><a href="images.html">Links and Images</a></li>
+	        <li><a href="tables.html">Tables</a></li>
+          	<li><a href="forms.html">Forms</a></li>
+          	<li><a href="beyondbasics.html">Beyond the Basics</a></li>
+		</ul>
           	</nav>
-          <article class="span9">
-
-    	<h3>&lt;Body&gt;</h3>
+          <article class="span8">
+    	<h3>Body</h3>
     		<p> The body of the webpage houses all of the content that is intended to be displayed to the public. The browser renders everything enclosed within the &lt;body&gt; and &lt;/body&gt; tags so that it is viewable. All other tags that we learn about go inside the body of the document. </p>
 
 <h3>Tags Used Within the Body</h3>
 	<p> Most of the following are pretty self-explanatory. </p>
     	
-    	<h4>&lt;section&gt;</h4>
-    		<p>&lt;section&gt; tag is used to group like content together. Sections could be nested or stand alone. Usually, the sections contain headers and footers. 
+    	<h4>Section</h4>
+    		<p>The &lt;section&gt; tag is used to group like content together. Sections could be nested or stand alone. Usually, the sections contain headers and footers. 
     
-    	<h4>&lt;header&gt;</h4>
+    	<h4>Header</h4>
 			<p> The header comes at the beginning of each section and indicates that the information enclosed in the &lt;header&gt; and &lt;/header&gt; is the header.
        	 
-       	 <h4>&lt;article&gt;</h4>
+       	 <h4>Article</h4>
 			<p> The &lt;article&gt; tag is used for grouped information within sections. These are usually not nested unless they are nested within sections of other sections [aside: to see more about nesting, go to Nesting].
 			
-    	<h4>&lt;p&gt;</h4>
+    	<h4>Paragraph</h4>
    			<p>The &lt;p&gt; tag is probably the most common tag you will see in a document, simply because it defines the portion of text that should be displayed as a paragraph. It is possible for a very simple page to be composed simply of &lt;p&gt; &lt;/p&gt; elements, however, it is very limited and it doesn't tell you much about the information enclosed. Also, when we start to style the page using CSS, other tags, such as section and article help better define parts of the webpage.</p>
-   	 	<h4>&lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, and &lt;h6&gt;</h4>
+   	 	<h4>H1, H2, H3, H4, H5, and H6</h4>
 		<p> The h tags are useful. In the example above, these were formed using these tags. Decreasing importance. In this page, the headings for each individual paragraph, for example section and article, use the h4 tag, while the heading for the entire page, HTML5, uses the h1 tag, indicated its hierarchal importance. </p>
-   		<h4>&lt;nav&gt;</h4>
+   		<h4>Navigation</h4>
    			<p> The &lt;nav&gt; &lt;/nav&gt;tag groups navigation links together. These links are usually presented as an unordered list (see below). [to see more about links go to Links and Images].
    		
-   		<h4>&lt;ul&gt; and &lt;ol&gt;</h4>
+   		<h4>Unordered and Ordered Lists</h4>
    			<p> Lists are used with surprising frequency when building webpages. The most common use is with navigation links but there are also other instances, such as the assumptions and learning objectives at the start of this tutorial. Lists help display information in an attractive and easy to read format, without the need for styling (though it's always looks better with a little style, see CSS).</p>
    			<p> There are two different tags for lists, depending on how you would like the information displayed: &lt;ul&gt; and &lt;ol&gt;. The &lt;ul&gt; tag is used when you do not want do put the information in any particular number order; it means unordered list. Depending on your styles or, if defined in styles, the browser default, a simple round bullet point precedes each item in the list. The &lt;ol&gt;, or ordered list, tag is used when you want the information to be displayed in order and using a number. The browser will automatically list the items in order 1, 2, 3, 4, etc, based on how you list it in the code. </p>
    			<p> In both cases, for each individual listed item you need to use the opening tag &lt;li&gt; and the closing tag &lt;/lil&gt;.</p>
    			<p> Let's take a look at a example of each type of list.</p>
 
    		
-   		<h4>&lt;footer&gt;</h4>
+   		<h4>Footer</h4>
     		<p> The footer comes at the end of a section or the page with extra information. </p>
     	
-    	<h4>&lt;Div&gt;</h4>
+    	<h4>Div tag</h4>
 <p>The &lt;div&gt; is a generic container that is used when none of the other tags appropriately define the information contained. They are used more often than not with CSS.</p>
  
  </article>
+
+<article class="span8 offset2">
+<h3> Structure At-a-Glance </h3>
+<table>
+<tr>
+<td>Tag</td>
+<td>Uses</td>
+<td>Do Not Use</td>
+</tr>
+</table>
+
+</article>
+</div>
+</div>
 </div>
       </section>
       
