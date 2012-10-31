@@ -1,0 +1,33 @@
+---
+# YAML for each page; examples below. Copy the contents
+# of _metadata.yml for a clean, commentless copy to add
+# to your files.
+
+# Subject area (e.g., JavaScript, HTML, Git...); should
+# be a single word
+subject: JavaScript
+
+# Specific page title (e.g., Getting Started)
+title: Getting Started
+
+# Short (140 chars or so) description/summary of the page
+# Start with an indented line below the > and keep your
+# lines indented evenly
+description: >
+  This introduces JavaScript and previews the rest of
+  the JavaScript module.
+# Comma-separated list of authors
+authors: Matt Heston
+
+# Layout; page is default & matches _layouts/page.html
+layout: page
+
+# Custom stylesheets, if used; specify root-relative path to file:
+stylesheets:
+  - url: /path/to/first/stylesheet.css
+  - url: /path/to/second/stylesheet.css
+# Custom JavaScripts, if used; specify root-relative path to file:
+scripts:
+  - url: /path/to/first/javascript.css
+  - url: /path/to/second/javascript.css
+---
