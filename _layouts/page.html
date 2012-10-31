@@ -39,7 +39,7 @@
       <div class="container-fluid">
         <a class="brand" href="/">Bootcamp</a>
           <ul class="nav">
-            <li><a href="/cli/">CLI</a></li>
+            <li><a href="/start/">Setup</a></li>
             <li><a href="/git/">Git</a></li>
             <li><a href="/md/">Markdown</a></li>
             <li><a href="/html/">HTML</a></li>
@@ -56,6 +56,7 @@
       <h1>{{ page.subject }}</h1>
     </div>
   </header>
+<<<<<<< HEAD
 
   <section class="container-fluid">
 
@@ -96,11 +97,53 @@
     <p>Licensed under Creative Commons. Created by {{ page.authors }}</p>
   </footer>
 
+=======
+
+  <div class="container-fluid">
+
+    <div class="row-fluid">
+      <nav class="span3 bs-docs-sidebar">
+        <ol class="nav nav-list bs-docs-sidenav">
+          {% assign subnav = page.subject | downcase %}
+          {% case subnav %}
+          {% when 'css' %}
+            {% include nav_css.html %}
+          {% when 'git' %}
+            {% include nav_git.html %}
+          {% when 'html' %}
+            {% include nav_html.html %}
+          {% when 'javascript' %}
+            {% include nav_javascript.html %}
+          {% when 'markdown' %}
+            {% include nav_markdown.html %}
+          {% when 'ruby' %}
+            {% include nav_ruby.html %}
+          {% when 'setup' %}
+            {% include nav_setup.html %}
+          {% endcase %}
+        </ol>
+      </nav>
+
+      <div class="span9">
+
+        {{ content }}
+
+      </div><!--/.span9 -->
+
+    </div><!--/.row-fluid -->
+
+  </div><!--/.container-fluid-->
+
+  <footer id="page-footer" class="container-fluid">
+    <p>Licensed under Creative Commons. Created by {{ page.authors }}</p>
+  </footer>
+
+>>>>>>> 62422eaaddda9bcf16b086a7cc3776dbbb9c0edc
 
   <!-- JavaScript
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
-  <script src="/assets/js/jquery.js"></script>
+  <script src="/assets/js/jquery.min.js"></script>
   <script src="/assets/js/bootstrap.min.js"></script>
   <script src="/assets/js/prettify/prettify.js"></script>
 
