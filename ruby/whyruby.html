@@ -1,152 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Ruby: Why Ruby?</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+---
+subject: Ruby
+title: Why Ruby?
+description: >
 
-  <!--Brief page description:-->
-  <meta name="description" content="">
-  <!--Name(s) of primary authors-->
-  <meta name="author" content="">
+# Comma-separated list of authors
+authors: Anthony T. Sansone
+layout: page
+---
 
-  <!--Styles-->
-  <link href="/assets/css/bootstrap.css" rel="stylesheet">
-  <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
-  <link href="/assets/css/prettify.css" rel="stylesheet">
+<article id="whyruby">
+  <header class="page-header">
+    <h2>Why Ruby?</h2>
+  </header>
+  <section>
+    <p>There are many programming languages available to a new programmer. Some you may know: Java, C and Javascript. Some you may not know: Haskell, Lisp or SmallTalk.</p>
+    <p>Ruby is flexible, popular, easy to code and free.</p>
 
-  <!--Custom styles-->
-  <link href="/assets/css/custom.css" rel="stylesheet">
+    <h3>Flexible</h3>
+    <p>Ruby can be used for most anything: web applications, system utilities or even games. It is not made to only do one thing.</p>
+    <p>Any programmer can also alter Ruby. If needed functionality does not exist in Ruby, the programmer can add it.</p>
 
-  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+    <h3>Popular</h3>
+    <p>Ruby is one of the top ten most used programming languages. Ruby on Rails, introduced in 2003, allows for rapid development of web applications. Many well known sites use Rails: <a href="http://www.groupon.com">Groupon</a>, LinkedIn, GitHub, Hulu, Basecamp, Penny Arcade and others.</p>
 
-</head>
+    <p>Ruby's popularity stems from its ease of use and comprehension.</p>
 
-<body>
+    <h3>Easy to Read and Code</h3>
 
-<div class="navbar navbar-inverse navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
-      <a class="brand" href="/">Bootcamp</a>
-        <ul class="nav">
-          <li><a href="/cli/">CLI</a></li>
-          <li><a href="/git/">Git</a></li>
-          <li><a href="/md/">Markdown</a></li>
-          <li><a href="/html/">HTML</a></li>
-          <li><a href="/css/">CSS</a></li>
-          <li><a href="/js/">Javascript</a></li>
-          <li class="active"><a href="/ruby/">Ruby</a></li>
-        </ul>
-    </div>
-  </div>
-</div>
+    <p>Ruby is written to appear as close to English as possible. It does not add more to the language to do something simple.</p>
 
-<header id="page-header" class="">
-  <div class="container-fluid hero-unit ruby-header">
-    <h1>Ruby</h1>
-    <p>Programming Made Easier</p>
-  </div>
-</header>
+    <p>If you want to have your computer show "Hello world!" on the screen, you would need to do the following...</p>
 
-<div class="container-fluid">
-
-  <div class="row-fluid">
-    <div class="span3 bs-docs-sidebar">
-      <ul class="nav nav-list bs-docs-sidenav">
-        <li><a href="index.html"><i class="icon-chevron-right"></i> Why Program?</a></li>
-        <li><a href="alreadyknow.html"><i class="icon-chevron-right"></i> What Should I Already Know?</a></li>
-        <li><a href="tolearn.html"><i class="icon-chevron-right"></i> What Should I Learn?</a></li>
-        <li><a href="whyruby.html"><i class="icon-chevron-right"></i> Why Ruby?</a></li>
-        <li><a href="dosomething.html"><i class="icon-chevron-right"></i> Doing Something</a></li>
-        <li><a href="#methods"><i class="icon-chevron-right"></i> Methods</a></li>
-        <li><a href="#vars"><i class="icon-chevron-right"></i> Variables</a></li>
-        <li><a href="#"><i class="icon-chevron-right"></i> </a></li>
-      </ul>
-    </div>
-
-    <div class="span9">
-
-      <article id="whyruby">
-        <header class="page-header">
-          <h2>Why Ruby?</h2>
-        </header>
-        <section>
-          <p>There are many programming languages available to a new programmer. Some you may know: Java, C and Javascript. Some you may not know: Haskell, Lisp or SmallTalk.</p>
-          <p>Ruby is flexible, popular, easy to code and free.</p>
-
-          <h3>Flexible</h3>
-          <p>Ruby can be used for most anything: web applications, system utilities or even games. It is not made to only do one thing.</p>
-          <p>Any programmer can also alter Ruby. If needed functionality does not exist in Ruby, the programmer can add it.</p>
-
-          <h3>Popular</h3>
-          <p>Ruby is one of the top ten most used programming languages. Ruby on Rails, introduced in 2003, allows for rapid development of web applications. Many well known sites use Rails: <a href="http://www.groupon.com">Groupon</a>, LinkedIn, GitHub, Hulu, Basecamp, Penny Arcade and others.</p>
-
-          <p>Ruby's popularity stems from its ease of use and comprehension.</p>
-
-          <h3>Easy to Read and Code</h3>
-
-          <p>Ruby is written to appear as close to English as possible. It does not add more to the language to do something simple.</p>
-
-          <p>If you want to have your computer show "Hello world!" on the screen, you would need to do the following...</p>
-
-          <h4>In Java</h4>
+    <h4>In Java</h4>
 
 <pre>
 public class HelloWorld {
-  public static void main(String[] args) {
-    System.out.println("Hello world!");
-  }
+public static void main(String[] args) {
+System.out.println("Hello world!");
+}
 }
 </pre>
 
-          <p>Translated, this says: Create a block of code that anyone can use to show "Hello world!". In this block, there is a block of code, a function, that runs by default, called "main", whenever someone tries to use HelloWorld. This function does not require additional information. This function runs a command, called a method, that prints a line of text ("Hello world!") out to the system (System.out.println). <i>Whew.</i></p>
+    <p>Translated, this says: Create a block of code that anyone can use to show "Hello world!". In this block, there is a block of code, a function, that runs by default, called "main", whenever someone tries to use HelloWorld. This function does not require additional information. This function runs a command, called a method, that prints a line of text ("Hello world!") out to the system (System.out.println). <i>Whew.</i></p>
 
-          <h4>In Ruby</h4>
+    <h4>In Ruby</h4>
 
 <pre>
 puts "Hello world!"
 </pre>
 
-          <p>This says put "Hello world!" on the screen.</p>
+    <p>This says put "Hello world!" on the screen.</p>
 
-          <p>Which language would you rather learn?</p>
+    <p>Which language would you rather learn?</p>
 
-          <h3>Free</h3>
+    <h3>Free</h3>
 
-          <p>Ruby can be downloaded and installed at no cost. All you need to program with it is a text editor; no specialized programs are required.</p>
+    <p>Ruby can be downloaded and installed at no cost. All you need to program with it is a text editor; no specialized programs are required.</p>
 
-        </section>
-        <footer>
-          <ul class="pager">
-            <li><a href="tolearn.html">Previous</a></li>
-            <li><a href="#">Next</a></li>
-          </ul>
-          <h5>Progress in This Tutorial</h5>
-          <div class="progress progress-striped">
-            <div class="bar" style="width: 20%;"></div>
-          </div>
-        </footer>
-      </article>
-
-    </div><!--/.span9 -->
-
-  </div><!--/.row-fluid -->
-  <footer id="page-footer">
-    <p>Written and designed by Anthony T. Sansone. &copy;2012. Licensed under Creative Commons</p>
+  </section>
+  <footer>
+    <ul class="pager">
+      <li><a href="tolearn.html">Previous</a></li>
+      <li><a href="#">Next</a></li>
+    </ul>
+    <h5>Progress in This Tutorial</h5>
+    <div class="progress progress-striped">
+      <div class="bar" style="width: 20%;"></div>
+    </div>
   </footer>
-
-</div><!--/.container-fluid-->
-
-  <!-- JavaScript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="/assets/js/jquery.js"></script>
-  <script src="/assets/js/bootstrap.min.js"></script>
-  <script src="/assets/js/prettify/prettify.js"></script>
-
-</body>
-</html>
+</article>
 
