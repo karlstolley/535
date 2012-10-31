@@ -32,12 +32,34 @@
 
 </head>
 
-<body>
+<body class="{{ page.subject | downcase }}">
   <div class="container-fluid">
 
     <header id="page-header">
       <h1>{{ page.subject }}</h1>
     </header>
+
+    <nav class="subnav">
+      <ol>
+    {% assign subnav = page.subject | downcase %}
+    {% case subnav %}
+    {% when 'css' %}
+      {% include nav_css.html %}
+    {% when 'git' %}
+      {% include nav_git.html %}
+    {% when 'html' %}
+      {% include nav_html.html %}
+    {% when 'javascript' %}
+      {% include nav_javascript.html %}
+    {% when 'markdown' %}
+      {% include nav_markdown.html %}
+    {% when 'ruby' %}
+      {% include nav_ruby.html %}
+    {% when 'setup' %}
+      {% include nav_setup.html %}
+    {% endcase %}
+      </ol>
+    </nav>
 
     {{ content }}
 
