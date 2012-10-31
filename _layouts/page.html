@@ -34,13 +34,17 @@
 
 <body class="{{ page.subject | downcase }}">
   <div class="container-fluid">
-
     <header id="page-header">
-      <h1>{{ page.subject }}</h1>
+      <div class="container-fluid hero-unit">
+        <h1>{{ page.subject }}</h1>
+      </div>
     </header>
 
-    <nav class="subnav">
-      <ol>
+<div class="container-fluid">
+
+  <div class="row-fluid">
+    <div class="span3 bs-docs-sidebar">
+      <ul class="nav nav-list bs-docs-sidenav">
     {% assign subnav = page.subject | downcase %}
     {% case subnav %}
     {% when 'css' %}
@@ -58,11 +62,16 @@
     {% when 'setup' %}
       {% include nav_setup.html %}
     {% endcase %}
-      </ol>
-    </nav>
+      </ul>
+    </div>
+
+    <div class="span9">
 
     {{ content }}
 
+    </div><!--/.span9 -->
+
+  </div><!--/.row-fluid -->
     <footer id="page-footer">
       <p>Licensed under Creative Commons. Created by {{ page.authors }}</p>
     </footer>
@@ -85,3 +94,4 @@
 
 </body>
 </html>
+
