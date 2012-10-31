@@ -61,7 +61,7 @@
 
     <div class="row-fluid">
       <nav class="span3 bs-docs-sidebar">
-        <ul class="nav nav-list bs-docs-sidenav">
+        <ol class="nav nav-list bs-docs-sidenav">
           {% assign subnav = page.subject | downcase %}
           {% case subnav %}
           {% when 'css' %}
@@ -79,7 +79,7 @@
           {% when 'setup' %}
             {% include nav_setup.html %}
           {% endcase %}
-        </ul>
+        </ol>
       </nav>
 
       <div class="span9">
