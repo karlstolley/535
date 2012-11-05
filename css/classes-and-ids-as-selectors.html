@@ -1,83 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>CSS: Selectors</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!--Brief page description:-->
-  <meta name="description" content="">
-  <!--Name(s) of primary authors-->
-  <meta name="author" content="">
-
-  <!--Styles-->
-  <link href="/assets/css/bootstrap.css" rel="stylesheet">
-  <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
-  <link href="/assets/css/prettify.css" rel="stylesheet">
-  <style type="text/css">
-    .codeExample{overflow:auto;}
-    #columnsEx{
-      width: 50%;
-      font-size: 18px;
-      font-family: "New Century Schoolbook", "Times New Roman", serif;
-    }
-    #columnsEx div {
-      width: 40%;
-      margin: 0 20px 10px 0;
-      float:left;
-      padding:10px;
-    }
-    #columnsEx p{
-      clear:both;
-    }
-    #columnsEx .column{
-      font-size: 12pt;
-      color: #0C17AB;
-      font-weight:bold;
-      font-family: "Helvetica", "Arial", sans-serif;
-    }
-    #multipleClasses .center{
-      text-align:center;
-    }
-
-    #multipleClasses .header{
-      color: #A913BD;
-      font-weight:900;
-    }
-
-    #multipleClasses .footer{
-      color: #80248C;
-      font-weight:900;
-      font-size:10px;
-      margin: 40px 0 0 0;
-    }
-
-    #IDsMustBeUnique {
-      width: 20%;
-      float:right;
-      background-color: yellow;
-      margin: 20px 0;
-      padding: 20px;
-      border: 4px solid brown;
-      font-size: 18px;
-    }
-  </style>
-  <!--Custom styles-->
-  <link href="/assets/css/custom.css" rel="stylesheet">
-  <script src="/assets/js/jquery.min.js"></script>
-  <script src="/assets/js/bootstrap.min.js"></script>
-  <script src="/assets/js/prettify/prettify.js"></script>
-</head>
-
-
-<body>
-
-  <div class="container-fluid">
-
-    <header id="page-header">
-      <h1>CSS</h1>
-    </header>
-
+---
+subject: CSS
+title: Classes and IDs as Selectors
+description: >
+  Styling elements using custom identifiers
+authors: Christine McClure
+layout: page
+stylesheets:
+  - url: /assets/css/css-chapter-examples.css
+---
     <article class="row-fluid">
       <header>
         <hgroup class="hero-unit">
@@ -109,7 +39,7 @@
       <p>Classes are used when you want to apply an action to <em>one or more</em> HTML elements. An "action" in this chapter refers to CSS style rules,
       but it could also refer to a <a href="/js">JavaScript</a> method. In the next example, we'll create a class to use on some text columns.</p>
 
-      <div class="codeExample" id="columnsEx">
+      <div class="codeExample" id="columnsEx1">
          <h1>Fascinating headline here...</h1>
          <div>
            <p>Column 1: text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.</p>
@@ -156,7 +86,7 @@
 }
 </pre>
       <p>This is the result:</p>
-      <div class="codeExample" id="columnsEx">
+      <div class="codeExample" id="columnsEx2">
          <h1>Fascinating headline here...</h1>
          <div>
            <p class="column">Column 1: text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text.</p>
@@ -247,17 +177,3 @@
         <p>Page last updated by Christine McClure</p>
       </footer>
     </article>
-
-    <footer id="page-footer">
-      <p>Licensed under Creative Commons</p>
-    </footer>
-
-  </div><!--/.container-fluid-->
-
-  <!-- JavaScript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="/assets/js/jquery.min.js"></script>
-  <script src="/assets/js/bootstrap.min.js"></script>
-</body>
-</html>
