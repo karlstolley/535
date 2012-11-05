@@ -68,21 +68,21 @@
 
 /* classes-and-ids-as-selectors.html */
   .codeExample{overflow:auto;}
-  #columnsEx{
+  #columnsEx1,#columnsEx2 {
     width: 50%;
     font-size: 18px;
     font-family: "New Century Schoolbook", "Times New Roman", serif;
   }
-  #columnsEx div {
+  #columnsEx1 div, #columnsEx2 div {
     width: 40%;
     margin: 0 20px 10px 0;
     float:left;
     padding:10px;
   }
-  #columnsEx p{
+  #columnsEx1 p, #columnsEx2 p{
     clear:both;
   }
-  #columnsEx .column{
+  #columnsEx1 .column, #columnsEx2 .column{
     font-size: 12pt;
     color: #0C17AB;
     font-weight:bold;
