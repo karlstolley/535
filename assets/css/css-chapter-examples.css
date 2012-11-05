@@ -18,3 +18,51 @@
         font-size: 12px;
         text-transform: lowercase;
     }
+
+/* positioning.html */
+
+  .clear {clear:both;}
+  .h1Inline h1{display:inline; width: 50px;}
+    .box {
+    width: 100px;
+    color:black;
+    font-weight:900;
+    font-size: 20px;
+    border: 1px solid black;
+    padding: 10px;
+    text-align:center;
+    position:static; /*default position for objects*/
+  }
+
+  /* use colors and patterns for boxk background for vision-impared */
+  .box1 {background: rgba(245, 188, 195, 0.7)
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAMklEQVQYlWNgYGAwZkAFxjjEcApgSOKTIGgSVpOxKcKqmGiFRFuNUwCHGFaT8erCGuAAtV8HLQ/j6goAAAAASUVORK5CYII=);}
+  .box2 {background: rgba(247, 234, 49, 0.4)
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQImWNgYGD4z0AswK4SAFXuAf8EPy+xAAAAAElFTkSuQmCC);}
+  .box3 {background:rgba(27, 66, 242, 0.3)
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAJElEQVQYlWNgwAT/sYjhVIRXMbokVsW4TPhPjCJi5clXTBwAAOy+CfekNMf3AAAAAElFTkSuQmCC);}
+  .box4 {
+    left: 20px;
+    background:rgba(11, 186, 11, 0.3)
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAEklEQVQYlWNgoBL4T7GCoW8FAGEXBfvNSmHvAAAAAElFTkSuQmCC);
+  }
+  #float1 {
+    width: 400px;
+    overflow:auto;
+    padding: 10px;
+  }
+  #float1 img{
+    width: 100px;
+    float:right;
+    margin: 0 0 0 20px;
+  }
+  #float2, #float3, #float3{overflow:auto;}
+  #float2 div, #float3 div, #float4 div {
+    width: 25%;
+    margin: 0 20px 10px 0;
+    background: beige;
+    border: 1px solid red;
+    padding:10px;
+  }
+  #float4 div + p{clear:both;}
+
