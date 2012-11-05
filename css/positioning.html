@@ -1,83 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>CSS: Positioning Elements</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!--Brief page description:-->
-  <meta name="description" content="">
-  <!--Name(s) of primary authors-->
-  <meta name="author" content="">
-
-  <!--Styles-->
-  <link href="/assets/css/bootstrap.css" rel="stylesheet">
-  <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
-  <link href="/assets/css/prettify.css" rel="stylesheet">
-
-  <!--Custom styles-->
-  <link href="/assets/css/custom.css" rel="stylesheet">
-  <script src="/assets/js/jquery.min.js"></script>
-  <script src="/assets/js/bootstrap.min.js"></script>
-  <script src="/assets/js/prettify/prettify.js"></script>
-  <style type="text/css">
-    .clear {clear:both;}
-    .h1Inline h1{display:inline; width: 50px;}
-      .box {
-      width: 100px;
-      color:black;
-      font-weight:900;
-      font-size: 20px;
-      border: 1px solid black;
-      padding: 10px;
-      text-align:center;
-      position:static; /*default position for objects*/
-    }
-
-    /* use colors and patterns for boxk background for vision-impared */
-    .box1 {background: rgba(245, 188, 195, 0.7)
-      url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAMklEQVQYlWNgYGAwZkAFxjjEcApgSOKTIGgSVpOxKcKqmGiFRFuNUwCHGFaT8erCGuAAtV8HLQ/j6goAAAAASUVORK5CYII=);}
-    .box2 {background: rgba(247, 234, 49, 0.4)
-      url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQImWNgYGD4z0AswK4SAFXuAf8EPy+xAAAAAElFTkSuQmCC);}
-    .box3 {background:rgba(27, 66, 242, 0.3)
-      url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAJElEQVQYlWNgwAT/sYjhVIRXMbokVsW4TPhPjCJi5clXTBwAAOy+CfekNMf3AAAAAElFTkSuQmCC);}
-    .box4 {
-      left: 20px;
-      background:rgba(11, 186, 11, 0.3)
-      url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAEklEQVQYlWNgoBL4T7GCoW8FAGEXBfvNSmHvAAAAAElFTkSuQmCC);
-    }
-    #float1 {
-      width: 400px;
-      overflow:auto;
-      padding: 10px;
-    }
-    #float1 img{
-      width: 100px;
-      float:right;
-      margin: 0 0 0 20px;
-    }
-    #float2, #float3, #float3{overflow:auto;}
-    #float2 div, #float3 div, #float4 div {
-      width: 25%;
-      margin: 0 20px 10px 0;
-      background: beige;
-      border: 1px solid red;
-      padding:10px;
-    }
-    #float4 div + p{clear:both;}
-
-
-  </style>
-</head>
-
-
-<body>
-
-  <div class="container-fluid">
-
-    <header id="page-header">
-      <h1>CSS</h1>
-    </header>
+---
+subject: CSS
+title: Positioning
+description: >
+  How to position elements with CSS rules
+authors: Christine McClure
+layout: page
+stylesheets:
+  - url: /assets/css/css-chapter-examples.css
+scripts:
+  - url: /assets/js/css-chapter-examples.js
+---
 
     <article class="row-fluid">
       <header>
@@ -394,93 +326,3 @@ img{
         <p>Page last updated by Christine McClure</p>
       </footer>
     </article>
-
-    <footer id="page-footer">
-      <p>Licensed under Creative Commons</p>
-    </footer>
-
-  </div><!--/.container-fluid-->
-
-  <!-- JavaScript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script>
-
-    $('#changeToRelative').toggle(function() {
-      $('#relative .box').css('position', 'relative');
-      $(this).html('Change back to \'static\' position');
-        }, function() {
-      $('#relative .box').css('position', 'static');
-      $(this).html('Change to \'relative\' position');
-    });
-
-    $('#changeToAbsolute').toggle(function() {
-      $('#absolute .box4').css('position', 'absolute');
-      $('#absolute .box4').css('top', '10px');
-      $('#absolute .box4').css('left', '200px');
-      $('#absolute').append('<p>Scroll up to the top of the window to see box 4.</p>');
-      $(this).html('Change back to \'static\' position');
-        }, function() {
-      $('#absolute p').hide();
-      $('#absolute .box4').css('top', '0');
-      $('#absolute .box4').css('left', '0');
-      $('#absolute .box4').css('position', 'static');
-      $(this).html('Change to \'absolute\' position');
-    });
-
-    $('#changeToFixed').toggle(function() {
-      $('#fixed .box4').css('left', '40%');
-      $('#fixed .box4').css('bottom', '5%');
-      $('#fixed .box4').css('position', 'fixed');
-      $('#fixed').append('<p>Scroll the window up and down and see how box 4 doesn\'t move.</p>');
-      $(this).html('Change back to \'static\' position');
-        }, function() {
-      $('#fixed p').hide();
-      $('#fixed .box4').css('left', '0');
-      $('#fixed .box4').css('bottom', '');
-      $('#fixed .box4').css('position', 'static');
-      $(this).html('Change to \'fixed\' position');
-    });
-
-    $('#changeToInherit').toggle(function() {
-      $('#inherit').css('position', 'fixed');
-      $('#inherit').css('top', '200px');
-      $('#inherit .box').css('position', 'inherit');
-      $('#inheritExplanation').append ('<p><strong>Once the containing element has a fixed position, the inheriting box elements will also be fixed in the same position and overlap each other.</strong></p>');
-      $(this).html('Change back to \'static\' position');
-        }, function() {
-      $('#inherit').css('position', 'static');
-      $('#inherit').css('left', '0');
-      $('#inherit .box').css('position', 'static');
-      $('#inheritExplanation p').hide();
-      $(this).html('Change to \'inherit\' position');
-    });
-
-    $('#floatLeft').toggle(function() {
-      $('#float2 div').css('float', 'left');
-      $(this).html('Remove float');
-        }, function() {
-      $('#float2 div').css('float', 'none');
-      $(this).html('Float items left');
-    });
-
-    $('#floatLeft3').toggle(function() {
-      $('#float3 div').css('float', 'left');
-      $(this).html('Oh no! Remove float!');
-        }, function() {
-      $('#float3 div').css('float', 'none');
-      $(this).html('Float items left');
-    });
-
-    $('#floatLeft4').toggle(function() {
-      $('#float4 div').css('float', 'left');
-      $(this).html('Back to normal');
-        }, function() {
-      $('#float4 div').css('float', 'none');
-      $(this).html('Float items left and clear');
-    });
-  </script>
-  <script src="/assets/js/jquery.min.js"></script>
-  <script src="/assets/js/bootstrap.min.js"></script>
-</body>
-</html>
