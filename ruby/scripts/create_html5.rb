@@ -26,9 +26,9 @@ class CreateHTML
 			
       table_list_row = (table_row + 1).to_s
       
-			questions.each_pair { |question,key| 
+			questions.each_pair { |question,answer| 
 				print "\n#{question} #{table_list_row}? "
-				@courses_data[table_row].merge!(key => gets.chomp)
+				@courses_data[table_row].merge!(answer => gets.chomp)
 			}
 
       table_row += 1
@@ -56,7 +56,7 @@ class CreateHTML
 
 			html_file.puts "  <tr>"
       
-      table_row.each_value { |table_cell| html_file.puts "    <td>" + table_cell + "</td>" }
+      table_row.each_value { |table_cell| html_file.puts "    <td>#{table_cell}</td>" }
       
       html_file.puts "  </tr>"
 

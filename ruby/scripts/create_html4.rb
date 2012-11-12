@@ -28,9 +28,9 @@ class CreateHTML
       
       puts "\nFor Class #{table_list_row}\n"
 
-			questions.each_pair { |question,key| 
+			questions.each_pair { |question,answer| 
 				print "\n#{question} #{table_list_row}? "
-				@courses_data[table_row].merge!(key => gets.chomp)
+				@courses_data[table_row].merge!(answer => gets.chomp)
 			}
 
       table_row += 1
@@ -39,23 +39,14 @@ class CreateHTML
 
   end
 
-
   def build_html_file
-  
     puts "<table>"
-
     @courses_data.each do |table_row|
-
 			puts "  <tr>"
-      
-      table_row.each_value { |table_cell| puts "    <td>" + table_cell + "</td>" }
-      
+      table_row.each_value { |table_cell| puts "    <td>#{table_cell}</td>" }
       puts "  </tr>"
-
     end
-
     puts "</table>"
-
   end
 
 end

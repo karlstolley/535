@@ -28,4 +28,3 @@ puts "    <td>" + start_time + "</td>"
 puts "    <td>" + end_time + "</td>"
 puts "  </tr>"
 puts "</table>"
-

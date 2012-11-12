@@ -11,10 +11,13 @@ questions = {
 
 courses_data = {}
 
-questions.each_pair { |question,key| print "\n#{question} "; courses_data.merge!(key => gets.chomp)}
+questions.each_pair { |question,answer| 
+	print "\n#{question} "
+	courses_data.merge!(answer => gets.chomp)
+}
 
 puts "<table>"
 puts "  <tr>"
-courses_data.each_value { |table_cell| puts "    <td>" + table_cell + "</td>" }
+courses_data.each_value { |table_cell| puts "    <td>#{table_cell}</td>" }
 puts "  </tr>"
 puts "</table>"
