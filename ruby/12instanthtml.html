@@ -1,0 +1,63 @@
+---
+subject: Ruby
+title: Instant Course List
+description: >
+
+# Comma-separated list of authors
+authors: Anthony T. Sansone
+layout: page
+---
+
+<article id=" ">
+  <header class="page-header">
+    <h2>Instant Course List</h2>
+  </header>
+  <section>
+
+  <p>Well, you wrote a Ruby script to give us an HTML-formatted course list. You also changed the script so it put the question and response on the same line. That's the difference between <code>print</code> and <code>puts</code>: <code>puts</code> always adds a new line character at the end of a line.</p>
+
+
+<div class="bs-docs-example">
+<p>Command line results from running <code>create_html1.rb</code></p>
+
+</div>
+<pre class="command-line linenums">
+<span class="prompt">[~/Projects/ruby/scripts]</span><span class="prompt-end">$</span> ruby create_html0.rb
+What is the course number of your class? com531
+What is the course title of your class? Web Development
+Who teaches this class? Karl Stolley
+What is day of the week does class meet? Wednesday
+What time does class start? 6:25pm
+What time does class end? 9:05pm
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;com531&lt;/td&gt;
+    &lt;td&gt;Web Development&lt;/td&gt;
+    &lt;td&gt;Karl Stolley&lt;/td&gt;
+    &lt;td&gt;Wednesday&lt;/td&gt;
+    &lt;td&gt;6:25pm&lt;/td&gt;
+    &lt;td&gt;9:05pm&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+<span class="prompt">[~/Projects/ruby/scripts]</span><span class="prompt-end">$</span>
+</pre>
+
+<p>Looks like we're done, right? You wrote a script so a user could add their courses from the command line and get a formatted list they could include in their own web page.</p>
+
+<p>Well, you wrote a script that let the user add <strong>one</strong> course. What about the rest of them? Also this does not seem to be a very Ruby-like way of programming. The script works, but lacks a certain elegance; we end up repeating ourselves unnecessarily.</p>
+
+<p>Let's streamline this script first, then we can write a script that captures all courses, not just one.</p>
+
+  </section>
+  <footer>
+    <ul class="pager">
+      <li><a href=" ">Previous</a></li>
+      <li><a href=" ">Next</a></li>
+    </ul>
+    <h5>Progress in This Tutorial</h5>
+    <div class="progress progress-striped">
+      <div class="bar" style="width: 65%;"></div>
+    </div>
+  </footer>
+</article>
+

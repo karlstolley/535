@@ -1,0 +1,84 @@
+---
+subject: Ruby
+title: Roller Coasters
+description: >
+
+# Comma-separated list of authors
+authors: Anthony T. Sansone
+layout: page
+---
+
+<article id=" ">
+  <header class="page-header">
+    <h2>Roller Coasters</h2>
+  </header>
+  <section>
+
+<p>When we discussed the DRY principle, we noted that we had a lot of repetition in our first course list script. Let's see where that repetition is.</p>
+
+    <div class="bs-docs-example">
+      <p>This Ruby script repeats itself:</p>
+      <ul>
+        <li>With every <code>print</code> command</li>
+        <li>With every <code>gets</code> command</li>
+        <li>With every table cell <code>&lt;td&gt;</code> printed</li>
+      </ul>
+
+    </div>
+<pre class="prettyprint linenums">
+#Version 1: Simple Script to HTML
+
+<span class="error">print</span> "What is the course number of your class? "
+number = <span class="error">gets.chomp</span>
+
+<span class="error">print</span> "What is the course title of your class? "
+title = <span class="error">gets.chomp</span>
+
+<span class="error">print</span> "Who teaches this class? "
+instructor = gets.chomp</span>
+
+<span class="error">print</span> "What is day of the week does class meet? "
+day = <span class="error">gets.chomp</span>
+
+<span class="error">print</span> "What time does class start? "
+start_time = <span class="error">gets.chomp
+
+<span class="error">print</span> "What time does class end? "
+end_time = <span class="error">gets.chomp</span>
+
+puts "&lt;table&gt;"
+puts "  &lt;tr&gt;"
+<span class="error">
+puts "    &lt;td&gt;" + number + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + title + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + instructor + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + day + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + start_time + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + end_time + "&lt;/td&gt;"
+</span>
+puts "  &lt;/tr&gt;"
+puts "&lt;/table&gt;"
+</pre>
+
+<p>That's a lot of repetition. Wow. So, how are we going to shorten this script? That can be done in three ways: changing the questions and answer variables into a Hash; looping through the questions to get responses; looping through the course information.</p>
+
+<h3>Building a New Hash</h3>
+
+
+<h3>Looping through a Hash</h3>
+
+<p>Lucky for us, the Array and Hash Objects have built in methods to help: each
+
+  </section>
+  <footer>
+    <ul class="pager">
+      <li><a href=" ">Previous</a></li>
+      <li><a href=" ">Next</a></li>
+    </ul>
+    <h5>Progress in This Tutorial</h5>
+    <div class="progress progress-striped">
+      <div class="bar" style="width:  %;"></div>
+    </div>
+  </footer>
+</article>
+

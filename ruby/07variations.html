@@ -1,0 +1,140 @@
+---
+subject: Ruby
+title: Variations on a Theme
+description: >
+
+# Comma-separated list of authors
+authors: Anthony T. Sansone
+layout: page
+---
+
+<article id=" ">
+  <header class="page-header">
+    <h2>Variations on a Theme</h2>
+  </header>
+  <section>
+
+    <div class="row-fluid">
+      <div class="span8">
+
+        <p>If you want to say hello to someone else, you would need to provide Ruby (and IRB) with another name.</p>
+
+        <p>That's not as hard as you would think.</p>
+
+        <p>You would need to rewrite your short program to ask for the person's name when the method is called. This will require a placeholder that holds on to the name until it is displayed. This placeholder is called a <strong>variable</strong>.</p>
+
+        Example
+
+        <p>The method would be written like this:</p>
+
+<pre class="prettyprint linenums">
+irb(main):015:0&gt; def hello name
+irb(main):016:1>   puts "Hello " + name + "!"
+irb(main):017:1> end
+=&gt; nil
+</pre>
+
+        <p>When you call the method, you would type the name of the method and the person's name in quotes after it:</p>
+
+<pre class="prettyprint linenums">
+irb(main):018:0&gt; hello "Tony"
+Hello Tony!
+=&gt; nil
+</pre>
+
+        <p>Not too difficult. What if you wanted to ask the person running this small program for their name and say hello?</p>
+
+        <p>That will require you to ask for input, information from the user. Ruby uses the method <code>gets</code> to do this.</p>
+
+        <p>Rewrite the hello method in IRB to ask for the person's name:</p>
+
+<pre class="prettyprint linenums">
+irb(main):019:0&gt; def hello
+irb(main):020:1>   puts "What is your name?"
+irb(main):021:1>   name = gets
+irb(main):022:1>   puts "Hello " + name + "!"
+irb(main):023:1> end
+=&gt; nil
+</pre>
+
+        <p>Now, when you call <code>hello</code>, you do not need to include the person's name. The program will ask the person for you.</p>
+
+<pre class="prettyprint linenums">
+irb(main):024:0&gt; hello
+What is your name?
+Tony
+Hello Tony
+!
+=&gt; nil
+irb(main):025:0&gt;
+</pre>
+
+        <p>Almost perfect. What's up with the line break between the person's name and the exclamation point?</p>
+
+        <p>Well, the user put it there. When the user wrote their name, the last character they typed was the Return key. This creates a new line character (<code>\n</code>) that got tacked on the end of the name variable.</p>
+
+        <p>How do you get rid of it?</p>
+
+        <p>Chomp it.</p>
+
+        <p>The method <code>chomp</code> allows you to strip away the new line character from the end of any string.</p>
+
+        <p>You will need to rewrite the hello method again in IRB to see this. Give it a try:</p>
+
+<pre class="prettyprint linenums">
+irb(main):025:0&gt; def hello
+irb(main):026:1>  puts "What is your name?"
+irb(main):027:1>  name = gets.chomp
+irb(main):028:1>  puts "Hello " + name + "!"
+irb(main):029:1> end
+=&gt; nil
+</pre>
+
+        <p>Now, when you call hello, you see:</p>
+
+<pre class="prettyprint linenums">
+irb(main):030:0&gt; hello
+What is your name?
+Tony
+Hello Tony!
+=&gt; nil
+irb(main):031:0&gt;
+</pre>
+
+        <p>This rewriting of the same program over and over is getting a bit tiring. Next, we move to writing Ruby code in a file that we can edit when we want to make changes.</p>
+
+        <p>Type <code>quit</code> in IRB to exit IRB.</p>
+
+      </div>
+
+      <div class="span4">
+      <aside>
+        <dl>
+          <dt>Variable</dt>
+          <dd>
+          A word that identifies a reusable value in a program.
+
+<pre class="prettyprint linenums">
+x = 6
+name = "Allison"
+</pre>
+
+          </dd>
+        </dl>
+      </aside>
+      </div>
+    </div>
+
+  </section>
+  <footer>
+    <ul class="pager">
+      <li><a href="06wordstasks.html">Previous</a></li>
+      <li><a href="08writescript.html">Next</a></li>
+    </ul>
+    <h5>Progress in This Tutorial</h5>
+    <div class="progress progress-striped">
+      <div class="bar" style="width: 40%;"></div>
+    </div>
+  </footer>
+</article>
+

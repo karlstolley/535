@@ -56,48 +56,6 @@
       <h1>{{ page.subject }}</h1>
     </div>
   </header>
-<<<<<<< HEAD
-
-  <section class="container-fluid">
-
-    <div class="row-fluid">
-      <nav class="span3 bs-docs-sidebar">
-        <ul class="nav nav-list bs-docs-sidenav">
-          {% assign subnav = page.subject | downcase %}
-          {% case subnav %}
-          {% when 'css' %}
-            {% include nav_css.html %}
-          {% when 'git' %}
-            {% include nav_git.html %}
-          {% when 'html' %}
-            {% include nav_html.html %}
-          {% when 'javascript' %}
-            {% include nav_javascript.html %}
-          {% when 'markdown' %}
-            {% include nav_markdown.html %}
-          {% when 'ruby' %}
-            {% include nav_ruby.html %}
-          {% when 'setup' %}
-            {% include nav_setup.html %}
-          {% endcase %}
-        </ul>
-      </nav>
-
-      <div class="span9">
-
-        {{ content }}
-
-      </div><!--/.span9 -->
-
-    </div><!--/.row-fluid -->
-
-  </section><!--/.container-fluid-->
-
-  <footer id="page-footer" class="container-fluid">
-    <p>Licensed under Creative Commons. Created by {{ page.authors }}</p>
-  </footer>
-
-=======
 
   <div class="container-fluid">
 
@@ -137,8 +95,6 @@
   <footer id="page-footer" class="container-fluid">
     <p>Licensed under Creative Commons. Created by {{ page.authors }}</p>
   </footer>
-
->>>>>>> 62422eaaddda9bcf16b086a7cc3776dbbb9c0edc
 
   <!-- JavaScript
   ================================================== -->

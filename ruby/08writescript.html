@@ -1,0 +1,69 @@
+---
+subject: Ruby
+title: Write the Script
+description: >
+
+# Comma-separated list of authors
+authors: Anthony T. Sansone
+layout: page
+---
+
+<article id=" ">
+  <header class="page-header">
+    <h2>Write the Script</h2>
+  </header>
+  <section>
+
+    <p>IRB is great for trying out a few lines of code, but anything more substantial requires a different approach.</p>
+
+    <p>Ruby code can be written as text files called scripts. These scripts can then be called on the command line.</p>
+
+    <p>Open up a text editor and create a new file. In that file, type exactly what you did in IRB:</p>
+
+<pre class="prettyprint linenums">
+def hello
+  puts "What is your name?"
+  name = gets.chomp
+  puts "Hello " + name + "!"
+end
+
+hello
+</pre>
+
+    <p>The indenting is important. One of Ruby's biggest benefits is that it does not clutter up code with unnecessary parentheses, square brackets and curly brackets. It uses indentation to make clear what is in a block of code.</p>
+
+    <p>The call to <code>hello</code> is also very important. A method does not work unless it is called. To tell the script to call your method, you will need to include the method name on its own line with no other information.</p>
+
+    <p>Save this file as <code>first_script.rb</code>.</p>
+
+    <p>The <code>.rb</code> is the file extension for Ruby. This is the case on all platforms.</p>
+
+    <p>Now, we can try this script:</p>
+
+    <p>Open up your command line</p>
+    <p>Type <code>ruby first_script.rb</code></p>
+
+<pre class="prettyprint linenums">
+d:\Dropbox\Grad School Projects\535\ruby>ruby first_script.rb
+What is your name?
+Tony
+Hello Tony!
+</pre>
+
+    <p>Congratulations! You have just written your first Ruby script!</p>
+
+    <p>From here, all Ruby coding will be done with Ruby scripts instead of IRB. You can test out ideas or try out code blocks using IRB, but full scripts will be easier to manage going forward, especially using Git.</p>
+
+  </section>
+  <footer>
+    <ul class="pager">
+      <li><a href="06wordstasks.html">Previous</a></li>
+      <li><a href="09courselist0.html">Next</a></li>
+    </ul>
+    <h5>Progress in This Tutorial</h5>
+    <div class="progress progress-striped">
+      <div class="bar" style="width: 45%;"></div>
+    </div>
+  </footer>
+</article>
+
