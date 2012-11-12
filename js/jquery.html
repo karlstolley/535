@@ -1,0 +1,170 @@
+---
+subject: JavaScript
+title: jQuery
+description: >
+
+# Comma-separated list of authors
+authors: Matthew Heston
+layout: page
+
+stylesheets:
+  - url: /js/styles/js-tutorial.css
+
+scripts:
+  - url: /js/scripts/js-tutorial.js
+---
+
+<article class="row-fluid">
+<header>
+<hgroup class="hero-unit">
+<h1>jQuery</h1>
+</hgroup>
+</header>
+<section class="span8 offset3 clearfix">
+
+<p class="lead">
+</p>
+
+<p>
+The <a href="http://www.jquery.com">jQuery home page</a> describes jQuery as
+a "fast and concise JavaScript Library that simplifies HTML document traversing."
+At the end of the last chapter, we learned that a JavaScript library is just
+a collection of code to make certain tasks easier. The task that jQuery makes
+easier is traversing the DOM -- it allows you to more easily <em>query</em> the
+DOM.
+</p>
+
+<aside>
+jQuery actually has a lot of other functionality that has been added in in addition
+to just manipulating the DOM, but we'll just be focusing on that aspect of the
+library. To learn more, check out their <a href="http://jquery.com">official website</a>.
+</aside>
+
+<p>
+The main function that jQuery offers you is <code>$</code>. That's just a dollar
+sign. All of the functions we have seen so far have been named using letters, but
+this one is just a symbol. You still use it the same way though. <code>$</code>
+allows you to pass in a string to query for DOM elements. Let's look at an example.
+</p>
+
+<p>
+Without jQuery, if we wanted to get the DOM element with the id, "myButton" we
+would call:
+
+<br />
+<code>
+  var element = document.getElementById("myButton");
+</code>
+<br />
+
+Using jQuery, we would call:
+
+<br />
+<code>
+  var element = $("#myButton");
+</code>
+<br />
+
+As you can see, we can use a syntax similar to CSS selectors to query the DOM.
+But why would we use jQuery here instead of our regular old DOM method
+<code>getElementById</code>? There are a couple reasons.
+</p>
+
+<p>
+First, <code>getElementById</code> returns a JavaScript object that we can manipulate
+to do some cool stuff with, like attach events or manipulate styles. However,
+<code>$</code> returns a sort of DOM super object that has a lot of other convenience
+methods we can take advantage of. For example, the following code allows you to attach
+an event to a div that makes it fade out when you click on it.
+
+<pre>
+<code>
+$("#myDiv").click(function () {
+  $("myDiv").fadeOut("slow");
+});
+</code>
+</pre>
+</p>
+
+<div id="myDiv">
+  Here is a div with the id "myDiv." Paste the above code into
+  your JavaScript console and give it a try.
+</div>
+
+<p>
+That code takes advantage of the jQuery method <code>click</code> which
+you can use to attach an event onto a jQuery element, and <code>fadeOut</code>
+which you can call to animate an element to fade out. There are a ton of other
+methods you can call on jQuery objects that allow you to animate them in other
+ways and manipulate their properties.
+</p>
+
+<p>
+The other reason you might want to use jQuery is that its selector syntax is
+very powerful. In the above example, we were only selecting an element by
+its id, which is pretty simple to do using vanilla JavaScript. But take a
+look at this example:
+
+<br />
+<code>$("div:contains('JavaScript')").css("color", "red");</code>
+<br />
+
+This will select <em>every</em> div on the page that contains the word
+"JavaScript" and will set its color property to "red." This illustrates
+a couple of important points:
+<ul>
+<li>
+  Unlike when we were searching by element id, jQuery allows us to select
+  several elements on a page and apply some action to all of them. We can apply
+  an action to every <code>ul</code> element, every element that has a certain class,
+  every element that contains certain text, or many other scenarios.
+</li>
+<li>
+  jQuery selectors let us do really cool stuff that would be hard if we were
+  just using regular JavaScript DOM methods. In this example, we selected every
+  div that contains certain text. You can also select elements that have a certain
+  attribute, elements that are hidden or visible, as well as search for child elements
+  within a certain parent element. For a full taste of what's possible, check out
+  the <a href="http://api.jquery.com/category/selectors">jQuery selectors documentation</a>.
+</li>
+</ul>
+</p>
+
+<p>
+These examples are fairly typical of what your jQuery calls will look like. You
+call <code>$</code> with a selector to get a jQuery element, and you can then call
+a method on that element. jQuery was also designed to allow you to chain multiple
+calls together. So, for example, say you had the following HTML:
+
+<pre>
+<code>
+&lt;ul id=&quot;bands&quot;&gt;
+  &lt;li class=&quot;firstElement&quot;&gt;Pavement&lt;/li&gt;
+  &lt;li&gt;Silver Jews&lt;/li&gt;
+  &lt;li&gt;The Jicks&lt;/li&gt;
+&lt;/ul&gt;
+</code>
+</pre>
+
+If you wanted to remove the <code>firstElement</code> class from the
+first element in the list, change its class to <code>specialFirstElement<code>
+and then you wanted to change its color to red, you could do the following:
+
+<br />
+<code>
+  $("#bands").find(".firstElement").removeClass("firstElement").addClass("specialFirstElement").css("color", "red");
+</code>
+<br />
+
+As you can see, we can <em>chain</em> the various methods together. You should
+be careful to not go overboard with this. Sometimes, like in this example when we
+are removing one class and adding another, it makes sense to chain these methods
+because it's clear that we are switching the class of this element. But if you
+are doing a lot of manipulations to an element, you should also try to make sure
+you maintain the readability of your code, and that might mean breaking things up.
+</p>
+
+<footer class="span8 offset3">
+<p>Page last updated by Matthew Heston</p>
+</footer>
+</article>
