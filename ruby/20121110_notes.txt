@@ -1,0 +1,411 @@
+
+===================================
+
+<h2>IRB</h2>
+
+<p>With Ruby installed, you get a cool console that lets you try out Ruby code directly on a command line. It is called <abbr title="Interactive Ruby Shell">IRB</abbr> or the Interactive Ruby Shell. To start IRB, type <code>irb</code> on the command line.</p>
+
+<p>For the next few sections, we will use IRB to learn about the basics of Ruby.</p>
+
+-----------------------------------
+
+Shell
+A program allows you to use the operating system's capabilities. Ruby is unlike most programming languages because it has its own shell.
+
+-----------------------------------
+
+===================================
+
+<h2>Operation Operator</h2>
+
+<p>At the very least, you can use Ruby as a high-powered calculator. If you were to open IRB and type:</p>
+
+<pre>
+irb(main):001:0&gt; 2 + 2
+</pre>
+
+<p>it would return</p>
+
+<pre>
+=&gt; 4
+</pre>
+
+<p>Simple, right? Ruby can do more than add. Try to add and subtract two numbers.</p>
+
+<p>You probably saw something like this:</p>
+
+<pre>
+irb(main):002:0&gt; 2 + 2
+=&gt; 4
+irb(main):003:0&gt; 2 - 2
+=&gt; 0
+</pre>
+
+<p>You can try to multiply and divide as well. This requires two characters that you may not have seen before: <code>*<code> for multiplication and <code>/</code> for division.</p>
+
+<p>These characters are known as <strong>operators</strong>.</p>
+
+-----------------------------------
+
+Operator
+Operators compare, assign or change values of given data such as numbers or text. Ruby has 36 operators in its language: 6 arithmetic, 8 comparison, 7 assignment, 6 logical, 6 bitwise, 1 ternary and 2 range. Bitwise, ternary and range operators are not often used and are outside of the scope of this tutorial.
+
+-----------------------------------
+
+<p>Try to multiple, then divide any two numbers.</p>
+
+<p>You probably saw something like this:</p>
+
+<pre>
+irb(main):004:0&gt; 2 / 2
+=&gt; 1
+irb(main):005:0&gt; 2 * 2
+=&gt; 4
+</pre>
+
+<p>It is possible to square a number as well. This uses the <code>**</code> operator.</p>
+
+Example
+
+<pre>
+irb(main):006:0&gt; 2 ** 3
+=&gt; 8
+irb(main):007:0&gt;
+</pre>
+
+<p>The fancy calculator is all well and good, but what about text? What if you want to write programs that have words?</p>
+
+===================================
+
+<h2>Words (Strings) and Tasks (Methods)</h2>
+
+<p>IRB can also work with text, which it calls Strings. </p>
+
+<p>You can write a string in IRB by putting any text between single or double quotes (as long as the quotes match on either side). </p>
+
+Example
+
+<pre>
+irb(main):008:0&gt; "Hello Ruby!"
+=&gt; "Hello Ruby!"
+</pre>
+
+<p>It is also possible, using the + operator, to join two (or more) strings together.</p> 
+
+Example
+
+<pre>
+irb(main):008:0&gt; "Hello " + "Ruby!"
+=&gt; "Hello Ruby!"
+</pre>
+
+<p>This addition is called concatenation. When you concatenate strings, you get the longer, complete string.</p>
+
+<p>Notice the space after the "Hello" in the last example? Without it, you would have seen:</p>
+
+<pre>
+irb(main):008:0&gt; "Hello" + "Ruby!"
+=&gt; "HelloRuby!"
+</pre>
+
+<p>Spaces are important.</p>
+
+<p>In the last few examples, IRB displayed the strings for you. That's interesting enough. This "Hello Ruby!" is not a program, though. It is only a String. To turn it into a program, you need to tell Ruby explicitly to put something on the screen. That is done using a Method called, helpfully enough, <code>puts</code>.</p>
+
+<pre>
+irb(main):010:0&gt; puts "Hello Ruby!"
+Hello Ruby!
+=&gt; nil
+</pre>
+
+-----------------------------------
+
+	Method
+	A series of expressions that return a value.
+
+	Expressions and Statements
+
+	Expression
+	An expression represents a single piece of data. An expression consists of one or more operands (strings, numbers, variables) and usually an operator. Expressions are evaluated (or processed) to produce (or return) a result. Expressions are like math; one or more pieces of data called operands are compared or changed and return a result. 
+
+	<code>a + b</code> returns the value of a plus b
+	<code>x = y</code> returns x which was set to the value of y
+	<code>j++</code> returns j + 1
+	<code>h < 0</code> compares h and 0 and says h is less than 0
+
+	Statement
+	A statement causes the computer to carry out some definite action. Statements are like sentences; they tell the computer what state something is in (like an intransitive verb sentence, that something is something) or tell the computer to do something, like compare two values, do something a number of times or do something only if a condition is met.
+
+	In summary, expressions have a value, while statements do not.
+
+	In Ruby, there is no difference between expressions and statements. Everything in Ruby returns a value, even if it is nothing, which Ruby calls <code>nil</code>. As you saw earlier when using IRB, if the expression or method did not return a value, it displayed <code>=&gt; nil</code>. 
+
+	Ruby returns the last line evaluated in an expression or a method as its value.
+
+	If we set the variable x to 6:
+
+	<pre>
+	irb(main):032:0&gt; x = 6
+	=&gt; 6
+	</pre>
+
+	It returns a value of 6, so the expression's value is 6.
+
+	If we tell Ruby to put "Hello Ruby!" on the screen:
+
+	<pre>
+	irb(main):010:0&gt; puts "Hello Ruby!"
+	Hello Ruby!
+	=&gt; nil
+	</pre>
+
+	It returns <code>nil</code>. The expression did something; it displayed a string as it was told. The puts method does not return any value as it stores nothing and evaluates nothing. So, the only value is <code>nil</code>.
+
+	Expressions are like the nouns in a sentence. Statements are the completed sentence or thought. One line in your method or loop could be an expression, and the conglomeration of those expressions into a closed loop or method could be thought of as a statement, which always returns a value.
+
+-----------------------------------
+
+<p>To recreate this as a small program, it would be necessary to place the puts function inside a method. You write a method by typing def [name of method] as the first line, then the lines needed to create the value you need, then the word end to indicate the end of that method.</p>
+
+Example
+
+<p>The method for "Hello Ruby!" could be written like this:</p>
+
+<pre>
+irb(main):011:0&gt; def hello
+irb(main):012:1>   puts "Hello Ruby!"
+irb(main):013:1> end
+=&gt; nil
+</pre>
+
+<p>To run this method, type:
+
+<pre>
+irb(main):014:0&gt; hello
+Hello Ruby!
+=&gt; nil
+</pre>
+
+<p>It displays <code>Hello Ruby!</code> (and returns <code>nil</code>) as expected.</p>
+
+<p>What if you want to say hello to someone else? Well, that's easy...</p>
+
+===================================
+
+<h2>Variations on a Theme</h2>
+
+<p>If you want to say hello to someone else, you would need to provide Ruby (and IRB) with another name.</p>
+
+<p>That's not as hard as you would think.</p>
+
+<p>You would need to rewrite your short program to ask for the person's name when the method is called. This will require a placeholder that holds on to the name until it is displayed. This placeholder is called a <strong>variable</strong>.</p>
+
+-----------------------------------
+
+Variable
+A word that identifies a reusable value in a program.
+
+<pre>
+x = 6
+name = "Allison"
+</pre>
+
+-----------------------------------
+
+Example
+
+<p>The method would be written like this:</p>
+
+<pre>
+irb(main):015:0&gt; def hello name
+irb(main):016:1>   puts "Hello " + name + "!"
+irb(main):017:1> end
+=&gt; nil
+</pre>
+
+<p>When you call the method, you would type the name of the method and the person's name in quotes after it:</p>
+
+<pre>
+irb(main):018:0&gt; hello "Tony"
+Hello Tony!
+=&gt; nil
+</pre>
+
+<p>Not too difficult. What if you wanted to ask the person running this small program for their name and say hello?</p>
+
+<p>That will require you to ask for input, information from the user. Ruby uses the method <code>gets</code> to do this.</p>
+
+<p>Rewrite the hello method in IRB to ask for the person's name:</p>
+
+<pre>
+irb(main):019:0&gt; def hello
+irb(main):020:1>   puts "What is your name?"
+irb(main):021:1>   name = gets
+irb(main):022:1>   puts "Hello " + name + "!"
+irb(main):023:1> end
+=&gt; nil
+</pre>
+
+<p>Now, when you call <code>hello</code>, you do not need to include the person's name. The program will ask the person for you.</p>
+
+<pre>
+irb(main):024:0&gt; hello
+What is your name?
+Tony
+Hello Tony
+!
+=&gt; nil
+irb(main):025:0&gt;
+</pre>
+
+<p>Almost perfect. What's up with the line break between the person's name and the exclamation point?</p>
+
+<p>Well, the user put it there. When the user wrote their name, the last character they typed was the Return key. This creates a new line character (<code>\n</code>) that got tacked on the end of the name variable.</p>
+
+<p>How do you get rid of it?</p>
+
+<p>Chomp it.</p>
+
+<p>The method <code>chomp</code> allows you to strip away the new line character from the end of any string.</p>
+
+<p>You will need to rewrite the hello method again in IRB to see this. Give it a try:</p>
+
+<pre>
+irb(main):025:0&gt; def hello
+irb(main):026:1> 	puts "What is your name?"
+irb(main):027:1> 	name = gets.chomp
+irb(main):028:1> 	puts "Hello " + name + "!"
+irb(main):029:1> end
+=&gt; nil
+</pre>
+
+<p>Now, when you call hello, you see:</p>
+
+<pre>
+irb(main):030:0&gt; hello
+What is your name?
+Tony
+Hello Tony!
+=&gt; nil
+irb(main):031:0&gt;
+</pre>
+
+<p>This rewriting of the same program over and over is getting a bit tiring. Next, we move to writing Ruby code in a file that we can edit when we want to make changes.</p>
+
+<p>Type <code>quit</code> in IRB to exit IRB.</p>
+
+===================================
+
+<h2>Write the Script</h2>
+
+<p>IRB is great for trying out a few lines of code, but anything more substantial requires a different approach.</p>
+
+<p>Ruby code can be written as text files called scripts. These scripts can then be called on the command line.</p>
+
+<p>Open up a text editor and create a new file. In that file, type exactly what you did in IRB:</p>
+
+<pre>
+def hello
+	puts "What is your name?"
+	name = gets.chomp
+	puts "Hello " + name + "!"
+end
+
+hello
+</pre>
+
+<p>The indenting is important. One of Ruby's biggest benefits is that it does not clutter up code with unnecessary parentheses, square brackets and curly brackets. It uses indentation to make clear what is in a block of code.</p>
+
+<p>The call to <code>hello</code> is also very important. A method does not work unless it is called. To tell the script to call your method, you will need to include the method name on its own line with no other information.</p>
+
+<p>Save this file as <code>first_script.rb</code>.</p>
+
+<p>The <code>.rb</code> is the file extension for Ruby. This is the case on all platforms.</p>
+
+<p>Now, we can try this script:</p>
+
+<p>Open up your command line</p>
+<p>Type <code>ruby first_script.rb<code></p>
+
+<pre>
+d:\Dropbox\Grad School Projects\535\ruby>ruby first_script.rb
+What is your name?
+Tony
+Hello Tony!
+</pre>
+
+<p>Congratulations! You have just written your first Ruby script!</p>
+
+<p>From here, all Ruby coding will be done with Ruby scripts instead of IRB. You can test out ideas or try out code blocks using IRB, but full scripts will be easier to manage going forward, especially using Git.</p>
+
+===================================
+
+<h2>Down to Business: Making a Course List</h2>
+
+<p>Let's actually make something. In creating a web site about you, why not include a list of the courses that you're taking at IIT?</p>
+
+<p>Let's start with just one class so we can make sure we understand the basics.</p>
+
+<p>You will need to include 6 things about the class:</p>
+
+<ul>
+<li>Course Number</li>
+<li>Course Title</li>
+<li>Instructor</li>
+<li>Day(s) of the Week that it meets</li>
+<li>Class start time</li>
+<li>Class end time</li>
+</ul>
+
+<p>This would be best done through a series of questions.</p>
+
+<h3>Exercise</h3>
+
+<p>Write six questions that collect this information then display it on the screen.</p>
+
+Each question should be put on the screen, get the user's response (without the trailing new line!) and put the response on the screen once they have all been answered.
+
+Save this script as <code>create_html0.rb</code>. 
+
+Add this script to your git repo, commit it and upload it to your GitHub account.
+
+<p>When you have completed this exercise, we can see how to make it output <a href="/html/" title="HyperText Markup Language">HTML</a>.</p>
+
+===================================
+
+First Pass at the Course List
+
+<p>The results of your first script should look something like this:</p>
+
+<pre class="prettyprint linenums">
+#Version 0: Simple Script
+
+print "What is the course number of your class? "
+number = gets.chomp
+
+print "What is the course title of your class? "
+title = gets.chomp
+
+print "Who teaches this class? "
+instructor = gets.chomp
+
+print "What is day of the week does class meet? "
+day = gets.chomp
+
+print "What time does class start? "
+start_time = gets.chomp
+
+print "What time does class end? "
+end_time = gets.chomp
+
+puts number
+puts title
+puts instructor
+puts day
+puts start_time
+puts end_time
+</pre>
+
+<p>Each question is displayed and a response is requested in order. When they are all done, they are printed to the screen.</p>
+
+<p>That did not result in HTML output, did it? No, that would require that the </p>
