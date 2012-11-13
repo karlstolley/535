@@ -1,0 +1,108 @@
+---
+subject: Ruby
+title: That's Some Good Hash
+description: >
+
+# Comma-separated list of authors
+authors: Anthony T. Sansone
+layout: page
+---
+
+<article id=" ">
+  <header class="page-header">
+    <h2>That's Some Good Hash</h2>
+  </header>
+  <section>
+
+<p>We hope you're comfortable with variables, because we're going to take you a little further.</p>
+
+<p>OK, a lot further. We need to be able to easily track and work through multiple courses, questions and the like. That will require you to understand how to use placeholders for multiple related items (Arrays, Hashes) and the means to move through and act on those related items (with our old friend the Method). Let's get started.</p>
+
+<p>Variables store one value. That may be all you need. Sometimes, though, you need to keep track of a list of related things. Having a separate variable for each item, like your courses, does not make a lot of sense. Why can't you just have a list of courses and keep track of them? You can, using Arrays.</p>
+
+<h3>Arrays</h3>
+
+<p>An <strong>Array</strong> is a list of items. That's it. An Array gives you one identifier to use to work with multiple related items.<p>
+
+<p>An Array is created in the same way as a Variable. It is declared, though it does not need an initial value.</p>
+<pre class="prettyprint linenums">
+# New Array
+courses = []
+</pre>
+
+<p>You can give an Array some values to start:</p>
+<pre class="prettyprint linenums">
+# New Array
+courses = ["com531","com535"]
+</pre>
+
+<p>Arrays are accessed by writing the Array variable and the number of the item in the list you want to use.</p>
+
+<p>So, to show com531 above, you would write:</p>
+<pre class="prettyprint linenums">
+# Accessing an Array Value
+puts courses[1]
+</pre>
+
+<p>Actually, no, you wouldn't. Arrays start counting from 0, as that's what computers do. (They do this because they work in binary systems, not decimal systems. Suffice to say, going along with the computer's convention helps with performance in larger programs.) So, to show com531, you would write:</p>
+
+<pre class="prettyprint linenums">
+# Accessing the Right Array Value
+puts courses[0]
+</pre>
+
+<p>Well, you may say, this is not the most convenient way to store or recall this information. After all, if the Array is large enough, you wouldn't know what position to request. Well, smart guy (or gal), you would be right. Arrays are great to use when you have to cycle through all items in an Array, but there would have to be an easier way to use a value stored an Array.</p>
+
+<p>There is. It's called an <strong>Associative Array</strong>, also known as a <strong>Hash</strong>.</p>
+
+<h3>Hashes</h3>
+
+<p>The term Hash comes from Perl by way of older computer science concepts. "Hash" is a lot easier to say repeatedly than "associative array". Hash is computer science is short for "Hash Table" which is a type of data that uses identifying values (known as <strong>Keys</strong>) to find associated values (known simply as <strong>values</strong>). Whew. Got all that?</p>
+
+<p>So, Ruby uses Hashes to offer a way to store lists of Values that are internally identified by another value (Key) that's not a number. What does that look like?</p>
+
+<pre class="prettyprint linenums">
+# Creating a Hash
+courses = {}
+</pre>
+
+<p>You can create a populated Hash by writing:</p>
+<pre class="prettyprint linenums">
+# Creating a Hash
+courses = {"com531"=>"Web Development", "com535"=>"Instructional Design"}
+</pre>
+
+<p>So, to get the name of com535 using the Hash, you would write:</p>
+
+<pre class="prettyprint linenums">
+# Creating a Hash
+puts courses['com535']
+</pre>
+
+<p>Simple, right? Now, we can see you may have two questions:</p>
+<ol>
+<li>What's with this operator <code>=></code>?</li>
+<li>Why do we not use curly brackets <code>{}</code> when recalling a value instead of square brackets <code>[]</code>?</li>
+</ol>
+
+<p>We have answers for that:</p>
+<ol>
+<li>This <code>=></code> is called a <strong>Hash Rocket</strong>. It is what you use when you assign a Value to a Key in a Hash. It helps you identify that the two values are indeed a Hash and which is the key and which is the value. That's good to know.</li>
+<li>The curly brackets <code>{}</code> are used when creating a Hash or assigning values to it. The square brackets <code>[]</code> are used when retriving values, like an Array, because a Hash is an Array. The only difference is that the key in an Array can be something other than a number.</li>
+</ol>
+
+<p>Did you get all that? Good. Now, let's get into why Hashes can make your code easier to read and use.</p>
+
+  </section>
+  <footer>
+    <ul class="pager">
+      <li><a href="13dry.html">Previous</a></li>
+      <li><a href="15rollercoasters.html">Next</a></li>
+    </ul>
+    <h5>Progress in This Tutorial</h5>
+    <div class="progress progress-striped">
+      <div class="bar" style="width: 67.5%;"></div>
+    </div>
+  </footer>
+</article>
+

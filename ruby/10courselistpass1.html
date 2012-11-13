@@ -1,0 +1,95 @@
+---
+subject: Ruby
+title: First Pass at the Course List
+description: >
+
+# Comma-separated list of authors
+authors: Anthony T. Sansone
+layout: page
+---
+
+<article id=" ">
+  <header class="page-header">
+    <h2>First Pass at the Course List</h2>
+  </header>
+  <section>
+
+    <p>The results of your first script should look something like this:</p>
+
+<div class="bs-docs-example">
+<p>Ruby script <code>create_html0.rb</code></p>
+
+</div>
+<pre class="prettyprint linenums">
+#Version 0: Simple Script
+
+print "What is the course number of your class? "
+number = gets.chomp
+
+print "What is the course title of your class? "
+title = gets.chomp
+
+print "Who teaches this class? "
+instructor = gets.chomp
+
+print "What is day of the week does class meet? "
+day = gets.chomp
+
+print "What time does class start? "
+start_time = gets.chomp
+
+print "What time does class end? "
+end_time = gets.chomp
+
+puts number
+puts title
+puts instructor
+puts day
+puts start_time
+puts end_time
+</pre>
+
+    <p>Each question is displayed and a response is requested in order. When they are all done, they are printed to the screen.</p>
+
+<div class="bs-docs-example">
+<p>Command line results from running <code>create_html0.rb</code></p>
+
+</div>
+<pre class="command-line linenums">
+<span class="prompt">[~/Projects/ruby/scripts]</span><span class="prompt-end">$</span> ruby create_html0.rb
+What is the course number of your class?
+com531
+What is the course title of your class?
+Web Development
+Who teaches this class?
+Karl Stolley
+What is day of the week does class meet?
+Wednesday
+What time does class start?
+6:25pm
+What time does class end?
+9:05pm
+com531
+Web Development
+Karl Stolley
+Wednesday
+6:25pm
+9:05pm
+<span class="prompt">[~/Projects/ruby/scripts]</span><span class="prompt-end">$</span>
+</pre>
+
+    <p>That did not result in HTML output, did it? No, that would require that the Ruby code in lines 21-26 in <code>create_html0.rb</code> included some <abbr title="HyperText Markup Language">HTML</abbr> tags. For something that would most likely be in a table, we probably should change the output to use and HTML <code>&lt;TABLE&gt;</code>.</p>
+
+  </section>
+  <footer>
+    <ul class="pager">
+      <li><a href="09courselist0.html">Previous</a></li>
+      <li><a href="11autohtml.html">Next</a></li>
+    </ul>
+    <h5>Progress in This Tutorial</h5>
+    <div class="progress progress-striped">
+      <div class="bar" style="width: 49.5%;"></div>
+    </div>
+  </footer>
+</article>
+

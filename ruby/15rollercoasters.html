@@ -1,0 +1,340 @@
+---
+subject: Ruby
+title: Roller Coasters
+description: >
+
+# Comma-separated list of authors
+authors: Anthony T. Sansone
+layout: page
+---
+
+<article id=" ">
+  <header class="page-header">
+    <h2>Roller Coasters</h2>
+  </header>
+  <section>
+
+<p>When we discussed the DRY principle, we noted that we had a lot of repetition in our first course list script. Let's see where that repetition is.</p>
+
+    <div class="bs-docs-example">
+      <p>This Ruby script repeats itself:</p>
+      <ul>
+        <li>With every <code>print</code> command</li>
+        <li>With every <code>gets</code> command</li>
+        <li>With every table cell <code>&lt;td&gt;</code> printed</li>
+      </ul>
+
+    </div>
+<pre class="prettyprint linenums">
+#Version 1: Simple Script to HTML
+
+<span class="error">print</span> "What is the course number of your class? "
+number = <span class="error">gets.chomp</span>
+
+<span class="error">print</span> "What is the course title of your class? "
+title = <span class="error">gets.chomp</span>
+
+<span class="error">print</span> "Who teaches this class? "
+instructor = gets.chomp</span>
+
+<span class="error">print</span> "What is day of the week does class meet? "
+day = <span class="error">gets.chomp</span>
+
+<span class="error">print</span> "What time does class start? "
+start_time = <span class="error">gets.chomp
+
+<span class="error">print</span> "What time does class end? "
+end_time = <span class="error">gets.chomp</span>
+
+puts "&lt;table&gt;"
+puts "  &lt;tr&gt;"
+<span class="error">puts "    &lt;td&gt;" + number + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + title + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + instructor + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + day + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + start_time + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + end_time + "&lt;/td&gt;"
+</span>puts "  &lt;/tr&gt;"
+puts "&lt;/table&gt;"
+</pre>
+
+<p>That's a lot of repetition. Wow. So, how are we going to shorten this script? That can be done in three ways: changing the questions and answer variables into a Hash; looping through the questions to get responses; looping through the course information.</p>
+
+<h3>Building a New Hash</h3>
+
+<p>A Hash can use anything for a key and anything for a value. So, why not make a Hash from the questions (as keys) and the answer variables (as values)? It's really simple.</p>
+<ol>
+<li>At the head of your Ruby script, create a variable for the hash, like <code>questions</code>.</li>
+<li>Type the equals sign, then the opening curly bracket: <code>= {</code>.</li>
+<li>Type each question followed by a Hash Rocket then followed by the variable name in quotation marks.</li>
+<li>After that is done, you should be able to delete Lines 3-19 of your script.</li>
+<li>Save the script as <code>create_html2.rb</code>.</li>
+</ol>
+
+<button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#example2">
+  See the Finished Code
+</button>
+
+    <p><div id="example2" class="collapse">
+<pre class="prettyprint linenums">
+questions = {
+  "What is the course number of your class?" => 'number',
+  "What is the course title of your class?" => 'title',
+  "Who teaches class?" => 'instructor',
+  "What is day of the week does class meet?" => 'day',
+  "What time does class start?" => 'start_time',
+  "What time does class end?" => 'end_time'
+}
+</pre>
+    </div></p>
+
+<h3>Looping through a Hash</h3>
+
+<p>Lucky for us, the Array and Hash Objects have built in Methods to help:
+<table class="table table-striped">
+<tr><td><code>each</code></td><td>Arrays</td><td>Go through each Array value</td></tr>
+<tr><td><code>each_pair</code></td><td>Hashes</td><td>Go through each Hash key and value</td></tr>
+<tr><td><code>each_key</code></td><td>Hashes<td>Go through each Hash key</td></tr>
+<tr><td><code>each_value</code></td><td>Hashes</td><td>Go through each Hash value</td></tr>
+</table>
+
+<h4>Asking Questions, Getting Answers</h4>
+
+<p>Well, we have a Hash of questions and answers, so <code>each_pair</code> seems like the best Method to use. We need to show each question on screen, collect the answer and save the answer. We would need to save the answer in new Hash, to keep questions and answers together.</p>
+
+<p>To begin, create a new empty Hash.</p>
+
+<pre class="prettyprint linenums">
+courses_data = {}
+</pre>
+
+<p>Simple enough. When we loop through the questions in the <code>questions</code> Hash, we will save the answers in the <code>courses_data</code> Hash. Now, we just need to create the loop.</p>
+
+<p>To loop through a Hash, you need to write the Hash name and method. We want to use the <code>questions</code> Hash and the <code>each_pair</code> Method, so we will write <code>questions.each_pair</code> in our script.<p>
+
+<p>How will the <code>questions</code> Hash know what keys and values to use? We need to tell it that. We know that the pairs are saved as question and answer, so why not tell the <code>questions</code> Hash when it loops to use <code>question</code> and <code>answer</code> for the keys and values it finds?</p>
+
+<p>This now give us the start of our code:</p>
+
+<pre class="prettyprint linenums">
+questions.each_pair { |question,answer|
+</pre>
+
+<p>The opening curly bracket starts our Hash loop. The pipes <code>||</code> hold our key and value pair <code>question, answer</code></p>
+
+<p>Next, we want to show each question in the Hash. In the previous version, we printed the question, so let's do that here:</p>
+
+<pre class="prettyprint linenums">
+questions.each_pair { |question,answer|
+  print "\n#{question} "
+</pre>
+
+<p>The new line character (<code>\n</code>) puts a line above each question to not make the questionnaire so difficult to read. The variable interpolation <code>#{}</code> is just a shorter way of concatenating a variable into other text. It would be the same as writing <code>"\n" + question + " "</code>.</p>
+
+<p>Now we have the loop started, the question displayed, so how do we get and save the answer? We put the answer variable and the user's answer into a new Hash using the <code>merge</code> Method. The whole loop would look like this:</p>
+
+<pre class="prettyprint linenums">
+questions.each_pair { |question,answer|
+  print "\n#{question} "
+<span class="success">  courses_data.merge!(answer => gets.chomp)</span>
+}
+</pre>
+
+<p>In this example, we are merging a new Hash with the answer variable of the original <code>questions</code> as the key and the user's answer, through <code>gets.chomp</code>, as the value.</p>
+
+    <div class="bs-docs-example">
+    <p>The first key/value pair in the <code>questions</code> Hash asks for the course number and will save it in the <code>number</code> value.
+
+    <p>When the Hash loop starts, it asks the question, then saves the answer variable, <code>number</code>, as the key and the answer the user gives as its value.</p>
+
+    <p>If the course number was <code>com535</code>, then the <code>course_data</code> Hash would be <code>course_data = { 'number' => "com535" }</code>
+    </div>
+
+<pre class="prettyprint linenums">
+questions = {
+  "What is the course number of your class?" => 'number',
+  ...
+}
+
+questions.each_pair { |question,answer|
+  print "\n#{question} "
+  courses_data.merge!(answer => gets.chomp)
+}
+</pre>
+
+<p>This just saved you two lines of code and set up a simple way to add more questions without much effort! With the loop in place, all you would need to do is add a question and answer to the <code>questions</code> array and the rest of your script would do the rest.</p>
+
+<button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#example3">
+  See the Finished Code
+</button>
+
+    <p><div id="example3" class="collapse">
+<pre class="prettyprint linenums">
+courses_data = {}
+
+questions.each_pair { |question,answer|
+  print "\n#{question} "
+  courses_data.merge!(answer => gets.chomp)
+}
+</pre>
+    </div></p>
+
+<h4>Displaying the Answers</h4>
+
+<p>We just cut our script down by two lines and made it much more useful. How do we do the same when displaying the HTML? If you guessed another loop, you'd be right.</p>
+
+<pre class="prettyprint linenums">
+puts "&lt;table&gt;"
+puts "  &lt;tr&gt;"
+<span class="error">puts "    &lt;td&gt;" + number + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + title + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + instructor + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + day + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + start_time + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + end_time + "&lt;/td&gt;"
+</span>puts "  &lt;/tr&gt;"
+puts "&lt;/table&gt;"
+</pre>
+
+<p>We can cut out the six highlighted lines with just one line of code, using the <code>each_value</code> Method. This method only loops through the values in a Hash. We created a new Hash when we got our questions answered called <code>courses_data</code>. We will need to loop through that Hash.
+
+    <div class="bs-docs-example">
+      <p>The first loop was harder. All we need to do is write a call to the <code>each_value</code> Method of the <code>courses_data</code> Hash, using <code>table_cell</code> as our value and <code>puts</code> it to the screen.<p>
+    </div>
+
+<pre class="prettyprint linenums">
+courses_data.each_value { |table_cell| puts "    <td>#{table_cell}</td>" }
+</pre>
+
+<p>Once you've made this change, save the Ruby script as <code>create_html2.rb</code>. Add the script to Git, commit it and push it to your GitHub repository.</p>
+
+<p>It's not too hard, once you learn how to read Ruby code. What makes it simple, the lack of extraneous brackets, braces and parentheses, can make it a little unclear as to what code is being run when. With a little more practice and review, it will hopefully become easier. Luckily, Hashes are both the most common and most complex parts of Ruby to understand. If you get this, it's downhill from here!</p>
+
+<h3>Compare the Versions</h3>
+<div class="accordion" id="accordion-final">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-final" href="#collapseOne">
+        create_html1.rb
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse in">
+      <div class="accordion-inner">
+<pre class="prettyprint linenums">
+#Version 1: Simple Script to HTML
+
+print "What is the course number of your class? "
+number = gets.chomp
+
+print "What is the course title of your class? "
+title = gets.chomp
+
+print "Who teaches this class? "
+instructor = gets.chomp
+
+print "What is day of the week does class meet? "
+day = gets.chomp
+
+print "What time does class start? "
+start_time = gets.chomp
+
+print "What time does class end? "
+end_time = gets.chomp
+
+puts "&lt;table&gt;"
+puts "  &lt;tr&gt;"
+puts "    &lt;td&gt;" + number + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + title + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + instructor + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + day + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + start_time + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + end_time + "&lt;/td&gt;"
+puts "  &lt;/tr&gt;"
+puts "&lt;/table&gt;"
+</pre>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-final" href="#collapseTwo">
+        create_html2.rb
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+      <div class="accordion-inner">
+<pre class="prettyprint linenums">
+# Version 2: Uses Hashes instead of Repetition
+
+questions = {
+  "What is the course number of your class?" => 'number',
+  "What is the course title of your class?" => 'title',
+  "Who teaches class?" => 'instructor',
+  "What is day of the week does class meet?" => 'day',
+  "What time does class start?" => 'start_time',
+  "What time does class end?" => 'end_time'
+}
+
+courses_data = {}
+
+questions.each_pair { |question,answer|
+  print "\n#{question} "
+  courses_data.merge!(answer => gets.chomp)
+}
+
+puts "&lt;table&gt;"
+puts "  &lt;tr&gt;"
+courses_data.each_value { |table_cell| puts "    &lt;td&gt;#{table_cell}&lt;/td&gt;" }
+puts "  &lt;/tr&gt;"
+puts "&lt;/table&gt;"
+</pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>The Final Result</h3>
+
+<p>When you run the script, it should not be terribly different in what the user sees. A little more space and that's about it. You cut seven lines of code and made the script much more useful. Good job.</p>
+
+<pre class="command-line linenums">
+<span class="prompt">[~/Projects/ruby/scripts]</span><span class="prompt-end">$</span> ruby create_html2.rb
+
+What is the course number of your class? com535
+
+What is the course title of your class? Instructional Design
+
+Who teaches class? Karl Stolley
+
+What is day of the week does class meet? Tuesday
+
+What time does class start? 6:25pm
+
+What time does class end? 9:05pm
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;com535&lt;/td&gt;
+    &lt;td&gt;Instructional Design&lt;/td&gt;
+    &lt;td&gt;Karl Stolley&lt;/td&gt;
+    &lt;td&gt;Tuesday&lt;/td&gt;
+    &lt;td&gt;6:25pm&lt;/td&gt;
+    &lt;td&gt;9:05pm&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+
+<p>Let's move on to making this code reusable.</p>
+
+  </section>
+  <footer>
+    <ul class="pager">
+      <li><a href="14hash.html">Previous</a></li>
+      <li><a href="16classes.html">Next</a></li>
+    </ul>
+    <h5>Progress in This Tutorial</h5>
+    <div class="progress progress-striped">
+      <div class="bar" style="width: 72%;"></div>
+    </div>
+  </footer>
+</article>
+
