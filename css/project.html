@@ -14,13 +14,62 @@ layout: page
       <section>
 
       <p class="lead">
-      Use CSS to add style to <span class="checkThisLater">Your Project</span>.
+        Use CSS to add style to <span class="checkThisLater">Your Project</span>.
       </p>
 
-      <h2></h2>
+      <h2>Choose TWO themes for your page</h2>
+      <p>Use your new <a href="/js">JavaScript</a> chops to switch back and forth between two different CSS themes. Here are some ideas for the two themes:</p>
+      <ul>
+        <li>A light theme and a dark theme</li>
+        <li>A brightly-colored theme and a muted color theme.</li>
+        <li>A theme that positions text blocks on the left side of the screen and one on the right.</li>
+      </ul>
+      <p>Remember you can anything in your theme: fonts, backgrounds, anything.</p>
+      <p>If you're like me, you might feel overwhelmed by having to choose a color palette. Here are some sites I use often:</p>
+      <ul>
+        <li><a class="btn" href="http://www.colourlovers.com/">COLOURlovers.com</a>: My favorite library. It gives you color palettes in RGB and Hex codes, and there's
+          also a pattern library in case you want to use background images. You can search by keyword or sort by different parameters.
+        </li>
+        <li>
+          <a class="btn" href="https://kuler.adobe.com/">Kuler</a>: This is an Adobe design site. You can search for colors or upload a favorite image and select colors from that.
+        </li>
+        <li>
+          <a class="btn" href="http://www.patternhead.com/">Pattern Head</a>: Many free vector pattern images for download. Vector images can be re-colored and resized without
+          losing image quality. 
+        </li>
+      </ul>
+      
+      <h2>Decide Element Positioning</h2>
+      <p>You should probably keep things pretty basic while you're still learning CSS, but here are some ideas you might want to try:</p>
+      <ul>
+        <li>Indenting your main text slightly so that your heading tags will be more prominent.</li>
+        <li>Floating your <code>&lt;h1&gt;</code> name header to the left and your contact information to the right, as many resumes do.</li>
+      </ul>
 
+      <h2>Create Your Stylesheets</h2>
+      <p>Use the instructions in the <a href="/css/stylesheets.html">Stylesheet</a> section to write your rules. It will be much easier for you to make
+      changes later on when your rules are in a separate document.</p>
 
-
+      <h3>Testing</h3>
+      <p>To switch between two different themes on one page, it's easiest to use different <a class="checkThisLater" href="/css/classes-and-ids-as-selectors.html">classes</a>.
+          You can create your initial page with every element you want to style have one class assigned to it, 
+          such as <code>&lt;p class=&quot;light&quot;&gt;</code>. 
+      </p>
+      <p>You can always look at your changes in the browser, but browsers can also give you additional tools to make debugging your CSS code easier.</p>
+      <h4>Chrome</h4>
+      <p>The <a href="http://www.google.com/chrome">Chrome browser</a> has some web developer tools built directly into it's structure. If you right-click on any HTML element,
+      you can select the "Inspect Element" option to look at the structure of any web page. It will show you all of the document's elements, what CSS rules 
+      have been applied, and which stylesheet(s) they came from. I use this tool almost every day.</p>
+      <h4>FireFox</h4>
+      <p>The <a href="http://www.mozilla.org/en-US/firefox/new/">FireFox browser</a> has an entire library of add-ons that can be installed in the browser. These are
+      utilities written by programmers for public use. <a href="https://addons.mozilla.org/en-US/firefox/user/45/">Chris Pederick</a> has created one of the
+      most popular: Web Developer. There are many tools included, but one will allow you to edit the CSS of a website directly within the browser. These are only
+      temporary changes (you must save any changes into your site's stylesheet), but it is very helpful when you need to make tweaks to your CSS code and want to
+      see results right away.</p>
+      <h2>Create a JavaScript Button</h2>
+      <p>Add a button (or link) to your page that says something like "Click to change page theme," or something similar. Your JavaScript code will then look
+      for each instance of your initial class name--"light" in the above example--and change it to your second class name. After the button is clicked, your styled elements
+      should now have your second class name applied to them, e.g. <code>&lt;p class=&quot;dark&quot;&gt;</code>. Happy coding!</p>
       <h4>Progress with this chapter</h4>
       <div class="progress">
           <div class="bar" style="width: 100%;"></div>
