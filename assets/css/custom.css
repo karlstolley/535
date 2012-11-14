@@ -148,7 +148,7 @@ pre .info {
 }
 
 .intexthtml {
-	background-color: #D3BECF;
+	background-color: #E8E8E8;
 }
 .splitsample {
 
@@ -163,8 +163,7 @@ pre .info {
 }
 
 .htmlaside {
-	float: right;
-	background-color: #FFE1FF;
+	background-color: #b1d2ce;
 }
 
 #sidenav {
@@ -173,5 +172,18 @@ pre .info {
 
 .span2 {
 	margin-top: 20px;
+}
+
+#head {
+	margin-top: 50px;
+	color: #81B6B0;
+	
+}
+
+.three-col {
+	 -moz-column-count: 3;
+     -moz-column-gap: 20px;
+     -webkit-column-count: 3;
+     -webkit-column-gap: 20px;
 	
 }
