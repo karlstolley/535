@@ -1,23 +1,26 @@
 ---
 subject: Ruby
-title: Once More with Feeling
+title: Write It Out
 description: >
 
 # Comma-separated list of authors
 authors: Anthony T. Sansone
 layout: page
+previous: multiples.html
+next: review.html
+progress: 90
 ---
 
 <article id=" ">
   <header class="page-header">
-    <h2>Once More with Feeling</h2>
+    <h2>Write It Out</h2>
   </header>
   <section>
 
 
 
 <pre class="prettyprint linenums">
-# Version 4: Allows for Multiple Courses
+# Version 5: Writes to a Separate HTML File
 
 class CreateHTML
 
@@ -45,8 +48,6 @@ class CreateHTML
 
       table_list_row = (table_row + 1).to_s
 
-      puts "\nFor Class #{table_list_row}\n"
-
       questions.each_pair { |question,answer|
         print "\n#{question} #{table_list_row}? "
         @courses_data[table_row].merge!(answer =&gt; gets.chomp)
@@ -58,14 +59,35 @@ class CreateHTML
 
   end
 
+
   def build_html_file
-    puts "&lt;table&gt;"
-    @courses_data.each do |table_row|
-      puts "  &lt;tr&gt;"
-      table_row.each_value { |table_cell| puts "    &lt;td&gt;#{table_cell}&lt;/td&gt;" }
-      puts "  &lt;/tr&gt;"
+
+    html_filename = ""
+
+    begin
+      html_file = File.open(html_filename, "w")
+    rescue
+      print "\n\nWhat do you want to call your Class listing file? "
+      html_filename = gets.chomp + ".html"
+      retry
     end
-    puts "&lt;/table&gt;"
+
+    html_file.puts "&lt;table&gt;"
+
+    @courses_data.each do |table_row|
+
+      html_file.puts "  &lt;tr&gt;"
+
+      table_row.each_value { |table_cell| html_file.puts "    &lt;td&gt;#{table_cell}&lt;/td&gt;" }
+
+      html_file.puts "  &lt;/tr&gt;"
+
+    end
+
+    html_file.puts "&lt;/table&gt;"
+
+    puts "\n" + html_filename + " created."
+
   end
 
 end
@@ -78,14 +100,6 @@ create_new_HTML.build_html_file
 
   </section>
   <footer>
-    <ul class="pager">
-      <li><a href="17breakup.html">Previous</a></li>
-      <li><a href="19writeitout.html">Next</a></li>
-    </ul>
-    <h5>Progress in This Tutorial</h5>
-    <div class="progress progress-striped">
-      <div class="bar" style="width: 85.5%;"></div>
-    </div>
   </footer>
 </article>
 
