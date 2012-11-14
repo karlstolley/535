@@ -1,67 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>HTML5: Tables</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!--Brief page description:-->
-  <meta name="description" content="">
-  <!--Name(s) of primary authors-->
-  <meta name="author" content="">
-
-  <!--Styles-->
-  <link href="/assets/css/bootstrap.css" rel="stylesheet">
- <!-- <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
-  <link href="/assets/css/prettify.css" rel="stylesheet">   -->
+---
+subject: HTML5
+title: HTML5 Getting Started
+description: >
   
-  <!--Custom styles-->
-  <link href="/assets/css/custom.css" rel="stylesheet">
+# Comma-separated list of authors
+authors: Khalila Cole
+layout: page
+---
 
-  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-
-</head>
-
-<body>
-
-  <div class="container-fluid">
-
-    <header id="page-header">
-      <h1>HTML 5</h1>
-    </header>
+<article>
 
 <section>
  
-    <article>
- 
-          <h2>Tables</h2>
      
-     <div class="row">
+    <div class="row">
+          <div class="span12">
+           <div class="row">
+          
           <nav class="span2">
-          <ul id="sidenav"> 
-          	<li><a href="index">HTML 5</a></li>
-          	<li><a href="#">Overview</a></li>
-          	<li><a href="elements">Tags, Attributes, and Elements</a></li>
-          	<li><a href="head">The Head</a></li>
-          	<li><a href="structure">Structure and Layout</a></li>
-          	<li><a href="images">Links and Images</a></li>
-	        <li><a href="tables">Tables</a></li>
-          	<li><a href="forms">Forms</a></li>
-          	<li><a href="beyondbasics">Beyond the Basics</a></li>
-
+          <ul class="nav nav-tabs"> 
+          	<li><a href="index.html">HTML 5</a></li>
+          	<li><a href="overview.html">Overview</a></li>
+          	<li><a href="elements.html">Tags, Attributes, and Elements</a></li>
+          	<li><a href="head.html">The Head</a></li>
+          	<li><a href="structure.html">Structure</a></li>
+          	<li><a href="images.html">Links and Images</a></li>
+	        <li><a href="tables.html">Tables</a></li>
+          	<li><a href="forms.html">Forms</a></li>
+          	<li><a href="beyondbasics.html">Beyond the Basics</a></li>
+		</ul>
           	</nav>
-          <article class="span9">
+          <article class="span8">
+               <h2>Tables</h2>
+
+    	<p>Tables are a series of rows and columns that create cells in which data lives. </p>
+    	<p> Tables are built using the &lt;table&gt; and &lt;/table&gt; tags. Anything within these tags are part of the table. Tables are built row by row using the &lt;row&gt; and &lt;/row&gt; tags. The &lt;table&gt;&lt;table&gt; tags indicate the top row heading, which, by default, is bold (can be changed with CSS). The &lt;table&gt; &lt;table&gt; tags contain the table cell data. Our example has a table. Each individual data cell are housed within the &lt;td&gt; &lt;/td&gt; tags.s</p>
+     <h4>thead, tbody, and tfoot</h4>
+     <p>Although a table could be built with just the 3 tags, 2 really, if you want to keep it very simple, HTML5 also provides three tags that break the table into natural sections for styling purposes [aside: use CSS]. The &lt;thead&gt;and &lt;/thead&gt; tags enclose the data in the first section to define the heading row of the table. Similarly, the &lt;tbody&gt;and &lt;/tbody&gt; and the &lt;tfoot&gt;and &lt;/tfoot&gt; tags enlose and define the body and footer data respectively.</p>
      
-     <h3>&lt;table&gt;</h3>
-     <h4>&lt;row&gt;</h4>
+<h3> Tables At-a-Glance</h3>
 
 
       </article>
-      </section>
-      
+     
+       </section>
     
     <footer id="page-footer">
       <p>Licensed under Creative Commons</p>
@@ -69,13 +51,4 @@
 </div>
   </div><!--/.container-fluid-->
 
-  <!-- JavaScript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="/assets/js/jquery.min.js"></script>
-  <script src="/assets/js/bootstrap.min.js"></script>
-  <script src="/assets/js/prettify/prettify.js"></script>
-
-</body>
-</html>
-test
+</article>
