@@ -86,8 +86,7 @@ aside {
 .command-line {
   position: relative;
   margin: 15px 0;
-  padding: 39px 19px 14px;
-  *padding-top: 19px;
+  padding: 19px 14px;
   background-color: #300A24;
   color: #fff;
   border: 1px solid #ddd;
@@ -138,7 +137,6 @@ pre .info {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
     margin: 20px 0 0;
     padding: 0;
-    width: 228px;
 }
 .bs-docs-sidenav > li > a {
     border: 1px solid #E5E5E5;
