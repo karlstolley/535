@@ -16,6 +16,13 @@ layout: page
 </header>
 <section class="span8 offset3 clearfix">
 
+<h2>By the End Of This Section You Should Be Able To...</h2>
+<ul>
+  <li>Explain the two ways script tags can be used to include JavaScript on a web page</li>
+  <li>Create your own script files to include on your own web pages</li>
+  <li>Explain what a JavaScript library is, and know how to include them on your web page</li>
+</ul>
+
 <p class="lead">
 So far, you've only used JavaScript using your in browser console. Obviously,
 this approach has some limitations. When you publish a web page, you want
@@ -30,19 +37,19 @@ using the <code>script</code> tag. Let's take a look at a short example.
 </p>
 
 <pre>
-      <code>
-      &lt;html&gt;
-      &lt;head&gt;
-      &lt;script type=&quot;text/javascript&quot;&gt;
-      alert(&quot;Hello, world!&quot;);
-      &lt;/script&gt;
-      &lt;/head&gt;
-      &lt;body&gt;
-      This is my web page.
-      &lt;/body&gt;
-      &lt;/html&gt;
-      </code>
-      </pre>
+<code>
+&lt;html&gt;
+&lt;head&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+alert(&quot;Hello, world!&quot;);
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+This is my web page.
+&lt;/body&gt;
+&lt;/html&gt;
+</code>
+</pre>
 
 <p>
 This is obviously a fairly trivial example, but it demonstrates the use
@@ -63,18 +70,18 @@ Then, in our HTML, we would do the following.
 </p>
 
 <pre>
-      <code>
-      &lt;html&gt;
-      &lt;head&gt;
-      &lt;script type=&quot;text/javascript&quot; src=&quot;alert.js&quot;&gt;
-      &lt;/script&gt;
-      &lt;/head&gt;
-      &lt;body&gt;
-      This is my web page.
-      &lt;/body&gt;
-      &lt;/html&gt;
-      </code>
-      </pre>
+<code>
+&lt;html&gt;
+&lt;head&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;alert.js&quot;&gt;
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+This is my web page.
+&lt;/body&gt;
+&lt;/html&gt;
+</code>
+</pre>
 
 <p>
 What we did here was add a <code>src</code> attribute to the <code>script</code>
