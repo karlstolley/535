@@ -20,26 +20,31 @@ progress: 36
     <div class="row-fluid">
       <div class="span8">
 
+<div class="alert alert-info">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <h4>Learning Goal:</h4>
+  Identify Variables. Create Methods.
+</div>
+
         <p>If you want to say hello to someone else, you would need to provide Ruby (and IRB) with another name.</p>
 
         <p>That's not as hard as you would think.</p>
 
-        <p>You would need to rewrite your short program to ask for the person's name when the method is called. This will require a placeholder that holds on to the name until it is displayed. This placeholder is called a <strong>variable</strong>.</p>
+        <p>You would need to rewrite your short program to ask for the person's name when the method is called. This will require a placeholder that holds on to the name until it is displayed. This placeholder is called a <strong>Variable</strong>.</p>
 
-        Example
-
+    <div class="bs-docs-example">
         <p>The method would be written like this:</p>
-
-<pre class="prettyprint linenums">
+    </div>
+<pre class="command-line">
 irb(main):015:0&gt; def hello name
-irb(main):016:1>   puts "Hello " + name + "!"
-irb(main):017:1> end
+irb(main):016:1&gt;   puts "Hello " + name + "!"
+irb(main):017:1&gt; end
 =&gt; nil
 </pre>
 
         <p>When you call the method, you would type the name of the method and the person's name in quotes after it:</p>
 
-<pre class="prettyprint linenums">
+<pre class="command-line">
 irb(main):018:0&gt; hello "Tony"
 Hello Tony!
 =&gt; nil
@@ -51,18 +56,18 @@ Hello Tony!
 
         <p>Rewrite the hello method in IRB to ask for the person's name:</p>
 
-<pre class="prettyprint linenums">
+<pre class="command-line">
 irb(main):019:0&gt; def hello
-irb(main):020:1>   puts "What is your name?"
-irb(main):021:1>   name = gets
-irb(main):022:1>   puts "Hello " + name + "!"
-irb(main):023:1> end
+irb(main):020:1&gt;   puts "What is your name?"
+irb(main):021:1&gt;   name = gets
+irb(main):022:1&gt;   puts "Hello " + name + "!"
+irb(main):023:1&gt; end
 =&gt; nil
 </pre>
 
         <p>Now, when you call <code>hello</code>, you do not need to include the person's name. The program will ask the person for you.</p>
 
-<pre class="prettyprint linenums">
+<pre class="command-line">
 irb(main):024:0&gt; hello
 What is your name?
 Tony
@@ -80,22 +85,22 @@ irb(main):025:0&gt;
 
         <p>Chomp it.</p>
 
-        <p>The method <code>chomp</code> allows you to strip away the new line character from the end of any string.</p>
+        <p>The Method <code>.chomp</code> allows you to strip away the new line character from the end of any string.</p>
 
-        <p>You will need to rewrite the hello method again in IRB to see this. Give it a try:</p>
+        <p>You will need to rewrite the <code>hello</code> method again in IRB to see this. Give it a try:</p>
 
-<pre class="prettyprint linenums">
+<pre class="command-line">
 irb(main):025:0&gt; def hello
-irb(main):026:1>  puts "What is your name?"
-irb(main):027:1>  name = gets.chomp
-irb(main):028:1>  puts "Hello " + name + "!"
-irb(main):029:1> end
+irb(main):026:1&gt;  puts "What is your name?"
+irb(main):027:1&gt;  name = gets.chomp
+irb(main):028:1&gt;  puts "Hello " + name + "!"
+irb(main):029:1&gt; end
 =&gt; nil
 </pre>
 
-        <p>Now, when you call hello, you see:</p>
+        <p>Now, when you call <code>hello</code>, you see:</p>
 
-<pre class="prettyprint linenums">
+<pre class="command-line">
 irb(main):030:0&gt; hello
 What is your name?
 Tony

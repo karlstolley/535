@@ -1,0 +1,65 @@
+<dl>
+
+  <dt>Shell</dt>
+  <dd>A program allows you to use the operating system's capabilities. Ruby is unlike most programming languages because it has its own shell.</dd>
+
+  <dt>Method</dt>
+  <dd>A series of expressions that return a value.</dd>
+
+  <dt>Expression</dt>
+  <dd>
+    An expression represents a single piece of data. An expression consists of one or more operands (strings, numbers, variables) and usually an operator. Expressions are evaluated (or processed) to produce (or return) a result. Expressions are like math; one or more pieces of data called operands are compared or changed and return a result.
+    <code>a + b</code> returns the value of <code>a</code> plus <code>b</code>
+    <code>x = y</code> returns <code>x</code> which was set to the value of <code>y</code>
+    <code>j++</code> returns <code>j + 1</code>
+    <code>h < 0</code> compares <code>h</code> and <code>0</code> and says <code>h</code> is less than <code>0</code>
+  </dd>
+
+  <dt>Statement</dt>
+  <dd>
+    <p>A statement causes the computer to carry out some definite action. Statements are like sentences; they tell the computer what state something is in (like an intransitive verb sentence, that something is something) or tell the computer to do something, like compare two values, do something a number of times or do something only if a condition is met.</p>
+    <p>In summary, expressions have a value, while statements do not.</p>
+    <p>In Ruby, there is no difference between expressions and statements. Everything in Ruby returns a value, even if it is nothing, which Ruby calls <code>nil</code>. As you saw earlier when using IRB, if the expression or method did not return a value, it displayed <code>=&gt; nil</code>.</p>
+    <p>Ruby returns the last line evaluated in an expression or a method as its value.</p>
+    <p>If we set the variable x to 6:</p>
+<pre class="command-line linenums">
+irb(main):032:0&gt; x = 6
+=&gt; 6
+</pre>
+    <p>It returns a value of 6, so the expression's value is 6.</p>
+    <p>If we tell Ruby to put "Hello Ruby!" on the screen:</p>
+<pre class="command-line linenums">
+irb(main):010:0&gt; puts "Hello Ruby!"
+Hello Ruby!
+=&gt; nil
+</pre>
+    <p>It returns <code>nil</code>. The expression did something; it displayed a string as it was told. The puts method does not return any value as it stores nothing and evaluates nothing. So, the only value is <code>nil</code>.</p>
+    <p>Expressions are like the nouns in a sentence. Statements are the completed sentence or thought. One line in your method or loop could be an expression, and the conglomeration of those expressions into a closed loop or method could be thought of as a statement, which always returns a value.</p>
+  </dd>
+
+  <dt>Variable</dt>
+  <dd>
+    A word that identifies a reusable value in a program.
+
+<pre class="prettyprint linenums">
+x = 6
+name = "Allison"
+</pre>
+  </dd>
+
+  <dt>Operator</dt>
+  <dd>Operators compare, assign or change values of given data such as numbers or text. Ruby has 36 operators in its language: 6 arithmetic, 8 comparison, 7 assignment, 6 logical, 6 bitwise, 1 ternary and 2 range. Bitwise, ternary and range operators are not often used and are outside of the scope of this chapter.</dd>
+
+  <dt>Array</dt>
+  <dd>A list of items using one identifier to work with multiple related items.</dd>
+
+  <dt>Hash</dt>
+  <dd>An <strong>Associative Array</strong> that stores lists of Values internally identified by another value called a Key rather than a number.</dd>
+
+  <dt>Class</dt>
+  <dd>Blueprint code from which copies of itself can be created with predictable properties and capabilities.</dd>
+
+  <dt>Object</dt>
+  <dd>Groups of code in program that have certain properties and can do certain tasks. Objects are instances of a Class.</dd>
+
+</dl>

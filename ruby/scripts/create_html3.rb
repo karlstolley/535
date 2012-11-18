@@ -6,8 +6,8 @@ class CreateHTML
 		questions = {
 			"What is the course number of your class?" => 'number',
 			"What is the course title of your class?" => 'title',
-			"Who teaches class?" => 'instructor',
-			"What is day of the week does class meet?" => 'day',
+			"Who teaches your class?" => 'instructor',
+			"What day of the week does your class meet?" => 'day',
 			"What time does class start?" => 'start_time',
 			"What time does class end?" => 'end_time'
 		}

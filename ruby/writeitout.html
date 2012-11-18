@@ -17,77 +17,189 @@ progress: 90
   </header>
   <section>
 
+<div class="alert alert-info">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <h4>Learning Goal:</h4>
+  Error check a condition. Write results to a separate file instead of the screen.
+</div>
 
+<p>This script works pretty well, except for one problem. The user fills out their questionnaire and then has to try and copy and paste the result from the command line. That seems silly. There has to be a better way.</p>
+
+<p>There is, and it only requires a change to the <code>build_html_file</code> script to do it.</p>
+
+<p>Writing to a file in most programming languages involves opening a file then writing the content to that new file, then closing the file. Ruby is not much different, but it only needs to open and write to the file, nothing more.</p>
+
+<p>To write to the file, you first need to provide a name for this file. You could hard code this into the script, or you could ask the user. We want to ask the user.</p>
 
 <pre class="prettyprint linenums">
-# Version 5: Writes to a Separate HTML File
+  <span class="success">html_filename = ""
+  print "\n\nWhat do you want to call your Class listing file? "
+  html_filename = gets.chomp + ".html"
+  html_file = File.open(html_filename, "w")</span>
+</pre>
+
+<p>Line 1 creates a new variable with a blank String in it. Lines 2 and 3 just ask the user for the name of a file and then add the <code>.html</code> at the end. Line 4 is the magic. It assigns an open file called what the user specified (<code>html_filename + ".html"</code>) and allows it to be writable (<code>"w"</code>) using the <code>.open</code> Method of the <code>File</code> Class.
+<code>html_file</code> is now an open file, ready to write new data.</p>
+
+<pre class="prettyprint linenums">
+  def build_html_file
+    html_filename = ""
+    print "\n\nWhat do you want to call your Class listing file? "
+    html_filename = gets.chomp + ".html"
+    html_file = File.open(html_filename, "w")
+    <span class="success">html_file.</span>puts "&lt;table&gt;"
+    @courses_data.each do |table_row|
+      <span class="success">html_file.</span>puts "  &lt;tr&gt;"
+      table_row.each_value { |table_cell| <span class="success">html_file.</span>puts "    &lt;td&gt;#{table_cell}&lt;/td&gt;" }
+      <span class="success">html_file.</span>puts "  &lt;/tr&gt;"
+    end
+    <span class="success">html_file.</span>puts "&lt;/table&gt;"
+    <span class="success">puts "\n" + html_filename + " created."</span>
+  end
+end
+</pre>
+
+<p>The difference is now that you <code>puts</code> the data to the file, not to the screen, by adding the file name variable (<code>html_file</code>) before each <code>puts</code>. To let the user know that something happened, we <code>puts</code> a line to the screen letting them know that the file was created.</p>
+
+<h3>Checking for an Error</h3>
+
+<p>Getting a name for the file from the user is great, but what if he or she just hits return. Would that be an error? How do we handle errors?</p>
+
+<p>Ruby uses <code>rescue</code> to check for errors. A small block of code first attempts the desired method and, if it cannot do it, asks Ruby to <code>rescue</code> the script by running additional code to fix the problem rather than crash the script.</p>
+
+<p>In this case, you would want to just open the new file. What if you didn't have a file name?</p>
+
+<pre class="prettyprint linenums">
+  def build_html_file
+    html_filename = ""
+    <span class="success">begin</span>
+      html_file = File.open(html_filename, "w")
+    <span class="success">rescue</span>
+      print "\n\nWhat do you want to call your Class listing file? "
+      html_filename = gets.chomp + ".html"
+      <span class="success">retry</span>
+    <span class="success">end</span>
+    ...
+end
+</pre>
+
+<p>The error catching block starts with the keyword <code>begin</code>. This tells Ruby that what follows is an error catching block. The block first tries to write the file with a filename it has. That filename is blank. This would normally cause Ruby to throw an error. The block does have a <code>rescue</code> section, so the script will then go to that. In this example, it asks the user for a filename. After it gets a filename, it retries the original task in the block (that is, it restarts from <code>begin</code>), and tries again. Now that it has a filename, it should work fine.</p>
+
+<p>More complex error checking can be run at your discretion. This just gives you a feel for what could be done.</p>
+
+<p>Where can you learn more?</p>
+
+<hr>
+
+<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#compare">
+  Compare the Versions
+</button>
+
+    <p><div id="compare" class="collapse">
+
+<ul class="nav nav-tabs" id="myTab">
+  <li><a href="#v1" data-toggle="tab">Version 1</a></li>
+  <li><a href="#v2" data-toggle="tab">Version 2</a></li>
+  <li><a href="#v3" data-toggle="tab">Version 3</a></li>
+  <li><a href="#v4" data-toggle="tab">Version 4</a></li>
+  <li class="active"><a href="#v5">Version 5</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane" id="v1">
+
+<pre class="prettyprint linenums">
+#Version 1: Simple Script to HTML
+
+print "What is the course number of your class? "
+number = gets.chomp
+
+print "What is the course title of your class? "
+title = gets.chomp
+
+print "Who teaches this class? "
+instructor = gets.chomp
+
+print "What is day of the week does class meet? "
+day = gets.chomp
+
+print "What time does class start? "
+start_time = gets.chomp
+
+print "What time does class end? "
+end_time = gets.chomp
+
+puts "&lt;table&gt;"
+puts "  &lt;tr&gt;"
+puts "    &lt;td&gt;" + number + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + title + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + instructor + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + day + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + start_time + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + end_time + "&lt;/td&gt;"
+puts "  &lt;/tr&gt;"
+puts "&lt;/table&gt;"
+</pre>
+
+  </div>
+  <div class="tab-pane" id="v2">
+
+<pre class="prettyprint linenums">
+# Version 2: Uses Hashes instead of Repetition
+
+questions = {
+  "What is the course number of your class?" =&gt; 'number',
+  "What is the course title of your class?" =&gt; 'title',
+  "Who teaches your class?" =&gt; 'instructor',
+  "What day of the week does your class meet?" =&gt; 'day',
+  "What time does class start?" =&gt; 'start_time',
+  "What time does class end?" =&gt; 'end_time'
+}
+
+courses_data = {}
+
+questions.each_pair { |question,answer|
+  print "\n#{question} "
+  courses_data.merge!(answer =&gt; gets.chomp)
+}
+
+puts "&lt;table&gt;"
+puts "  &lt;tr&gt;"
+courses_data.each_value { |table_cell| puts "    &lt;td&gt;#{table_cell}&lt;/td&gt;" }
+puts "  &lt;/tr&gt;"
+puts "&lt;/table&gt;"
+</pre>
+
+  </div>
+  <div class="tab-pane" id="v3">
+
+<pre class="prettyprint linenums">
+# Version 3: Separates Questions and Display into Two Methods
 
 class CreateHTML
 
   def ask_questions
-
     questions = {
-      "What is the course number of your class" =&gt; 'number',
-      "What is the course title of your class" =&gt; 'title',
-      "Who teaches class" =&gt; 'instructor',
-      "What is day of the week does class meet" =&gt; 'day',
-      "What time does class start" =&gt; 'start_time',
-      "What time does class end" =&gt; 'end_time'
+      "What is the course number of your class?" =&gt; 'number',
+      "What is the course title of your class?" =&gt; 'title',
+      "Who teaches your class?" =&gt; 'instructor',
+      "What day of the week does your class meet?" =&gt; 'day',
+      "What time does class start?" =&gt; 'start_time',
+      "What time does class end?" =&gt; 'end_time'
     }
-
-    print "\nHow many classes do you have this semester? "
-    @course_count = gets.chomp
-
-    @courses_data = []
-
-    @courses = (@course_count.to_i)-1
-
-    0.upto(@courses) do |table_row|
-
-      @courses_data[table_row] = {}
-
-      table_list_row = (table_row + 1).to_s
-
-      questions.each_pair { |question,answer|
-        print "\n#{question} #{table_list_row}? "
-        @courses_data[table_row].merge!(answer =&gt; gets.chomp)
-      }
-
-      table_row += 1
-
-    end
-
+    @courses_data = {}
+    questions.each_pair { |question,answer|
+      print "\n#{question} "
+      @courses_data.merge!(answer =&gt; gets.chomp)
+    }
   end
 
-
   def build_html_file
-
-    html_filename = ""
-
-    begin
-      html_file = File.open(html_filename, "w")
-    rescue
-      print "\n\nWhat do you want to call your Class listing file? "
-      html_filename = gets.chomp + ".html"
-      retry
-    end
-
-    html_file.puts "&lt;table&gt;"
-
-    @courses_data.each do |table_row|
-
-      html_file.puts "  &lt;tr&gt;"
-
-      table_row.each_value { |table_cell| html_file.puts "    &lt;td&gt;#{table_cell}&lt;/td&gt;" }
-
-      html_file.puts "  &lt;/tr&gt;"
-
-    end
-
-    html_file.puts "&lt;/table&gt;"
-
-    puts "\n" + html_filename + " created."
-
+    puts "&lt;table&gt;"
+      puts "  &lt;tr&gt;"
+      @courses_data.each_value { |table_cell| puts "    &lt;td&gt;#{table_cell}&lt;/td&gt;" }
+      puts "  &lt;/tr&gt;"
+    puts "&lt;/table&gt;"
   end
 
 end
@@ -96,6 +208,123 @@ create_new_HTML = CreateHTML.new
 create_new_HTML.ask_questions
 create_new_HTML.build_html_file
 </pre>
+
+  </div>
+  <div class="tab-pane" id="v4">
+
+<pre class="prettyprint linenums">
+# Version 4: Allows for Multiple Courses
+
+class CreateHTML
+
+  def ask_questions
+    questions = {
+      "What is the course number of your class" =&gt; 'number',
+      "What is the course title of your class" =&gt; 'title',
+      "Who teaches class" =&gt; 'instructor',
+      "What day of the week does your class meet" =&gt; 'day',
+      "What time does class start" =&gt; 'start_time',
+      "What time does class end" =&gt; 'end_time'
+    }
+    print "\nHow many classes do you have this semester? "
+    @course_count = gets.chomp
+    @courses_data = []
+    @courses = (@course_count.to_i)-1
+    0.upto(@courses) do |table_row|
+      @courses_data[table_row] = {}
+      table_list_row = (table_row + 1).to_s
+      puts "\nFor Class #{table_list_row}\n"
+      questions.each_pair { |question,answer|
+        print "\n#{question} #{table_list_row}? "
+        @courses_data[table_row].merge!(answer =&gt; gets.chomp)
+      }
+      table_row += 1
+    end
+  end
+
+  def build_html_file
+    puts "&lt;table&gt;"
+    @courses_data.each do |table_row|
+      puts "  &lt;tr&gt;"
+      table_row.each_value { |table_cell| puts "    &lt;td&gt;#{table_cell}&lt;/td&gt;" }
+      puts "  &lt;/tr&gt;"
+    end
+    puts "&lt;/table&gt;"
+  end
+
+end
+
+create_new_HTML = CreateHTML.new
+create_new_HTML.ask_questions
+create_new_HTML.build_html_file
+</pre>
+
+  </div>
+  <div class="tab-pane active" id="v5">
+
+<pre class="prettyprint linenums">
+# Version 5: Writes to a Separate HTML File
+
+class CreateHTML
+  def ask_questions
+    questions = {
+      "What is the course number of class" =&gt; 'number',
+      "What is the course title of class" =&gt; 'title',
+      "Who teaches class" =&gt; 'instructor',
+      "What day of the week does your class meet" =&gt; 'day',
+      "What time does class start" =&gt; 'start_time',
+      "What time does class end" =&gt; 'end_time'
+    }
+    print "\nHow many classes do you have this semester? "
+    @course_count = gets.chomp
+    @courses_data = []
+    @courses = (@course_count.to_i)-1
+    0.upto(@courses) do |table_row|
+      @courses_data[table_row] = {}
+      table_list_row = (table_row + 1).to_s
+      questions.each_pair { |question,answer|
+        print "\n#{question} #{table_list_row}? "
+        @courses_data[table_row].merge!(answer =&gt; gets.chomp)
+      }
+      table_row += 1
+    end
+  end
+
+  def build_html_file
+    html_filename = ""
+    begin
+      html_file = File.open(html_filename, "w")
+    rescue
+      print "\n\nWhat do you want to call your Class listing file? "
+      html_filename = gets.chomp + ".html"
+      retry
+    end
+    html_file.puts "&lt;table&gt;"
+    @courses_data.each do |table_row|
+      html_file.puts "  &lt;tr&gt;"
+      table_row.each_value { |table_cell| html_file.puts "    &lt;td&gt;#{table_cell}&lt;/td&gt;" }
+      html_file.puts "  &lt;/tr&gt;"
+    end
+    html_file.puts "&lt;/table&gt;"
+    puts "\n" + html_filename + " created."
+  end
+end
+
+create_new_HTML = CreateHTML.new
+create_new_HTML.ask_questions
+create_new_HTML.build_html_file
+</pre>
+
+  </div>
+</div>
+
+</div></p>
+
+<script>
+  $(function () {
+    $('#myTab a:last').tab('show');
+  })
+</script>
 
 
   </section>

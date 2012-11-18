@@ -17,6 +17,9 @@ progress: 67.5
   </header>
   <section>
 
+    <div class="row-fluid">
+      <div class="span8">
+
     <p>We hope you're comfortable with variables, because we're going to take you a little further.</p>
 
     <p>OK, a lot further. We need to be able to easily track and work through multiple courses, questions and the like. That will require you to understand how to use placeholders for multiple related items (Arrays, Hashes) and the means to move through and act on those related items (with our old friend the Method). Let's get started.</p>
@@ -60,7 +63,7 @@ puts courses[0]
 
     <h3>Hashes</h3>
 
-    <p>The term Hash comes from Perl by way of older computer science concepts. "Hash" is a lot easier to say repeatedly than "associative array". Hash is computer science is short for "Hash Table" which is a type of data that uses identifying values (known as <strong>Keys</strong>) to find associated values (known simply as <strong>values</strong>). Whew. Got all that?</p>
+    <p>The term <strong>Hash</strong> comes from Perl by way of older computer science concepts. "Hash" is a lot easier to say repeatedly than "associative array". Hash is computer science is short for "Hash Table" which is a type of data that uses identifying values (known as <strong>Keys</strong>) to find associated values (known simply as <strong>values</strong>). Whew. Got all that?</p>
 
     <p>So, Ruby uses Hashes to offer a way to store lists of Values that are internally identified by another value (Key) that's not a number. What does that look like?</p>
 
@@ -72,7 +75,7 @@ courses = {}
     <p>You can create a populated Hash by writing:</p>
 <pre class="prettyprint linenums">
 # Creating a Hash
-courses = {"com531"=>"Web Development", "com535"=>"Instructional Design"}
+courses = {"com531"=&gt;"Web Development", "com535"=&gt;"Instructional Design"}
 </pre>
 
     <p>So, to get the name of com535 using the Hash, you would write:</p>
@@ -95,6 +98,21 @@ puts courses['com535']
     </ol>
 
     <p>Did you get all that? Good. Now, let's get into why Hashes can make your code easier to read and use.</p>
+
+
+      </div>
+
+      <div class="span4">
+      <aside>
+        <dl>
+          <dt>Array</dt>
+          <dd>A list of items using one identifier to work with multiple related items.</dd>
+          <dt>Hash</dt>
+          <dd>An Associative Array that stores lists of Values internally identified by another value called a Key rather than a number.</dd>
+        </dl>
+      </aside>
+      </div>
+    </div>
 
   </section>
   <footer>

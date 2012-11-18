@@ -9,7 +9,7 @@ title = gets.chomp
 print "Who teaches this class? "
 instructor = gets.chomp
 
-print "What is day of the week does class meet? "
+print "What day of the week does your class meet? "
 day = gets.chomp
 
 print "What time does class start? "
