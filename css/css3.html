@@ -105,6 +105,40 @@ layout: page
       <p>There are other CSS3 rules similar to the rounded corners effect such as box-shadow, text-shadow and color gradients, shown below:</p>
       <img src="/assets/img/css3-multiple-styles-box.png" alt="image of a box with box-shadow, text-shadow and color gradient from css3 rules.">
 
+      <h2>Web Fonts</h2>
+      <p>The publishing world has an almost endless array of fonts to display text. On the web--prior to CSS3--you were limisted to the fonts that were installed on your users' computers. You could
+        identify  with some certainty font families that were installed by default on Windows and/or Apple computers: Arial, Geneva, Times New Roman and Courier, or simply <code>serif</code>,
+        <code>sans-serif</code> <code>monospace</code> generalizations. If you wanted text to be displayed in a particular way, such as a company logo, you had to create an image of it. While this will 
+       display correctly, an image does not allow the user to copy the text to their clipboard and paste it into another application.</p>
+
+      <p><strong>Web fonts</strong> allow you to specify a font that can be loaded into the user's browser temporarily. A good example is the types of fonts that appear to be handwritten script. In
+      a standard CSS rule, it is impossible to use a script-style font that is universal across all computers. INstead, your HTML code would look like this:</p>
+<pre>
+&lt;img src=&quot;my-name-in-script-font.jpg&quot; alt=&quot;'Christine McClure' in an image written in script font&quot;&gt;
+<span class="exampleAside">  <i class="icon-arrow-up"></i> img tag instead of text</span>
+</pre>
+
+      <p>With a web font, your html and CSS rules look something like this:</p>
+<pre>
+&lt;link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'&gt;
+<span class="exampleAside">  <i class="icon-arrow-up"></i> Google font API to load fond style</span>
+
+&lt;style&gt;
+  h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 84px;
+  }
+&lt;/style&gt;
+<span class="exampleAside">  <i class="icon-arrow-up"></i> CSS3 rule</span>
+
+&lt;h1&gt;My Name in Fancy Script&lt;/h1&gt;
+  <span class="exampleAside">  <i class="icon-arrow-up"></i> text instead of image</span>
+</pre>
+
+      <p>The result will look just like the image below, but the actual CSS3-styled text will be able to be selected and copied to the clipboard.</p>
+
+       <img src="/assets/img/css3-web-font.png" alt="image text styled by web font.">
+
       <h2>Transitions</h2>
 
       <p>Transitions are a way to slow down (or speed up) the changing of colors or images in your HTML5 elements. Having elements immediately change in appearance can be a bit jarring, 
