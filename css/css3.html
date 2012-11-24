@@ -24,7 +24,68 @@ layout: page
         using the "if it ain't broke, don't fix it" philosophy. And some people may be visiting your site from a computer they don't own and cannot upgrade (like a work or lab computer).
       </aside>
 
-      <h2></h2>
+      <p>Here are a few of the new changes you can make in a browser with CSS3 rules. Note: the display examples will be images rather than CSS3 rules to ensure you will be able to view them,
+      regardless of the browser you're using.</p>
+
+      <aside>Not sure if browser you're using for this tutorial supports CSS3? You can find out in the "Css3 Support"
+        section of the <a href="http://fmbip.com/">FindMeByIP</a> website.
+      </aside>
+
+      <h2>RGB Colors</h2>
+
+      <p>We've been referring to colors in this chapter in hexidecimal (hex) format such as <code>#E01BAB</code>, which is a bright pink color. The hex format identifies the amount of red, green,
+      and blue color to mix into a screen pixel. RGB color does the same thing using a different format: the hex color listed previous would be displayed as rgb(224, 27, 171). The advantage to using
+      RGB colors with CSS3 rules is that you can also set a <strong>transparency level</strong> for the color, without changing the color value.</p>
+
+      <p>Here are the style rules for a class of "box" that can be applied to an HTML5 element:</p>
+<pre>
+.box {
+  width: 50px;
+  height: 50px;
+  float:left;
+  margin: 10px;
+  background-color: rgb(224,27,171);
+                    <span class="exampleAside"><i class="icon-arrow-up"></i> CSS3 rule for color: RGB</span>
+}
+</pre>
+
+      <p>This is a screenshot of what would be displayed in the browser:</p>
+
+      <img src="/assets/img/css3-rgb-boxes.png" alt="image of 5 boxes with the same dimensions and the same pink background color.">
+
+      <p>Let's say you wanted to display these boxes as the same color, but with decreasing levels of transparency and ending with the solid color. Before CSS3 rules, you would have to
+        determine what each new hex color would be. Now however, you can determine what your base color would be and apply an <strong>alpha transparency</strong> between 0 and 1 (with 1 being 100% 
+        opaque) with the <code>RGBa</code> format. </p>
+
+<pre>
+<span class="exampleAside"><i class="icon-arrow-down"></i> Create a separate class for each level of transparency</span>
+.alpha20 {
+  background-color: rgba(224,27,171,0.2);
+}
+.alpha40 {
+  background-color: rgba(224,27,171,0.4);
+}
+.alpha60 {
+  background-color: rgba(224,27,171,0.6);
+}
+.alpha80 {
+  background-color: rgba(224,27,171,<span class="exampleAside">0.8</span>);
+                    <span class="exampleAside"><i class="icon-arrow-up"></i> The RGBa property and transparency value</span>
+}
+</pre>
+      <p>Add the new classes to your elements:</p>
+<pre>
+&lt;div class=&quot;box alpha20&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;box alpha40&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;box alpha60&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;box alpha80&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+</pre>
+
+      <p>And now you have your graduated colors. No images have to be captured, and these can be easily modified later if you want to change the color.</p>
+
+      <img src="/assets/img/css3-rgba-boxes.png" alt="image of 5 boxes with graduated colors, starting with light and increasing to deep pink.">
+
       <footer>
         <p>Page last updated by Christine McClure</p>
       </footer>
