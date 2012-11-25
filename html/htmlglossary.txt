@@ -28,3 +28,7 @@ ol
 ul
 li
 row
+tag
+start or opening tag
+end or closing tag
+br
