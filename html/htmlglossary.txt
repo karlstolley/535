@@ -2,7 +2,29 @@ HTML Glossary
 
 
 
-
+Pages
 1. index.html
 2. overview.html
 3. 
+
+Glossary/Key Words
+!DOCTYPE html
+html
+head
+title
+meta
+link
+body
+header
+article
+section
+footer
+a
+img
+table
+p
+nav
+ol
+ul
+li
+row
