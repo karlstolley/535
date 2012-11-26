@@ -187,3 +187,7 @@ pre .info {
      -webkit-column-gap: 20px;
 	
 }
+
+.btn { /* cm: to keep following text from butting up  against button */
+  margin-bottom: 12px;
+}
