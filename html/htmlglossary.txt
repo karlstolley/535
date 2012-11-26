@@ -34,3 +34,7 @@ tag
 start or opening tag
 end or closing tag
 br
+
+Notes:
+     Doctype- this is what tells the browsers what to find
+summarize each page at the end of the section
