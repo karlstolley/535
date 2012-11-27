@@ -1,0 +1,336 @@
+---
+subject: Ruby
+title: Breaking Up Is Hard
+description: >
+
+# Comma-separated list of authors
+authors: Anthony T. Sansone
+layout: page
+previous: classes.html
+next: multiples.html
+progress: 81
+---
+
+<article id=" ">
+  <header class="page-header">
+    <h2>Breaking Up Is Hard</h2>
+  </header>
+  <section>
+
+    <p>The course list script currently has everything in one long strip. Nothing has been put into Methods or Classes. Looking at this script, what lines would comprise the two methods: <code>ask_questions</code> and <code>build_html_file</code>?</p>
+
+<pre class="prettyprint linenums">
+# Version 2: Uses Hashes instead of Repetition
+
+questions = {
+  "What is the course number of your class?" =&gt; 'number',
+  "What is the course title of your class?" =&gt; 'title',
+  "Who teaches your class?" =&gt; 'instructor',
+  "What day of the week does your class meet?" =&gt; 'day',
+  "What time does class start?" =&gt; 'start_time',
+  "What time does class end?" =&gt; 'end_time'
+}
+
+courses_data = {}
+
+questions.each_pair { |question,answer|
+  print "\n#{question} "
+  courses_data.merge!(answer =&gt; gets.chomp)
+}
+
+puts "&lt;table&gt;"
+puts "  &lt;tr&gt;"
+courses_data.each_value { |table_cell| puts "    &lt;td&gt;#{table_cell}&lt;/td&gt;" }
+puts "  &lt;/tr&gt;"
+puts "&lt;/table&gt;"
+</pre>
+
+<p>It looks like Lines 3-17 would be our first method, <code>ask_questions</code>. As discussed earlier, this block has the questions and answer variables as a hash (Lines 3-10) which get answers fed into the <code>courses_data</code> hash (Lines 14-16). So, above Line 3, we would add the method declaration: </p>
+
+<pre class="prettyprint linenums">
+def ask_questions
+</pre>
+
+After the <code>questions.each_pair</code> loop, we would put the keyword <code>end</code>:
+
+<pre class="prettyprint linenums">
+  def ask_questions
+    questions = {
+      "What is the course number of your class?" =&gt; 'number',
+      "What is the course title of your class?" =&gt; 'title',
+      "Who teaches your class?" =&gt; 'instructor',
+      "What day of the week does your class meet?" =&gt; 'day',
+      "What time does class start?" =&gt; 'start_time',
+      "What time does class end?" =&gt; 'end_time'
+    }
+    courses_data = {}
+    questions.each_pair { |question,answer|
+      print "\n#{question} "
+      courses_data.merge!(answer =&gt; gets.chomp)
+    }
+  <span class="success">end</span>
+</pre>
+
+<p>Now, this changes this script fundamentally, you can no longer just run the script "as-is". You will need to call this method at the end of your script. A method is self-contained, it has to be told it is needed. we are not going to worry about that yet, because we need still to create the second method <code>build_html</code>.</p>
+
+<p>This second method will just need the Method declaration above the first <code>puts</code> and the <code>end</code> after the last <code>puts</code>:</p>
+
+<pre class="prettyprint linenums">
+  <span class="success">def build_html_file</span>
+    puts "&lt;table&gt;"
+      puts "  &lt;tr&gt;"
+      @courses_data.each_value { |table_cell| puts "    &lt;td&gt;#{table_cell}&lt;/td&gt;" }
+      puts "  &lt;/tr&gt;"
+    puts "&lt;/table&gt;"
+  <span class="success">end</span>
+</pre>
+
+<p>We now have our two Methods but now we have another problem: how do we pass the information in the Hash <code>courses_data</code>?</p>
+
+<p>We have a few options here. That's one of Ruby's strengths; there is never only one way to do something. We could change <code>ask_questions</code> to return <code>courses_data</code>. That would require adding <code>courses_data</code> as the last line in <code>ask_questions</code> (before <code>end</code>). it would also require adding a <strong>Parameter</strong> variable to the end of  <code>build_html_file</code> Method declaration, then using that new Variable to build the HTML.</p>
+
+<pre class="prettyprint linenums">
+# Version 2.5: Separates Questions and Display into Two Methods
+
+  def ask_questions
+    questions = {
+      "What is the course number of your class?" =&gt; 'number',
+      "What is the course title of your class?" =&gt; 'title',
+      "Who teaches your class?" =&gt; 'instructor',
+      "What day of the week does your class meet?" =&gt; 'day',
+      "What time does class start?" =&gt; 'start_time',
+      "What time does class end?" =&gt; 'end_time'
+    }
+    courses_data = {}
+    questions.each_pair { |question,answer|
+      print "\n#{question} "
+      courses_data.merge!(answer =&gt; gets.chomp)
+    }
+    <span class="success">courses_data</span>
+  end
+
+  def build_html_file <span class="success">course_listing</span>
+    puts "&lt;table&gt;"
+      puts "  &lt;tr&gt;"
+      courses_listing.each_value { |table_cell| puts "    &lt;td&gt;#{table_cell}&lt;/td&gt;" }
+      puts "  &lt;/tr&gt;"
+    puts "&lt;/table&gt;"
+  end
+
+<span class="success">course_list = ask_questions
+build_html_file course_list</span>
+</pre>
+
+<p>Note the last two lines; these are the lines that call the two methods. It's not necessary to code this example; it only illustrates how to pass variables between two methods and how to call the methods.</p>
+
+<p>as noted earlier, this is one way to solve this problem. What would probably be a better way to solve it would be to wrap these two Methods into a Class.</p>
+
+<p>The Methods alone are reusable if this Ruby was included inside another script. This creates another set of problems, though. How can you be sure you are calling the right methods for the right purpose? That's why you put Methods in Classes: scope. You know that all of the Methods of this Classes are related to a particular activity or activities. Putting these Methods into one Class also gives you another advantage to scope: <strong>Variable Scope</strong>.</p>
+
+<p>Most Variables retain their assigned value where the Variable value was assigned. The Variable <code>courses_data</code> does not exist outside of the <code>ask_questions</code> Method. It's scope is called Local, so the Variable is a <strong>Local Variable</strong>. That's why we need to return the value at the end of the Method. That value is then passed to the <code>course_list</code> variable in the scope of the script so it can then be passed to the <code>build_html_file</code> Method.</p>
+
+<p>If you wrap the two methods in a Class, you could use a type of Variable that has a different scope called Instance, creating an <strong>Instance Variable</strong>. As discussed earlier, a Class is only a blueprint, an Instance of the Class, or Object, must be created before any of the Class' functionality could be used. So, what does that mean for the Instance Variable? That means that an Instance Variable can be used throughout the Instance / Object, so you can use that Variable and its value (or values, in the case of an Array or Hash) anywhere in the Object. How do you make an Instance Variable?</p>
+
+<div class="bs-docs-example">
+<ul>
+<li>Local Variable: <code>courses_data</code></li>
+<li>Instance Variable: <code>@courses_data</code></li>
+</ul>
+
+<p>That's it.</p>
+</div>
+
+<p>For our script, we now need to do four things:</p>
+<ol>
+<li>Wrap our Methods in a Class</li>
+<li>Change <code>courses_data</code> to the Instance Variable <code>@courses_data</code> so we can use it throughout the Object</li>
+<li>Create an Instance of this new Class</li>
+<li>Call the Methods of this new Object</li>
+</ol>
+
+<p>Let's do 1 and 2 first:</p>
+<pre class="prettyprint linenums">
+# Version 3: Separates Questions and Display into Two Methods
+
+<span class="success">class CreateHTML</span>
+
+  def ask_questions
+    questions = {
+      "What is the course number of your class?" =&gt; 'number',
+      "What is the course title of your class?" =&gt; 'title',
+      "Who teaches your class?" =&gt; 'instructor',
+      "What day of the week does your class meet?" =&gt; 'day',
+      "What time does class start?" =&gt; 'start_time',
+      "What time does class end?" =&gt; 'end_time'
+    }
+    <span class="success">@</span>courses_data = {}
+    questions.each_pair { |question,answer|
+      print "\n#{question} "
+      <span class="success">@</span>courses_data.merge!(answer =&gt; gets.chomp)
+    }
+  end
+
+  def build_html_file
+    puts "&lt;table&gt;"
+      puts "  &lt;tr&gt;"
+      <span class="success">@</span>courses_data.each_value { |table_cell| puts "    &lt;td&gt;#{table_cell}&lt;/td&gt;" }
+      puts "  &lt;/tr&gt;"
+    puts "&lt;/table&gt;"
+  end
+
+<span class="success">end</span>
+
+</pre>
+
+<p>Not a lot of work, was it? We now have a self-contained block of code that will allow us to create HTML formatted course lists from the command line. More importantly, it allows us to make changes to smaller parts of the code without risking failures in other parts of the code. We now have shorter and more easily managed code.</p>
+
+<p>We have two last tasks: Create the Object and call the Methods. That's even easier. After the Class, write:</p>
+
+<pre class="prettyprint linenums">
+create_new_HTML = CreateHTML.new
+create_new_HTML.ask_questions
+create_new_HTML.build_html_file
+</pre>
+
+<p>Line 1 creates the Object and calls it <code>create_new_HTML</code>. Line 2 calls the <code>ask_questions</code> Method of the new <code>create_new_HTML</code> Object. Line 3 calls the <code>build_html_file</code> Method of the new <code>create_new_HTML</code> Object.</p>
+
+<p>That's it. Now you have modular, object-oriented code. Good job! Now, let's move on to the next problem: How do we handle more than one class?</p>
+
+<hr>
+
+<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#compare">
+  Compare the Versions
+</button>
+
+    <p><div id="compare" class="collapse">
+
+<ul class="nav nav-tabs" id="myTab">
+  <li><a href="#v1" data-toggle="tab">Version 1</a></li>
+  <li><a href="#v2" data-toggle="tab">Version 2</a></li>
+  <li class="active"><a href="#v3" data-toggle="tab">Version 3</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane" id="v1">
+
+<pre class="prettyprint linenums">
+#Version 1: Simple Script to HTML
+
+print "What is the course number of your class? "
+number = gets.chomp
+
+print "What is the course title of your class? "
+title = gets.chomp
+
+print "Who teaches this class? "
+instructor = gets.chomp
+
+print "What is day of the week does class meet? "
+day = gets.chomp
+
+print "What time does class start? "
+start_time = gets.chomp
+
+print "What time does class end? "
+end_time = gets.chomp
+
+puts "&lt;table&gt;"
+puts "  &lt;tr&gt;"
+puts "    &lt;td&gt;" + number + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + title + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + instructor + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + day + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + start_time + "&lt;/td&gt;"
+puts "    &lt;td&gt;" + end_time + "&lt;/td&gt;"
+puts "  &lt;/tr&gt;"
+puts "&lt;/table&gt;"
+</pre>
+
+  </div>
+  <div class="tab-pane" id="v2">
+
+<pre class="prettyprint linenums">
+# Version 2: Uses Hashes instead of Repetition
+
+questions = {
+  "What is the course number of your class?" =&gt; 'number',
+  "What is the course title of your class?" =&gt; 'title',
+  "Who teaches your class?" =&gt; 'instructor',
+  "What day of the week does your class meet?" =&gt; 'day',
+  "What time does class start?" =&gt; 'start_time',
+  "What time does class end?" =&gt; 'end_time'
+}
+
+courses_data = {}
+
+questions.each_pair { |question,answer|
+  print "\n#{question} "
+  courses_data.merge!(answer =&gt; gets.chomp)
+}
+
+puts "&lt;table&gt;"
+puts "  &lt;tr&gt;"
+courses_data.each_value { |table_cell| puts "    &lt;td&gt;#{table_cell}&lt;/td&gt;" }
+puts "  &lt;/tr&gt;"
+puts "&lt;/table&gt;"
+</pre>
+
+  </div>
+  <div class="tab-pane active" id="v3">
+
+<pre class="prettyprint linenums">
+# Version 3: Separates Questions and Display into Two Methods
+
+class CreateHTML
+
+  def ask_questions
+    questions = {
+      "What is the course number of your class?" =&gt; 'number',
+      "What is the course title of your class?" =&gt; 'title',
+      "Who teaches your class?" =&gt; 'instructor',
+      "What day of the week does your class meet?" =&gt; 'day',
+      "What time does class start?" =&gt; 'start_time',
+      "What time does class end?" =&gt; 'end_time'
+    }
+    @courses_data = {}
+    questions.each_pair { |question,answer|
+      print "\n#{question} "
+      @courses_data.merge!(answer =&gt; gets.chomp)
+    }
+  end
+
+  def build_html_file
+    puts "&lt;table&gt;"
+      puts "  &lt;tr&gt;"
+      @courses_data.each_value { |table_cell| puts "    &lt;td&gt;#{table_cell}&lt;/td&gt;" }
+      puts "  &lt;/tr&gt;"
+    puts "&lt;/table&gt;"
+  end
+
+end
+
+create_new_HTML = CreateHTML.new
+create_new_HTML.ask_questions
+create_new_HTML.build_html_file
+</pre>
+
+  </div>
+</div>
+</div></p>
+
+<script>
+  $(function () {
+    $('#myTab a:last').tab('show');
+  })
+</script>
+
+
+
+
+
+  </section>
+  <footer>
+
+  </footer>
+</article>
+

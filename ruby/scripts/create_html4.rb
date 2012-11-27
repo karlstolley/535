@@ -5,21 +5,21 @@ class CreateHTML
   def ask_questions
 
 		questions = {
-			"What is the course number of your class" => 'number',
-			"What is the course title of your class" => 'title',
-			"Who teaches class" => 'instructor',
-			"What is day of the week does class meet" => 'day',
-			"What time does class start" => 'start_time',
-			"What time does class end" => 'end_time'
+      "What is the course number of class" => 'number',
+      "What is the course title of class" => 'title',
+      "Who teaches class" => 'instructor',
+      "What day of the week do you attend class" => 'day',
+      "When do you start class" => 'start_time',
+      "What do you leave class" => 'end_time'
 		}
 
     print "\nHow many classes do you have this semester? "
     @course_count = gets.chomp
 
 		@courses_data = []
-    
+
     @courses = (@course_count.to_i)-1
-    
+
     0.upto(@courses) do |table_row|
 
 			@courses_data[table_row] = {}

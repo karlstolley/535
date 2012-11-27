@@ -11,7 +11,12 @@ body {
   background: -ms-linear-gradient(top, #a90329 0%,#8f0222 44%,#6d0019 100%); /* IE10+ */
   background: linear-gradient(to bottom, #a90329 0%,#8f0222 44%,#6d0019 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
+}
+
+
+.hero-unit {
   padding-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .ruby .hero-unit h1, .ruby .hero-unit p {
@@ -81,8 +86,7 @@ aside {
 .command-line {
   position: relative;
   margin: 15px 0;
-  padding: 39px 19px 14px;
-  *padding-top: 19px;
+  padding: 19px 14px;
   background-color: #300A24;
   color: #fff;
   border: 1px solid #ddd;
@@ -123,6 +127,60 @@ pre .info {
     background: whiteSmoke;
     padding:10px;
     border: 1px solid #ccc;
+}
+
+/* Update to the side menu */
+
+.bs-docs-sidenav {
+    background-color: #FFFFFF;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+    margin: 20px 0 0;
+    padding: 0;
+}
+.bs-docs-sidenav > li > a {
+    border: 1px solid #E5E5E5;
+    display: block;
+    margin: 0 0 -1px;
+    padding: 8px 14px;
+}
+.bs-docs-sidenav > li:first-child > a {
+    border-radius: 6px 6px 0 0;
+}
+.bs-docs-sidenav > li:last-child > a {
+    border-radius: 0 0 6px 6px;
+}
+.bs-docs-sidenav > .active > a {
+    border: 0 none;
+    box-shadow: 1px 0 0 rgba(0, 0, 0, 0.1) inset, -1px 0 0 rgba(0, 0, 0, 0.1) inset;
+    padding: 9px 15px;
+    position: relative;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+    z-index: 2;
+}
+.bs-docs-sidenav .icon-chevron-right {
+    float: right;
+    margin-right: -6px;
+    margin-top: 2px;
+    opacity: 0.25;
+}
+.bs-docs-sidenav > li > a:hover {
+    background-color: #F5F5F5;
+}
+.bs-docs-sidenav a:hover .icon-chevron-right {
+    opacity: 0.5;
+}
+.bs-docs-sidenav .active .icon-chevron-right, .bs-docs-sidenav .active a:hover .icon-chevron-right {
+    background-image: url("../img/glyphicons-halflings-white.png");
+    opacity: 1;
+}
+.bs-docs-sidenav.affix {
+    top: 40px;
+}
+.bs-docs-sidenav.affix-bottom {
+    bottom: 270px;
+    position: absolute;
+    top: auto;
 }
 
 /* For when you want to make a note in the <pre> tag */
@@ -167,7 +225,7 @@ pre .info {
 }
 
 #sidenav {
-	
+
 }
 
 .span2 {
@@ -177,7 +235,7 @@ pre .info {
 #head {
 	margin-top: 50px;
 	color: #81B6B0;
-	
+
 }
 
 .three-col {
@@ -185,7 +243,7 @@ pre .info {
      -moz-column-gap: 20px;
      -webkit-column-count: 3;
      -webkit-column-gap: 20px;
-	
+
 }
 
 .btn { /* cm: to keep following text from butting up  against button */

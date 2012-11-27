@@ -9,7 +9,7 @@ title = gets.chomp
 puts "Who teaches this class?"
 instructor = gets.chomp
 
-puts "What is day of the week does class meet?"
+puts "What day of the week does your class meet?"
 day = gets.chomp
 
 puts "What time does class start?"

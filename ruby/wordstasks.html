@@ -6,6 +6,9 @@ description: >
 # Comma-separated list of authors
 authors: Anthony T. Sansone
 layout: page
+previous: operator.html
+next: variations.html
+progress: 31.5
 ---
 
 <article id=" ">
@@ -14,42 +17,48 @@ layout: page
   </header>
   <section>
 
+<div class="alert alert-info">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <h4>Learning Goal:</h4>
+  Identify Strings and Methods. Create Methods.
+</div>
+
     <div class="row-fluid">
       <div class="span8">
-      <p>IRB can also work with text, which it calls Strings. </p>
+      <p>IRB can also work with text, which it calls <strong>Strings</strong>.</p>
 
+    <div class="bs-docs-example">
       <p>You can write a string in IRB by putting any text between single or double quotes (as long as the quotes match on either side). </p>
+    </div>
 
-      Example
-
-<pre class="prettyprint linenums">
+<pre class="command-line">
 irb(main):008:0&gt; "Hello Ruby!"
 =&gt; "Hello Ruby!"
 </pre>
 
       <p>It is also possible, using the + operator, to join two (or more) strings together.</p>
 
-      Example
-
-<pre class="prettyprint linenums">
+    <div class="bs-docs-example">
+    </div>
+<pre class="command-line">
 irb(main):008:0&gt; "Hello " + "Ruby!"
 =&gt; "Hello Ruby!"
 </pre>
 
-      <p>This addition is called concatenation. When you concatenate strings, you get the longer, complete string.</p>
+      <p>This addition is called <strong>concatenation</strong>. When you concatenate strings, you get the longer, complete string.</p>
 
-      <p>Notice the space after the "Hello" in the last example? Without it, you would have seen:</p>
+      <p>Notice the space after the <code>"Hello"</code> in the last example? Without it, you would have seen:</p>
 
-<pre class="prettyprint linenums">
+<pre class="command-line">
 irb(main):008:0&gt; "Hello" + "Ruby!"
 =&gt; "HelloRuby!"
 </pre>
 
       <p>Spaces are important.</p>
 
-      <p>In the last few examples, IRB displayed the strings for you. That's interesting enough. This "Hello Ruby!" is not a program, though. It is only a String. To turn it into a program, you need to tell Ruby explicitly to put something on the screen. That is done using a Method called, helpfully enough, <code>puts</code>.</p>
+      <p>In the last few examples, IRB displayed the strings for you. That's interesting enough. This <code>"Hello Ruby!"</code> is not a program, though. It is only a String. To turn it into a program, you need to tell Ruby explicitly to put something on the screen. That is done using a Method called, helpfully enough, <code>puts</code>.</p>
 
-<pre class="prettyprint linenums">
+<pre class="command-line">
 irb(main):010:0&gt; puts "Hello Ruby!"
 Hello Ruby!
 =&gt; nil
@@ -57,20 +66,19 @@ Hello Ruby!
 
       <p>To recreate this as a small program, it would be necessary to place the puts function inside a method. You write a method by typing def [name of method] as the first line, then the lines needed to create the value you need, then the word end to indicate the end of that method.</p>
 
-      Example
-
+    <div class="bs-docs-example">
       <p>The method for "Hello Ruby!" could be written like this:</p>
-
-<pre class="prettyprint linenums">
+    </div>
+<pre class="command-line">
 irb(main):011:0&gt; def hello
-irb(main):012:1>   puts "Hello Ruby!"
-irb(main):013:1> end
+irb(main):012:1&gt;   puts "Hello Ruby!"
+irb(main):013:1&gt; end
 =&gt; nil
 </pre>
 
       <p>To run this method, type:
 
-<pre class="prettyprint linenums">
+<pre class="command-line">
 irb(main):014:0&gt; hello
 Hello Ruby!
 =&gt; nil
@@ -84,7 +92,7 @@ Hello Ruby!
 
       <div class="span4">
       <aside>
-  Expressions and Statements
+  <h4>Expressions and Statements</h4>
 
         <dl>
           <dt>Method</dt>
@@ -93,10 +101,10 @@ Hello Ruby!
           <dt>Expression</dt>
           <dd>An expression represents a single piece of data. An expression consists of one or more operands (strings, numbers, variables) and usually an operator. Expressions are evaluated (or processed) to produce (or return) a result. Expressions are like math; one or more pieces of data called operands are compared or changed and return a result.
 
-          <code>a + b</code> returns the value of a plus b
-          <code>x = y</code> returns x which was set to the value of y
-          <code>j++</code> returns j + 1
-          <code>h < 0</code> compares h and 0 and says h is less than 0
+          <code>a + b</code> returns the value of <code>a</code> plus <code>b</code>
+          <code>x = y</code> returns <code>x</code> which was set to the value of <code>y</code>
+          <code>j++</code> returns <code>j + 1</code>
+          <code>h < 0</code> compares <code>h</code> and <code>0</code> and says <code>h</code> is less than <code>0</code>
           </dd>
 
           <dt>Statement</dt>
@@ -111,7 +119,7 @@ Hello Ruby!
 
             <p>If we set the variable x to 6:</p>
 
-<pre class="prettyprint linenums">
+<pre class="command-line">
 irb(main):032:0&gt; x = 6
 =&gt; 6
 </pre>
@@ -120,7 +128,7 @@ irb(main):032:0&gt; x = 6
 
             <p>If we tell Ruby to put "Hello Ruby!" on the screen:</p>
 
-<pre class="prettyprint linenums">
+<pre class="command-line">
 irb(main):010:0&gt; puts "Hello Ruby!"
 Hello Ruby!
 =&gt; nil
@@ -138,14 +146,7 @@ Hello Ruby!
 
   </section>
   <footer>
-    <ul class="pager">
-      <li><a href="05operator.html">Previous</a></li>
-      <li><a href="07variations.html">Next</a></li>
-    </ul>
-    <h5>Progress in This Tutorial</h5>
-    <div class="progress progress-striped">
-      <div class="bar" style="width: 31.5%;"></div>
-    </div>
+
   </footer>
 </article>
 

@@ -6,6 +6,9 @@ description: >
 # Comma-separated list of authors
 authors: Anthony T. Sansone
 layout: page
+previous: hash.html
+next: classes.html
+progress: 72
 ---
 
 <article id=" ">
@@ -14,7 +17,7 @@ layout: page
   </header>
   <section>
 
-<p>When we discussed the DRY principle, we noted that we had a lot of repetition in our first course list script. Let's see where that repetition is.</p>
+<p>When we discussed the <a href="dry.html" title="Don't Repeat Yourself">DRY principle</a>, we noted that we had a lot of repetition in our first course list script. Let's see where that repetition is.</p>
 
     <div class="bs-docs-example">
       <p>This Ruby script repeats itself:</p>
@@ -35,13 +38,13 @@ number = <span class="error">gets.chomp</span>
 title = <span class="error">gets.chomp</span>
 
 <span class="error">print</span> "Who teaches this class? "
-instructor = gets.chomp</span>
+instructor = <span class="error">gets.chomp</span>
 
 <span class="error">print</span> "What is day of the week does class meet? "
 day = <span class="error">gets.chomp</span>
 
 <span class="error">print</span> "What time does class start? "
-start_time = <span class="error">gets.chomp
+start_time = <span class="error">gets.chomp</span>
 
 <span class="error">print</span> "What time does class end? "
 end_time = <span class="error">gets.chomp</span>
@@ -78,12 +81,12 @@ puts "&lt;/table&gt;"
     <p><div id="example2" class="collapse">
 <pre class="prettyprint linenums">
 questions = {
-  "What is the course number of your class?" => 'number',
-  "What is the course title of your class?" => 'title',
-  "Who teaches class?" => 'instructor',
-  "What is day of the week does class meet?" => 'day',
-  "What time does class start?" => 'start_time',
-  "What time does class end?" => 'end_time'
+  "What is the course number of your class?" =&gt; 'number',
+  "What is the course title of your class?" =&gt; 'title',
+  "Who teaches your class?" =&gt; 'instructor',
+  "What day of the week does your class meet?" =&gt; 'day',
+  "What time does class start?" =&gt; 'start_time',
+  "What time does class end?" =&gt; 'end_time'
 }
 </pre>
     </div></p>
@@ -147,18 +150,18 @@ questions.each_pair { |question,answer|
 
     <p>When the Hash loop starts, it asks the question, then saves the answer variable, <code>number</code>, as the key and the answer the user gives as its value.</p>
 
-    <p>If the course number was <code>com535</code>, then the <code>course_data</code> Hash would be <code>course_data = { 'number' => "com535" }</code>
+    <p>If the course number was <code>com535</code>, then the <code>course_data</code> Hash would be <code>course_data = { 'number' =&gt; "com535" }</code>
     </div>
 
 <pre class="prettyprint linenums">
 questions = {
-  "What is the course number of your class?" => 'number',
+  "What is the course number of your class?" =&gt; 'number',
   ...
 }
 
 questions.each_pair { |question,answer|
   print "\n#{question} "
-  courses_data.merge!(answer => gets.chomp)
+  courses_data.merge!(answer =&gt; gets.chomp)
 }
 </pre>
 
@@ -174,7 +177,7 @@ courses_data = {}
 
 questions.each_pair { |question,answer|
   print "\n#{question} "
-  courses_data.merge!(answer => gets.chomp)
+  courses_data.merge!(answer =&gt; gets.chomp)
 }
 </pre>
     </div></p>
@@ -203,23 +206,29 @@ puts "&lt;/table&gt;"
     </div>
 
 <pre class="prettyprint linenums">
-courses_data.each_value { |table_cell| puts "    <td>#{table_cell}</td>" }
+courses_data.each_value { |table_cell| puts "    &lt;td&gt;#{table_cell}&lt;/td&gt;" }
 </pre>
 
 <p>Once you've made this change, save the Ruby script as <code>create_html2.rb</code>. Add the script to Git, commit it and push it to your GitHub repository.</p>
 
 <p>It's not too hard, once you learn how to read Ruby code. What makes it simple, the lack of extraneous brackets, braces and parentheses, can make it a little unclear as to what code is being run when. With a little more practice and review, it will hopefully become easier. Luckily, Hashes are both the most common and most complex parts of Ruby to understand. If you get this, it's downhill from here!</p>
 
-<h3>Compare the Versions</h3>
-<div class="accordion" id="accordion-final">
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-final" href="#collapseOne">
-        create_html1.rb
-      </a>
-    </div>
-    <div id="collapseOne" class="accordion-body collapse in">
-      <div class="accordion-inner">
+<hr>
+
+<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#compare">
+  Compare the Versions
+</button>
+
+    <p><div id="compare" class="collapse">
+
+<ul class="nav nav-tabs" id="myTab">
+  <li class="active"><a href="#v1" data-toggle="tab">Version 1</a></li>
+  <li><a href="#v2" data-toggle="tab">Version 2</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="v1">
+
 <pre class="prettyprint linenums">
 #Version 1: Simple Script to HTML
 
@@ -252,34 +261,27 @@ puts "    &lt;td&gt;" + end_time + "&lt;/td&gt;"
 puts "  &lt;/tr&gt;"
 puts "&lt;/table&gt;"
 </pre>
-      </div>
-    </div>
+
   </div>
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-final" href="#collapseTwo">
-        create_html2.rb
-      </a>
-    </div>
-    <div id="collapseTwo" class="accordion-body collapse">
-      <div class="accordion-inner">
+  <div class="tab-pane" id="v2">
+
 <pre class="prettyprint linenums">
 # Version 2: Uses Hashes instead of Repetition
 
 questions = {
-  "What is the course number of your class?" => 'number',
-  "What is the course title of your class?" => 'title',
-  "Who teaches class?" => 'instructor',
-  "What is day of the week does class meet?" => 'day',
-  "What time does class start?" => 'start_time',
-  "What time does class end?" => 'end_time'
+  "What is the course number of your class?" =&gt; 'number',
+  "What is the course title of your class?" =&gt; 'title',
+  "Who teaches your class?" =&gt; 'instructor',
+  "What day of the week does your class meet?" =&gt; 'day',
+  "What time does class start?" =&gt; 'start_time',
+  "What time does class end?" =&gt; 'end_time'
 }
 
 courses_data = {}
 
 questions.each_pair { |question,answer|
   print "\n#{question} "
-  courses_data.merge!(answer => gets.chomp)
+  courses_data.merge!(answer =&gt; gets.chomp)
 }
 
 puts "&lt;table&gt;"
@@ -288,10 +290,16 @@ courses_data.each_value { |table_cell| puts "    &lt;td&gt;#{table_cell}&lt;/td&
 puts "  &lt;/tr&gt;"
 puts "&lt;/table&gt;"
 </pre>
-      </div>
-    </div>
+
   </div>
 </div>
+</div></p>
+
+<script>
+  $(function () {
+    $('#myTab a:last').tab('show');
+  })
+</script>
 
 <h3>The Final Result</h3>
 
@@ -327,14 +335,7 @@ What time does class end? 9:05pm
 
   </section>
   <footer>
-    <ul class="pager">
-      <li><a href="14hash.html">Previous</a></li>
-      <li><a href="16classes.html">Next</a></li>
-    </ul>
-    <h5>Progress in This Tutorial</h5>
-    <div class="progress progress-striped">
-      <div class="bar" style="width: 72%;"></div>
-    </div>
+
   </footer>
 </article>
 

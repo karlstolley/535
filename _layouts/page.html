@@ -37,12 +37,12 @@
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container-fluid">
-        <a class="brand" href="/">Bootcamp</a>
+        <a class="brand" href="/">DCCG</a>
           <ul class="nav">
             <li><a href="/start/">Setup</a></li>
             <li><a href="/git/">Git</a></li>
             <li><a href="/md/">Markdown</a></li>
-            <li><a href="/html/">HTML</a></li>
+            <li><a href="/html/">HTML5</a></li>
             <li><a href="/css/">CSS</a></li>
             <li><a href="/js/">Javascript</a></li>
             <li><a href="/ruby/">Ruby</a></li>
@@ -65,20 +65,20 @@
         <ol class="nav nav-list bs-docs-sidenav">
           {% assign subnav = page.subject | downcase %}
           {% case subnav %}
-          {% when 'css' %}
-            {% include nav_css.html %}
-          {% when 'git' %}
-            {% include nav_git.html %}
-          {% when 'html' %}
-            {% include nav_html.html %}
-          {% when 'javascript' %}
-            {% include nav_javascript.html %}
-          {% when 'markdown' %}
-            {% include nav_markdown.html %}
-          {% when 'ruby' %}
-            {% include nav_ruby.html %}
-          {% when 'setup' %}
-            {% include nav_setup.html %}
+            {% when 'css' %}
+              {% include nav_css.html %}
+            {% when 'git' %}
+              {% include nav_git.html %}
+            {% when 'html' %}
+              {% include nav_html.html %}
+            {% when 'javascript' %}
+              {% include nav_javascript.html %}
+            {% when 'markdown' %}
+              {% include nav_markdown.html %}
+            {% when 'ruby' %}
+              {% include nav_ruby.html %}
+            {% when 'setup' %}
+              {% include nav_setup.html %}
           {% endcase %}
         </ol>
       </nav>
@@ -94,7 +94,20 @@
   </div><!--/.container-fluid-->
 
   <footer id="page-footer" class="container-fluid">
-    <p>Licensed under Creative Commons. Created by {{ page.authors }}</p>
+    <div class="span3">
+&nbsp;
+    </div>
+    <div class="span9">
+      <ul class="pager">
+        <li><a href="{{page.previous}}">Previous</a></li>
+        <li><a href="{{page.next}}">Next</a></li>
+      </ul>
+      <h5>Progress in This Tutorial</h5>
+      <div class="progress progress-striped">
+        <div class="bar" style="width: {{page.progress}}%;"></div>
+      </div>
+      <p>Licensed under Creative Commons. Created by {{ page.authors }}</p>
+    </div>
   </footer>
 
   <!-- JavaScript
@@ -103,6 +116,8 @@
   <script src="/assets/js/jquery.min.js"></script>
   <script src="/assets/js/bootstrap.min.js"></script>
   <script src="/assets/js/bootstrap-transition.js"></script>
+  <script src="/assets/js/bootstrap-alert.js"></script>
+  <script src="/assets/js/bootstrap-tab.js"></script>
   <script src="/assets/js/prettify/prettify.js"></script>
 
   {% if page.scripts %}
