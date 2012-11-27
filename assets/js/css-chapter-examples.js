@@ -33,7 +33,7 @@ $(function() {
     $('#changeToAbsolute').toggle(function() {
       $('#absolute .box4').css('position', 'absolute');
       $('#absolute .box4').css('top', '100px');
-      $('#absolute .box4').css('left', '200px');
+      $('#absolute .box4').css('left', '300px');
       $('#absolute').append('<p>Scroll up to the top of the window to see box 4.</p>');
       $(this).html('Change back to \'static\' position');
         }, function() {

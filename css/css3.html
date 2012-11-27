@@ -3,21 +3,190 @@ subject: CSS
 title: CSS--The Future is Now
 description: >
   A brief overview of the new CSS3 style rules
+authors: Christine McClure
 layout: page
 ---
     <article class="row-fluid">
       <header>
-        <hgroup class="hero-unit">
+        <hgroup>
           <h1>CSS3: The Future is Now</h1>
         </hgroup>
       </header>
 
       <p class="lead">The CSS3 specification is still being defined as of 2012, but here are some examples to wet your whistle.</p>
-      <p>Most browsers already support many of the new CSS3 specifications in their latest versions, and almost all smartphones do. </p>
 
-      <h2>Areas </h2>
+      <p>Most browsers already support many of the new CSS3 specifications in their latest versions, and almost all smartphones do. But since not all browsers
+      support these items, it's best to use them to <strong>enhance</strong> the user's experience on your site. Don't depend on CSS3 elements for the <strong>design</strong> or
+      <strong>construction</strong> of your site; people using older browsers may become lost as style rules get applied sporadically or not at all.</p>
+
+      <aside>
+        Don't assume that people aren't using the latest versions of web browsers out of fear or apathy. Some may want to upgrade and aren't sure how to do it. Some people may be
+        using the "if it ain't broke, don't fix it" philosophy. And some people may be visiting your site from a computer they don't own and cannot upgrade (like a work or lab computer).
+      </aside>
+
+      <p>Here are a few of the new changes you can make in a browser with CSS3 rules. Note: the display examples will be images or video rather than CSS3 rules to ensure you will be able to view them
+      regardless of the browser you're using.</p>
+
+      <aside>Not sure if browser you're using for this tutorial supports CSS3? You can find out in the "CSS3 Support"
+        section of the <a href="http://fmbip.com/">FindMeByIP</a> website.
+      </aside>
+
+      <h2>RGB Colors</h2>
+
+      <p>We've been referring to colors in this chapter in hexidecimal (hex) format such as <code>#E01BAB</code>, which is a bright pink color. The hex format identifies the amount of red, green,
+      and blue color to mix into a screen pixel. RGB color does the same thing using a different format: the hex color listed previous would be displayed as rgb(224, 27, 171). The advantage to using
+      RGB colors with CSS3 rules is that you can also set a <strong>transparency level</strong> for the color, without changing the color value.</p>
+
+      <p>Here are the style rules for a class of "box" that can be applied to an HTML5 element:</p>
+<pre>
+.box {
+  width: 50px;
+  height: 50px;
+  float:left;
+  margin: 10px;
+  background-color: rgb(224,27,171);
+                    <span class="exampleAside"><i class="icon-arrow-up"></i> CSS3 rule for color: RGB</span>
+}
+</pre>
+
+      <p>This is a screenshot of what would be displayed in the browser:</p>
+
+      <img src="/assets/img/css3-rgb-boxes.png" alt="image of 5 boxes with the same dimensions and the same pink background color.">
+
+      <p>Let's say you wanted to display these boxes as the same color, but with decreasing levels of transparency and ending with the solid color. Before CSS3 rules, you would have to
+        determine what each new hex color would be. Now however, you can determine what your base color would be and apply an <strong>alpha transparency</strong> between 0 and 1 (with 1 being 100% 
+        opaque) with the <code>RGBa</code> format. </p>
+
+<pre>
+<span class="exampleAside"><i class="icon-arrow-down"></i> Create a separate class for each level of transparency</span>
+.alpha20 {
+  background-color: rgba(224,27,171,0.2);
+}
+.alpha40 {
+  background-color: rgba(224,27,171,0.4);
+}
+.alpha60 {
+  background-color: rgba(224,27,171,0.6);
+}
+.alpha80 {
+  background-color: rgba(224,27,171,<span class="exampleAside">0.8</span>);
+                    <span class="exampleAside"><i class="icon-arrow-up"></i> The RGBa property and transparency value</span>
+}
+</pre>
+      <p>Add the new classes to your elements:</p>
+<pre>
+&lt;div class=&quot;box alpha20&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;box alpha40&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;box alpha60&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;box alpha80&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+</pre>
+
+      <p>And now you have your graduated colors. No static images have to be captured, and they can be easily modified later if you decide to change the color.</p>
+
+      <img src="/assets/img/css3-rgba-boxes.png" alt="image of 5 boxes with graduated colors, starting with light and increasing to deep pink.">
+
+      <h2>Rounded Corners</h2>
+
+      <p>The Web is...boxy. Your browser is a box and so are all of the elements that are contained inside of it. Before CSS3 you had to created images of rounded corners with a transparent background
+      to create the <strong>illusion</strong> of an element having rounded corners. The new <code>border-radius</code> declaration in CSS3 allows you to do this very simply. Adding this code to your style rules:</p>
+<pre>
+  width: 50px;
+  height: 50px;
+  float:left;
+  margin: 10px;
+  background-color: rgb(224,27,171);
+  border-radius: 10px;
+  <span class="exampleAside"><i class="icon-arrow-up"></i> generic border-radius rule</span>
+</pre>
+      <p>Now your box will display rounded corners like this:</p>
+      <img src="/assets/img/css3-rounded-corner-box.png" alt="image of a box with rounded corners from an applied css3 rule.">
+
+      <p>There are other CSS3 rules similar to the rounded corners effect such as box-shadow, text-shadow and color gradients, shown below:</p>
+      <img src="/assets/img/css3-multiple-styles-box.png" alt="image of a box with box-shadow, text-shadow and color gradient from css3 rules.">
+
+      <h2>Web Fonts</h2>
+      <p>The publishing world has an almost endless array of fonts to display text. On the web--prior to CSS3--you were limisted to the fonts that were installed on your users' computers. You could
+        identify  with some certainty font families that were installed by default on Windows and/or Apple computers: Arial, Geneva, Times New Roman and Courier, or simply <code>serif</code>,
+        <code>sans-serif</code> <code>monospace</code> generalizations. If you wanted text to be displayed in a particular way, such as a company logo, you had to create an image of it. While this will 
+       display correctly, an image does not allow the user to copy the text to their clipboard and paste it into another application.</p>
+
+      <p><strong>Web fonts</strong> allow you to specify a font that can be loaded into the user's browser temporarily. A good example is the types of fonts that appear to be handwritten script. In
+      a standard CSS rule, it is impossible to use a script-style font that is universal across all computers. INstead, your HTML code would look like this:</p>
+<pre>
+&lt;img src=&quot;my-name-in-script-font.jpg&quot; alt=&quot;'Christine McClure' in an image written in script font&quot;&gt;
+<span class="exampleAside">  <i class="icon-arrow-up"></i> img tag instead of text</span>
+</pre>
+
+      <p>With a web font, your html and CSS rules look something like this:</p>
+<pre>
+&lt;link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'&gt;
+<span class="exampleAside">  <i class="icon-arrow-up"></i> Google font API to load fond style</span>
+
+&lt;style&gt;
+  h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 84px;
+  }
+&lt;/style&gt;
+<span class="exampleAside">  <i class="icon-arrow-up"></i> CSS3 rule</span>
+
+&lt;h1&gt;My Name in Fancy Script&lt;/h1&gt;
+  <span class="exampleAside">  <i class="icon-arrow-up"></i> text instead of image</span>
+</pre>
+
+      <p>The result will look just like the image below, but the actual CSS3-styled text will be able to be selected and copied to the clipboard.</p>
+
+       <img src="/assets/img/css3-web-font.png" alt="image text styled by web font.">
+
+      <h2>Transitions</h2>
+
+      <p>Transitions are a way to slow down (or speed up) the changing of colors or images in your HTML5 elements. Having elements immediately change in appearance can be a bit jarring, 
+      so transitions can help "ease" the new style into place.</p>
+
+      <p>To see an example of a CSS3 transition, watch the following video (created for the wonderful <a href="http://www.abookapart.com/products/css3-for-web-designers">CSS3 for Web Designers</a> book ). It briefly slows the color change of an element when the mouse hovers over it in
+        a subtle, but effective transition.</p>
+
+      <object width="432" height="265"><param name="movie" value="http://www.youtube.com/v/8v7ltfDGKTc?fs=1&amp;hl=en_US"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="http://www.youtube.com/v/8v7ltfDGKTc?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="540" height="328"></object>
+
+      <h2>Vendor Prefixes</h2>
+
+      <p>Because CSS3 rules aren't completed, many browsers have implemented the rules according to what they think the final specification will look like. A <strong>vendor prefix</strong> is used
+      when the browser's support for a rule is expected to change once the specification is final. It is a best practice to include all vendor prefixes as well as the generic version of the rule to
+      get the most consistent look  across browsers. Here is what the borde-radius rule would look like if all current vendor prefixes were applied in the rule:</p>
+
+<pre>
+.box {
+
+  /* vendor prefixes */
+  -moz-border-radius: 10px;  
+  -webkit-border-radius: 10px; 
+  -o-border-radius: 10px; 
+  -ms-border-radius: 10px;
+
+  /* generic rule */
+  border-radius: 10px;
+}
+</pre>
+
+      <p>The vendor prefixes are:</p>
+      <ul>
+        <li><code>-moz-</code> for Mozilla-based (Firefox) browsers</li>
+        <li><code>-webkit-</code> for Webkit-based (Safari, Chrome) browsers</li>
+        <li><code>-o-</code> for Opera (Apple's default browser)</li>
+        <li><code>-ms-</code> for Internet Explorer (Microsoft's default browser)</li>
+      </ul>
+
+      <p>Pretty ugly, aren't they? This transitional period is why you should tread lightly with CSS3 rules for the time being. Add these declarations to enhance your user's experience, but don't depend
+      on them until the specification has been completed.</p>
+
       <footer>
         <p>Page last updated by Christine McClure</p>
       </footer>
     </article>
 
+---
+prev: best-practices.html
+next: what-have-i-learned.html
+progress: 63
+---
