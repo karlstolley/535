@@ -3,19 +3,19 @@ subject: Setup
 title: Getting Started
 description: >
   Overview of getting set up, including essential tools:
-  broswer, editor, command-line.
+  broswer, editor, Markdown, and the command-line.
 # Comma-separated list of authors
 authors: Karl Stolley
 layout: page
 previous: /
 next: cli.html
-progress: 25
+progress: 50
 ---
     <article class="row-fluid">
       <header>
         <hgroup>
-          <h1>Three Essential Tools</h1>
-          <h2>Browser, Editor, Command-Line</h2>
+          <h1>Four Essential Tools</h1>
+          <h2>Browser, Editor, Markdown, Command-Line</h2>
         </hgroup>
       </header>
       <section>
@@ -79,9 +79,87 @@ progress: 25
             as though you'd just hit the spacebar twice)
           </li>
         </ol>
+        <h1>Markdown</h1>
+        <p>With your editor setup, you can, of course, just start typing text. Plain text.</p>
+        <p>
+          But in the absence of any formatting, you can quickly get lost in a sea of text (even the
+          font in your editor is just a preference; someone opening a plain-text file of any kind
+          will see it in her own preferred editor font).
+        <p>
+        <p>
+          If you were to type long enough, you might find yourself doing certain kinds of things.
+          For example, to emphasize a word, you might toss it inside of a couple of asterisks:
+        </p>
+<pre>
+Text editors seem *really* primitive.
+</pre>
+        <p>
+          And for bulleted lists, you might use asterisks again:
+        </p>
+<pre>
+Primary colors:
+
+* Red
+* Blue
+* Yellow
+</pre>
+        <p>
+          For paragraphs of text, you'd probably just use an extra line of white-space, like you
+          do in email or a longer Facebook status:
+        </p>
+<pre>
+And so I'm going to write something
+that's a little bit long.
+
+In fact, it has multiple paragraphs.
+Even if they're short.
+</pre>
+        <p>
+          When you do those kinds of things, you're actually writing in Markdown syntax. Or, more
+          accurately, you're writing in a pattern that was codified <i>as</i> Markdown, which is
+          just a shorthand set of punctuation marks to add formatting to a document.
+        </p>
+        <p>
+          You can read <a href="http://daringfireball.net/projects/markdown/syntax">the entire
+          Markdown syntax specification here</a>. It's a fast read, and only once through
+          it will show you all that you can do with Markdown, including headings, links, and other
+          goodies.
+        </p>
+        <h2>Parsing Markdown</h2>
+        <p>
+          Markdown is everywhere. You can compose your blog posts on
+          <a href="http://tumblr.com/">Tumblr</a> in Markdown, for example. And if you open
+          an Issue on a project hosted on <a href="http://github.com/">GitHub</a>, you can actually
+          use Markdown in your message. GitHub asks repository maintainers to keep a
+          <kbd>README.md</kbd> in their projects; the <kbd>.md</kbd> stands for (you guessed it)
+          Markdown.
+        </p>
+        <p>
+          Tumblr and GitHub, in those cases, take your Markdown syntax, and convert it to
+          <a href="/html/">HTML</a>.
+        </p>
+        <p>
+          It's also possible to parse Markdown into HTML yourself. John Gruber, the creator of
+          Markdown, maintains a Markdown text-to-html converter written in Perl. Other projects,
+          like EpicEditor, are implemented for browser use. If you go to the
+          <a href="http://epiceditor.com/">EpicEditor</a> home page, you can try out writing some
+          Markdown, and preview how it will be rendered in HTML.
+        </p>
+        <p>
+          You should also check your text editor; many editors can now output Markdown as HTML.
+          Others,
+          <a href="http://cantus.us/mac/using-markdown-in-textwrangler/">like TextWrangler</a>,
+          enable you to add plugins and scripts to do the processing right inside of your editor.
+        </p>
+        <p>
+          In the <a href="/git/">Git</a> portion of this resource, you'll use Markdown to make
+          a Web presence on GitHub, which you'll later convert to pure <a href="/html/">HTML</a>
+          and <a href="/css/">CSS</a>.
+        </p>
         <h1>Command Line</h1>
         <p>
-          The command line...
+          The command line is the most complex and demanding of the four essential tools that
+          you will need, so it <a href="cli.html">gets its own section</a>.
         </p>
       </section>
       <footer>
