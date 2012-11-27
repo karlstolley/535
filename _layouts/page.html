@@ -98,14 +98,22 @@
 &nbsp;
     </div>
     <div class="span9">
+    {% if page.previous || page.next %}
       <ul class="pager">
+        {% if page.previous %}
         <li><a href="{{page.previous}}">Previous</a></li>
+        {% endif %}
+        {% if page.next %}
         <li><a href="{{page.next}}">Next</a></li>
+        {% endif %}
       </ul>
+    {% endif %}
+    {% if page.progress %}
       <h5>Progress in This Tutorial</h5>
       <div class="progress progress-striped">
         <div class="bar" style="width: {{page.progress}}%;"></div>
       </div>
+    {% endif %}
       <p>Licensed under Creative Commons. Created by {{ page.authors }}</p>
     </div>
   </footer>
