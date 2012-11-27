@@ -20,30 +20,30 @@ progress: 45
           
          
           <article class="span8">
-<p class="lead"> Now that we've seen the elements that go into creating the body of a webpage, let's discuss the rules for making sure each element is correctly displayed.</p>
+<p class="lead"> Now that we've learned most of the structural elements that go into creating the body of a webpage, let's discuss the rules for making sure each element is correctly displayed.</p>
 
 
-<h2>Nesting</h2>
-<p>
+<h2>Hierarchy</h2>
+
+<p> Below is a common aid for visualizing the DOM.</p>
+
+<p>Although the hierarchy is always in place, a few of the tags that are used most often in this are the section and article tags.
     	<h3>Body</h3>
-    		<p> The body of the webpage houses all of the content that is intended to be displayed to the public. The browser renders everything enclosed within the <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code> tags so that it is viewable. All other tags that we learn about go inside the body of the document. </p>
-
-<h3>Tags Used Within the Body</h3>
-	<p> Most of the following are pretty self-explanatory. </p>
+    		
     	
     	<h4>Section</h4>
-    		<p>The <code>&lt;section&gt;</code> tag is used to group like content together. Sections could be nested or stand alone. Usually, the sections contain headers and footers. 
+    		
     
     	<h4>Header</h4>
-			<p> The header comes at the beginning of each section and indicates that the information enclosed in the <code>&lt;header&gt;</code> and <code>&lt;/header&gt;</code> is the header.
+			
        	 
        	 <h4>Article</h4>
-			<p> The <code>&lt;article&gt;</code> tag is used for grouped information within sections. These are usually not nested unless they are nested within sections of other sections [aside: to see more about nesting, go to Nesting].
 			
     	<h4>Paragraph</h4>
-   			<p>The <code>&lt;p&gt;</code> tag is probably the most common tag you will see in a document, simply because it defines the portion of text that should be displayed as a paragraph. It is possible for a very simple page to be composed simply of <code>&lt;p&gt;</code><code> &lt;/p&gt;</code> elements, however, it is very limited and it doesn't tell you much about the information enclosed. Also, when we start to style the page using CSS, other tags, such as section and article help better define parts of the webpage.</p>
+   			
    	 	<h4>H1, H2, H3, H4, H5, and H6</h4>
-		<p> The h tags are useful. In the example above, these were formed using these tags. Decreasing importance. In this page, the headings for each individual paragraph, for example section and article, use the h4 tag, while the heading for the entire page, HTML5, uses the h1 tag, indicated its hierarchal importance. </p>
+		<h2>Nesting</h2>
+
    		<h4>Navigation</h4>
    			<p> The <code>&lt;nav&gt;</code> <code>&lt;/nav&gt;</code> tag groups navigation links together. These links are usually presented as an unordered list (see below). [to see more about links go to Links and Images].
    		
