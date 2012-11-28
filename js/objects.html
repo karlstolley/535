@@ -1,6 +1,6 @@
 ---
 subject: JavaScript
-title: Manipulating the Page
+title: Objects
 description: >
 
 # Comma-separated list of authors
@@ -17,13 +17,25 @@ scripts:
 <article class="row-fluid">
 <header>
 <hgroup class="hero-unit">
-<h1>Manipulating the Page</h1>
+<h1>Objects</h1>
 </hgroup>
 </header>
 <section class="span8 offset3 clearfix">
 
-<p class="lead">
+<h2>By the End Of This Section You Should Be Able To...</h2>
+<ul>
+  <li>Describe what a JavaScript object is</li>
+  <li>Recognize objects in JavaScript code</li>
+  <li>Create objects in your JavaScript console</li>
+</ul>
+
+<p>
+In this section, you're going to learn about JavaScript objects. Before getting
+into that, though, you're going to do a short activity to get you interacting
+with some code that we'll use to drive our discussion.
 </p>
+
+<h2>Manipulating the Page</h2>
 
 <p>
 Here is a button:
@@ -148,12 +160,12 @@ access those properties. Let's add another property to our
 object now.
 
 <pre>
-        <code>
-        car.driver = {};
-        car.driver.firstname = "Stephen"
-        car.driver.lastname = "Malkmus"
-        </code>
-        </pre>
+<code>
+car.driver = {};
+car.driver.firstname = "Stephen"
+car.driver.lastname = "Malkmus"
+</code>
+</pre>
 
 What did we just do here? We created another property on car called
 driver. But what is the value of driver? <em>It is another object</em>.

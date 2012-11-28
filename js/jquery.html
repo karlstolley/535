@@ -22,7 +22,16 @@ scripts:
 </header>
 <section class="span8 offset3 clearfix">
 
-<p class="lead">
+<h2>By the End Of This Section You Should Be Able To...</h2>
+<ul>
+  <li>Use jQuery on your own web pages</li>
+  <li>Explain what jQuery is and what you can do with it</li>
+  <li>Use jQuery to manipulate the DOM</li>
+</ul>
+
+<h2>Getting and Using jQuery</h2>
+<p>
+TODO: this part
 </p>
 
 <p>
@@ -80,7 +89,7 @@ an event to a div that makes it fade out when you click on it.
 <pre>
 <code>
 $("#myDiv").click(function () {
-  $("myDiv").fadeOut("slow");
+  $("#myDiv").fadeOut("slow");
 });
 </code>
 </pre>
@@ -106,10 +115,10 @@ its id, which is pretty simple to do using vanilla JavaScript. But take a
 look at this example:
 
 <br />
-<code>$("div:contains('JavaScript')").css("color", "red");</code>
+<code>$("p:contains('JavaScript')").css("color", "red");</code>
 <br />
 
-This will select <em>every</em> div on the page that contains the word
+This will select <em>every</em> paragraph element on the page that contains the word
 "JavaScript" and will set its color property to "red." This illustrates
 a couple of important points:
 <ul>
@@ -162,6 +171,22 @@ are removing one class and adding another, it makes sense to chain these methods
 because it's clear that we are switching the class of this element. But if you
 are doing a lot of manipulations to an element, you should also try to make sure
 you maintain the readability of your code, and that might mean breaking things up.
+</p>
+
+<h2>What's Next?</h2>
+<p>
+This wraps up the JavaScript section! You now know:
+
+<ul>
+  <li>What JavaScript is and what role it plays on the web</li>
+  <li>Basic programming concepts and how to use them in JavaScript</li>
+  <li>What the DOM is and what role it plays on the web, and how to use JavaScript
+  to manipulate it</li>
+  <li>How to use jQuery to make your life easier when writing scripts</li>
+</ul>
+
+The next section will you give you an exercise to do with your GitHub user
+profile page using this knowledge you've acquired.
 </p>
 
 <footer class="span8 offset3">
