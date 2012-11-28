@@ -63,20 +63,76 @@ rgb(27,224,63);
       <p>You can assign a variable similar to above for your RGB value:</p>
 <pre>
 <span class="exampleAside">$green</span>: rgb(27,224,63);
+
+body {
+  background: <span class="exampleAside">$green</span>;
+}
 </pre>
       
       <p>For an RGBA color, you can also assign a variable for the alpha transparency.</p>
 
 <pre>
+$green: rgb(27,224,63);
 <span class="exampleAside">$alpha</span>: .5;
+
+body {
+    background: rgba($green, <span class="exampleAside">$alpha</span>);
+}
+</pre>
+      <p>You can even combine the two to make your code even more succinct:</p>
+
+<pre>
+$green: rgb(27,224,63);
+$alpha: .5;
 <span class="exampleAside">$greenAlpha</span>: rgba($green, $alpha);
+
+body {
+    background: <span class="exampleAside">$greenAlpha</span>;
+}
 </pre>
 
-      <h2>Other Types of Variables</h2>
-      <p>Anything that is interpreted as a string in CSS can be made into a variable within Sass. </p>
+      <h2>Variables for Fonts</h2>
+      <p>Sass variables aren't constrained to test strings, they can also be used arithmatically, which is a big
+      help when you're defining font sizes for your site. Here is some standard CSS for font sizes:</p>
+<pre>
+h1 {
+  font-size: 20px;
+}
+h2 {
+  font-size: 18px;
+}
+h3 {
+  font-size: 16px;
+}
+p {
+  font-size: 14px;
+}
+</pre>
 
+      <p>But by assigning a base font-size in pixels, points, or ems, you can scale it up or down within Sass by
+        using simple arithmatic declarations.</p>
+<pre>
+<span class="exampleAside">$base-font</span>: 14px;
 
-            <footer>
+h1 {
+  font-size: $base-font + 6;
+}
+h2 {
+  font-size: $base-font * .95;
+}
+h3 {
+  font-size: $base-font - 4pt;
+}
+p {
+  font-size: $base-font / 1.5;
+}
+</pre>
+
+      <p>Assigning one base font as a Sass variable allows you to easily make changes to your code later on.</p>
+
+     <h2>Other Variables</h2>
+
+      <footer>
         <p>Page last updated by Christine McClure</p>
       </footer>
     </article>
