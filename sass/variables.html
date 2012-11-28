@@ -56,9 +56,24 @@ body a {
       into a browser.</p>
 
       <h3>Variable RGB and RGBA Colors</h3>
+      <p>The same concept applies applies to RGB colors. If you write the color green as:</p>
+<pre>
+rgb(27,224,63);
+</pre>
+      <p>You can assign a variable similar to above for your RGB value:</p>
+<pre>
+<span class="exampleAside">$green</span>: rgb(27,224,63);
+</pre>
+      
+      <p>For an RGBA color, you can also assign a variable for the alpha transparency.</p>
+
+<pre>
+<span class="exampleAside">$alpha</span>: .5;
+<span class="exampleAside">$greenAlpha</span>: rgba($green, $alpha);
+</pre>
 
       <h2>Other Types of Variables</h2>
-
+      <p>Anything that is interpreted as a string in CSS can be made into a variable within Sass. </p>
 
 
             <footer>
