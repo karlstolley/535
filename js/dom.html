@@ -22,8 +22,12 @@ scripts:
 </header>
 <section class="span8 offset3 clearfix">
 
-<p class="lead">
-</p>
+<h2>By the End Of This Section You Should Be Able To...</h2>
+<ul>
+  <li>Explain what the DOM is</li>
+  <li>Understand how you can use JavaScript to manipulate the DOM</li>
+  <li>Write your own JavaScript code to manipulate HTML elements</li>
+</ul>
 
 <p>
 Why did we have to learn all of that nested object stuff? Well,
@@ -65,10 +69,10 @@ looks like this:
 
 <br />
 <pre>
-        <code>
-        TODO: Put example here.
-        </code>
-        </pre>
+<code>
+TODO: Put example here.
+</code>
+</pre>
 <br />
 
 Like with our car object, we can imagine this HTML document as a set
@@ -102,17 +106,17 @@ and break it down.
 </p>
 
 <pre>
-        <code>
-          var btn = document.getElementById("color-change-button");
+<code>
+var btn = document.getElementById("color-change-button");
 
-          btn.onclick = buttonClickHandler;
+btn.onclick = buttonClickHandler;
 
-          function buttonClickHandler() {
-            var randomColor = getRandomColor();
-            document.body.style.background = randomColor;
-          }
-        </code>
-        </pre>
+function buttonClickHandler() {
+  var randomColor = getRandomColor();
+  document.body.style.background = randomColor;
+}
+</code>
+</pre>
 
 <p>
 Our first line here is
@@ -149,13 +153,13 @@ Other examples of properties on button you can assign functions to are
 Let's examine the buttonClickHandler function
 
 <pre>
-        <code>
-        function buttonClickHandler() {
-          var randomColor = getRandomColor();
-          document.body.style.background = randomColor;
-        }
-        </code>
-        </pre>
+<code>
+function buttonClickHandler() {
+  var randomColor = getRandomColor();
+  document.body.style.background = randomColor;
+}
+</code>
+</pre>
 </p>
 
 <p>
@@ -208,15 +212,15 @@ to work at it on your own first.
 <button type="button" class=btn" id="show-solution">Show solution</button>
 
 <div id="solution">
-  <pre>
-        <code>
-        var myDiv = document.getElementById("change-my-background-color")
-        myDiv.onmouseover = mouseOverEventHandler;
-        function mouseOverEventHandler() {
-          myDiv.style.background = "red";
-        }
-        </code>
-        </pre>
+<pre>
+<code>
+var myDiv = document.getElementById("change-my-background-color")
+myDiv.onmouseover = mouseOverEventHandler;
+function mouseOverEventHandler() {
+  myDiv.style.background = "red";
+}
+</code>
+</pre>
 
 </div>
 
