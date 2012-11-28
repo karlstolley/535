@@ -39,6 +39,12 @@ ol {
   list-style-type: decimal;
 }
 
+.htmlcode {
+	color: #01778F;
+	
+}
+
+
 aside {
   padding: 10px;
   background-color: #f7f7f9;
