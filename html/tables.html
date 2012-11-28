@@ -1,11 +1,14 @@
 ---
 subject: HTML5
-title: HTML5 Getting Started
+title: Tables
 description: >
   
 # Comma-separated list of authors
 authors: Khalila Cole
 layout: page
+previous: images.html
+next: learned.html
+progress: 80
 ---
 
 <article>
@@ -17,38 +20,87 @@ layout: page
           <div class="span12">
            <div class="row">
           
-          <nav class="span2">
-          <ul class="nav nav-tabs"> 
-          	<li><a href="index.html">HTML 5</a></li>
-          	<li><a href="overview.html">Overview</a></li>
-          	<li><a href="elements.html">Tags, Attributes, and Elements</a></li>
-          	<li><a href="head.html">The Head</a></li>
-          	<li><a href="structure.html">Structure</a></li>
-          	<li><a href="images.html">Links and Images</a></li>
-	        <li><a href="tables.html">Tables</a></li>
-          	<li><a href="forms.html">Forms</a></li>
-          	<li><a href="beyondbasics.html">Beyond the Basics</a></li>
-		</ul>
-          	</nav>
+         
           <article class="span8">
                <h2>Tables</h2>
 
-    	<p>Tables are a series of rows and columns that create cells in which data lives. </p>
-    	<p> Tables are built using the &lt;table&gt; and &lt;/table&gt; tags. Anything within these tags are part of the table. Tables are built row by row using the &lt;row&gt; and &lt;/row&gt; tags. The &lt;table&gt;&lt;table&gt; tags indicate the top row heading, which, by default, is bold (can be changed with CSS). The &lt;table&gt; &lt;table&gt; tags contain the table cell data. Our example has a table. Each individual data cell are housed within the &lt;td&gt; &lt;/td&gt; tags.s</p>
+    	<p>TTables are used for tabular dataables are a series of rows and columns that create cells in which data lives. </p>
+    	<p> Tables are built using essentially three tag elements: <code>&lt;table&gt;</code> <code>&lt;/table&gt;</code>, <code>&lt;tr&gt;</code> <code>&lt;/tr&gt;</code>, and <code>&lt;td&gt;</code><code>&lt;/td&gt;</code>. </p>
+    	<p>To create a table, you begin with the <code>&lt;table&gt;</code> <code>&lt;/table&gt;</code> tags. Anything within these tags are part of the table. Tables are built row by row using the <code>&lt;tr&gt;</code> and <code>&lt;/tr&gt;</code> tags. Creating tables is another example of where hierarchal nesting is important.  Let's take a look at our sample project. </p>
+    	<pre class="prettyprint">
+    	&lt;table&gt;
+	&lt;tr&gt;
+	&lt;th&gt;Education&lt;/th&gt;
+	&lt;th&gt;Experience&lt;/th&gt;
+	&lt;th&gt;Skills&lt;/th&gt;
+	&lt;/tr&gt;
+	
+	&lt;tr&gt;
+	&lt;td&gt;taciti&lt;/td&gt;
+	&lt;td&gt;litora&lt;/td&gt;
+	&lt;td&gt;conubia&lt;/td&gt;
+	&lt;/tr&gt;
+	
+	&lt;/table&gt;
+	</pre>
+
+    	<p> As you can see above it all begins with the opening <code>&lt;table&gt;</code> tag. The &lt;table&gt;&lt;table&gt; tags indicate the top row heading, which, by default, is bold (can be changed with CSS). The &lt;table&gt; &lt;table&gt; tags contain the table cell data. Our example has a table. Each individual data cell are housed within the &lt;td&gt; &lt;/td&gt; tags.s</p>  
+    	<p>The HTML above gives you this</p>
+    	<table>
+	<tr>
+	<th>Education</th>
+	<th>Experience</th>
+	<th>Skills</th>
+	</tr>
+	
+	<tr>
+	<td>taciti</td>
+	<td>litora</td>
+	<td>conubia</td>
+	</tr>
+	
+	</table>
+	<p> If you wanted to add more rows, you simple continue with the same structure within the table element. Just make sure you enclose each row of data with the <code>&lt;tr&gt;</code> and <code>&lt;/tr&gt;</code> tags.
+  <p> To set the . If you are creating a small table, th is good. but for large tables or perhaps to make it easier on yourself, use thead.  	In each row element, each td element is a column, in the order in which it is presented.
+    	Number of columns is determined by the number of td elements. If we were to add an additional td element, we would be therefore be also adding a column.
      <h4>thead, tbody, and tfoot</h4>
-     <p>Although a table could be built with just the 3 tags, 2 really, if you want to keep it very simple, HTML5 also provides three tags that break the table into natural sections for styling purposes [aside: use CSS]. The &lt;thead&gt;and &lt;/thead&gt; tags enclose the data in the first section to define the heading row of the table. Similarly, the &lt;tbody&gt;and &lt;/tbody&gt; and the &lt;tfoot&gt;and &lt;/tfoot&gt; tags enlose and define the body and footer data respectively.</p>
-     
-<h3> Tables At-a-Glance</h3>
-
-
+     <p>Although a table could be built with just the 3 tags, HTML5 also provides three tags that break the table into natural sections for styling purposes [aside: use CSS]. The &lt;thead&gt;and &lt;/thead&gt; tags enclose the data in the first section to define the heading row of the table. Similarly, the &lt;tbody&gt;and &lt;/tbody&gt; and the &lt;tfoot&gt;and &lt;/tfoot&gt; tags enlose and define the body and footer data respectively.</p> Unlike the th tag, when the thead tag is used, there is no need to specify the order when you are writing the html. the browser will recognize the thead should be placed on top of the tbody; similarly with the tfoot tag, there is no need to make this come at the end of the rows of td. For example, 
+     <pre class="prettyprint">
+    	&lt;table&gt;
+	&lt;thead&gt;
+	&lt;td&gt;Education&lt;/td&gt;
+	&lt;td&gt;Experience&lt;/td&gt;
+	&lt;td&gt;Skills&lt;/td&gt;
+	&lt;/thead&gt;
+	
+	&lt;tr&gt;
+	&lt;td&gt;taciti&lt;/td&gt;
+	&lt;td&gt;litora&lt;/td&gt;
+	&lt;td&gt;conubia&lt;/td&gt;
+	&lt;/tr&gt;
+	
+	&lt;/table&gt;
+	</pre>
+<h3> Table Attribute</h3>
+<p> span</p>
+<p> width</p>
+<p> In the sample above, we may want the table footer (tfoot) to span the width of the entire table. Here we would use the number of columns, 
+<h2>Your Turn</h2>
+   <p>Now that you have all of the elements you need to create the head of a page, give it a try</p>
+   <ul>
+   <li>What should the title of your personal profile be?</li>
+   <li>What meta information would you like to include?</li>
+   <li>Are there any comments or notes you would like to make for yourself or others to help you remember anything?</li>
+   </ul>
       </article>
      
        </section>
     
-    <footer id="page-footer">
-      <p>Licensed under Creative Commons</p>
-    </footer>
+    
 </div>
   </div><!--/.container-fluid-->
 
+ <footer>
+
+</footer>
 </article>

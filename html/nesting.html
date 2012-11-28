@@ -1,0 +1,103 @@
+---
+subject: HTML5
+title: Body and Structure
+description: >
+  
+# Comma-separated list of authors
+authors: Khalila Cole
+layout: page
+previous: structure.html
+next: images.html
+progress: 45
+---
+
+<article>
+<section>
+                    
+      <div class="row">
+          <div class="span12">
+           <div class="row">
+          
+         
+          <article class="span8">
+<p class="lead"> Now that we've learned most of the structural elements that go into creating the body of a webpage, let's discuss the rules for making sure each element is correctly displayed.</p>
+
+
+<h2>Hierarchy</h2>
+
+<p>Hierarchy, as a concept, is an expansion of what we  have learned already in regards to HTML tags as bookends--an opening (start) tag and a closing (end) tag are needed in order for the browser to know when a command begins and ends. But what happens if you want a command not to end and you want another to begin? Let's take a look at an example of when we might want that.
+
+Sample
+<pre class="prettyprint">
+&lt;div&gt;
+&lt;ol&gt;
+
+
+As you can see above, . The tag used most recently will the tag you close first. The more tags you use, the more you have to close before completing the structure. If you don't close a tag, you may have part of your content bleeding into the next, and that's just one of the ways thing can go awry if you don't close your tags correctly.
+
+
+Below is a common aid for visualizing the DOM.</p>
+
+<p>Although the hierarchy is always in place, a few of the tags that are used most often in this are the section and article tags.
+    	<h3>Body</h3>
+    		
+    	
+    	<h4>Section</h4>
+    		
+    
+    	<h4>Header</h4>
+			
+       	 
+       	 <h4>Article</h4>
+			
+    	<h4>Paragraph</h4>
+   			
+   	 	<h4>H1, H2, H3, H4, H5, and H6</h4>
+		<h2>Nesting</h2>
+
+   		<h4>Navigation</h4>
+   			<p> The <code>&lt;nav&gt;</code> <code>&lt;/nav&gt;</code> tag groups navigation links together. These links are usually presented as an unordered list (see below). [to see more about links go to Links and Images].
+   		
+   		<h4>Unordered and Ordered Lists</h4>
+   			<p> Lists are used with surprising frequency when building webpages. The most common use is with navigation links but there are also other instances, such as the assumptions and learning objectives at the start of this tutorial. Lists help display information in an attractive and easy to read format, without the need for styling (though it's always looks better with a little style, see CSS).</p>
+   			<p> There are two different tags for lists, depending on how you would like the information displayed: <code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code>. The <code>&lt;ul&gt;</code> tag is used when you do not want do put the information in any particular number order; it means unordered list. Depending on your styles or, if defined in styles, the browser default, a simple round bullet point precedes each item in the list. The <code>&lt;ol&gt;</code>, or ordered list, tag is used when you want the information to be displayed in order and using a number. The browser will automatically list the items in order 1, 2, 3, 4, etc, based on how you list it in the code. </p>
+   			<p> In both cases, for each individual listed item you need to use the opening tag <code>&lt;li&gt;</code> and the closing tag <code>&lt;/li&gt;</code>.</p>
+   			<p> Let's take a look at a example of each type of list.</p>
+
+   		
+   		<h4>Footer</h4>
+    		<p> The footer comes at the end of a section or the page with extra information. </p>
+    	
+    	<h4>Div tag</h4>
+<p>The <code>&lt;div&gt;</code> is a generic container that is used when none of the other tags appropriately define the information contained. They are used more often than not with CSS.</p>
+ 
+ </article>
+
+<article class="span8 offset2">
+<h3> Structure At-a-Glance </h3>
+<table>
+<tr>
+<td>Tag</td>
+<td>Uses</td>
+<td>Do Not Use</td>
+</tr>
+</table>
+
+
+
+    
+      
+<h5> Next up, <a href="images.html">Images and Links. </a> </h5>
+ 
+  </article>  
+      </section>
+     
+
+ <footer>
+
+</footer>
+</div>
+</div>
+</div>
+  </div><!--/.container-fluid-->
+</article>
