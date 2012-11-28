@@ -93,13 +93,10 @@
 
     </div><!--/.row-fluid -->
 
-  </div><!--/.container-fluid-->
 
-  <footer id="page-footer" class="container-fluid">
-    <div class="span3">
-&nbsp;
-    </div>
-    <div class="span9">
+
+  <footer id="page-footer" class="row-fluid">
+    <div class="span9 offset3">
     {% if page.previous || page.next %}
       <ul class="pager">
         {% if page.previous %}
@@ -116,9 +113,17 @@
         <div class="bar" style="width: {{page.progress}}%;"></div>
       </div>
     {% endif %}
-      <p>Licensed under Creative Commons. Created by {{ page.authors }}</p>
+      <p class="alert alert-info">
+        <small>
+          Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/" class="label label-info">Creative Commons</a>.
+          <a href="https://github.com/karlstolley/535/" class="label label-info">Source on GitHub</a>. 
+          This page created by {{ page.authors }}.
+        </small>
+      </p>
     </div>
   </footer>
+  
+  </div><!--/.container-fluid-->
 
   <!-- JavaScript
   ================================================== -->
