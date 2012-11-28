@@ -19,6 +19,7 @@ Pages
 Glossary/Key Words
 Tags
 !DOCTYPE html
+content
 html
 head
 title
