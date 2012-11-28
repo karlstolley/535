@@ -32,6 +32,8 @@ footer
 a
 img
 table
+details
+aside
 p
 nav
 ol
