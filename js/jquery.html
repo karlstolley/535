@@ -6,6 +6,9 @@ description: >
 # Comma-separated list of authors
 authors: Matthew Heston
 layout: page
+prev: scriptfiles.html
+next: project.html
+progress: 88
 
 stylesheets:
   - url: /js/styles/js-tutorial.css
@@ -16,23 +19,35 @@ scripts:
 
 <article class="row-fluid">
 <header>
-<hgroup class="hero-unit">
+<hgroup>
 <h1>jQuery</h1>
 </hgroup>
 </header>
-<section class="span8 offset3 clearfix">
 
-<h2>By the End Of This Section You Should Be Able To...</h2>
+<h2>Learning Objectives</h2>
 <ul>
   <li>Use jQuery on your own web pages</li>
   <li>Explain what jQuery is and what you can do with it</li>
   <li>Use jQuery to manipulate the DOM</li>
 </ul>
 
-<h2>Getting and Using jQuery</h2>
+<h2>Getting jQuery</h2>
 <p>
-TODO: this part
+The easiest way to start using jQuery is to add the following line to your
+web page.
+<br /><br />
+<code>
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js&quot;&gt;
+</code>
+<br /><br />
+This is the same thing we were doing in the last section where we were including
+a library by using a script tag to point at a file. The difference is that in
+this case instead of pointing at a local file, we are pointing at a JavaScript file
+hosted at Google. You can also feel free to download your own copy of jQuery at
+<a href="http:jquery.com">jquery.com</a>.
 </p>
+
+<h2>Using jQuery</h2>
 
 <p>
 The <a href="http://www.jquery.com">jQuery home page</a> describes jQuery as
@@ -189,7 +204,4 @@ The next section will you give you an exercise to do with your GitHub user
 profile page using this knowledge you've acquired.
 </p>
 
-<footer class="span8 offset3">
-<p>Page last updated by Matthew Heston</p>
-</footer>
 </article>

@@ -6,6 +6,9 @@ description: >
 # Comma-separated list of authors
 authors: Matthew Heston
 layout: page
+prev: objects.html
+next: scriptfiles.html
+progress: 66
 
 stylesheets:
   - url: /js/styles/js-tutorial.css
@@ -16,13 +19,12 @@ scripts:
 
 <article class="row-fluid">
 <header>
-<hgroup class="hero-unit">
+<hgroup>
 <h1>The DOM</h1>
 </hgroup>
 </header>
-<section class="span8 offset3 clearfix">
 
-<h2>By the End Of This Section You Should Be Able To...</h2>
+<h2>Learning Objectives</h2>
 <ul>
   <li>Explain what the DOM is</li>
   <li>Understand how you can use JavaScript to manipulate the DOM</li>
@@ -44,7 +46,7 @@ this object hierarchy like this:
 </p>
 
 <p>
-[TODO: Insert Figure here.]
+<img src="images/COM.png" alt="Representation of a car object model" />
 </p>
 
 <p>
@@ -70,7 +72,23 @@ looks like this:
 <br />
 <pre>
 <code>
-TODO: Put example here.
+&lt;html&gt;
+
+&lt;head&gt;
+&lt;title&gt;My Page&lt;/title&gt;
+&lt;/head&gt;
+
+
+&lt;body&gt;
+
+&lt;h1&gt;Hello, World!&gt;
+&lt;div class=&quot;myClass&quot;&gt;
+  &lt;p&gt;This is my webpage!&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
 </code>
 </pre>
 <br />
@@ -78,7 +96,7 @@ TODO: Put example here.
 Like with our car object, we can imagine this HTML document as a set
 of object nodes:
 <br /><br />
-TODO: Put figure here
+<img src = "images/DOM.png" alt="Here is how the DOM is represented." />
 <br /><br />
 </p>
 
@@ -233,7 +251,4 @@ code that would change the background color of the div when you move your
 mouse over the div, and then change it back when you move your mouse off?
 </p>
 
-<footer class="span8 offset3">
-<p>Page last updated by Matthew Heston</p>
-</footer>
 </article>
