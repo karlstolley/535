@@ -15,10 +15,64 @@ progress: 80
         </hgroup>
       </header>
 
-      <p class="lead">Mixins are bits of code written by the <a href="http://sass-lang.com/about.html">Sass developers</a> to avoid
-        re-creating the CSS wheel.</p>
+      <p class="lead">Mixins are bits of code written by you (or someone else) to avoid re-creating the CSS wheel.</p>
+      
+      <p>Mixins are like any other <em>software function</em>: a set of instructions that can be acted upon by the software being run--in this case, the
+      Sass program. As with other programming functions, they need to be defined before they can be used.</p>
 
+      <h2>Defining a Mixin</h2>
+      <p>To define a mixin, simply give it a name and wrap the CSS/Sass rules with within the <code>@mixin</code> tag:</p>
+<pre>
+  @mixin my-custom-css-code {
+    
+  }
+</pre>
+      <p>What goes in between the braces is any valid CSS or Sass code. Say you have a site that
+        uses many different kinds of tables to hold data. You need to have a consistent look for some tables, but others will look different.
+        You can create a mixin that will apply custom CSS rules to the tables you specify. Here's what that mixin code might look like:</p>
+      
+<pre>
+  $tableFont: 'Michroma', Verdana, Arial,  sans-serif;
+  $tableFontColor: #CCCCCC;
+  $tableDataSize: 12px;
+  $tableHeaderSize: 16px;
 
+  @mixin format-data-table {
+    font-family: $tableFont;
+    color: $tableFontColor;
+    th {
+      font-size: $tableHeaderSize;
+      padding: 4px 2px;
+      text-align: center;
+    }
+    td {
+      font-size: $tableDataSize;
+    }
+  }
+</pre>
+     <h2>Using a Mixin</h2>
+     <p>When you need to use the mixin, simply call it by name with the <code>@mixin</code> tag:</p>
+
+<pre>
+  /* Budget report #1 section */
+
+  #intro {
+    th, td { /* different table style rules */
+      font-size: 10px;
+      font-color:blue;
+    }
+  }
+  /* budget report page */
+  #rpt1 {
+    h1, h2, h3 { /* re*/
+      font-color: red;
+      font-weight:strong;
+    }
+    @include format-data-table; /* use standard data table formatting for all budget reports*/
+  }
+</pre>
+
+     <p>Mixins are another Sass method of the DRY (Don't Repeat Yourself) code philosophy.</p>
 
       <footer>
         <p>Page last updated by Christine McClure</p>
