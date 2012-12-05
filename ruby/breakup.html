@@ -17,6 +17,20 @@ progress: 81
   </header>
   <section>
 
+    <div class="row-fluid">
+      <div class="span8">
+
+    <div class="alert alert-info">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <h4>Learning Goals</h4>
+      <ol>
+        <li>Change Ruby script to use Classes.</li>
+        <li>Understand Variable Scope.</li>
+        <li>Identify and understand Instance Variables.</li>
+        <li>Understand Objects and Methods calls.</li>
+      </ol>
+    </div>
+
     <p>The course list script currently has everything in one long strip. Nothing has been put into Methods or Classes. Looking at this script, what lines would comprise the two methods: <code>ask_questions</code> and <code>build_html_file</code>?</p>
 
 <pre class="prettyprint linenums">
@@ -324,7 +338,21 @@ create_new_HTML.build_html_file
   })
 </script>
 
+      </div>
 
+      <div class="span4">
+      <aside>
+        <dl>
+          <dt>Variable Scope</dt>
+          <dd>This is the boundary of effect for or context of a Variable. The value in a given Variables can only work within a given context. Variables declared within a Method only work in that Method. Variables declared outside a Method will not work in that Method. This is done to keep memory usage reasonable; if every value of every  Variable everywhere was kept, computers would run out of memory. Some Variables only need a limited shelf life. This creates some issues with some parts of a program, which is why Variable Scope exists.</dd>
+          <dt>Instance Variable</dt>
+          <dd>A Variable that can be used throughout the Instance / Object. The Variable and its value (or values, in the case of an Array or Hash) can use the same identifier, starting with <code>@</code> anywhere in the Object</dd>
+          <dt>Local Variable</dt>
+          <dd>A Variable that only works within the scope it was declared, either inside or outside a Method or Class.</dd>
+        </dl>
+      </aside>
+      </div>
+    </div>
 
 
 
