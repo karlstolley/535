@@ -11,13 +11,70 @@ progress: 60
     <article class="row-fluid">
       <header>
         <hgroup>
-          <h1>Nesting</h1>
+          <h1>Nesting Code</h1>
         </hgroup>
       </header>
 
-      <p class="lead">Nesting keeps your CSS code from becoming tangled and unmanageable: spaghetti-like.</p>
+      <p class="lead">Nesting code keeps your CSS from becoming tangled and unmanageable: you know, spaghetti-like.</p>
 
+      <h2>Logical Groupings</h2>
 
+      <p>When you start working on larger projects, you'll begin to see just how large your CSS file can get. You generally start
+      out writing CSS code with the plan to structure your elements in the most logical way: first headers and footers, then
+      main page elements, then individual page details later. As deadlines approach (or are shortened!), the urge to make quick
+      changes at the bottom of the file becomes more appealing. Then weeks or months later when you have to make updates, you find yourself
+      struggling through the CSS logic trying to find the section you need to change. </p>
+
+      <p>A large project can include multiple CSS files with hundreds of lines of code. <strong>Nesting</strong> within
+      Sass allows you to keep your code orderly.</p>
+
+      <p>A typical example is how basic HTML5 elements can change in a page's footer section. Since "footer" is an
+        <a href="/html/structure.html">HTML5 tag</a>, we can nest all of our footer-specific elements under that tag in the
+      Sass file:</p>
+<pre>
+/* Footer code block. All footer elements go here */
+<span class="exampleAside">footer</span> {
+  p { /* This block is for all paragraph tags within the footer element. */
+    width: 40%;
+    display:inline;
+
+    a { /* This block is for any anchor tags within paragraph tags in the footer element. */
+      font-weight: 900;
+    }
+  }
+
+  p.copyright { /* A special class of paragraph within the footer. */
+    width: 40%;
+    display:inline;
+    float:right;
+    text-align:right;
+  }
+
+<span class="exampleAside">}</span> /* End of the footer nested block. */
+</pre>
+      <p>But since Sass is really CSS, it will get compiled (manually, or automatically using a Ruby library 
+        called <a href="http://compass-style.org/">Compass</a>) as standard CSS. CSS doesn't use nested code, so individual
+      rules need to be made for your nested code. Here is what the compiled CSS file will look like:</p>
+
+<pre>
+footer p {
+  width: 40%;
+display: inline;
+}
+
+footer p a {
+  font-weight: 900;
+}
+
+footer p.copyright {
+  width: 40%;
+  display: inline;
+  float: right;
+  text-align: right;
+}
+</pre>
+      <p>Since you will work within the Sass <strong>.scss</strong> file, you are still following the DRY principle of development, and
+      the CSS rules are all grouped together for anyone who may only have your <strong>.css</strong> file to use as a reference.</p>
 
       <footer>
         <p>Page last updated by Christine McClure</p>
