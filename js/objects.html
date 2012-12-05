@@ -6,6 +6,9 @@ description: >
 # Comma-separated list of authors
 authors: Matthew Heston
 layout: page
+prev: programming.html
+next: dom.html
+progress: 55
 
 stylesheets:
   - url: /js/styles/js-tutorial.css
@@ -16,13 +19,12 @@ scripts:
 
 <article class="row-fluid">
 <header>
-<hgroup class="hero-unit">
+<hgroup>
 <h1>Objects</h1>
 </hgroup>
 </header>
-<section class="span8 offset3 clearfix">
 
-<h2>By the End Of This Section You Should Be Able To...</h2>
+<h2>Learning Objectives</h2>
 <ul>
   <li>Describe what a JavaScript object is</li>
   <li>Recognize objects in JavaScript code</li>
@@ -56,17 +58,17 @@ Type the following into the console:
 </p>
 
 <pre>
-        <code>
-          var btn = document.getElementById("color-change-button");
+<code>
+var btn = document.getElementById("color-change-button");
 
-          btn.onclick = buttonClickHandler;
+btn.onclick = buttonClickHandler;
 
-          function buttonClickHandler() {
-            var randomColor = getRandomColor();
-            document.body.style.background = randomColor;
-          }
-        </code>
-        </pre>
+function buttonClickHandler() {
+  var randomColor = getRandomColor();
+  document.body.style.background = randomColor;
+}
+</code>
+</pre>
 
 <p>
 Try clicking the button again. You should see a result.
@@ -250,7 +252,4 @@ topic -- the Document Object Model, or the DOM.
 </p>
 
 
-<footer class="span8 offset3">
-<p>Page last updated by Matthew Heston</p>
-</footer>
 </article>
