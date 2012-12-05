@@ -196,16 +196,6 @@ pre .info {
 }
 
 
-/* *** Temporary - Remove later */
-/* Makes an ugly highlight on an item to remind you to check something later */
-.checkThisLater {
-  padding: 2px;
-  background:yellow;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  border: 2px solid red;
-}
-
 .chapterbutton h2 {
 	background-color: #339999;
 	margin: 20;
