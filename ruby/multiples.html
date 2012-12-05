@@ -20,6 +20,13 @@ progress: 85.5
     <div class="row-fluid">
       <div class="span8">
 
+    <div class="alert alert-info">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <h4>Learning Goal</h4>
+      <p>Add Arrays into Classes to loop through multiple courses.</p>
+
+    </div>
+
 <p>So far, we have been coding this a script that can only handle one course. Who only takes one course each semester? Yeah, this script needs to be changed. it needs to handle multiple courses to be of any use.</p>
 
 <p>With the current script, we can handle one class. We also know, though, that it is possible to run through an Array or Hash quickly, since they are only lists whose values are identified by one variable and either a number (Array) or key (Hash). Since this will be an ordered list, an Array will probably do the job.</p>
@@ -145,45 +152,56 @@ progress: 85.5
     <p>Yes, that was a lot of information. Let's break it down in detail:</p>
     </div>
 <pre class="prettyprint linenums">
-    print "\nHow many classes do you have this semester? "
-    @course_count = gets.chomp                                   # User answers "2", @course_count = 2
-    @courses_data = []                                           # An empty Array called
-                                                                 # @courses_data is created
-    @courses = (@course_count.to_i)-1                            # The Outer Loop upper bound is set
-                                                                 #   to (@course_count - 1) = 1
-    0.upto(@courses) do |table_row|                              # Starting with 0, loop until you
-                                                                 #   reach 1.
-                                                                 #   Use table_row as the Inner Loop
-                                                                 #   iterator.
-                                                                 #   Pass through the loop 2 times.
-      @courses_data[table_row] = {}                              # Create the empty @courses_data[0]
-                                                                 #   Hash
-      table_list_row = (table_row + 1).to_s                      # Set the value for table_list_row to
-                                                                 #   the Inner Loop iterator + 1
-      puts "\nFor Class #{table_list_row}\n"                     # Print a new line then
-                                                                 #   For Class #1
-                                                                 #   then another new line
-      questions.each_pair { |question,answer|                    # Loop through the questions Hash
-                                                                 #   using question and answer for the
-                                                                 #   key and value pairs in the Hash
-                                                                 #   (Inner Loop)
-        print "\n#{question} #{table_list_row}? "                # Print a new line then the first
-                                                                 #   question:
-                                                                 #   What is the course number of
-                                                                 #   class 1?
-        @courses_data[table_row].merge!(answer =&gt; gets.chomp) # Prompt the user for a response
-                                                                 #   Store that value in
-                                                                 #   @courses_data[1][number =>
-                                                                 #                    "Answer"]
-      }                                                          # Loop through the 5 questions.
-                                                                 #   answer_pair until all questions
-                                                                 #   for Course 1 are answered
-                                                                 # Five more passes
-                                                                 # End the Inner Loop
-      table_row += 1                                             # Add 1 to table_row, so the loop
-                                                                 #   continues with the 2nd pass
-                                                                 # Another pass
-    end                                                          # End the Outer Loop
+print "\nHow many classes do you have this semester? "
+
+@course_count = gets.chomp
+  # User answers "2", @course_count = 2
+
+@courses_data = []
+  # An empty Array called @courses_data is created
+
+@courses = (@course_count.to_i)-1
+  # The Outer Loop upper bound is set to (@course_count - 1) = 1
+
+0.upto(@courses) do |table_row|
+  # Starting with 0, loop until you reach 1.
+  #   Use table_row as the Inner Loop iterator.
+  #   Pass through the loop 2 times.
+
+  @courses_data[table_row] = {}
+    # Create the empty @courses_data[0] Hash
+
+  table_list_row = (table_row + 1).to_s
+    # Set the value for table_list_row to the Inner Loop
+    # iterator + 1
+
+  puts "\nFor Class #{table_list_row}\n"
+    # Print a new line then for Class #1 then another new line
+
+  questions.each_pair { |question,answer|
+    # Loop through the questions Hash using question and answer
+    #   for the key and value pairs in the Hash (Inner Loop)
+
+    print "\n#{question} #{table_list_row}? "
+      # Print a new line then the first question:
+      #   What is the course number of  class 1?
+
+    @courses_data[table_row].merge!(answer =&gt; gets.chomp)
+      # Prompt the user for a response Store that value in
+      #   @courses_data[1][number => "Answer"]
+
+  }
+    # Loop through the 5 questions / answer_pairs until all
+    #   questions for Course 1 are answered
+    # Five more passes
+    # End the Inner Loop
+
+  table_row += 1
+    # Add 1 to table_row, so the loop continues with the 2nd pass
+    # Another pass
+
+end
+  # End the Outer Loop
 </pre>
 
 <p>Now that you have collected the answers for each course, you need to display them.</p>

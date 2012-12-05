@@ -13,6 +13,23 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
 }
 
+.ruby aside {
+  background-color: #fd9db3;
+}
+
+dt, dd {
+  margin-bottom: 10px;
+}
+
+aside dl, aside h3 {
+  margin: 0px;
+}
+
+aside h3 {
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+
 
 .hero-unit {
   padding-bottom: 30px;
@@ -245,3 +262,8 @@ pre .info {
 .btn { /* cm: to keep following text from butting up  against button */
   margin-bottom: 12px;
 }
+
+.alert p:last-child, .alert ol:last-child {
+  margin-bottom: 0px;
+}
+
