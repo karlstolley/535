@@ -1,7 +1,7 @@
 ---
 subject: HTML5
 title: Tags, Attributes, and Elements
-description: >
+description: Defines basic html vocabulary
   
 # Comma-separated list of authors
 authors: Khalila Cole
@@ -12,18 +12,11 @@ progress: 15
 ---
  <article>
  
-  <div class="container-fluid">
 
-         <h2> Tags, Attributes, and Elements</h2>
-<section>
-     <div class="row">
-          <div class="span12">
-           <div class="row">
-          
-          <article class="span8">
+<h2> Tags, Attributes, and Elements</h2>
 
-     <p> So, let's take another look at our HTML5 project. And this time from the behind the scenes, that is, the HTML version.</p>
-<!-- image of final product, side by side with html -->
+     <p class="lead"> So, let's take another look at our HTML5 project. And this time from the behind the scenes, that is, the HTML version.</p>
+<!-- it would be nice to have image of final product, side by side with html -->
     <img src="images/sampleproject.png" alt="sample project">
      
      <pre class="prettyprint">
@@ -102,14 +95,16 @@ progress: 15
 &lt;/body&gt;
 &lt;/html&gt;
 </pre>      
-</section>
-<section>
+
 <p>There is clearly a lot that went into such a simple looking document, but before we go on, let's define some terminology.</p>
     
 <h3>Tags</h3>
 <p> A tag is the simplest unit of HTML, and basically defines the language.  Browsers read tags for instructions on how to display the content in a webpage. A browser recognizes an HTML tag by the <em>&lt;</em> and <em>&gt;</em> that enclose each particular instruction. Acting as bookends, the <em>&lt;</em> and <em>&gt;</em>let the browser know when the tag begins (&lt;) and ends (&gt;). Let's take another look at the project code above for an example. On the very first line, we see the <code class="htmlcode"> &lt;html&gt; </code> tag. The <code class="htmlcode"> &lt;html&gt; </code> lets the browser know that the what follows is a webpage. </p>
-<p>But that's not all. Just as the tag needs both an <em>&lt;</em> and an <em>&gt;</em>, to define it, the element that the tag modifies needs something to let the browser know when the instruction ends, the <em>&lt;/&gt;</em>. So think of each tag as a set of bookends, one that precedes the content it modifies, called a start or opening tag, <em>&lt; &gt;</em> and one at the end of the content, called a end or closing tag <em>&lt; / &gt;</em>. There are a few exceptions to this "bookend" rule, we'll discuss these in later sections. <!--one we discussed earlier - &lt;!DOCTYPE html&gt;which tells the browser which version of html it is using; &lt;/br&gt;, which we'll discuss in the next sections.-->
-</p>
+
+<p>But that's not all. Just as the tag needs both an <em>&lt;</em> and an <em>&gt;</em>, to define it, the element that the tag modifies needs something to let the browser know when the instruction ends, the <em>&lt;/&gt;</em>. So think of each tag as a set of bookends, one that precedes the content it modifies, called a start or opening tag, <em>&lt; &gt;</em> and one at the end of the content, called a end or closing tag <em>&lt; / &gt;</em>.  </p>
+<p>There are a few exceptions to this "bookend" rule. One is <code class="htmlcode">&lt;!DOCTYPE html&gt;</code> and another is <code class="htmlcode">&lt;br&gt;</code>. The <code class="htmlcode">&lt;!DOCTYPE html&gt;</code> tag is not really a tag at all. Instead, consider it a doctype declaration which lets the browser know which version of HTML the webpage is written in. The <code class="htmlcode">&lt;!DOCTYPE html&gt;</code> declaration indicates the page is written in HTML5.</p>
+<p>We'll discuss the <code class="htmlcode">&lt;br&gt;</code> tag in a later section.</p>
+
 <p>As we return to our example, we can see that the <code class="htmlcode">&lt;html&gt;</code> start tag at the beginning, has a closing tag, <code class="htmlcode">&lt;/html&gt;</code> all the way at the very end of the page. In fact, it's the last tag, which makes sense because it is basically telling the browser that there is nothing more to the webpage.
 </p>
 
@@ -120,10 +115,10 @@ progress: 15
 
 <h3>Elements </h3>
 <p> An element consists of a set of opening and closing tags and the information it encloses, including the attributes and values. Let's take the <code class="htmlcode">&lt;meta&gt;</code> for example. In the sample project above, The tags by themselves <code class="htmlcode">&lt;meta&gt;</code> and <code>&lt;/meta&gt;</code>are simply tags. However, we see that there is a lot of information within these tags.  Each of these meta elements begin with the opening meta tag <code class="htmlcode">&lt;/meta&gt;</code> has some information then ends with the closing tag <code class="htmlcode">&lt;/meta&gt;</code>. </p>
-<p> Sometimes you may see the term element used interchangeably with tag. Let's take for example the element <code class="htmlcode">&lt;!DOCTYPE html&gt;</code>. It is an element that stands by itself.   Let's find another example. below that is &lt;html&gt;. but not simply <code class="htmlcode">&lt;html&gt;</code>, it also includes the attribute, <code> lang="en"</code> where the attribute name is <code class="htmlcode">lang</code> and the value is <code class="htmlcode">en<code>.</p>
+<p> Sometimes you may see the term element used interchangeably with tag. Let's take for example the element <code class="htmlcode">&lt;!DOCTYPE html&gt;</code>. It is an element that stands by itself.   Let's find another example. below that is &lt;html&gt;. but not simply <code class="htmlcode">&lt;html&gt;</code>, it also includes the attribute, <code> lang="en"</code> where the attribute name is <code class="htmlcode">lang</code> and the value is <code class="htmlcode">en</code>.</p>
 
 <h5>Now that we have some of the definitions out of the way, let's move on to the next section and see how webpages are put together, beginning with <a href="head.html">the head</a>.</h5>
-</section>
+
 <aside>Other markup, stylesheet, and programming languages have their own set of symbols that distinguish; there maybe be some elements in common, try to keep them distinct in your mind.</aside>
  <footer>
 

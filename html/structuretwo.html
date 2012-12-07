@@ -7,86 +7,56 @@ description: >
 authors: Khalila Cole
 layout: page
 previous: head.html
-next: structure.html
+next: images.html
 progress: 40
 ---
 
 <article>
-<section>
-                    
-      <div class="row">
-          <div class="span12">
-           <div class="row">
-          
-         
-          <article class="span8">
-<h2>Structure</h2>
+       
+     <h2>Body: Structure Part II</h2>
 
-    	<h3>Body</h3>
-    		<p> The body of the webpage houses all of the content that is intended to be displayed to the public. The browser renders everything enclosed within the <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code> tags so that it is viewable. All other tags that we learn about go inside the body of the document. </p>
+       <p class="lead"> Tags used within the body of a webpage continue with other structural tags that help define smaller parts of the section, article, div, and footer sections</p>              
 
-<h3>Tags Used Within the Body</h3>
-	<p> Most of the following are pretty self-explanatory. </p>
-    	
-    	<h4>Section</h4>
-    		<p>The <code>&lt;section&gt;</code> tag is used to group like content together. Sections could be nested or stand alone. Usually, the sections contain headers and footers. 
-    
+  <h3>More Tags Used Within the Body</h3>
+
     	<h4>Header</h4>
-			<p> The header comes at the beginning of each section and indicates that the information enclosed in the <code>&lt;header&gt;</code> and <code>&lt;/header&gt;</code> is the header.
-       	 
-       	 <h4>Article</h4>
-			<p> The <code>&lt;article&gt;</code> tag is used for grouped information within sections. These are usually not nested unless they are nested within sections of other sections [aside: to see more about nesting, go to Nesting].
-			
+			<p> The header begins and indicates that the information enclosed in the <code>&lt;header&gt;</code> and <code>&lt;/header&gt;</code> is the header. Content within the header could be as simple as the title of the section, but it could also include supplementary information. Although there should only be one header per section or article, since there could be multiple sections and articles in page, there could be more than one header per page. Each header element must contain at least one heading tag (see below).</p>
+    
+     <h4>H1, H2, H3, H4, H5, and H6</h4>
+		<p>The heading tags are used to set apart certain text from the rest of content, usually in size and font weight. By default, and generally by design, the <code>&lt;h1&gt;</code>and <code>&lt;/h1&gt;</code> tags indicate the most important information and when used are a much larger size and weight. The style of the tags continue to decrease in size and font weight from the <code>&lt;h2&gt;</code> tag to the <code>&lt;h6&gt;</code> tag. For example, on this webpage, the title of the tutorial, HTML5, uses the <code>&lt;h1&gt;</code> tag, then the title of the page <em>Body: Structure Part I</em> uses the <code>&lt;h2&gt;</code> tag, then the title of the section <em>More Tags Used Within the Body</em> uses the <code>&lt;h2&gt;</code>tags, and the title of each paragraph uses the <code>&lt;h4&gt;</code> tags. Always be sure to close the tag with the appropriate matching end tag.</p>  	 		
+    	
     	<h4>Paragraph</h4>
    			<p>The <code>&lt;p&gt;</code> tag is probably the most common tag you will see in a document, simply because it defines the portion of text that should be displayed as a paragraph. It is possible for a very simple page to be composed simply of <code>&lt;p&gt;</code><code> &lt;/p&gt;</code> elements, however, it is very limited and it doesn't tell you much about the information enclosed. Also, when we start to style the page using CSS, other tags, such as section and article help better define parts of the webpage.</p>
-   	 	<h4>H1, H2, H3, H4, H5, and H6</h4>
-		<p> The h tags are useful. In the example above, these were formed using these tags. Decreasing importance. In this page, the headings for each individual paragraph, for example section and article, use the h4 tag, while the heading for the entire page, HTML5, uses the h1 tag, indicated its hierarchal importance. </p>
-   		<h4>Navigation</h4>
-   			<p> The <code>&lt;nav&gt;</code> <code>&lt;/nav&gt;</code> tag groups navigation links together. These links are usually presented as an unordered list (see below). [to see more about links go to Links and Images].
+   	 	
+   		
    		
    		<h4>Unordered and Ordered Lists</h4>
    			<p> Lists are used with surprising frequency when building webpages. The most common use is with navigation links but there are also other instances, such as the assumptions and learning objectives at the start of this tutorial. Lists help display information in an attractive and easy to read format, without the need for styling (though it's always looks better with a little style, see CSS).</p>
-   			<p> There are two different tags for lists, depending on how you would like the information displayed: <code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code>. The <code>&lt;ul&gt;</code> tag is used when you do not want do put the information in any particular number order; it means unordered list. Depending on your styles or, if defined in styles, the browser default, a simple round bullet point precedes each item in the list. The <code>&lt;ol&gt;</code>, or ordered list, tag is used when you want the information to be displayed in order and using a number. The browser will automatically list the items in order 1, 2, 3, 4, etc, based on how you list it in the code. </p>
-   			<p> In both cases, for each individual listed item you need to use the opening tag <code>&lt;li&gt;</code> and the closing tag <code>&lt;/li&gt;</code>.</p>
-   			<p> Let's take a look at a example of each type of list.</p>
-br tag
+   			<p> There are two different tags for lists, depending on how you would like the information displayed: <code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code>. The <code>&lt;ul&gt;</code> tag is used for unordered lists, when you do not want do put the information in any particular number order. Depending on your styling, or, if defined in styles, the browser default, a simple round bullet point precedes each item in the list.</p>
+   			<p> The <code>&lt;ol&gt;</code>, or ordered list, tag is used when you want the information to be displayed in order and using a number. The browser will automatically list the items in order 1, 2, 3, 4, etc, based on how you list it in the code. </p>
+   			<p> In both cases, for each individual listed item you need to use the opening tag <code>&lt;li&gt;</code> and the closing tag <code>&lt;/li&gt;</code>. If, for example, we wanted to create an ordered list, we would start with the opening <code>&lt;ol&gt;</code> tag. Then we would list each item in the list within the <code>&lt;li&gt;</code> and <code>&lt;/li&gt;</code> tags. Once we are done, we would close the list with the end <code>&lt;ol&gt;</code> tag. </p>
    		
-   		<h4>Footer</h4>
-    		<p> The footer comes at the end of a section or the page with extra information. </p>
-    	
-    	<h4>Div tag</h4>
-<p>The <code>&lt;div&gt;</code> is a generic container that is used when none of the other tags appropriately define the information contained. They are used more often than not with CSS.</p>
- 
- </article>
-
-<article class="span8 offset2">
-
 
 
 <h4>Aside</h4>
     <p> The aside tags <code>&lt;aside&gt;</code> <code>&lt;/aside&gt;</code> are used for pieces of content that relate to an article or webpage's content but could stand on its own or may not be necessary to understand the rest of the content. Asides could be presented in various ways. They are used much like sidebars are used in print documents, though in websites, they don't necessarily have to be sidebars. Another example would be of a pull quote from a long article that highlights the topic, or glossary of terminology, or related links for further information.  In this guide, you see examples of how they are used to present extra information. </p> 
  
- Common attributes for these elements
  
- <h2>Your Turn</h2>
-   <p>Now that you have all of the elements you need to create the head of a page, give it a try</p>
+ <h3>Your Turn</h3>
+   <p>Now that you have all of the elements you need to create the structure of a page, give it a try.</p>
    <ul>
-   <li>What should the title of your personal profile be?</li>
-   <li>What meta information would you like to include?</li>
-   <li>Are there any comments or notes you would like to make for yourself or others to help you remember anything?</li>
+   <li>How do you want to structure the small sections of your page? </li>
+   <li>How should the content be broken up?</li>
+    <li>What should be set apart?</li>
+
    </ul>   
       
-<h5> Next up, <a href="images.html">Images and Links. </a> </h5>
+<h5> Next up, <a href="images.html">Links and Images. </a> </h5>
  
-  </article>  
-      </section>
      
 
  <footer>
 
 </footer>
-</div>
-</div>
-</div>
-  </div><!--/.container-fluid-->
+
 </article>

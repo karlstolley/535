@@ -1,24 +1,10 @@
 HTML Glossary
 
 
-
-Pages
-1. index.html
-2. overview.html
-3. elements.html
-4. head.html
-5. structure.html
-6. structuretwo.html
-7. nesting.html
-8. images.html
-9. tables.html
-10. learned.html
-11. learnmore.html
-
-
 Glossary/Key Words
 Tags
 !DOCTYPE html
+content
 html
 head
 title
@@ -32,7 +18,6 @@ footer
 a
 img
 table
-details
 aside
 p
 nav
@@ -46,8 +31,3 @@ end or closing tag
 br
 
 Attributes
-
-
-Notes:
-     Doctype- this is what tells the browsers what to find
-summarize each page at the end of the section
