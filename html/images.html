@@ -11,35 +11,40 @@ next: tables.html
 progress: 55
 ---
 <article>
-Links, also called Hyperlinks, allow you to connect with other parts of a webpage, other parts of a website, and external websites. Images provide illustrative imagery to your content.
-
 <h2>Links and Images</h2>
+
+Links, also called hyperlinks, allow you to connect with other parts of a webpage, other parts of a website, and external websites. Images provide illustrative imagery to your content.
+
      
 <h3>Links</h3>
-<p> Now, let's learn about what makes a webpage truly a webpage-- links. If not for links, a webpage would be a static document isolated from the rest of the internet, nearly impossible to reach and just as impossible to leave. Links are what makes the world wide web, the world wide web. </p>
-<p>Now that we've stressed the importance of learning such a critical component of webpages, we're going to learn about three types of links: in page links or bookmarks, local page links, and external links. But before we do, let's take a closer look at the link tag and its individual components.</p>
+<p> Now, let's learn about what makes a webpage truly a webpage&#8212;links. If not for links, a webpage would be a static document isolated from the rest of the internet, nearly impossible to reach and just as impossible to leave. Links are what makes the world wide web, the world wide <em>web</em>. </p>
 
-<p>Links are formed with the start tag <code> &lt;a&gt;</code> and end tag <code> &lt;/a&gt;</code>. The <strong>a<strong> in this tag indicates anchor, and the <code> &lt;a&gt;</code> can refer to either the origin anchor, where the link starts, or the target anchor, where the link ends, on text within the same webpage.</p>
+<p>There are three types of links: in page links or bookmarks, internal links, and external links. But before we learn more about what makes each of these types of links unique, let's take a closer look at the link tag and its individual components.</p>
 
-<p>The origin anchor, also known as the source anchor, is where the link begins and is identified by the simple presence of the opening <code> &lt;a&gt;</code> tag. The target anchor is identified within the opening tag with an attribute <aside>For a refresher on attributes, visit the <a href="elements.html"> Tags, Attributes, and Elements</a> section.</aside> To identify the target anchor, we need to use the <strong>href</strong> attribute. The <strong>value</strong> of the attribute will be the destination, where the link is going. Depending on the type of link-- in-page, local page, or external--the attribute is handled in different ways, as we will soon see below. </p>
+<p>Links are formed with the start tag <code> &lt;a&gt;</code> and end tag <code> &lt;/a&gt;</code>. The <strong>a<strong> in this tag indicates anchor, and the anchor,<strong>a</strong> can refer to either the origin anchor, where the link starts, or the target anchor, where the link ends, on text within the same webpage.</p>
 
-<p>In short, the element structure for links is <code> &lt;a href="LINK DESTINATION"&gt; WHAT VIEWER SEES AS A HYPERLINK&lt;/a&gt;</code>.</p>
+<p>The origin anchor, also known as the source anchor, is where the link begins and is identified by the presence of the opening <code> &lt;a&gt;</code> tag. The target anchor is identified within the opening tag with the <strong>href</strong> attribute. The <strong>value</strong> of the attribute will be the link destination. Depending on the type of link&#8212;in-page, local page, or external&#8212;the attribute is handled in different ways, as we will soon see below. </p>
+<aside>For a refresher on attributes, visit the <a href="elements.html"> Tags, Attributes, and Elements</a> section.</aside> 
+<p>Basically, the element structure for links is <code> &lt;a href="LINK DESTINATION"&gt; WHAT VIEWER SEES AS A HYPERLINK&lt;/a&gt;</code>.</p>
+
 <aside> Be sure not to confuse the <code> &lt;a&gt;</code> tag with the <code> &lt;link&gt;</code> tag; <code> &lt;a&gt;</code> tags only appear in the body, and <code> &lt;link&gt;</code> tags only appear in the head of the document</aside>
 
 
-<h4>External Pages</h4>
-<p>Links to external pages are the simplest types of links to create. All you have to do to insert a link in your content to an external page is use the <code> &lt;a&gt;</code> <code> &lt;/a&gt;</code>tags listed above and insert the complete web address as the destination value. For example, if we wanted to provide a link from this page to the IIT home page, we would simple use the following code <code> &lt;a href"www.iit.edu"&gt; IIT &lt;/a&gt;</code>, which appears simply as  <a href="www.iit.edu"> IIT</a&gt;>.</p>
+<h4>External Links</h4>
+<p>We'll start with the simplest types of links&#8212;the external link. </p>
 
-<h4>Internal Pages</h4>
+<p>To insert a link in your content to an external page is use the <code> &lt;a&gt;</code> <code> and &lt;/a&gt;</code>tags and insert the complete web address as the destination value. For example, if we wanted to provide a link from this page to the IIT home page, we would simple type <code> &lt;a href="www.iit.edu"&gt; IIT &lt;/a&gt;</code>, which appears to the viewer as <a href="www.iit.edu"> IIT</a&gt;>.</p>
 
-<p>Internal page links are those found within the same site, though not on the same webpage. For example, the various sections of this tutorial are housed on different pages within the same website- DigitalContentCreatorsResource.com. In order to create links to internal pages, you must know where the content for your pages resides. For example, the pages for this HTML5 tutorial are housed within an folder separate from the pages for the CSS or Javascript tutorials. If I wanted to link to one of the pages in those tutorials, I would need to . If I wanted to link to pages within this tutorial, </p>
+<h4>Internal Links</h4>
+
+<p>Internal page links are links to webpages within the same website, though not on the same webpage. For example, the various sections of this tutorial are housed on different pages within the same website- DigitalContentCreatorsResource.com. In order to create links to internal pages, you must know where the content for your pages resides. For example, the pages for this HTML5 tutorial are housed together in the same folder. If I wanted to link to another page within this tutorial, let's say the Overview, then I would list the name of the html document as the destination value in the attribute. Let's see the this in action: <code> &lt;a href="overview.html"&gt; Overview &lt;/a&gt;</code>.  As we can see, the anchor tag &lt;a&gt; contains the value as the name of the document. The viewer would only see <a href="overview.html"> Overview</a&gt;>./p>
 
 <h4>Bookmarks</h4>
-<p> Bookmarks are links found in a webpage that take you to anchors of the same webpage, meaning other parts of the same page. You must define the anchor . 
+<p> Bookmarks, or in page links, are links found in a webpage that take you to anchors on the same webpage. Unlike external and internal links, there are two steps to creating bookmarks: defining the anchor and creating the destination.You must define the anchor . 
 </p>
+
+
 <h3>Images</h3>
-
-
 
 <p> Images are included as part of the same tutorial as the links because they share the same concept only with different tags. The opening <code> &lt;img&gt;</code>tag contains the src attribute whose value identifies the image that should appear. Here is where the idea closely follows the way an internal page is made. The value of the src is usually within the same website and you have to know and list the location. For example...</p>
 
