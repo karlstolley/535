@@ -12,14 +12,17 @@ progress: 80
 ---
 
 <article>
+
+ <h2>Tables</h2>
+
 <p class="lead">
  Tables are used to present data and other similar types of information in a grid. Tables are are a series of rows and columns that create cells that house each individual piece of information. Tables should not be used for layouts, instead, you should use <a href="/CSS/index.html">CSS</a>.</p>
  
- <h2>Tables</h2>
 
     	<p> Tables are built using essentially three tag elements: <code>&lt;table&gt;</code> <code>&lt;/table&gt;</code>, <code>&lt;tr&gt;</code> <code>&lt;/tr&gt;</code>, and <code>&lt;td&gt;</code><code>&lt;/td&gt;</code>. </p>
     	
-    	<p>To create a table, begin with the <code>&lt;table&gt;</code> <code>&lt;/table&gt;</code> tags. Anything within these tags are part of the table. Tables are built row by row using the <code>&lt;tr&gt;</code> and <code>&lt;/tr&gt;</code> tags. Let's take a look at a part of our sample project. </p>
+    	<p>To create a table, use the <code>&lt;table&gt;</code> tag to start the table and the<code>&lt;/table&gt;</code> tag to end the table. Anything within these tags are part of the table. </p>
+    	<p>Tables are built row by row using the <code>&lt;tr&gt;</code> and <code>&lt;/tr&gt;</code> tags. Let's take a look at a part of our sample project. </p>
     	
     	<pre class="prettyprint">
     	&lt;table&gt;
@@ -38,13 +41,17 @@ progress: 80
 	&lt;/table&gt;
 	</pre>
 
-    	<p> As you can see above, it all begins with the opening <code>&lt;table&gt;</code> tag. The next tag is the opening <code>&lt;tr&gt;</code> tag, which indicates the first row in the able. It is followed by three table header elements, which use the table header tags&lt;th&gt; and &lt;/th&gt;. The table header elements indicate that the first row, the row we've just created with the <code>&lt;tr&gt;</code> tag, is a header row. By default, all content within the <code>&lt;th&gt;</code> and <code>&lt;/th&gt;</code> tags is bold. The row, with its table header elements, end with the closing <code>&lt;/tr&gt;</code> tag.</p>
+    	<p> As you can see above, the table begins with the opening <code>&lt;table&gt;</code> tag. The next tag is the opening <code>&lt;tr&gt;</code> tag, which indicates the first row in the able. It is followed by three table header elements, which use the table header tags <code>&lt;th&gt;</code> and <code>&lt;/th&gt;</code>. The table header elements indicate that the first row, the row we've just created with the <code>&lt;tr&gt;</code> tag, is a header row. By default, all content within the <code>&lt;th&gt;</code> and <code>&lt;/th&gt;</code> tags is bold. The row, with its table header elements, end with the closing <code>&lt;/tr&gt;</code> tag.</p>
     	
-    	<p> The next row, as indicated by the next opening <code>&lt;tr&gt;</code> tag, contains the cell data. The <code>&lt;td&gt;</code> and <code>&lt;/td&gt;</code> tags contain the table cell data. These cells are not bolded and are displayed in the default font. <aside>Change style and fonts with <a href="/CSS/index.html">CSS</a>.</p> 
-    	<p> The number of columns is determined by the number of table data elements, for example <code>&lt;td&gt;</code>Education<code>&lt;td&gt;</code>. If we were to add an additional table data element, we would be also adding a column. When adding columns, be sure to make sue you incude the same number table data elements for all table rows.</p>
-    	<p>If you wanted to add more rows, you simple continue with the same structure within the table element. Just make sure you enclose each row of data with the <code>&lt;tr&gt;</code> and <code>&lt;/tr&gt;</code> tags.</p>
+    	<p> The next row, as indicated by the next opening <code>&lt;tr&gt;</code> tag, contains the cell data. The <code>&lt;td&gt;</code> and <code>&lt;/td&gt;</code> tags contain the table cell data. These cells are not bolded and are displayed in the default font. </p> 
     	
-    	<p> After you have finished added the rows of data you want to include in your table, close the table with the <code>&lt;table&gt;</code>
+    	<aside>Change style and fonts with <a href="/CSS/index.html">CSS</a>.</aside> 
+    	
+    	
+    	<p> The number of columns is determined by the number of table data elements, for example <code>&lt;td&gt;</code>Education<code>&lt;td&gt;</code> is one data element. If we were to add an additional table data element, we would be also adding a column. When adding columns, be sure to make sue you incude the same number table data elements for all table rows. Otherwise, your table may end up like a series of uneven stairs, if you're lucky.</p>
+    	<p>If you want to add more rows, you simple continue with the same structure within the table element: <code>&lt;tr&gt;</code> tag followed by as many data elements (columns) as you need, then the row is closed with the <code>&lt;/tr&gt;</code> tag.</p>
+    	
+    	<p> After you have finished adding your rows of content, close the table with the <code>&lt;table&gt;</code>
     	
     	<p>The above HTML will give you this...</p>
     	<table>
@@ -62,27 +69,37 @@ progress: 80
 	
 	</table>
 	
-  <p> To set the . If you are creating a small table, th is good. but for large tables or perhaps to make it easier on yourself, use thead.  	
-     <h4>thead, tbody, and tfoot</h4>
+  <p>The structure above is fine for creating small tables that do not contain a lot of content, but sometimes they can become too unwieldy to make it worth it. For larger tables, or, perhaps, if you want to add styling (with CSS) to different parts of the table to make them stand out it is easier to break the table down into different sections: the table header, table body, and table footer. 
+  	
+<h4>thead, tbody, and tfoot</h4>
      <p>Although a table could be built with just the three tags (<code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, and <code>&lt;td&gt;</code>), HTML5 also provides three tags that break the table into natural sections for styling purposes. The <code>&lt;thead&gt;</code>and <code>&lt;/thead&gt;</code> tags enclose the data in the first section to define the heading row of the table. Similarly, the <code>&lt;tbody&gt;</code>and <code>&lt;/tbody&gt;</code> and the <code>&lt;tfoot&gt;</code>and <code>&lt;/tfoot&gt;</code> tags enlose and define the body and footer data respectively.</p> 
-     <p>Unlike the <code>&lt;th&gt;</code> tag, when the  <code>&lt;thead&gt;</code>tag is used, there is no need to make sure that the header row is first when you are writing the html. The browser will recognize the <strong>thead</strong> element should be placed on before the tbody element. Similarly, with the tfoot tag, there is no need to make this come at the end of the rows of table data. For example, 
+     <p>Unlike the <code>&lt;th&gt;</code> tag, when the  <code>&lt;thead&gt;</code>tag is used, there is no need to make sure that the header row is first when you are writing the html. The browser will recognize the <code>&lt;thead&gt;</code> element should be placed on before the tbody element. This is also the case for the <code>&lt;tfoot&gt;</code> tag; there is no need to write the <code>&lt;tfoot&gt;</code> at the very end of the rows of data in the body of the table. For example, </p>
+     
      <pre class="prettyprint">
     	&lt;table&gt;
+	
+	&lt;tfoot&gt;
+		&lt;td&gt;Footer 1&lt;/td&gt;
+		&lt;td&gt;Footer 2&lt;/td&gt;
+		&lt;td&gt;Footer 3lt;/td&gt;
+	&lt;/tfoot&gt;
+	
 	&lt;thead&gt;
-	&lt;td&gt;Education&lt;/td&gt;
-	&lt;td&gt;Experience&lt;/td&gt;
-	&lt;td&gt;Skills&lt;/td&gt;
+		&lt;td&gt;Education&lt;/td&gt;
+		&lt;td&gt;Experience&lt;/td&gt;
+		&lt;td&gt;Skills&lt;/td&gt;
 	&lt;/thead&gt;
 	
+	&lt;tbody&gt;
 	&lt;tr&gt;
-	&lt;td&gt;taciti&lt;/td&gt;
-	&lt;td&gt;litora&lt;/td&gt;
-	&lt;td&gt;conubia&lt;/td&gt;
-	&lt;/tr&gt;
+		&lt;td&gt;taciti&lt;/td&gt;
+		&lt;td&gt;litora&lt;/td&gt;
+		&lt;td&gt;conubia&lt;/td&gt;
+	&lt;tbody&gt;
+	
 	
 	&lt;/table&gt;
 	</pre>
-<p> With the code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;/tfoot&gt;</code> tags, it is possible to change the orders of these elements without affecting the page.</p>
 
 <h2>Your Turn</h2>
    <p>Now that you have know how to create a table, what type of table will you create for your profile page?</p>
@@ -91,8 +108,6 @@ progress: 80
    <li>Will there be a header or footer?</li>
    
    </ul>
-
-    
     
  <footer>
 
