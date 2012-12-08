@@ -6,138 +6,65 @@ description: >
 # Comma-separated list of authors
 authors: Khalila Cole
 layout: page
-previous: structure.html
+previous: structuretwo.html
 next: tables.html
 progress: 55
 ---
 <article>
-<section>
-    
-   <div class="row">
-          <div class="span12">
-           <div class="row">
-          
-         
-          <article class="span8">
-      <h2>Links and Images</h2>
+<h2>Links and Images</h2>
+
+Links, also called hyperlinks, allow you to connect to other parts of a website and external websites. Images provide illustrative imagery to your content.
+
      
-<h3>HyperLinks</h3>
-<p> Now, let's learn about what makes a webpage truly a webpage, links. If not for links, a webpage would be a static document isolated from the rest of the internet nearly impossible to reach and just as impossible to leave. Links are what makes the world wide web, the world wide web. Now that we've stressed the importance of learning such a critical component of webpages, we're going to learn about three types of links: in page links or bookmarks, local page links, and external links. But before we do, let's take a closer look at the hyperlink tag and its individual components.</p>
-<p>
-Links are formed with the start tag &lt;a&gt; and end tag &lt;/a&gt;. The a in this tag means anchor, and the &lt;a&gt; can refer to either the origin anchor, where the link starts, or the target anchor, where the link ends, on text within the same webpage.
-The origin anchor, also known as the source anchor, is where the link begins and is identified by the simple presence of the opening &lt;a&gt; tag. The target anchor is identified within the opening tag with an attribute [aside: for a refresher on attributes, visit the <a href="elements.html"> Tags, Attributes, and Elements</a> section.] To identify the target anchor, we need to use the href attribute. The value of the attribute will be the destination. Depending on the type of link, the attribute is handled in different ways, as we will soon see below. </p>
-<p> In addition, a title attribute could be added to the opening tag to let the user know where the link will take them; the title may  appear if you hover the cursor over the link, if enabled, or for accessibility.[see this webpage for accessibility]</p>
-<p>In short, the element structure for links is <!-- Trying out an html highligher --> <span class="intexthtml"> &lt;a href="LINK DESTINATION" title="DESTINATION TITLE"&gt; WHAT VIEWER SEES AS A HYPERLINK&lt;/a&gt;</span>.
-[aside: don't confuse the &lt;a&gt; tag with the &lt;link&gt; tag; &lt;a&gt; tags only appear in the body, and &lt;link&gt; tags only appear in the head of the document]
-</p>
-<p>Let's take a look at our sample project.</p>
+<h3>Links</h3>
+<p> Now, let's learn about what makes a webpage truly a webpage&#8212;links. If not for links, a webpage would be a static document isolated from the rest of the internet, nearly impossible to reach and just as impossible to leave. Links are what makes the world wide web, the world wide <em>web</em>. </p>
 
-<p><img src="images/sampleproject.png" alt="sample project"> </p>
-     
-     <pre class="prettyprint">
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-&lt;meta charset="utf-8"&gt;
- &lt;title&gt;HTML5 Sample&lt;/title&gt;
+<p>Here, we will learn about the two types of links: internal links and external links. But before we learn more about what makes each of these types of links unique, let's take a closer look at the link tag and its individual components.</p>
 
-  &lt;!--Brief page description:--&gt;
-  &lt;meta name="description" content=""&gt;
-  &lt;!--Name(s) of primary authors--&gt;
- &lt;meta name="author" content=""&gt;
+<p>Links are formed with the start tag <code> &lt;a&gt;</code> and end tag <code> &lt;/a&gt;</code>. 
 
-  &lt;!--Styles--&gt;
-&lt;!-- &lt;link href="/assets/css/bootstrap.css" rel="stylesheet"&gt; --&gt;
+<p>The origin anchor, also known as the source anchor, is where the link begins and is identified by the presence of the opening <code> &lt;a&gt;</code> tag. The target anchor is identified within the opening tag with the <strong>href</strong> attribute. The <strong>value</strong> of the attribute will be the link destination. Depending on the type of link&#8212;local page or external&#8212;the attribute is handled in different ways, as we will soon see below. </p>
 
-&lt;/head&gt;
-&lt;body&gt;
+<aside>For a refresher on attributes, visit the <a href="elements.html"> Tags, Attributes, and Elements</a> section of this tutorial.</aside> 
 
-&lt;section&gt;
+<p>Basically, the element structure for links is <code> &lt;a href="LINK DESTINATION"&gt; WHAT VIEWER SEES AS A HYPERLINK&lt;/a&gt;</code>.</p>
 
-    &lt;header&gt;
-      &lt;h1&gt;About Me&lt;/h1&gt;
-      
-    &lt;/header&gt;
-    &lt;nav&gt;
-    	&lt;ul&gt;
-    		&lt;li&gt;&lt;a href="#"&gt;My life&lt;/a&gt;&lt;/li&gt;
-    		&lt;li&gt;&lt;a href="#"&gt;My work&lt;/a&gt;&lt;/li&gt;
-    		&lt;li&gt;&lt;a href="#"&gt;My future&lt;/a&gt;&lt;/li&gt;
-    &lt;/nav&gt;
-    &lt;article&gt;
-      
-      &lt;h2&gt; My life &lt;/h2&gt;
-    
-     &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit convallis nunc mattis tempor. Praesent tortor quam, porttitor a egestas vel, sollicitudin sit amet augue. Sed sed purus erat. Ut ante diam, consequat in mollis eget, gravida eget magna. Vivamus egestas massa non tellus pellentesque scelerisque. Morbi sem mauris, rhoncus in lobortis ut, tincidunt sed erat.  &lt;/p&gt;
-      &lt;/article&gt;
-      &lt;article&gt;
-     &lt;h2&gt; My Work &lt;/h2&gt;
-     &lt;p&gt;Morbi sem mauris, rhoncus in lobortis ut, tincidunt sed erat. Cras rutrum dignissim sagittis. Fusce sit amet lectus dui, quis feugiat elit. Nullam facilisis mattis urna vitae commodo. Cras porttitor malesuada nisi, id facilisis nulla scelerisque ut. Cras eleifend dui quis.&lt;/p&gt;
-     &lt;ol&gt;
-		&lt;li&gt;Class aptent&lt;/li&gt;
-		&lt;li&gt;Fusce sit amet &lt;/li&gt;
-		&lt;li&gt;Morbi sem mauris &lt;/li&gt;
-		&lt;li&gt;Nullam facilisis &lt;/li&gt;
-&lt;/ol&gt;
-&lt;table&gt;
-	&lt;tr&gt;
-	&lt;th&gt;Education&lt;/th&gt;
-	&lt;th&gt;Experience&lt;/th&gt;
-	&lt;th&gt;Skills&lt;/th&gt;
-	&lt;/tr&gt;
-	
-	&lt;tr&gt;
-	&lt;td&gt;taciti&lt;/td&gt;
-	&lt;td&gt;litora&lt;/td&gt;
-	&lt;td&gt;conubia&lt;/td&gt;
-	&lt;/tr&gt;
-	
-	&lt;tr&gt;
-	&lt;td&gt;scelerisque&lt;/td&gt;
-	&lt;td&gt;torquent&lt;/td&gt;
-	&lt;td&gt;Cras&lt;/td&gt;
-	&lt;/tr&gt;
-	
-	&lt;/table&gt;
-      &lt;/article&gt;
-&lt;h2&gt;My Future&lt;/h2&gt;
-&lt;img src="images/oceanview.jpg" alt="my future image"&gt;
-      &lt;/section&gt;
-    
-    &lt;footer&gt;
-      &lt;p&gt;Designed and Created by Me&lt;/p&gt;
-    &lt;/footer&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>      
+<aside> Be sure not to confuse the <code> &lt;a&gt;</code> tag with the <code> &lt;link&gt;</code> tag; <code> &lt;a&gt;</code> tags only appear in the body, and <code> &lt;link&gt;</code> tags only appear in the head of the document</aside>
 
-<h4>External Pages</h4>
-<p>Links to external pages are the simplest of the link types. All you have to do to insert a link to an external page is use the &lt;a&gt; element structure listed above and insert the web address (including http//:) as the destination value. For example, in the project above, we have a link to the IIT home page. The user will see only the IIT highlighted as a hyperlink.</p>
-<h4>Internal Pages</h4>
-<p>Internal page links are those found within the same site, though not within the same webpage. For example, the various sections of this tutorial are housed on different pages within the same website- DigitalContentCreatorsResource.com. You have to know where the page you would like to link to lives within the website, in order to link to it using an internal link.</p>
 
-<h4>Bookmarks</h4>
-<p> We refer to bookmarks as links that take you to anchors on the same page. You must define the anchor. Bookmarks are links found in a webpage that take you to other parts of the same page. 
-</p>
+<h4>External Links</h4>
+<p>We'll start with the simplest types of links&#8212;the external link. </p>
+
+<p>To insert a link in your content to an external page is use the <code> &lt;a&gt;</code> <code> and &lt;/a&gt;</code>tags and insert the complete web address as the destination value. For example, if we wanted to provide a link from this page to the IIT home page, we would simple type <code> &lt;a href="www.iit.edu"&gt; IIT &lt;/a&gt;</code>, which appears to the viewer as <a href="www.iit.edu"> IIT</a>.</p>
+
+<h4>Internal Links</h4>
+
+<p>Internal page links connect to other webpages within the same website. For example, the various sections of this tutorial are housed on different pages within the same website- DigitalContentCreatorsResource.com. In order to create links to internal pages, you must know where the content for your pages resides. For example, the pages for this HTML5 tutorial are housed together in the same folder. If I wanted to link to another page within this tutorial, let's say the Overview, then I would list the name of the html document as the destination value in the attribute. Let's see the this in action: <code> &lt;a href="overview.html"&gt; Overview &lt;/a&gt;</code>.  As we can see, the anchor tag &lt;a&gt; contains the value as the name of the document. The viewer would only see <a href="overview.html"> Overview</a>.</p>
+
+
 <h3>Images</h3>
-<p> Images are included as part of the same tutorial as the links because they share the same concept only with different tags. The opening &lt;img&gt;tag contains the src attribute whose value identifies the image that should appear. Here is where the idea closely follows the way an internal page is made. The value of the src is usually within the same website and you have to know and list the location. For example...</p>
-<p> If the image is not found within the same website or directory, then the image element is nested within an anchor or link element. For example...</p>
-    <h2>Your Turn</h2>
-   <p>Now that you have all of the elements you need to create the head of a page, give it a try</p>
-   <ul>
-   <li>What should the title of your personal profile be?</li>
-   <li>What meta information would you like to include?</li>
-   <li>Are there any comments or notes you would like to make for yourself or others to help you remember anything?</li>
-   </ul>
-    <p> Moving on to <a href="tables.html">Tables. </a> </p>
 
-    </article>
-</div>
-      </section>
+<p> Images are part of the same tutorial as the links because they share the same concept only with different tags. The opening <code> &lt;img&gt;</code>tag contains the <strong>src</strong> attribute whose value identifies the image that should appear. Here, is where the idea closely follows the way an internal link is made. The value of the <strong>src</strong> attribute is usually within the same website that the webpage you are creating is in, usually within a folder named <strong>Images</strong>. Let's take a look below at a portion of our sample project for an example. </p>
+   
+   <pre class="prettyprint">
+    &lt;h2&gt;My Future&lt;/h2&gt;
+&lt;img src="images/oceanview.jpg" alt="my future image"&gt;
+    </pre>
+<p>As we can see above, the <code> &lt;img&gt;</code> tag is used to indicated that an image is being inserted into the document. The value of the <strong>src</strong> attribute is the location of the image, which is in the <strong>Images</strong> folder.</p>
+<p>Also above, we can see another attribute, the <strong>alt</strong>. The value for the <strong>alt</strong> attribute is the alternate text that would appear if for some reason the image did not load.</p>
+<p>Remember, when we learned that there were several tags that did not require end tags. The <code> &lt;img&gt;</code> tag is one of them.</p>
+    
+    <h2>Your Turn</h2>
+   <p>Where would you like to link your profile to? Parts of the same page, external pages?</p>
+   <ul>
+   <li>What images would you like to include in your profile? </li>
+   
+   </ul>
+    <br>
+    <h5> Moving on to <a href="tables.html">Tables. </a> </h5>
 
  <footer>
 
 </footer>
       
-  </div><!--/.container-fluid-->
 </article>
